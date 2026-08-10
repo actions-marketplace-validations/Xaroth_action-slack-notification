@@ -1,23 +1,22 @@
-import stateHelper, { EXPORT_VAR_PREFIX } from 'utils/state-helper'
-import * as actionsCore from '@actions/core'
-import { mkdtempSync, writeFileSync } from 'fs'
-import { tmpdir } from 'os'
-import { join } from 'path'
+import { jest } from '@jest/globals'
+
+// @actions/core is ESM only, so it has to be mocked before the module under test is imported.
+const core = {
+  getInput: jest.fn(() => ''),
+  setOutput: jest.fn(),
+  setSecret: jest.fn(),
+  exportVariable: jest.fn(),
+}
+jest.unstable_mockModule('@actions/core', () => core)
+
+const { default: stateHelper, EXPORT_VAR_PREFIX } = await import('utils/state-helper')
 
 describe('state tests', () => {
   const name = 'TESTVALUE'
   const value = 'test'
 
   beforeAll(() => {
-    // Point the command files at a temp dir, otherwise @actions/core emits workflow
-    // commands on stdout, which GitHub refuses to trust when running our own tests.
-    const dir = mkdtempSync(join(tmpdir(), 'state-helper-'))
     process.env = {}
-    for (const file of ['GITHUB_ENV', 'GITHUB_OUTPUT', 'GITHUB_STATE']) {
-      const path = join(dir, file)
-      writeFileSync(path, '')
-      process.env[file] = path
-    }
   })
 
   it('stateHelper picks up on process.env variables', () => {
@@ -38,27 +37,21 @@ describe('state tests', () => {
   })
 
   it('calls exportVariable when setting states', () => {
-    const exportVariable = jest.spyOn(actionsCore, 'exportVariable').mockImplementation(jest.fn())
-
     const [, setValue] = stateHelper(name)
     setValue(value)
-    expect(exportVariable).toHaveBeenCalled()
+    expect(core.exportVariable).toHaveBeenCalled()
   })
 
   it('calls setOutput when setting states with output', () => {
-    const setOutput = jest.spyOn(actionsCore, 'setOutput').mockImplementation(jest.fn())
-
     const [, setValue] = stateHelper(name, { output: true })
     setValue(value)
-    expect(setOutput).toHaveBeenCalled()
+    expect(core.setOutput).toHaveBeenCalled()
   })
 
   it('marks secrets as secret', () => {
-    const setSecret = jest.spyOn(actionsCore, 'setSecret').mockImplementation(jest.fn())
-
     const [, setValue] = stateHelper(name, { isSensitive: true })
     setValue(value)
-    expect(setSecret).toHaveBeenCalled()
+    expect(core.setSecret).toHaveBeenCalled()
   })
 
   it('returns the default when one is specified', () => {
@@ -80,7 +73,7 @@ describe('state tests', () => {
   })
 
   afterEach(() => {
-    jest.restoreAllMocks()
+    jest.clearAllMocks()
     delete process.env[`${EXPORT_VAR_PREFIX}${name}`]
   })
 })

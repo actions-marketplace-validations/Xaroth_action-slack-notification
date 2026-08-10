@@ -18,21 +18,22 @@
     "build": "ncc build src/main.ts",
     "dev": "ncc build --watch src/main.ts",
     "format": "prettier --write '**/*.ts'",
-    "test": "jest --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:format": "prettier --check '**/*.ts'",
     "test:lint": "eslint src/",
-    "test:unit": "jest",
+    "test:unit": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:build": "ncc build -C -q src/main.ts",
     "commit:format": "pretty-quick --staged --check --pattern **/*.ts"
   },
   "dependencies": {
-    "@actions/core": "^2.0.3",
+    "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
     "@slack/web-api": "^8.0.0",
     "js-yaml": "^5.2.3"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@jest/globals": "^30.4.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.0",
     "@vercel/ncc": "^0.44.1",
