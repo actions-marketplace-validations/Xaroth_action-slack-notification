@@ -23841,7 +23841,7 @@ const run = async () => {
         const slack = new web_api_1.WebClient(state.slackToken);
         // Ensure that either channel-id or channel-name is set
         if (!state.channelId && !state.channelName) {
-            return (0, core_1.setFailed)(`Either 'channel-id' or 'channel-name' must be sedt.`);
+            return (0, core_1.setFailed)(`Either 'channel-id' or 'channel-name' must be set.`);
         }
         // Get our channel ID. If specified as a name, see if we can look it up.
         const channel = state.channelId || (await (0, slack_1.lookupChannel)(slack, state.channelName));
