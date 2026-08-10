@@ -23864,7 +23864,7 @@ const run = async () => {
         const status = (await github.getJobJustStarted(currentJob)) ? 'started' : 'in_progress';
         const attachments = (0, slack_1.buildAttachmentsMessage)({
             status,
-            jobId: currentJob === null || currentJob === void 0 ? void 0 : currentJob.id,
+            jobId: currentJob?.id,
         });
         const args = {
             channel,
@@ -23899,7 +23899,7 @@ const cleanup = async () => {
         const slack = new web_api_1.WebClient(state.slackToken);
         const attachments = (0, slack_1.buildAttachmentsMessage)({
             status,
-            jobId: currentJob === null || currentJob === void 0 ? void 0 : currentJob.id,
+            jobId: currentJob?.id,
         });
         const args = {
             channel: state.channelId,
@@ -23966,7 +23966,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getJobJustStarted = exports.getCurrentJobConclusion = exports.getCurrentJobForWorkflowRun = exports.matchJobByName = exports.listCurrentJobsForWorkflowRun = exports.getOctokit = void 0;
 const github_1 = __nccwpck_require__(5438);
@@ -24014,7 +24013,7 @@ if (Object.entries(state.jobNames).length === 0) {
             const contents = (0, fs_1.readFileSync)(fname, 'utf8');
             const data = (0, js_yaml_1.load)(contents);
             for (const [jobKey, jobItem] of Object.entries(data.jobs)) {
-                state.jobNames[jobKey] = (_a = jobItem.name) !== null && _a !== void 0 ? _a : jobKey;
+                state.jobNames[jobKey] = jobItem.name ?? jobKey;
             }
             state.setJobNames(state.jobNames);
         }
@@ -24024,7 +24023,7 @@ if (Object.entries(state.jobNames).length === 0) {
         }
     }
 }
-const jobName = (_b = state.jobNames[job]) !== null && _b !== void 0 ? _b : job;
+const jobName = state.jobNames[job] ?? job;
 if (jobName.indexOf('${{') !== -1) {
     log.warning('Job name contains a matrix variable. This is not supported.');
 }
@@ -24062,13 +24061,12 @@ const getMatrixData = () => {
  * @returns True if the job is the current one based on matrix data
  */
 const matchJobByName = (jobItem) => {
-    var _a;
     if (jobItem.name === jobName)
         return true;
     const matrixData = getMatrixData();
     log.debug(`Matrix fields: ${(0, util_1.inspect)(matrixData, false, null)}`);
     if (matrixData) {
-        const { name = '', matrix = '' } = ((_a = jobItem.name.match(jobMatcher)) === null || _a === void 0 ? void 0 : _a.groups) || {};
+        const { name = '', matrix = '' } = jobItem.name.match(jobMatcher)?.groups || {};
         log.debug(`Job name: '${name.trim()}'`);
         log.debug(`Expected job name: ${jobName}`);
         if (name.trim().localeCompare(jobName, undefined, { sensitivity: 'base' }) !== 0)
@@ -24101,10 +24099,9 @@ const getCurrentJobForWorkflowRun = async () => {
 };
 exports.getCurrentJobForWorkflowRun = getCurrentJobForWorkflowRun;
 const getCurrentJobConclusion = async (currentJob) => {
-    var _a;
-    const job = currentJob !== null && currentJob !== void 0 ? currentJob : (await (0, exports.getCurrentJobForWorkflowRun)());
+    const job = currentJob ?? (await (0, exports.getCurrentJobForWorkflowRun)());
     log.startGroup('Current job');
-    log.info((0, util_1.inspect)((job === null || job === void 0 ? void 0 : job.steps) || [], false, null));
+    log.info((0, util_1.inspect)(job?.steps || [], false, null));
     log.endGroup();
     // Since we are checking the current running job, we can not trust
     // the `conclusion` field as it will remain `null` until the job has
@@ -24113,7 +24110,7 @@ const getCurrentJobConclusion = async (currentJob) => {
     // there are any failed steps.
     // To make it easier, we check only the completed steps, more
     // specifically, those that have not been skipped.
-    const steps = ((job === null || job === void 0 ? void 0 : job.steps) || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
+    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
     if (steps.find((x) => x.conclusion === 'failure'))
         return 'failure';
     if (steps.find((x) => x.conclusion === 'cancelled'))
@@ -24124,7 +24121,7 @@ const getCurrentJobConclusion = async (currentJob) => {
     if (steps.filter((x) => x.conclusion === 'success').length > 0)
         return 'success';
     // If we don't, we try to use the job conclusion, or fall back to 'unknown'
-    return (_a = job === null || job === void 0 ? void 0 : job.conclusion) !== null && _a !== void 0 ? _a : 'unknown';
+    return job?.conclusion ?? 'unknown';
 };
 exports.getCurrentJobConclusion = getCurrentJobConclusion;
 const getJobJustStarted = async (currentJob) => {
@@ -24132,10 +24129,10 @@ const getJobJustStarted = async (currentJob) => {
     // to check if we have just started or not.
     // Ideally we would want this action to be called
     // as early as possible to notify the start of the workflow.
-    const job = currentJob !== null && currentJob !== void 0 ? currentJob : (await (0, exports.getCurrentJobForWorkflowRun)());
+    const job = currentJob ?? (await (0, exports.getCurrentJobForWorkflowRun)());
     // To make it easier, we check only the completed steps, more
     // specifically, those that have not been skipped.
-    const steps = ((job === null || job === void 0 ? void 0 : job.steps) || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
+    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
     // There should always be a 'Set up job' task at the start of
     // the tasks list. We compare against 2 because in some cases,
     // like our own repo, we must checkout before we can run the
@@ -24208,12 +24205,11 @@ const state = __importStar(__nccwpck_require__(403));
 const ensureChannelName = (channelName) => channelName.replace(/[#@]/g, '');
 exports.ensureChannelName = ensureChannelName;
 const lookupChannel = async (slack, channelName) => {
-    var _a;
     const name = (0, exports.ensureChannelName)(channelName);
     for await (const page of slack.paginate('conversations.list', {
         types: 'public_channel, private_channel',
     })) {
-        const match = (_a = page === null || page === void 0 ? void 0 : page.channels) === null || _a === void 0 ? void 0 : _a.find((x) => x.name === name);
+        const match = page?.channels?.find((x) => x.name === name);
         if (match) {
             return match.id;
         }
@@ -24242,18 +24238,17 @@ const workflowField = {
     short: true,
 };
 const buildTitle = () => {
-    var _a, _b, _c;
     if (state.messageTitle) {
         return {
             title: state.messageTitle,
-            title_link: (_a = state.messageLink) !== null && _a !== void 0 ? _a : undefined,
+            title_link: state.messageLink ?? undefined,
         };
     }
     switch (eventName) {
         case 'pull_request':
             return {
-                title: `${eventTitle} [${payload.action}]: ${(_b = payload.pull_request) === null || _b === void 0 ? void 0 : _b.title}`,
-                title_link: (_c = payload.pull_request) === null || _c === void 0 ? void 0 : _c.html_url,
+                title: `${eventTitle} [${payload.action}]: ${payload.pull_request?.title}`,
+                title_link: payload.pull_request?.html_url,
             };
         case 'release':
             return {
