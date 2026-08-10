@@ -1,15 +1,13 @@
-import { jest } from '@jest/globals'
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
+import * as core from '@actions/core'
+import stateHelper, { EXPORT_VAR_PREFIX } from 'utils/state-helper'
 
-// @actions/core is ESM only, so it has to be mocked before the module under test is imported.
-const core = {
-  getInput: jest.fn(() => ''),
-  setOutput: jest.fn(),
-  setSecret: jest.fn(),
-  exportVariable: jest.fn(),
-}
-jest.unstable_mockModule('@actions/core', () => core)
-
-const { default: stateHelper, EXPORT_VAR_PREFIX } = await import('utils/state-helper')
+vi.mock('@actions/core', () => ({
+  getInput: vi.fn(() => ''),
+  setOutput: vi.fn(),
+  setSecret: vi.fn(),
+  exportVariable: vi.fn(),
+}))
 
 describe('state tests', () => {
   const name = 'TESTVALUE'
@@ -73,7 +71,7 @@ describe('state tests', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     delete process.env[`${EXPORT_VAR_PREFIX}${name}`]
   })
 })
