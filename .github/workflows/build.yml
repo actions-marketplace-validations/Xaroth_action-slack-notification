@@ -1,13 +1,13 @@
-name: Compile if needed
+name: Rebuild dist
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
-  check-formatting:
-    if: (github.repository_owner != 'xaroth' || (github.ref_name != 'main' && github.ref_type == 'branch')) && github.actor != 'dependabot[bot]'
+  rebuild:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v7
@@ -45,8 +45,10 @@ jobs:
 
       - name: Push changes if there are any
         if: steps.is-modified.outputs.modified == 'true'
+        env:
+          ACTOR: ${{ github.actor }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit -am "Automatically fix formatting" --author="${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+          git commit dist/ -m "build: rebuild dist bundle" --author="${ACTOR} <${ACTOR}@users.noreply.github.com>"
           git push
