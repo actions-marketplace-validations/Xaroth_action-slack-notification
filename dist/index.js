@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 4914:
+/***/ 8797:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -43,7 +43,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issueCommand = issueCommand;
 exports.issue = issue;
 const os = __importStar(__nccwpck_require__(857));
-const utils_1 = __nccwpck_require__(302);
+const utils_1 = __nccwpck_require__(3729);
 /**
  * Issues a command to the GitHub Actions runner
  *
@@ -136,7 +136,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 7484:
+/***/ 3841:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -206,12 +206,12 @@ exports.group = group;
 exports.saveState = saveState;
 exports.getState = getState;
 exports.getIDToken = getIDToken;
-const command_1 = __nccwpck_require__(4914);
-const file_command_1 = __nccwpck_require__(4753);
-const utils_1 = __nccwpck_require__(302);
+const command_1 = __nccwpck_require__(8797);
+const file_command_1 = __nccwpck_require__(5728);
+const utils_1 = __nccwpck_require__(3729);
 const os = __importStar(__nccwpck_require__(857));
 const path = __importStar(__nccwpck_require__(6928));
-const oidc_utils_1 = __nccwpck_require__(5306);
+const oidc_utils_1 = __nccwpck_require__(471);
 /**
  * The code to exit an action
  */
@@ -500,29 +500,29 @@ function getIDToken(aud) {
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(1847);
+var summary_1 = __nccwpck_require__(4416);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(1847);
+var summary_2 = __nccwpck_require__(4416);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(1976);
+var path_utils_1 = __nccwpck_require__(9581);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
 /**
  * Platform utilities exports
  */
-exports.platform = __importStar(__nccwpck_require__(8968));
+exports.platform = __importStar(__nccwpck_require__(3349));
 //# sourceMappingURL=core.js.map
 
 /***/ }),
 
-/***/ 4753:
+/***/ 5728:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -569,7 +569,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 const crypto = __importStar(__nccwpck_require__(6982));
 const fs = __importStar(__nccwpck_require__(9896));
 const os = __importStar(__nccwpck_require__(857));
-const utils_1 = __nccwpck_require__(302);
+const utils_1 = __nccwpck_require__(3729);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -600,7 +600,7 @@ function prepareKeyValueMessage(key, value) {
 
 /***/ }),
 
-/***/ 5306:
+/***/ 471:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -616,9 +616,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(4844);
-const auth_1 = __nccwpck_require__(4552);
-const core_1 = __nccwpck_require__(7484);
+const http_client_1 = __nccwpck_require__(1212);
+const auth_1 = __nccwpck_require__(8600);
+const core_1 = __nccwpck_require__(3841);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -684,7 +684,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 1976:
+/***/ 9581:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -762,7 +762,7 @@ function toPlatformPath(pth) {
 
 /***/ }),
 
-/***/ 8968:
+/***/ 3349:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -816,7 +816,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.isLinux = exports.isMacOS = exports.isWindows = exports.arch = exports.platform = void 0;
 exports.getDetails = getDetails;
 const os_1 = __importDefault(__nccwpck_require__(857));
-const exec = __importStar(__nccwpck_require__(5236));
+const exec = __importStar(__nccwpck_require__(2922));
 const getWindowsInfo = () => __awaiter(void 0, void 0, void 0, function* () {
     const { stdout: version } = yield exec.getExecOutput('powershell -command "(Get-CimInstance -ClassName Win32_OperatingSystem).Version"', undefined, {
         silent: true
@@ -873,7 +873,7 @@ function getDetails() {
 
 /***/ }),
 
-/***/ 1847:
+/***/ 4416:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1163,7 +1163,7 @@ exports.summary = _summary;
 
 /***/ }),
 
-/***/ 302:
+/***/ 3729:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1209,7 +1209,7 @@ function toCommandProperties(annotationProperties) {
 
 /***/ }),
 
-/***/ 5236:
+/***/ 2922:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1260,7 +1260,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.exec = exec;
 exports.getExecOutput = getExecOutput;
 const string_decoder_1 = __nccwpck_require__(3193);
-const tr = __importStar(__nccwpck_require__(6665));
+const tr = __importStar(__nccwpck_require__(1811));
 /**
  * Exec a command.
  * Output will be streamed to the live console.
@@ -1332,7 +1332,7 @@ function getExecOutput(commandLine, args, options) {
 
 /***/ }),
 
-/***/ 6665:
+/***/ 1811:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -1386,8 +1386,8 @@ const os = __importStar(__nccwpck_require__(857));
 const events = __importStar(__nccwpck_require__(4434));
 const child = __importStar(__nccwpck_require__(5317));
 const path = __importStar(__nccwpck_require__(6928));
-const io = __importStar(__nccwpck_require__(4994));
-const ioUtil = __importStar(__nccwpck_require__(5207));
+const io = __importStar(__nccwpck_require__(6557));
+const ioUtil = __importStar(__nccwpck_require__(6682));
 const timers_1 = __nccwpck_require__(3557);
 /* eslint-disable @typescript-eslint/unbound-method */
 const IS_WINDOWS = process.platform === 'win32';
@@ -1964,7 +1964,7 @@ class ExecState extends events.EventEmitter {
 
 /***/ }),
 
-/***/ 4552:
+/***/ 8600:
 /***/ (function(__unused_webpack_module, exports) {
 
 "use strict";
@@ -2052,7 +2052,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 4844:
+/***/ 1212:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -2106,9 +2106,9 @@ exports.getProxyUrl = getProxyUrl;
 exports.isHttps = isHttps;
 const http = __importStar(__nccwpck_require__(8611));
 const https = __importStar(__nccwpck_require__(5692));
-const pm = __importStar(__nccwpck_require__(4988));
-const tunnel = __importStar(__nccwpck_require__(770));
-const undici_1 = __nccwpck_require__(6752);
+const pm = __importStar(__nccwpck_require__(5836));
+const tunnel = __importStar(__nccwpck_require__(2345));
+const undici_1 = __nccwpck_require__(4485);
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -2796,7 +2796,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 4988:
+/***/ 5836:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -2897,7 +2897,7 @@ class DecodedURL extends URL {
 
 /***/ }),
 
-/***/ 5207:
+/***/ 6682:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -3128,7 +3128,7 @@ function getCmdPath() {
 
 /***/ }),
 
-/***/ 4994:
+/***/ 6557:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -3184,7 +3184,7 @@ exports.which = which;
 exports.findInPath = findInPath;
 const assert_1 = __nccwpck_require__(2613);
 const path = __importStar(__nccwpck_require__(6928));
-const ioUtil = __importStar(__nccwpck_require__(5207));
+const ioUtil = __importStar(__nccwpck_require__(6682));
 /**
  * Copies a file or folder.
  * Based off of shelljs - https://github.com/shelljs/shelljs/blob/9237f66c52e5daa40458f94f9565e18e8132f5a6/src/cp.js
@@ -3447,7 +3447,7 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
-/***/ 9234:
+/***/ 8109:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3552,7 +3552,7 @@ exports.ConsoleLogger = ConsoleLogger;
 
 /***/ }),
 
-/***/ 4591:
+/***/ 7175:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3563,7 +3563,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 1356:
+/***/ 2036:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3573,7 +3573,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 3819:
+/***/ 5875:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3584,7 +3584,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 4148:
+/***/ 5660:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3594,7 +3594,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 9110:
+/***/ 8030:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3607,7 +3607,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 3234:
+/***/ 7050:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3617,7 +3617,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 5523:
+/***/ 139:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3627,7 +3627,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 4854:
+/***/ 2430:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3637,7 +3637,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 2149:
+/***/ 7949:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3647,7 +3647,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 6077:
+/***/ 6021:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3657,7 +3657,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 674:
+/***/ 4218:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3667,7 +3667,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 3147:
+/***/ 9907:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3677,7 +3677,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 245:
+/***/ 9261:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3687,7 +3687,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 9679:
+/***/ 2695:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3697,7 +3697,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 9335:
+/***/ 1711:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3708,7 +3708,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 365:
+/***/ 1269:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3718,7 +3718,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 9660:
+/***/ 1044:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3728,7 +3728,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 6850:
+/***/ 1578:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3738,7 +3738,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 7783:
+/***/ 2719:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3748,7 +3748,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 6954:
+/***/ 885:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -3768,37 +3768,37 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__nccwpck_require__(4854), exports);
-__exportStar(__nccwpck_require__(2149), exports);
-__exportStar(__nccwpck_require__(6077), exports);
-__exportStar(__nccwpck_require__(674), exports);
-__exportStar(__nccwpck_require__(3147), exports);
-__exportStar(__nccwpck_require__(245), exports);
-__exportStar(__nccwpck_require__(9679), exports);
-__exportStar(__nccwpck_require__(9335), exports);
-__exportStar(__nccwpck_require__(365), exports);
-__exportStar(__nccwpck_require__(9660), exports);
-__exportStar(__nccwpck_require__(6850), exports);
-__exportStar(__nccwpck_require__(7783), exports);
-__exportStar(__nccwpck_require__(8324), exports);
-__exportStar(__nccwpck_require__(2199), exports);
-__exportStar(__nccwpck_require__(495), exports);
-__exportStar(__nccwpck_require__(6286), exports);
-__exportStar(__nccwpck_require__(1710), exports);
-__exportStar(__nccwpck_require__(5710), exports);
-__exportStar(__nccwpck_require__(4178), exports);
-__exportStar(__nccwpck_require__(7662), exports);
-__exportStar(__nccwpck_require__(7145), exports);
-__exportStar(__nccwpck_require__(8064), exports);
-__exportStar(__nccwpck_require__(8974), exports);
-__exportStar(__nccwpck_require__(5876), exports);
-__exportStar(__nccwpck_require__(6000), exports);
-__exportStar(__nccwpck_require__(5906), exports);
+__exportStar(__nccwpck_require__(2430), exports);
+__exportStar(__nccwpck_require__(7949), exports);
+__exportStar(__nccwpck_require__(6021), exports);
+__exportStar(__nccwpck_require__(4218), exports);
+__exportStar(__nccwpck_require__(9907), exports);
+__exportStar(__nccwpck_require__(9261), exports);
+__exportStar(__nccwpck_require__(2695), exports);
+__exportStar(__nccwpck_require__(1711), exports);
+__exportStar(__nccwpck_require__(1269), exports);
+__exportStar(__nccwpck_require__(1044), exports);
+__exportStar(__nccwpck_require__(1578), exports);
+__exportStar(__nccwpck_require__(2719), exports);
+__exportStar(__nccwpck_require__(8156), exports);
+__exportStar(__nccwpck_require__(9327), exports);
+__exportStar(__nccwpck_require__(119), exports);
+__exportStar(__nccwpck_require__(6854), exports);
+__exportStar(__nccwpck_require__(9958), exports);
+__exportStar(__nccwpck_require__(4150), exports);
+__exportStar(__nccwpck_require__(1050), exports);
+__exportStar(__nccwpck_require__(5062), exports);
+__exportStar(__nccwpck_require__(7585), exports);
+__exportStar(__nccwpck_require__(7944), exports);
+__exportStar(__nccwpck_require__(5478), exports);
+__exportStar(__nccwpck_require__(7036), exports);
+__exportStar(__nccwpck_require__(5288), exports);
+__exportStar(__nccwpck_require__(5690), exports);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 8324:
+/***/ 8156:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3808,7 +3808,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 2199:
+/***/ 9327:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3818,7 +3818,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 495:
+/***/ 119:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3828,7 +3828,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 1710:
+/***/ 9958:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3838,7 +3838,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 6286:
+/***/ 6854:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3848,7 +3848,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 5710:
+/***/ 4150:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3858,7 +3858,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 4178:
+/***/ 1050:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3868,7 +3868,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 7662:
+/***/ 5062:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3878,7 +3878,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 7145:
+/***/ 7585:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3888,7 +3888,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 8064:
+/***/ 7944:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3898,7 +3898,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 8974:
+/***/ 5478:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3908,7 +3908,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 5876:
+/***/ 7036:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3918,7 +3918,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 6000:
+/***/ 5288:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3928,7 +3928,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 5906:
+/***/ 5690:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3938,7 +3938,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 4775:
+/***/ 2623:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -3958,22 +3958,22 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__nccwpck_require__(4591), exports);
-__exportStar(__nccwpck_require__(1356), exports);
-__exportStar(__nccwpck_require__(3819), exports);
-__exportStar(__nccwpck_require__(4148), exports);
-__exportStar(__nccwpck_require__(9110), exports);
-__exportStar(__nccwpck_require__(3234), exports);
-__exportStar(__nccwpck_require__(5523), exports);
-__exportStar(__nccwpck_require__(6954), exports);
-__exportStar(__nccwpck_require__(5723), exports);
-__exportStar(__nccwpck_require__(9380), exports);
-__exportStar(__nccwpck_require__(7445), exports);
+__exportStar(__nccwpck_require__(7175), exports);
+__exportStar(__nccwpck_require__(2036), exports);
+__exportStar(__nccwpck_require__(5875), exports);
+__exportStar(__nccwpck_require__(5660), exports);
+__exportStar(__nccwpck_require__(8030), exports);
+__exportStar(__nccwpck_require__(7050), exports);
+__exportStar(__nccwpck_require__(139), exports);
+__exportStar(__nccwpck_require__(885), exports);
+__exportStar(__nccwpck_require__(1843), exports);
+__exportStar(__nccwpck_require__(636), exports);
+__exportStar(__nccwpck_require__(6029), exports);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 5723:
+/***/ 1843:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3983,7 +3983,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 9380:
+/***/ 636:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4017,7 +4017,7 @@ var CustomFieldType;
 
 /***/ }),
 
-/***/ 7445:
+/***/ 6029:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4027,7 +4027,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 4048:
+/***/ 6377:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -4075,16 +4075,16 @@ const node_path_1 = __nccwpck_require__(6760);
 const node_querystring_1 = __nccwpck_require__(1792);
 const node_util_1 = __nccwpck_require__(7975);
 const node_zlib_1 = __importDefault(__nccwpck_require__(8522));
-const p_queue_1 = __importDefault(__nccwpck_require__(6459));
-const p_retry_1 = __importStar(__nccwpck_require__(2103));
-const chat_stream_1 = __nccwpck_require__(7760);
-const errors_1 = __nccwpck_require__(8486);
-const file_upload_1 = __nccwpck_require__(2577);
-const helpers_1 = __importDefault(__nccwpck_require__(4060));
-const instrument_1 = __nccwpck_require__(9224);
-const logger_1 = __nccwpck_require__(4385);
-const methods_1 = __nccwpck_require__(9339);
-const retry_policies_1 = __nccwpck_require__(1766);
+const p_queue_1 = __importDefault(__nccwpck_require__(8278));
+const p_retry_1 = __importStar(__nccwpck_require__(6545));
+const chat_stream_1 = __nccwpck_require__(9097);
+const errors_1 = __nccwpck_require__(3805);
+const file_upload_1 = __nccwpck_require__(9688);
+const helpers_1 = __importDefault(__nccwpck_require__(6921));
+const instrument_1 = __nccwpck_require__(6795);
+const logger_1 = __nccwpck_require__(9234);
+const methods_1 = __nccwpck_require__(782);
+const retry_policies_1 = __nccwpck_require__(6213);
 /*
  * Helpers
  */
@@ -4784,7 +4784,7 @@ function redact(body) {
 
 /***/ }),
 
-/***/ 7760:
+/***/ 9097:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4984,7 +4984,7 @@ exports.ChatStreamer = ChatStreamer;
 
 /***/ }),
 
-/***/ 8486:
+/***/ 3805:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5080,7 +5080,7 @@ exports.WebAPIFileUploadReadFileDataError = WebAPIFileUploadReadFileDataError;
 
 /***/ }),
 
-/***/ 2577:
+/***/ 9688:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -5108,7 +5108,7 @@ exports.buildMultipleChannelsErrorMsg = buildMultipleChannelsErrorMsg;
 exports.buildInvalidFilesUploadParamError = buildInvalidFilesUploadParamError;
 const node_fs_1 = __nccwpck_require__(3024);
 const node_stream_1 = __nccwpck_require__(7075);
-const errors_1 = __nccwpck_require__(8486);
+const errors_1 = __nccwpck_require__(3805);
 async function getFileUploadJob(options, logger) {
     // Validate parameters
     warnIfLegacyFileType(options, logger);
@@ -5442,7 +5442,7 @@ function buildInvalidFilesUploadParamError() {
 
 /***/ }),
 
-/***/ 4060:
+/***/ 6921:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5463,7 +5463,7 @@ function delay(ms) {
 
 /***/ }),
 
-/***/ 5105:
+/***/ 4092:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -5488,7 +5488,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WebClientEvent = exports.WebClient = exports.ChatStreamer = exports.retryPolicies = exports.LogLevel = exports.addAppMetadata = exports.WebAPIRequestError = exports.WebAPIRateLimitedError = exports.WebAPIPlatformError = exports.WebAPIHTTPError = exports.WebAPIFileUploadReadFileDataError = exports.WebAPIFileUploadInvalidArgumentsError = exports.SlackError = exports.ErrorCode = void 0;
-var errors_1 = __nccwpck_require__(8486);
+var errors_1 = __nccwpck_require__(3805);
 Object.defineProperty(exports, "ErrorCode", ({ enumerable: true, get: function () { return errors_1.ErrorCode; } }));
 Object.defineProperty(exports, "SlackError", ({ enumerable: true, get: function () { return errors_1.SlackError; } }));
 Object.defineProperty(exports, "WebAPIFileUploadInvalidArgumentsError", ({ enumerable: true, get: function () { return errors_1.WebAPIFileUploadInvalidArgumentsError; } }));
@@ -5497,26 +5497,26 @@ Object.defineProperty(exports, "WebAPIHTTPError", ({ enumerable: true, get: func
 Object.defineProperty(exports, "WebAPIPlatformError", ({ enumerable: true, get: function () { return errors_1.WebAPIPlatformError; } }));
 Object.defineProperty(exports, "WebAPIRateLimitedError", ({ enumerable: true, get: function () { return errors_1.WebAPIRateLimitedError; } }));
 Object.defineProperty(exports, "WebAPIRequestError", ({ enumerable: true, get: function () { return errors_1.WebAPIRequestError; } }));
-var instrument_1 = __nccwpck_require__(9224);
+var instrument_1 = __nccwpck_require__(6795);
 Object.defineProperty(exports, "addAppMetadata", ({ enumerable: true, get: function () { return instrument_1.addAppMetadata; } }));
-var logger_1 = __nccwpck_require__(4385);
+var logger_1 = __nccwpck_require__(9234);
 Object.defineProperty(exports, "LogLevel", ({ enumerable: true, get: function () { return logger_1.LogLevel; } }));
-var retry_policies_1 = __nccwpck_require__(1766);
+var retry_policies_1 = __nccwpck_require__(6213);
 Object.defineProperty(exports, "retryPolicies", ({ enumerable: true, get: function () { return __importDefault(retry_policies_1).default; } }));
-__exportStar(__nccwpck_require__(381), exports);
-__exportStar(__nccwpck_require__(5591), exports);
-var chat_stream_1 = __nccwpck_require__(7760);
+__exportStar(__nccwpck_require__(2100), exports);
+__exportStar(__nccwpck_require__(8952), exports);
+var chat_stream_1 = __nccwpck_require__(9097);
 Object.defineProperty(exports, "ChatStreamer", ({ enumerable: true, get: function () { return chat_stream_1.ChatStreamer; } }));
-var WebClient_1 = __nccwpck_require__(4048);
+var WebClient_1 = __nccwpck_require__(6377);
 Object.defineProperty(exports, "WebClient", ({ enumerable: true, get: function () { return WebClient_1.WebClient; } }));
 Object.defineProperty(exports, "WebClientEvent", ({ enumerable: true, get: function () { return WebClient_1.WebClientEvent; } }));
 // methods must be exported after WebClient
-__exportStar(__nccwpck_require__(9339), exports);
+__exportStar(__nccwpck_require__(782), exports);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 9224:
+/***/ 6795:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -5559,7 +5559,7 @@ exports.addAppMetadata = addAppMetadata;
 exports.getUserAgent = getUserAgent;
 const os = __importStar(__nccwpck_require__(8161));
 const node_path_1 = __nccwpck_require__(6760);
-const packageJson = __nccwpck_require__(6734);
+const packageJson = __nccwpck_require__(4158);
 /**
  * Replaces occurrences of '/' with ':' in a string, since '/' is meaningful inside User-Agent strings as a separator.
  */
@@ -5610,7 +5610,7 @@ function getUserAgent() {
 
 /***/ }),
 
-/***/ 4385:
+/***/ 9234:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -5618,8 +5618,8 @@ function getUserAgent() {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.LogLevel = void 0;
 exports.getLogger = getLogger;
-const logger_1 = __nccwpck_require__(9234);
-var logger_2 = __nccwpck_require__(9234);
+const logger_1 = __nccwpck_require__(8109);
+var logger_2 = __nccwpck_require__(8109);
 Object.defineProperty(exports, "LogLevel", ({ enumerable: true, get: function () { return logger_2.LogLevel; } }));
 let instanceCount = 0;
 /**
@@ -5646,7 +5646,7 @@ function getLogger(name, level, existingLogger) {
 
 /***/ }),
 
-/***/ 9339:
+/***/ 782:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -5667,8 +5667,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Methods = void 0;
-const eventemitter3_1 = __nccwpck_require__(2415);
-const WebClient_1 = __nccwpck_require__(4048);
+const eventemitter3_1 = __nccwpck_require__(8016);
+const WebClient_1 = __nccwpck_require__(6377);
 /**
  * Binds a certain `method` and its (required) arguments and result types to the `apiCall` method in `WebClient`.
  */
@@ -7258,12 +7258,12 @@ class Methods extends eventemitter3_1.EventEmitter {
     };
 }
 exports.Methods = Methods;
-__exportStar(__nccwpck_require__(4775), exports);
+__exportStar(__nccwpck_require__(2623), exports);
 //# sourceMappingURL=methods.js.map
 
 /***/ }),
 
-/***/ 1766:
+/***/ 6213:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -7304,7 +7304,7 @@ exports["default"] = policies;
 
 /***/ }),
 
-/***/ 381:
+/***/ 2100:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -7314,7 +7314,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 5591:
+/***/ 8952:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -7324,7 +7324,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 /***/ }),
 
-/***/ 2415:
+/***/ 870:
 /***/ ((module) => {
 
 "use strict";
@@ -7668,3278 +7668,351 @@ if (true) {
 
 /***/ }),
 
-/***/ 4484:
-/***/ ((__unused_webpack_module, exports) => {
+/***/ 8016:
+/***/ ((module) => {
 
-/*! js-yaml 5.2.3 https://github.com/nodeca/js-yaml @license MIT */
-Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-//#region src/tag.ts
-var NOT_RESOLVED = Symbol("NOT_RESOLVED");
-var MERGE_KEY = Symbol("MERGE_KEY");
-function defineScalarTag(tagName, options) {
-	var _options$implicit, _options$matchByTagPr, _options$implicitFirs, _options$identify, _options$represent, _options$representTag;
-	return {
-		tagName,
-		nodeKind: "scalar",
-		implicit: (_options$implicit = options.implicit) !== null && _options$implicit !== void 0 ? _options$implicit : false,
-		matchByTagPrefix: (_options$matchByTagPr = options.matchByTagPrefix) !== null && _options$matchByTagPr !== void 0 ? _options$matchByTagPr : false,
-		implicitFirstChars: (_options$implicitFirs = options.implicitFirstChars) !== null && _options$implicitFirs !== void 0 ? _options$implicitFirs : null,
-		resolve: options.resolve,
-		identify: (_options$identify = options.identify) !== null && _options$identify !== void 0 ? _options$identify : null,
-		represent: (_options$represent = options.represent) !== null && _options$represent !== void 0 ? _options$represent : ((data) => String(data)),
-		representTagName: (_options$representTag = options.representTagName) !== null && _options$representTag !== void 0 ? _options$representTag : null
-	};
-}
-function defineSequenceTag(tagName, options) {
-	var _options$matchByTagPr2, _options$finalize, _options$identify2, _options$represent2, _options$representTag2;
-	const carrierIsResult = options.finalize === void 0;
-	return {
-		tagName,
-		nodeKind: "sequence",
-		implicit: false,
-		matchByTagPrefix: (_options$matchByTagPr2 = options.matchByTagPrefix) !== null && _options$matchByTagPr2 !== void 0 ? _options$matchByTagPr2 : false,
-		create: options.create,
-		addItem: options.addItem,
-		finalize: (_options$finalize = options.finalize) !== null && _options$finalize !== void 0 ? _options$finalize : ((carrier) => carrier),
-		carrierIsResult,
-		identify: (_options$identify2 = options.identify) !== null && _options$identify2 !== void 0 ? _options$identify2 : null,
-		represent: (_options$represent2 = options.represent) !== null && _options$represent2 !== void 0 ? _options$represent2 : ((data) => data),
-		representTagName: (_options$representTag2 = options.representTagName) !== null && _options$representTag2 !== void 0 ? _options$representTag2 : null
-	};
-}
-function defineMappingTag(tagName, options) {
-	var _options$matchByTagPr3, _options$finalize2, _options$identify3, _options$represent3, _options$representTag3;
-	const carrierIsResult = options.finalize === void 0;
-	return {
-		tagName,
-		nodeKind: "mapping",
-		implicit: false,
-		matchByTagPrefix: (_options$matchByTagPr3 = options.matchByTagPrefix) !== null && _options$matchByTagPr3 !== void 0 ? _options$matchByTagPr3 : false,
-		create: options.create,
-		addPair: options.addPair,
-		has: options.has,
-		keys: options.keys,
-		get: options.get,
-		finalize: (_options$finalize2 = options.finalize) !== null && _options$finalize2 !== void 0 ? _options$finalize2 : ((carrier) => carrier),
-		carrierIsResult,
-		identify: (_options$identify3 = options.identify) !== null && _options$identify3 !== void 0 ? _options$identify3 : null,
-		represent: (_options$represent3 = options.represent) !== null && _options$represent3 !== void 0 ? _options$represent3 : ((data) => data),
-		representTagName: (_options$representTag3 = options.representTagName) !== null && _options$representTag3 !== void 0 ? _options$representTag3 : null
-	};
-}
-//#endregion
-//#region src/tag/scalar/str.ts
-var strTag = defineScalarTag("tag:yaml.org,2002:str", {
-	resolve: (source) => source,
-	identify: (data) => typeof data === "string"
-});
-//#endregion
-//#region src/tag/scalar/null_core.ts
-var NULL_VALUES$1 = [
-	"",
-	"~",
-	"null",
-	"Null",
-	"NULL"
-];
-var nullCoreTag = defineScalarTag("tag:yaml.org,2002:null", {
-	implicit: true,
-	implicitFirstChars: [
-		"",
-		"~",
-		"n",
-		"N"
-	],
-	resolve: (source) => {
-		if (NULL_VALUES$1.indexOf(source) !== -1) return null;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => object === null,
-	represent: () => "null"
-});
-//#endregion
-//#region src/tag/scalar/null_json.ts
-var nullJsonTag = defineScalarTag("tag:yaml.org,2002:null", {
-	implicit: true,
-	implicitFirstChars: ["n"],
-	resolve: (source, isExplicit) => {
-		if (source === "null" || isExplicit && source === "") return null;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => object === null,
-	represent: () => "null"
-});
-//#endregion
-//#region src/tag/scalar/null_yaml11.ts
-var NULL_VALUES = [
-	"",
-	"~",
-	"null",
-	"Null",
-	"NULL"
-];
-var nullYaml11Tag = defineScalarTag("tag:yaml.org,2002:null", {
-	implicit: true,
-	implicitFirstChars: [
-		"",
-		"~",
-		"n",
-		"N"
-	],
-	resolve: (source) => {
-		if (NULL_VALUES.indexOf(source) !== -1) return null;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => object === null,
-	represent: () => "null"
-});
-//#endregion
-//#region src/tag/scalar/bool_core.ts
-var TRUE_VALUES$2 = [
-	"true",
-	"True",
-	"TRUE"
-];
-var FALSE_VALUES$2 = [
-	"false",
-	"False",
-	"FALSE"
-];
-var boolCoreTag = defineScalarTag("tag:yaml.org,2002:bool", {
-	implicit: true,
-	implicitFirstChars: [
-		"t",
-		"T",
-		"f",
-		"F"
-	],
-	resolve: (source) => {
-		if (TRUE_VALUES$2.indexOf(source) !== -1) return true;
-		if (FALSE_VALUES$2.indexOf(source) !== -1) return false;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
-	represent: (object) => object ? "true" : "false"
-});
-//#endregion
-//#region src/tag/scalar/bool_json.ts
-var TRUE_VALUES$1 = ["true"];
-var FALSE_VALUES$1 = ["false"];
-var boolJsonTag = defineScalarTag("tag:yaml.org,2002:bool", {
-	implicit: true,
-	implicitFirstChars: ["t", "f"],
-	resolve: (source) => {
-		if (TRUE_VALUES$1.indexOf(source) !== -1) return true;
-		if (FALSE_VALUES$1.indexOf(source) !== -1) return false;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
-	represent: (object) => object ? "true" : "false"
-});
-//#endregion
-//#region src/tag/scalar/bool_yaml11.ts
-var TRUE_VALUES = [
-	"true",
-	"True",
-	"TRUE",
-	"y",
-	"Y",
-	"yes",
-	"Yes",
-	"YES",
-	"on",
-	"On",
-	"ON"
-];
-var FALSE_VALUES = [
-	"false",
-	"False",
-	"FALSE",
-	"n",
-	"N",
-	"no",
-	"No",
-	"NO",
-	"off",
-	"Off",
-	"OFF"
-];
-var boolYaml11Tag = defineScalarTag("tag:yaml.org,2002:bool", {
-	implicit: true,
-	implicitFirstChars: [
-		"y",
-		"Y",
-		"n",
-		"N",
-		"t",
-		"T",
-		"f",
-		"F",
-		"o",
-		"O"
-	],
-	resolve: (source) => {
-		if (TRUE_VALUES.indexOf(source) !== -1) return true;
-		if (FALSE_VALUES.indexOf(source) !== -1) return false;
-		return NOT_RESOLVED;
-	},
-	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
-	represent: (object) => object ? "true" : "false"
-});
-//#endregion
-//#region src/tag/scalar/int_core.ts
-var YAML_INTEGER_IMPLICIT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:0o[0-7]+|0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
-var YAML_INTEGER_EXPLICIT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1]+|[-+]?0o[0-7]+|[-+]?0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
-function parseYamlInteger$2(source) {
-	let value = source;
-	let sign = 1;
-	if (value[0] === "-" || value[0] === "+") {
-		if (value[0] === "-") sign = -1;
-		value = value.slice(1);
-	}
-	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
-	if (value.startsWith("0o")) return sign * parseInt(value.slice(2), 8);
-	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
-	return sign * parseInt(value, 10);
-}
-function resolveYamlInteger$2(source, isExplicit) {
-	if (isExplicit) {
-		if (!YAML_INTEGER_EXPLICIT_PATTERN$1.test(source)) return NOT_RESOLVED;
-	} else if (!YAML_INTEGER_IMPLICIT_PATTERN$1.test(source)) return NOT_RESOLVED;
-	const result = parseYamlInteger$2(source);
-	return Number.isFinite(result) ? result : NOT_RESOLVED;
-}
-var intCoreTag = defineScalarTag("tag:yaml.org,2002:int", {
-	implicit: true,
-	implicitFirstChars: [
-		"-",
-		"+",
-		..."0123456789"
-	],
-	resolve: resolveYamlInteger$2,
-	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
-	represent: (object) => object.toString(10)
-});
-//#endregion
-//#region src/tag/scalar/int_json.ts
-var YAML_INTEGER_IMPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^-?(?:0|[1-9][0-9]*)$");
-var YAML_INTEGER_EXPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1]+|[-+]?0o[0-7]+|[-+]?0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
-function parseYamlInteger$1(source) {
-	let value = source;
-	let sign = 1;
-	if (value[0] === "-" || value[0] === "+") {
-		if (value[0] === "-") sign = -1;
-		value = value.slice(1);
-	}
-	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
-	if (value.startsWith("0o")) return sign * parseInt(value.slice(2), 8);
-	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
-	return sign * parseInt(value, 10);
-}
-function resolveYamlInteger$1(source, isExplicit) {
-	if (isExplicit) {
-		if (!YAML_INTEGER_EXPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
-	} else if (!YAML_INTEGER_IMPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
-	const result = parseYamlInteger$1(source);
-	return Number.isFinite(result) ? result : NOT_RESOLVED;
-}
-var intJsonTag = defineScalarTag("tag:yaml.org,2002:int", {
-	implicit: true,
-	implicitFirstChars: ["-", ..."0123456789"],
-	resolve: resolveYamlInteger$1,
-	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
-	represent: (object) => object.toString(10)
-});
-//#endregion
-//#region src/tag/scalar/int_yaml11.ts
-var YAML_INTEGER_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1_]+|[-+]?0[0-7_]+|[-+]?0x[0-9a-fA-F_]+|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+|[-+]?(?:0|[1-9][0-9_]*))$");
-function parseYamlInteger(source) {
-	let value = source.replace(/_/g, "");
-	let sign = 1;
-	if (value[0] === "-" || value[0] === "+") {
-		if (value[0] === "-") sign = -1;
-		value = value.slice(1);
-	}
-	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
-	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
-	if (value.includes(":")) {
-		let result = 0;
-		for (const part of value.split(":")) result = result * 60 + Number(part);
-		return sign * result;
-	}
-	if (value !== "0" && value[0] === "0") return sign * parseInt(value, 8);
-	return sign * parseInt(value, 10);
-}
-function resolveYamlInteger(source) {
-	if (!YAML_INTEGER_PATTERN.test(source)) return NOT_RESOLVED;
-	const result = parseYamlInteger(source);
-	return Number.isFinite(result) ? result : NOT_RESOLVED;
-}
-var intYaml11Tag = defineScalarTag("tag:yaml.org,2002:int", {
-	implicit: true,
-	implicitFirstChars: [
-		"-",
-		"+",
-		..."0123456789"
-	],
-	resolve: resolveYamlInteger,
-	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
-	represent: (object) => object.toString(10)
-});
-//#endregion
-//#region src/tag/scalar/float_core.ts
-var YAML_FLOAT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?[0-9]+(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?|[-+]?\\.[0-9]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
-var YAML_FLOAT_SPECIAL_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
-function resolveYamlFloat$2(source) {
-	if (!YAML_FLOAT_PATTERN$1.test(source)) return NOT_RESOLVED;
-	let value = source.toLowerCase();
-	const sign = value[0] === "-" ? -1 : 1;
-	if ("+-".includes(value[0])) value = value.slice(1);
-	if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
-	if (value === ".nan") return NaN;
-	const result = sign * parseFloat(value);
-	if (Number.isFinite(result) || YAML_FLOAT_SPECIAL_PATTERN$1.test(source)) return result;
-	return NOT_RESOLVED;
-}
-function representYamlFloat$2(object) {
-	if (isNaN(object)) return ".nan";
-	if (object === Number.POSITIVE_INFINITY) return ".inf";
-	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
-	if (Object.is(object, -0)) return "-0.0";
-	const result = object.toString(10);
-	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
-}
-var floatCoreTag = defineScalarTag("tag:yaml.org,2002:float", {
-	implicit: true,
-	implicitFirstChars: [
-		"-",
-		"+",
-		".",
-		..."0123456789"
-	],
-	resolve: resolveYamlFloat$2,
-	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
-	represent: representYamlFloat$2
-});
-//#endregion
-//#region src/tag/scalar/float_json.ts
-var YAML_FLOAT_IMPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?$");
-var YAML_FLOAT_EXPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?[0-9]+(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?|[-+]?\\.[0-9]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
-function resolveYamlFloat$1(source, isExplicit) {
-	if (isExplicit) {
-		if (!YAML_FLOAT_EXPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
-		let value = source.toLowerCase();
-		const sign = value[0] === "-" ? -1 : 1;
-		if ("+-".includes(value[0])) value = value.slice(1);
-		if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
-		if (value === ".nan") return NaN;
-		const result = sign * parseFloat(value);
-		return Number.isFinite(result) ? result : NOT_RESOLVED;
-	}
-	if (!YAML_FLOAT_IMPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
-	const result = Number(source);
-	if (Number.isFinite(result)) return result;
-	return NOT_RESOLVED;
-}
-function representYamlFloat$1(object) {
-	if (isNaN(object)) return ".nan";
-	if (object === Number.POSITIVE_INFINITY) return ".inf";
-	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
-	if (Object.is(object, -0)) return "-0.0";
-	const result = object.toString(10);
-	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
-}
-var floatJsonTag = defineScalarTag("tag:yaml.org,2002:float", {
-	implicit: true,
-	implicitFirstChars: ["-", ..."0123456789"],
-	resolve: resolveYamlFloat$1,
-	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
-	represent: representYamlFloat$1
-});
-//#endregion
-//#region src/tag/scalar/float_yaml11.ts
-var YAML_FLOAT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?(?:(?:[0-9][0-9_]*)?\\.[0-9_]*)(?:[eE][-+][0-9]+)?|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
-var YAML_FLOAT_SPECIAL_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
-function resolveYamlFloat(source) {
-	if (!YAML_FLOAT_PATTERN.test(source)) return NOT_RESOLVED;
-	let value = source.toLowerCase().replace(/_/g, "");
-	const sign = value[0] === "-" ? -1 : 1;
-	if ("+-".includes(value[0])) value = value.slice(1);
-	if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
-	if (value === ".nan") return NaN;
-	let result = 0;
-	if (value.includes(":")) {
-		for (const part of value.split(":")) result = result * 60 + Number(part);
-		result *= sign;
-	} else result = sign * parseFloat(value);
-	if (Number.isFinite(result) || YAML_FLOAT_SPECIAL_PATTERN.test(source)) return result;
-	return NOT_RESOLVED;
-}
-function representYamlFloat(object) {
-	if (isNaN(object)) return ".nan";
-	if (object === Number.POSITIVE_INFINITY) return ".inf";
-	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
-	if (Object.is(object, -0)) return "-0.0";
-	const result = object.toString(10);
-	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
-}
-var floatYaml11Tag = defineScalarTag("tag:yaml.org,2002:float", {
-	implicit: true,
-	implicitFirstChars: [
-		"-",
-		"+",
-		".",
-		..."0123456789"
-	],
-	resolve: resolveYamlFloat,
-	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
-	represent: representYamlFloat
-});
-//#endregion
-//#region src/tag/scalar/merge.ts
-var mergeTag = defineScalarTag("tag:yaml.org,2002:merge", {
-	implicit: true,
-	implicitFirstChars: ["<"],
-	resolve: (source, isExplicit) => {
-		if (source === "<<" || isExplicit && source === "") return MERGE_KEY;
-		return NOT_RESOLVED;
-	}
-});
-//#endregion
-//#region src/tag/scalar/binary.ts
-var BASE64_PATTERN = /^[A-Za-z0-9+/]*={0,2}$/;
-function resolveYamlBinary(source) {
-	const input = source.replace(/\s/g, "");
-	if (input.length % 4 !== 0 || !BASE64_PATTERN.test(input)) return NOT_RESOLVED;
-	const binary = atob(input);
-	const result = new Uint8Array(binary.length);
-	for (let index = 0; index < binary.length; index++) result[index] = binary.charCodeAt(index);
-	return result;
-}
-function representYamlBinary(object) {
-	let binary = "";
-	for (let index = 0; index < object.length; index++) binary += String.fromCharCode(object[index]);
-	return btoa(binary);
-}
-var binaryTag = defineScalarTag("tag:yaml.org,2002:binary", {
-	resolve: resolveYamlBinary,
-	identify: (object) => Object.prototype.toString.call(object) === "[object Uint8Array]",
-	represent: representYamlBinary
-});
-//#endregion
-//#region src/tag/scalar/timestamp.ts
-var YAML_DATE_REGEXP = /* @__PURE__ */ new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$");
-var YAML_TIMESTAMP_REGEXP = /* @__PURE__ */ new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9]?)-([0-9][0-9]?)(?:[Tt]|[ \\t]+)([0-9][0-9]?):([0-9][0-9]):([0-9][0-9])(?:\\.([0-9]*))?(?:[ \\t]*(Z|([-+])([0-9][0-9]?)(?::([0-9][0-9]))?))?$");
-function makeUtcDate(year, month, day, hour = 0, minute = 0, second = 0, fraction = 0) {
-	const date = new Date(Date.UTC(year, month, day, hour, minute, second, fraction));
-	date.setUTCFullYear(year, month, day);
-	return date;
-}
-function resolveYamlTimestamp(source) {
-	let match = YAML_DATE_REGEXP.exec(source);
-	if (match === null) match = YAML_TIMESTAMP_REGEXP.exec(source);
-	if (match === null) return NOT_RESOLVED;
-	const year = +match[1];
-	const month = +match[2] - 1;
-	const day = +match[3];
-	if (!match[4]) {
-		const date = makeUtcDate(year, month, day);
-		if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month || date.getUTCDate() !== day) return NOT_RESOLVED;
-		return date;
-	}
-	const hour = +match[4];
-	const minute = +match[5];
-	const second = +match[6];
-	let fraction = 0;
-	if (hour > 23 || minute > 59 || second > 59) return NOT_RESOLVED;
-	if (match[7]) {
-		let value = match[7].slice(0, 3);
-		while (value.length < 3) value += "0";
-		fraction = +value;
-	}
-	const date = makeUtcDate(year, month, day, hour, minute, second, fraction);
-	if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month || date.getUTCDate() !== day) return NOT_RESOLVED;
-	if (match[9]) {
-		const offsetHour = +match[10];
-		const offsetMinute = +(match[11] || 0);
-		if (offsetHour > 23 || offsetMinute > 59) return NOT_RESOLVED;
-		const offset = (offsetHour * 60 + offsetMinute) * 6e4;
-		date.setTime(date.getTime() - (match[9] === "-" ? -offset : offset));
-	}
-	return date;
-}
-var timestampTag = defineScalarTag("tag:yaml.org,2002:timestamp", {
-	implicit: true,
-	implicitFirstChars: [..."0123456789"],
-	resolve: resolveYamlTimestamp,
-	identify: (object) => object instanceof Date,
-	represent: (object) => object.toISOString()
-});
-//#endregion
-//#region src/tag/sequence/seq.ts
-var seqTag = defineSequenceTag("tag:yaml.org,2002:seq", {
-	create: () => [],
-	addItem: (container, item) => {
-		container.push(item);
-	},
-	identify: Array.isArray
-});
-//#endregion
-//#region src/common/object.ts
-function isPlainObject(data) {
-	if (data === null || typeof data !== "object" || Array.isArray(data)) return false;
-	const prototype = Object.getPrototypeOf(data);
-	return prototype === null || prototype === Object.prototype;
-}
-function pick(object, keys) {
-	const result = {};
-	for (const key of keys) if (object[key] !== void 0) result[key] = object[key];
-	return result;
-}
-//#endregion
-//#region src/tag/sequence/omap.ts
-var omapTag = defineSequenceTag("tag:yaml.org,2002:omap", {
-	create: () => ({
-		list: [],
-		seen: /* @__PURE__ */ new Set()
-	}),
-	addItem: (carrier, item) => {
-		let key;
-		if (item instanceof Map) {
-			if (item.size !== 1) return "cannot resolve an ordered map item";
-			key = item.keys().next().value;
-		} else if (isPlainObject(item)) {
-			const itemKeys = Object.keys(item);
-			if (itemKeys.length !== 1) return "cannot resolve an ordered map item";
-			key = itemKeys[0];
-		} else return "cannot resolve an ordered map item";
-		if (carrier.seen.has(key)) return "duplicate key in ordered map";
-		carrier.seen.add(key);
-		carrier.list.push(item);
-		return "";
-	},
-	finalize: (carrier) => carrier.list
-});
-//#endregion
-//#region src/tag/sequence/pairs.ts
-var pairsTag = defineSequenceTag("tag:yaml.org,2002:pairs", {
-	create: () => [],
-	addItem: (container, item) => {
-		if (item instanceof Map) {
-			if (item.size !== 1) return "cannot resolve a pairs item";
-			container.push(item.entries().next().value);
-			return "";
-		}
-		if (Object.prototype.toString.call(item) !== "[object Object]") return "cannot resolve a pairs item";
-		const object = item;
-		const keys = Object.keys(object);
-		if (keys.length !== 1) return "cannot resolve a pairs item";
-		container.push([keys[0], object[keys[0]]]);
-		return "";
-	}
-});
-//#endregion
-//#region src/tag/mapping/map.ts
-var mapTag = defineMappingTag("tag:yaml.org,2002:map", {
-	create: () => ({}),
-	identify: isPlainObject,
-	represent: (o) => {
-		const map = /* @__PURE__ */ new Map();
-		for (const key of Object.keys(o)) map.set(key, o[key]);
-		return map;
-	},
-	addPair: (container, key, value) => {
-		if (key !== null && typeof key === "object") return "object-based map does not support complex keys";
-		const normalizedKey = String(key);
-		if (normalizedKey === "__proto__") Object.defineProperty(container, normalizedKey, {
-			value,
-			enumerable: true,
-			configurable: true,
-			writable: true
-		});
-		else container[normalizedKey] = value;
-		return "";
-	},
-	has: (container, key) => {
-		if (key !== null && typeof key === "object") return false;
-		return Object.prototype.hasOwnProperty.call(container, String(key));
-	},
-	keys: (container) => Object.keys(container),
-	get: (container, key) => {
-		const normalizedKey = String(key);
-		if (!Object.prototype.hasOwnProperty.call(container, normalizedKey)) return null;
-		return container[normalizedKey];
-	}
-});
-//#endregion
-//#region src/tag/mapping/set.ts
-var setTag = defineMappingTag("tag:yaml.org,2002:set", {
-	create: () => /* @__PURE__ */ new Set(),
-	identify: (data) => data instanceof Set,
-	represent: (data) => {
-		const map = /* @__PURE__ */ new Map();
-		for (const key of data) map.set(key, null);
-		return map;
-	},
-	addPair: (container, key, value) => {
-		if (value !== null) return "cannot resolve a set item";
-		container.add(key);
-		return "";
-	},
-	has: (container, key) => container.has(key),
-	keys: (container) => container.keys(),
-	get: () => null
-});
-//#endregion
-//#region \0@oxc-project+runtime@0.137.0/helpers/esm/typeof.js
-function _typeof(o) {
-	"@babel/helpers - typeof";
-	return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
-		return typeof o;
-	} : function(o) {
-		return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-	}, _typeof(o);
-}
-//#endregion
-//#region \0@oxc-project+runtime@0.137.0/helpers/esm/toPrimitive.js
-function toPrimitive(t, r) {
-	if ("object" != _typeof(t) || !t) return t;
-	var e = t[Symbol.toPrimitive];
-	if (void 0 !== e) {
-		var i = e.call(t, r || "default");
-		if ("object" != _typeof(i)) return i;
-		throw new TypeError("@@toPrimitive must return a primitive value.");
-	}
-	return ("string" === r ? String : Number)(t);
-}
-//#endregion
-//#region \0@oxc-project+runtime@0.137.0/helpers/esm/toPropertyKey.js
-function toPropertyKey(t) {
-	var i = toPrimitive(t, "string");
-	return "symbol" == _typeof(i) ? i : i + "";
-}
-//#endregion
-//#region \0@oxc-project+runtime@0.137.0/helpers/esm/defineProperty.js
-function _defineProperty(e, r, t) {
-	return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
-		value: t,
-		enumerable: !0,
-		configurable: !0,
-		writable: !0
-	}) : e[r] = t, e;
-}
-//#endregion
-//#region src/schema.ts
-function createTagDefinitionMap() {
-	return {
-		scalar: Object.create(null),
-		sequence: Object.create(null),
-		mapping: Object.create(null)
-	};
-}
-function createTagDefinitionListMap() {
-	return {
-		scalar: [],
-		sequence: [],
-		mapping: []
-	};
-}
-function compileTags(tags) {
-	const result = [];
-	for (const tag of tags) {
-		let index = result.length;
-		for (let previousIndex = 0; previousIndex < result.length; previousIndex++) {
-			const previous = result[previousIndex];
-			if (previous.nodeKind === tag.nodeKind && previous.tagName === tag.tagName && previous.matchByTagPrefix === tag.matchByTagPrefix) {
-				index = previousIndex;
-				break;
-			}
-		}
-		result[index] = tag;
-	}
-	return result;
-}
-var Schema = class Schema {
-	constructor(tags) {
-		_defineProperty(this, "tags", void 0);
-		_defineProperty(this, "implicitScalarTags", void 0);
-		_defineProperty(this, "implicitScalarByFirstChar", void 0);
-		_defineProperty(this, "implicitScalarAnyFirstChar", void 0);
-		_defineProperty(this, "defaultScalarTag", void 0);
-		_defineProperty(this, "defaultSequenceTag", void 0);
-		_defineProperty(this, "defaultMappingTag", void 0);
-		_defineProperty(this, "exact", void 0);
-		_defineProperty(this, "prefix", void 0);
-		const compiledTags = compileTags(tags);
-		const implicitScalarTags = [];
-		const exact = createTagDefinitionMap();
-		const prefix = createTagDefinitionListMap();
-		for (const tag of compiledTags) {
-			if (tag.nodeKind === "scalar" && tag.implicit) {
-				if (tag.matchByTagPrefix) throw new Error("Implicit scalar tags cannot match by tag prefix");
-				implicitScalarTags.push(tag);
-			}
-			switch (tag.nodeKind) {
-				case "scalar":
-					if (tag.matchByTagPrefix) prefix.scalar.push(tag);
-					else exact.scalar[tag.tagName] = tag;
-					break;
-				case "sequence":
-					if (tag.matchByTagPrefix) prefix.sequence.push(tag);
-					else exact.sequence[tag.tagName] = tag;
-					break;
-				case "mapping":
-					if (tag.matchByTagPrefix) prefix.mapping.push(tag);
-					else exact.mapping[tag.tagName] = tag;
-					break;
-			}
-		}
-		const implicitScalarAnyFirstChar = implicitScalarTags.filter((tag) => tag.implicitFirstChars === null);
-		const keys = /* @__PURE__ */ new Set();
-		for (const tag of implicitScalarTags) if (tag.implicitFirstChars !== null) for (const key of tag.implicitFirstChars) keys.add(key);
-		const implicitScalarByFirstChar = /* @__PURE__ */ new Map();
-		for (const key of keys) implicitScalarByFirstChar.set(key, implicitScalarTags.filter((tag) => tag.implicitFirstChars === null || tag.implicitFirstChars.indexOf(key) !== -1));
-		const defaultScalarTag = exact.scalar["tag:yaml.org,2002:str"];
-		if (!defaultScalarTag) throw new Error("schema does not define the default scalar tag (tag:yaml.org,2002:str)");
-		this.tags = compiledTags;
-		this.implicitScalarTags = implicitScalarTags;
-		this.implicitScalarByFirstChar = implicitScalarByFirstChar;
-		this.implicitScalarAnyFirstChar = implicitScalarAnyFirstChar;
-		this.defaultScalarTag = defaultScalarTag;
-		this.defaultSequenceTag = exact.sequence["tag:yaml.org,2002:seq"];
-		this.defaultMappingTag = exact.mapping["tag:yaml.org,2002:map"];
-		this.exact = exact;
-		this.prefix = prefix;
-	}
-	withTags(...tags) {
-		let flatTags = [];
-		for (const tag of tags) flatTags = flatTags.concat(tag);
-		return new Schema([...this.tags, ...flatTags]);
-	}
-};
-var FAILSAFE_SCHEMA = new Schema([
-	strTag,
-	seqTag,
-	mapTag
-]);
-var JSON_SCHEMA = new Schema([
-	...FAILSAFE_SCHEMA.tags,
-	nullJsonTag,
-	boolJsonTag,
-	intJsonTag,
-	floatJsonTag
-]);
-var CORE_SCHEMA = new Schema([
-	...FAILSAFE_SCHEMA.tags,
-	nullCoreTag,
-	boolCoreTag,
-	intCoreTag,
-	floatCoreTag
-]);
-var YAML11_SCHEMA = new Schema([
-	...FAILSAFE_SCHEMA.tags,
-	nullYaml11Tag,
-	boolYaml11Tag,
-	intYaml11Tag,
-	floatYaml11Tag,
-	timestampTag,
-	mergeTag,
-	binaryTag,
-	omapTag,
-	pairsTag,
-	setTag
-]);
-//#endregion
-//#region src/tag/mapping/real_map.ts
-var realMapTag = defineMappingTag("tag:yaml.org,2002:map", {
-	create: () => /* @__PURE__ */ new Map(),
-	addPair: (container, key, value) => {
-		container.set(key, value);
-		return "";
-	},
-	has: (container, key) => container.has(key),
-	keys: (container) => container.keys(),
-	get: (container, key) => container.get(key),
-	identify: (data) => data instanceof Map || isPlainObject(data),
-	represent: (data) => {
-		if (data instanceof Map) return data;
-		const map = /* @__PURE__ */ new Map();
-		const obj = data;
-		for (const key of Object.keys(obj)) map.set(key, obj[key]);
-		return map;
-	}
-});
-//#endregion
-//#region src/tag/mapping/legacy_map.ts
-function normalizeKey(key) {
-	if (Array.isArray(key)) {
-		const array = Array.prototype.slice.call(key);
-		for (let index = 0; index < array.length; index++) {
-			if (Array.isArray(array[index])) return null;
-			if (typeof array[index] === "object" && Object.prototype.toString.call(array[index]) === "[object Object]") array[index] = "[object Object]";
-		}
-		return String(array);
-	}
-	if (typeof key === "object" && Object.prototype.toString.call(key) === "[object Object]") return "[object Object]";
-	return String(key);
-}
-var legacyMapTag = defineMappingTag("tag:yaml.org,2002:map", {
-	create: () => ({}),
-	identify: isPlainObject,
-	represent: (o) => {
-		const map = /* @__PURE__ */ new Map();
-		for (const key of Object.keys(o)) map.set(key, o[key]);
-		return map;
-	},
-	addPair: (container, key, value) => {
-		const normalizedKey = normalizeKey(key);
-		if (normalizedKey === null) return "nested arrays are not supported inside keys";
-		if (normalizedKey === "__proto__") Object.defineProperty(container, normalizedKey, {
-			value,
-			enumerable: true,
-			configurable: true,
-			writable: true
-		});
-		else container[normalizedKey] = value;
-		return "";
-	},
-	has: (container, key) => {
-		const normalizedKey = normalizeKey(key);
-		return normalizedKey !== null && Object.prototype.hasOwnProperty.call(container, normalizedKey);
-	},
-	keys: (container) => Object.keys(container),
-	get: (container, key) => {
-		const normalizedKey = String(key);
-		if (!Object.prototype.hasOwnProperty.call(container, normalizedKey)) return null;
-		return container[normalizedKey];
-	}
-});
-//#endregion
-//#region \0@oxc-project+runtime@0.137.0/helpers/esm/objectSpread2.js
-function ownKeys(e, r) {
-	var t = Object.keys(e);
-	if (Object.getOwnPropertySymbols) {
-		var o = Object.getOwnPropertySymbols(e);
-		r && (o = o.filter(function(r) {
-			return Object.getOwnPropertyDescriptor(e, r).enumerable;
-		})), t.push.apply(t, o);
-	}
-	return t;
-}
-function _objectSpread2(e) {
-	for (var r = 1; r < arguments.length; r++) {
-		var t = null != arguments[r] ? arguments[r] : {};
-		r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
-			_defineProperty(e, r, t[r]);
-		}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
-			Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
-		});
-	}
-	return e;
-}
-//#endregion
-//#region src/common/snippet.ts
-var DEFAULT_SNIPPET_OPTIONS = {
-	maxLength: 79,
-	indent: 1,
-	linesBefore: 3,
-	linesAfter: 2
-};
-function getLine(buffer, lineStart, lineEnd, position, maxLineLength) {
-	let head = "";
-	let tail = "";
-	const maxHalfLength = Math.floor(maxLineLength / 2) - 1;
-	if (position - lineStart > maxHalfLength) {
-		head = " ... ";
-		lineStart = position - maxHalfLength + head.length;
-	}
-	if (lineEnd - position > maxHalfLength) {
-		tail = " ...";
-		lineEnd = position + maxHalfLength - tail.length;
-	}
-	return {
-		str: head + buffer.slice(lineStart, lineEnd).replace(/\t/g, "→") + tail,
-		pos: position - lineStart + head.length
-	};
-}
-function padStart(string, max) {
-	return " ".repeat(Math.max(max - string.length, 0)) + string;
-}
-function makeSnippet(mark, options) {
-	if (!mark.buffer) return null;
-	const opts = _objectSpread2(_objectSpread2({}, DEFAULT_SNIPPET_OPTIONS), options);
-	const re = /\r?\n|\r|\0/g;
-	const lineStarts = [0];
-	const lineEnds = [];
-	let match;
-	let foundLineNo = -1;
-	while (match = re.exec(mark.buffer)) {
-		lineEnds.push(match.index);
-		lineStarts.push(match.index + match[0].length);
-		if (mark.position <= match.index && foundLineNo < 0) foundLineNo = lineStarts.length - 2;
-	}
-	if (foundLineNo < 0) foundLineNo = lineStarts.length - 1;
-	let result = "";
-	const lineNoLength = Math.min(mark.line + opts.linesAfter, lineEnds.length).toString().length;
-	const maxLineLength = opts.maxLength - (opts.indent + lineNoLength + 3);
-	for (let i = 1; i <= opts.linesBefore; i++) {
-		if (foundLineNo - i < 0) break;
-		const line = getLine(mark.buffer, lineStarts[foundLineNo - i], lineEnds[foundLineNo - i], mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo - i]), maxLineLength);
-		result = `${" ".repeat(opts.indent)}${padStart((mark.line - i + 1).toString(), lineNoLength)} | ${line.str}\n${result}`;
-	}
-	const line = getLine(mark.buffer, lineStarts[foundLineNo], lineEnds[foundLineNo], mark.position, maxLineLength);
-	result += `${" ".repeat(opts.indent)}${padStart((mark.line + 1).toString(), lineNoLength)} | ${line.str}\n`;
-	result += `${"-".repeat(opts.indent + lineNoLength + 3 + line.pos)}^\n`;
-	for (let i = 1; i <= opts.linesAfter; i++) {
-		if (foundLineNo + i >= lineEnds.length) break;
-		const line = getLine(mark.buffer, lineStarts[foundLineNo + i], lineEnds[foundLineNo + i], mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo + i]), maxLineLength);
-		result += `${" ".repeat(opts.indent)}${padStart((mark.line + i + 1).toString(), lineNoLength)} | ${line.str}\n`;
-	}
-	return result.replace(/\n$/, "");
-}
-//#endregion
-//#region src/common/exception.ts
-function formatError(exception, compact) {
-	let where = "";
-	if (!exception.mark) return exception.reason;
-	if (exception.mark.name) where += `in "${exception.mark.name}" `;
-	where += `(${exception.mark.line + 1}:${exception.mark.column + 1})`;
-	if (!compact && exception.mark.snippet) where += `\n\n${exception.mark.snippet}`;
-	return `${exception.reason} ${where}`;
-}
-var YAMLException = class extends Error {
-	constructor(reason, mark) {
-		super();
-		_defineProperty(this, "reason", void 0);
-		_defineProperty(this, "mark", void 0);
-		this.name = "YAMLException";
-		this.reason = reason;
-		this.mark = mark;
-		this.message = formatError(this, false);
-		if (Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
-	}
-	toString(compact) {
-		return `${this.name}: ${formatError(this, compact)}`;
-	}
-};
-function throwErrorAt(source, position, message, filename = "") {
-	let line = 0;
-	let lineStart = 0;
-	for (let index = 0; index < position; index++) {
-		const ch = source.charCodeAt(index);
-		if (ch === 10) {
-			line++;
-			lineStart = index + 1;
-		} else if (ch === 13) {
-			line++;
-			if (source.charCodeAt(index + 1) === 10) index++;
-			lineStart = index + 1;
-		}
-	}
-	const mark = {
-		name: filename,
-		buffer: source,
-		position,
-		line,
-		column: position - lineStart
-	};
-	mark.snippet = makeSnippet(mark);
-	throw new YAMLException(message, mark);
-}
-//#endregion
-//#region src/parser/events.ts
-var EVENT_DOCUMENT = 1;
-var EVENT_SEQUENCE = 2;
-var EVENT_MAPPING = 3;
-var EVENT_SCALAR = 4;
-var EVENT_ALIAS = 5;
-var EVENT_POP = 6;
-var SCALAR_STYLE_PLAIN = 1;
-var SCALAR_STYLE_SINGLE_QUOTED = 2;
-var SCALAR_STYLE_DOUBLE_QUOTED = 3;
-var SCALAR_STYLE_LITERAL_BLOCK = 4;
-var SCALAR_STYLE_FOLDED_BLOCK = 5;
-var COLLECTION_STYLE_BLOCK = 1;
-var COLLECTION_STYLE_FLOW = 2;
-var CHOMPING_CLIP = 1;
-var CHOMPING_STRIP = 2;
-var CHOMPING_KEEP = 3;
-//#endregion
-//#region src/parser/parser_scalar.ts
-var NO_RANGE$3 = -1;
-function simpleEscapeSequence(c) {
-	switch (c) {
-		case 48: return "\0";
-		case 97: return "\x07";
-		case 98: return "\b";
-		case 116: return "	";
-		case 9: return "	";
-		case 110: return "\n";
-		case 118: return "\v";
-		case 102: return "\f";
-		case 114: return "\r";
-		case 101: return "\x1B";
-		case 32: return " ";
-		case 34: return "\"";
-		case 47: return "/";
-		case 92: return "\\";
-		case 78: return "";
-		case 95: return "\xA0";
-		case 76: return "\u2028";
-		case 80: return "\u2029";
-		default: return "";
-	}
-}
-var simpleEscapeCheck = new Array(256);
-var simpleEscapeMap = new Array(256);
-for (let i = 0; i < 256; i++) {
-	simpleEscapeCheck[i] = simpleEscapeSequence(i) ? 1 : 0;
-	simpleEscapeMap[i] = simpleEscapeSequence(i);
-}
-function charFromCodepoint(c) {
-	if (c <= 65535) return String.fromCharCode(c);
-	return String.fromCharCode((c - 65536 >> 10) + 55296, (c - 65536 & 1023) + 56320);
-}
-function fromHexCode$1(c) {
-	if (c >= 48 && c <= 57) return c - 48;
-	return (c | 32) - 97 + 10;
-}
-function escapedHexLen$1(c) {
-	if (c === 120) return 2;
-	if (c === 117) return 4;
-	return 8;
-}
-function skipFoldedBreaks(input, position, end) {
-	let breaks = 0;
-	while (position < end) {
-		const ch = input.charCodeAt(position);
-		if (ch === 10) {
-			breaks++;
-			position++;
-		} else if (ch === 13) {
-			breaks++;
-			position++;
-			if (input.charCodeAt(position) === 10) position++;
-		} else if (ch === 32 || ch === 9) position++;
-		else break;
-	}
-	return {
-		position,
-		breaks
-	};
-}
-function foldedBreaks(count) {
-	if (count === 1) return " ";
-	return "\n".repeat(count - 1);
-}
-function getPlainValue(input, start, end) {
-	let result = "";
-	let position = start;
-	let captureStart = start;
-	let captureEnd = start;
-	while (position < end) {
-		const ch = input.charCodeAt(position);
-		if (ch === 10 || ch === 13) {
-			result += input.slice(captureStart, captureEnd);
-			const fold = skipFoldedBreaks(input, position, end);
-			result += foldedBreaks(fold.breaks);
-			position = captureStart = captureEnd = fold.position;
-		} else {
-			position++;
-			if (ch !== 32 && ch !== 9) captureEnd = position;
-		}
-	}
-	return result + input.slice(captureStart, captureEnd);
-}
-function getSingleQuotedValue(input, start, end) {
-	let result = "";
-	let position = start;
-	let captureStart = start;
-	let captureEnd = start;
-	while (position < end) {
-		const ch = input.charCodeAt(position);
-		if (ch === 39) {
-			result += input.slice(captureStart, position) + "'";
-			position += 2;
-			captureStart = captureEnd = position;
-		} else if (ch === 10 || ch === 13) {
-			result += input.slice(captureStart, captureEnd);
-			const fold = skipFoldedBreaks(input, position, end);
-			result += foldedBreaks(fold.breaks);
-			position = captureStart = captureEnd = fold.position;
-		} else {
-			position++;
-			if (ch !== 32 && ch !== 9) captureEnd = position;
-		}
-	}
-	return result + input.slice(captureStart, end);
-}
-function getDoubleQuotedValue(input, start, end) {
-	let result = "";
-	let position = start;
-	let captureStart = start;
-	let captureEnd = start;
-	while (position < end) {
-		const ch = input.charCodeAt(position);
-		if (ch === 92) {
-			result += input.slice(captureStart, position);
-			position++;
-			const escaped = input.charCodeAt(position);
-			if (escaped === 10 || escaped === 13) position = skipFoldedBreaks(input, position, end).position;
-			else if (escaped < 256 && simpleEscapeCheck[escaped]) {
-				result += simpleEscapeMap[escaped];
-				position++;
-			} else {
-				let hexLength = escapedHexLen$1(escaped);
-				let hexResult = 0;
-				for (; hexLength > 0; hexLength--) {
-					position++;
-					const digit = fromHexCode$1(input.charCodeAt(position));
-					hexResult = (hexResult << 4) + digit;
-				}
-				result += charFromCodepoint(hexResult);
-				position++;
-			}
-			captureStart = captureEnd = position;
-		} else if (ch === 10 || ch === 13) {
-			result += input.slice(captureStart, captureEnd);
-			const fold = skipFoldedBreaks(input, position, end);
-			result += foldedBreaks(fold.breaks);
-			position = captureStart = captureEnd = fold.position;
-		} else {
-			position++;
-			if (ch !== 32 && ch !== 9) captureEnd = position;
-		}
-	}
-	return result + input.slice(captureStart, end);
-}
-function getBlockValue(input, start, end, indent, chomping, folded) {
-	const textIndent = indent < 0 ? 0 : indent;
-	const region = input.slice(start, end).replace(/\r\n?/g, "\n");
-	const lines = region === "" ? [] : (region.endsWith("\n") ? region.slice(0, -1) : region).split("\n");
-	let result = "";
-	let didReadContent = false;
-	let emptyLines = 0;
-	let atMoreIndented = false;
-	for (const line of lines) {
-		let column = 0;
-		while (column < textIndent && line.charCodeAt(column) === 32) column++;
-		if (indent < 0 || column >= line.length) {
-			emptyLines++;
-			continue;
-		}
-		const content = line.slice(textIndent);
-		const first = content.charCodeAt(0);
-		if (folded) if (first === 32 || first === 9) {
-			atMoreIndented = true;
-			result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
-		} else if (atMoreIndented) {
-			atMoreIndented = false;
-			result += "\n".repeat(emptyLines + 1);
-		} else if (emptyLines === 0) {
-			if (didReadContent) result += " ";
-		} else result += "\n".repeat(emptyLines);
-		else result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
-		result += content;
-		didReadContent = true;
-		emptyLines = 0;
-	}
-	if (chomping === 3) result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
-	else if (chomping !== 2) {
-		if (didReadContent) result += "\n";
-	}
-	return result;
-}
-function getScalarValue(input, scalar) {
-	if (scalar.valueStart === NO_RANGE$3) return "";
-	const { valueStart, valueEnd } = scalar;
-	if (scalar.fast) return input.slice(valueStart, valueEnd);
-	switch (scalar.style) {
-		case 2: return getSingleQuotedValue(input, valueStart, valueEnd);
-		case 3: return getDoubleQuotedValue(input, valueStart, valueEnd);
-		case 4: return getBlockValue(input, valueStart, valueEnd, scalar.indent, scalar.chomping, false);
-		case 5: return getBlockValue(input, valueStart, valueEnd, scalar.indent, scalar.chomping, true);
-		default: return getPlainValue(input, valueStart, valueEnd);
-	}
-}
-//#endregion
-//#region src/common/tagname.ts
-var DEFAULT_TAG_HANDLERS = Object.assign(Object.create(null), {
-	"!": "!",
-	"!!": "tag:yaml.org,2002:"
-});
-function tagPercentEncode(source) {
-	return encodeURI(source).replace(/!/g, "%21");
-}
-function tagNameFull(rawTag, tagHandlers) {
-	var _ref, _tagHandlers$handle;
-	if (rawTag.startsWith("!<") && rawTag.endsWith(">")) return decodeURIComponent(rawTag.slice(2, -1));
-	const handleEnd = rawTag.indexOf("!", 1);
-	const handle = handleEnd === -1 ? "!" : rawTag.slice(0, handleEnd + 1);
-	const prefix = (_ref = (_tagHandlers$handle = tagHandlers === null || tagHandlers === void 0 ? void 0 : tagHandlers[handle]) !== null && _tagHandlers$handle !== void 0 ? _tagHandlers$handle : DEFAULT_TAG_HANDLERS[handle]) !== null && _ref !== void 0 ? _ref : handle;
-	return decodeURIComponent(prefix) + decodeURIComponent(rawTag.slice(handle.length));
-}
-function tagNameShort(fullTag) {
-	let tag = fullTag;
-	if (tag.charCodeAt(0) === 33) {
-		tag = tag.slice(1);
-		return `!${tagPercentEncode(tag)}`;
-	}
-	if (tag.slice(0, 18) === "tag:yaml.org,2002:") return `!!${tagPercentEncode(tag.slice(18))}`;
-	return `!<${tagPercentEncode(tag)}>`;
-}
-//#endregion
-//#region src/parser/constructor.ts
-var NO_RANGE$2 = -1;
-var DEFAULT_CONSTRUCTOR_OPTIONS = {
-	filename: "",
-	schema: CORE_SCHEMA,
-	json: false,
-	maxTotalMergeKeys: 1e4,
-	maxAliases: -1
-};
-function eventPosition$1(event) {
-	if ("tagStart" in event && event.tagStart !== NO_RANGE$2) return event.tagStart;
-	if ("anchorStart" in event && event.anchorStart !== NO_RANGE$2) return event.anchorStart;
-	if ("valueStart" in event && event.valueStart !== NO_RANGE$2) return event.valueStart;
-	if ("start" in event) return event.start;
-	return 0;
-}
-function throwError$1(state, message) {
-	throwErrorAt(state.source, state.position, message, state.filename);
-}
-function finalizeCollection(state, position, tag, carrier) {
-	try {
-		return tag.finalize(carrier);
-	} catch (error) {
-		if (error instanceof YAMLException) throw error;
-		throwErrorAt(state.source, position, error instanceof Error ? error.message : String(error), state.filename);
-	}
-}
-function lookupTag(exact, prefix, tagName) {
-	const exactTag = exact[tagName];
-	if (exactTag) return exactTag;
-	for (const tag of prefix) if (tagName.startsWith(tag.tagName)) return tag;
-}
-function findExplicitTag(state, exact, prefix, tagName, nodeKind) {
-	const tag = lookupTag(exact, prefix, tagName);
-	if (tag) return tag;
-	throwError$1(state, `unknown ${nodeKind} tag !<${tagName}>`);
-}
-function constructScalar(state, event) {
-	const source = getScalarValue(state.source, event);
-	const rawTag = event.tagStart === NO_RANGE$2 ? "" : state.source.slice(event.tagStart, event.tagEnd);
-	const strTag = state.schema.defaultScalarTag;
-	if (rawTag !== "") {
-		var _lookupTag;
-		if (rawTag === "!") return {
-			value: source,
-			tag: strTag
-		};
-		const tagName = tagNameFull(rawTag, state.tagHandlers);
-		const scalarTag = lookupTag(state.schema.exact.scalar, state.schema.prefix.scalar, tagName);
-		if (scalarTag) {
-			const result = scalarTag.resolve(source, true, tagName);
-			if (result === NOT_RESOLVED) throwError$1(state, `cannot resolve a node with !<${tagName}> explicit tag`);
-			return {
-				value: result,
-				tag: scalarTag
-			};
-		}
-		const collectionTagDef = (_lookupTag = lookupTag(state.schema.exact.mapping, state.schema.prefix.mapping, tagName)) !== null && _lookupTag !== void 0 ? _lookupTag : lookupTag(state.schema.exact.sequence, state.schema.prefix.sequence, tagName);
-		if (collectionTagDef) {
-			if (source !== "") throwError$1(state, `cannot resolve a node with !<${tagName}> explicit tag`);
-			const carrier = collectionTagDef.create(tagName);
-			return {
-				value: collectionTagDef.carrierIsResult ? carrier : finalizeCollection(state, state.position, collectionTagDef, carrier),
-				tag: collectionTagDef
-			};
-		}
-		throwError$1(state, `unknown scalar tag !<${tagName}>`);
-	}
-	if (event.style === 1) {
-		var _state$schema$implici;
-		const candidates = (_state$schema$implici = state.schema.implicitScalarByFirstChar.get(source.charAt(0))) !== null && _state$schema$implici !== void 0 ? _state$schema$implici : state.schema.implicitScalarAnyFirstChar;
-		for (const tag of candidates) {
-			const result = tag.resolve(source, false, tag.tagName);
-			if (result !== NOT_RESOLVED) return {
-				value: result,
-				tag
-			};
-		}
-	}
-	return {
-		value: strTag.resolve(source, false, strTag.tagName),
-		tag: strTag
-	};
-}
-function collectionTag(state, event, exact, prefix, defaultTagName, nodeKind) {
-	const rawTag = event.tagStart === NO_RANGE$2 ? "" : state.source.slice(event.tagStart, event.tagEnd);
-	const tagName = rawTag === "" || rawTag === "!" ? defaultTagName : tagNameFull(rawTag, state.tagHandlers);
-	return {
-		tagName,
-		tag: findExplicitTag(state, exact, prefix, tagName, nodeKind)
-	};
-}
-function isMappingTag(tag) {
-	return tag.nodeKind === "mapping";
-}
-function mergeKeys(state, frame, source, sourceTag) {
-	for (const sourceKey of sourceTag.keys(source)) {
-		var _frame$overridable;
-		if (state.maxTotalMergeKeys !== -1 && ++state.totalMergeKeys > state.maxTotalMergeKeys) throwError$1(state, `merge keys exceeded maxTotalMergeKeys (${state.maxTotalMergeKeys})`);
-		if (frame.tag.has(frame.value, sourceKey)) continue;
-		const err = frame.tag.addPair(frame.value, sourceKey, sourceTag.get(source, sourceKey));
-		if (err) throwError$1(state, err);
-		((_frame$overridable = frame.overridable) !== null && _frame$overridable !== void 0 ? _frame$overridable : frame.overridable = /* @__PURE__ */ new Set()).add(sourceKey);
-	}
-}
-function mergeSource(state, frame, source, sourceTag) {
-	state.position = frame.keyPosition;
-	if (isMappingTag(sourceTag)) mergeKeys(state, frame, source, sourceTag);
-	else if (sourceTag.nodeKind === "sequence" && Array.isArray(source)) for (const element of source) mergeKeys(state, frame, element, frame.tag);
-	else throwError$1(state, "cannot merge mappings; the provided source object is unacceptable");
-}
-function addMappingValue(state, frame, key, value, tag) {
-	var _frame$overridable2, _frame$overridable3;
-	state.position = frame.keyPosition;
-	if (key === MERGE_KEY) {
-		mergeSource(state, frame, value, tag);
-		return;
-	}
-	if (!state.json && frame.tag.has(frame.value, key) && !((_frame$overridable2 = frame.overridable) === null || _frame$overridable2 === void 0 ? void 0 : _frame$overridable2.has(key))) throwError$1(state, "duplicated mapping key");
-	const err = frame.tag.addPair(frame.value, key, value);
-	if (err) throwError$1(state, err);
-	(_frame$overridable3 = frame.overridable) === null || _frame$overridable3 === void 0 || _frame$overridable3.delete(key);
-}
-function addValue(state, value, tag) {
-	const frame = state.frames[state.frames.length - 1];
-	if (frame.kind === "document") {
-		frame.value = value;
-		frame.hasValue = true;
-	} else if (frame.kind === "sequence") {
-		if (frame.merge) {
-			if (!isMappingTag(tag)) throwError$1(state, "cannot merge mappings; the provided source object is unacceptable");
-		}
-		const err = frame.tag.addItem(frame.value, value, frame.index++);
-		if (err) throwError$1(state, err);
-	} else if (frame.hasKey) {
-		const key = frame.key;
-		frame.key = void 0;
-		frame.hasKey = false;
-		addMappingValue(state, frame, key, value, tag);
-	} else {
-		frame.key = value;
-		frame.keyPosition = state.position;
-		frame.hasKey = true;
-	}
-}
-function storeAnchor(state, event, value, tag, isValueFinal) {
-	if (event.anchorStart !== NO_RANGE$2) {
-		const anchor = {
-			value,
-			tag,
-			isValueFinal
-		};
-		state.anchors.set(state.source.slice(event.anchorStart, event.anchorEnd), anchor);
-		return anchor;
-	}
-	return null;
-}
-function constructFromEvents(events, options) {
-	const state = _objectSpread2(_objectSpread2(_objectSpread2({}, DEFAULT_CONSTRUCTOR_OPTIONS), options), {}, {
-		events,
-		documents: [],
-		eventIndex: 0,
-		position: 0,
-		frames: [],
-		anchors: /* @__PURE__ */ new Map(),
-		tagHandlers: Object.create(null),
-		totalMergeKeys: 0,
-		aliasCount: 0
-	});
-	while (state.eventIndex < state.events.length) {
-		const event = state.events[state.eventIndex++];
-		state.position = eventPosition$1(event);
-		switch (event.type) {
-			case 1:
-				state.anchors = /* @__PURE__ */ new Map();
-				state.aliasCount = 0;
-				state.tagHandlers = Object.create(null);
-				for (const directive of event.directives) if (directive.kind === "tag") state.tagHandlers[directive.handle] = directive.prefix;
-				state.frames.push({
-					kind: "document",
-					position: state.position,
-					value: void 0,
-					hasValue: false
-				});
-				break;
-			case 4: {
-				const { value, tag } = constructScalar(state, event);
-				storeAnchor(state, event, value, tag, true);
-				addValue(state, value, tag);
-				break;
-			}
-			case 2: {
-				const definition = collectionTag(state, event, state.schema.exact.sequence, state.schema.prefix.sequence, "tag:yaml.org,2002:seq", "sequence");
-				const value = definition.tag.create(definition.tagName);
-				const anchor = storeAnchor(state, event, value, definition.tag, definition.tag.carrierIsResult);
-				const parent = state.frames[state.frames.length - 1];
-				const merge = parent !== void 0 && parent.kind === "mapping" && parent.hasKey && parent.key === MERGE_KEY;
-				state.frames.push({
-					kind: "sequence",
-					position: state.position,
-					value,
-					tag: definition.tag,
-					anchor,
-					index: 0,
-					merge
-				});
-				break;
-			}
-			case 3: {
-				const definition = collectionTag(state, event, state.schema.exact.mapping, state.schema.prefix.mapping, "tag:yaml.org,2002:map", "mapping");
-				const value = definition.tag.create(definition.tagName);
-				const anchor = storeAnchor(state, event, value, definition.tag, definition.tag.carrierIsResult);
-				state.frames.push({
-					kind: "mapping",
-					position: state.position,
-					value,
-					tag: definition.tag,
-					anchor,
-					key: void 0,
-					keyPosition: state.position,
-					hasKey: false,
-					overridable: null
-				});
-				break;
-			}
-			case 5: {
-				if (state.maxAliases !== -1 && ++state.aliasCount > state.maxAliases) throwError$1(state, `aliases exceeded maxAliases (${state.maxAliases})`);
-				const name = state.source.slice(event.anchorStart, event.anchorEnd);
-				const anchor = state.anchors.get(name);
-				if (!anchor) throwError$1(state, `unidentified alias "${name}"`);
-				if (!anchor.isValueFinal) throwError$1(state, `recursive alias "${name}" is not supported for tag ${anchor.tag.tagName} because it uses finalize()`);
-				addValue(state, anchor.value, anchor.tag);
-				break;
-			}
-			case 6: {
-				const frame = state.frames.pop();
-				if (frame.kind === "mapping" && frame.hasKey) {
-					state.position = frame.keyPosition;
-					throwError$1(state, "incomplete mapping pair in event stream");
-				}
-				if (frame.kind === "document") state.documents.push(frame.value);
-				else {
-					const value = frame.tag.carrierIsResult ? frame.value : finalizeCollection(state, frame.position, frame.tag, frame.value);
-					if (frame.anchor) {
-						frame.anchor.value = value;
-						frame.anchor.isValueFinal = true;
-					}
-					addValue(state, value, frame.tag);
-				}
-				break;
-			}
-		}
-	}
-	return state.documents;
-}
-//#endregion
-//#region src/parser/parser.ts
-var NO_RANGE$1 = -1;
-var HAS_OWN = Object.prototype.hasOwnProperty;
-var CONTEXT_FLOW_IN = 1;
-var CONTEXT_FLOW_OUT = 2;
-var CONTEXT_BLOCK_IN = 3;
-var CONTEXT_BLOCK_OUT = 4;
-var PATTERN_NON_PRINTABLE = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x84\x86-\x9F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
-var PATTERN_FLOW_INDICATORS = /[,\[\]{}]/;
-var PATTERN_TAG_HANDLE = /^(?:!|!!|![0-9A-Za-z-]+!)$/;
-var NS_URI_CHAR = String.raw`(?:%[0-9A-Fa-f]{2}|[0-9A-Za-z\-#;/?:@&=+$,_.!~*'()\[\]])`;
-var NS_TAG_CHAR = String.raw`(?:%[0-9A-Fa-f]{2}|[0-9A-Za-z\-#;/?:@&=+$.~*'()_])`;
-var PATTERN_TAG_URI = new RegExp(`^(?:${NS_URI_CHAR})*$`);
-var PATTERN_TAG_SUFFIX = new RegExp(`^(?:${NS_TAG_CHAR})+$`);
-var PATTERN_TAG_PREFIX = new RegExp(`^(?:!(?:${NS_URI_CHAR})*|${NS_TAG_CHAR}(?:${NS_URI_CHAR})*)$`);
-var DEFAULT_PARSER_OPTIONS = {
-	filename: "",
-	maxDepth: 100
-};
-function addDocumentEvent(state, explicitStart, explicitEnd) {
-	state.events.push({
-		type: 1,
-		explicitStart,
-		explicitEnd,
-		directives: state.directives
-	});
-}
-function addSequenceEvent(state, start, anchorStart, anchorEnd, tagStart, tagEnd, style) {
-	state.events.push({
-		type: 2,
-		start,
-		anchorStart,
-		anchorEnd,
-		tagStart,
-		tagEnd,
-		style
-	});
-}
-function addMappingEvent(state, start, anchorStart, anchorEnd, tagStart, tagEnd, style) {
-	state.events.push({
-		type: 3,
-		start,
-		anchorStart,
-		anchorEnd,
-		tagStart,
-		tagEnd,
-		style
-	});
-}
-function insertFlowPairMappingEvent(state, snapshot) {
-	state.events.splice(snapshot.eventsLength, 0, {
-		type: 3,
-		start: snapshot.position,
-		anchorStart: NO_RANGE$1,
-		anchorEnd: NO_RANGE$1,
-		tagStart: NO_RANGE$1,
-		tagEnd: NO_RANGE$1,
-		style: 2
-	});
-}
-function addScalarEvent(state, valueStart, valueEnd, anchorStart, anchorEnd, tagStart, tagEnd, style, chomping = 1, indent = -1, fast = false) {
-	state.events.push({
-		type: 4,
-		valueStart,
-		valueEnd,
-		anchorStart,
-		anchorEnd,
-		tagStart,
-		tagEnd,
-		style,
-		chomping,
-		indent,
-		fast
-	});
-}
-function addAliasEvent(state, anchorStart, anchorEnd) {
-	state.events.push({
-		type: 5,
-		anchorStart,
-		anchorEnd
-	});
-}
-function addPopEvent(state) {
-	state.events.push({ type: 6 });
-}
-function addEmptyScalarEvent(state) {
-	addScalarEvent(state, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, 1);
-}
-function emptyProperties() {
-	return {
-		anchorStart: NO_RANGE$1,
-		anchorEnd: NO_RANGE$1,
-		tagStart: NO_RANGE$1,
-		tagEnd: NO_RANGE$1
-	};
-}
-function snapshotState(state) {
-	return {
-		position: state.position,
-		line: state.line,
-		lineStart: state.lineStart,
-		lineIndent: state.lineIndent,
-		firstTabInLine: state.firstTabInLine,
-		eventsLength: state.events.length
-	};
-}
-function restoreState(state, snapshot) {
-	state.position = snapshot.position;
-	state.line = snapshot.line;
-	state.lineStart = snapshot.lineStart;
-	state.lineIndent = snapshot.lineIndent;
-	state.firstTabInLine = snapshot.firstTabInLine;
-	state.events.length = snapshot.eventsLength;
-}
-function throwError(state, message) {
-	throwErrorAt(state.input.slice(0, state.length), state.position, message, state.filename);
-}
-function isEol(c) {
-	return c === 10 || c === 13;
-}
-function isWhiteSpace(c) {
-	return c === 9 || c === 32;
-}
-function isWsOrEol(c) {
-	return isWhiteSpace(c) || isEol(c);
-}
-function isWsOrEolOrEnd(c) {
-	return c === 0 || isWsOrEol(c);
-}
-function isFlowIndicator(c) {
-	return c === 44 || c === 91 || c === 93 || c === 123 || c === 125;
-}
-function fromDecimalCode(c) {
-	return c >= 48 && c <= 57 ? c - 48 : -1;
-}
-function fromHexCode(c) {
-	if (c >= 48 && c <= 57) return c - 48;
-	const lc = c | 32;
-	if (lc >= 97 && lc <= 102) return lc - 97 + 10;
-	return -1;
-}
-function escapedHexLen(c) {
-	if (c === 120) return 2;
-	if (c === 117) return 4;
-	if (c === 85) return 8;
-	return 0;
-}
-function isSimpleEscape(c) {
-	return c === 48 || c === 97 || c === 98 || c === 116 || c === 9 || c === 110 || c === 118 || c === 102 || c === 114 || c === 101 || c === 32 || c === 34 || c === 47 || c === 92 || c === 78 || c === 95 || c === 76 || c === 80;
-}
-function consumeLineBreak(state) {
-	if (state.input.charCodeAt(state.position) === 10) state.position++;
-	else {
-		state.position++;
-		if (state.input.charCodeAt(state.position) === 10) state.position++;
-	}
-	state.line++;
-	state.lineStart = state.position;
-	state.lineIndent = 0;
-	state.firstTabInLine = -1;
-}
-function skipSeparationSpace(state, allowComments) {
-	let lineBreaks = 0;
-	let ch = state.input.charCodeAt(state.position);
-	let hasSeparation = state.position === state.lineStart || isWsOrEol(state.input.charCodeAt(state.position - 1));
-	while (ch !== 0) {
-		while (isWhiteSpace(ch)) {
-			hasSeparation = true;
-			if (ch === 9 && state.firstTabInLine === -1) state.firstTabInLine = state.position;
-			ch = state.input.charCodeAt(++state.position);
-		}
-		if (allowComments && hasSeparation && ch === 35) do
-			ch = state.input.charCodeAt(++state.position);
-		while (!isEol(ch) && ch !== 0);
-		if (!isEol(ch)) break;
-		consumeLineBreak(state);
-		lineBreaks++;
-		hasSeparation = true;
-		ch = state.input.charCodeAt(state.position);
-		while (ch === 32) {
-			state.lineIndent++;
-			ch = state.input.charCodeAt(++state.position);
-		}
-	}
-	return lineBreaks;
-}
-function testDocumentSeparator(state, position = state.position) {
-	const ch = state.input.charCodeAt(position);
-	if ((ch === 45 || ch === 46) && ch === state.input.charCodeAt(position + 1) && ch === state.input.charCodeAt(position + 2)) {
-		const following = state.input.charCodeAt(position + 3);
-		return following === 0 || isWsOrEol(following);
-	}
-	return false;
-}
-function skipUntilLineEnd(state) {
-	let ch = state.input.charCodeAt(state.position);
-	while (ch !== 0 && !isEol(ch)) ch = state.input.charCodeAt(++state.position);
-}
-function checkPrintable(state, start, end) {
-	if (PATTERN_NON_PRINTABLE.test(state.input.slice(start, end))) throwError(state, "the stream contains non-printable characters");
-}
-function readTagProperty(state, props, inFlow) {
-	if (state.input.charCodeAt(state.position) !== 33) return false;
-	if (props.tagStart !== NO_RANGE$1) throwError(state, "duplication of a tag property");
-	const start = state.position;
-	let isVerbatim = false;
-	let isNamed = false;
-	let tagHandle = "!";
-	let ch = state.input.charCodeAt(++state.position);
-	if (ch === 60) {
-		isVerbatim = true;
-		ch = state.input.charCodeAt(++state.position);
-	} else if (ch === 33) {
-		isNamed = true;
-		tagHandle = "!!";
-		ch = state.input.charCodeAt(++state.position);
-	}
-	let suffixStart = state.position;
-	let tagName;
-	if (isVerbatim) {
-		while (ch !== 0 && ch !== 62) ch = state.input.charCodeAt(++state.position);
-		if (ch !== 62) throwError(state, "unexpected end of the stream within a verbatim tag");
-		tagName = state.input.slice(suffixStart, state.position);
-		state.position++;
-	} else {
-		while (ch !== 0 && !isWsOrEol(ch) && !(inFlow && isFlowIndicator(ch))) {
-			if (ch === 33) if (!isNamed) {
-				tagHandle = state.input.slice(suffixStart - 1, state.position + 1);
-				if (!PATTERN_TAG_HANDLE.test(tagHandle)) throwError(state, "named tag handle cannot contain such characters");
-				isNamed = true;
-				suffixStart = state.position + 1;
-			} else throwError(state, "tag suffix cannot contain exclamation marks");
-			ch = state.input.charCodeAt(++state.position);
-		}
-		tagName = state.input.slice(suffixStart, state.position);
-		if (PATTERN_FLOW_INDICATORS.test(tagName)) throwError(state, "tag suffix cannot contain flow indicator characters");
-	}
-	if (tagName && !(isVerbatim ? PATTERN_TAG_URI.test(tagName) : PATTERN_TAG_SUFFIX.test(tagName))) throwError(state, `tag name cannot contain such characters: ${tagName}`);
-	if (!isVerbatim && tagHandle !== "!" && tagHandle !== "!!" && !HAS_OWN.call(state.tagHandlers, tagHandle)) throwError(state, `undeclared tag handle "${tagHandle}"`);
-	props.tagStart = start;
-	props.tagEnd = state.position;
-	return true;
-}
-function readAnchorProperty(state, props) {
-	if (state.input.charCodeAt(state.position) !== 38) return false;
-	if (props.anchorStart !== NO_RANGE$1) throwError(state, "duplication of an anchor property");
-	state.position++;
-	const start = state.position;
-	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position)) && !isFlowIndicator(state.input.charCodeAt(state.position))) state.position++;
-	if (state.position === start) throwError(state, "name of an anchor node must contain at least one character");
-	props.anchorStart = start;
-	props.anchorEnd = state.position;
-	return true;
-}
-function readAlias(state, props) {
-	if (state.input.charCodeAt(state.position) !== 42) return false;
-	if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) throwError(state, "alias node should not have any properties");
-	state.position++;
-	const start = state.position;
-	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position)) && !isFlowIndicator(state.input.charCodeAt(state.position))) state.position++;
-	if (state.position === start) throwError(state, "name of an alias node must contain at least one character");
-	addAliasEvent(state, start, state.position);
-	return true;
-}
-function readFlowScalarBreak(state, nodeIndent) {
-	skipSeparationSpace(state, false);
-	if (state.lineIndent < nodeIndent) throwError(state, "deficient indentation");
-}
-function readSingleQuotedScalar(state, nodeIndent, props) {
-	if (state.input.charCodeAt(state.position) !== 39) return false;
-	state.position++;
-	const start = state.position;
-	let simple = true;
-	while (state.input.charCodeAt(state.position) !== 0) {
-		const ch = state.input.charCodeAt(state.position);
-		if (ch === 39) {
-			if (state.input.charCodeAt(state.position + 1) === 39) {
-				simple = false;
-				state.position += 2;
-				continue;
-			}
-			const end = state.position;
-			state.position++;
-			addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2, 1, -1, simple);
-			return true;
-		}
-		if (isEol(ch)) {
-			simple = false;
-			readFlowScalarBreak(state, nodeIndent);
-		} else if (state.position === state.lineStart && testDocumentSeparator(state)) throwError(state, "unexpected end of the document within a single quoted scalar");
-		else if (ch !== 9 && ch < 32) throwError(state, "expected valid JSON character");
-		else state.position++;
-	}
-	throwError(state, "unexpected end of the stream within a single quoted scalar");
-}
-function readDoubleQuotedScalar(state, nodeIndent, props) {
-	if (state.input.charCodeAt(state.position) !== 34) return false;
-	state.position++;
-	const start = state.position;
-	let simple = true;
-	while (state.input.charCodeAt(state.position) !== 0) {
-		const ch = state.input.charCodeAt(state.position);
-		if (ch === 34) {
-			const end = state.position;
-			state.position++;
-			addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 3, 1, -1, simple);
-			return true;
-		}
-		if (ch === 92) {
-			simple = false;
-			const escaped = state.input.charCodeAt(++state.position);
-			if (isEol(escaped)) readFlowScalarBreak(state, nodeIndent);
-			else if (isSimpleEscape(escaped)) state.position++;
-			else {
-				let hexLength = escapedHexLen(escaped);
-				if (hexLength === 0) throwError(state, "unknown escape sequence");
-				while (hexLength-- > 0) {
-					state.position++;
-					if (fromHexCode(state.input.charCodeAt(state.position)) < 0) throwError(state, "expected hexadecimal character");
-				}
-				state.position++;
-			}
-		} else if (isEol(ch)) {
-			simple = false;
-			readFlowScalarBreak(state, nodeIndent);
-		} else if (state.position === state.lineStart && testDocumentSeparator(state)) throwError(state, "unexpected end of the document within a double quoted scalar");
-		else if (ch !== 9 && ch < 32) throwError(state, "expected valid JSON character");
-		else state.position++;
-	}
-	throwError(state, "unexpected end of the stream within a double quoted scalar");
-}
-function readBlockScalar(state, parentIndent, props) {
-	const ch = state.input.charCodeAt(state.position);
-	let chomping = 1;
-	let indent = -1;
-	let detectedIndent = false;
-	if (ch !== 124 && ch !== 62) return false;
-	const style = ch === 124 ? 4 : 5;
-	state.position++;
-	while (state.input.charCodeAt(state.position) !== 0) {
-		const current = state.input.charCodeAt(state.position);
-		const digit = fromDecimalCode(current);
-		if (current === 43 || current === 45) {
-			if (chomping !== 1) throwError(state, "repeat of a chomping mode identifier");
-			chomping = current === 43 ? 3 : 2;
-			state.position++;
-		} else if (digit >= 0) {
-			if (digit === 0) throwError(state, "bad explicit indentation width of a block scalar; it cannot be less than one");
-			if (detectedIndent) throwError(state, "repeat of an indentation width identifier");
-			indent = parentIndent + digit - 1;
-			detectedIndent = true;
-			state.position++;
-		} else break;
-	}
-	let hadWhitespace = false;
-	while (isWhiteSpace(state.input.charCodeAt(state.position))) {
-		hadWhitespace = true;
-		state.position++;
-	}
-	if (hadWhitespace && state.input.charCodeAt(state.position) === 35) skipUntilLineEnd(state);
-	if (isEol(state.input.charCodeAt(state.position))) consumeLineBreak(state);
-	else if (state.input.charCodeAt(state.position) !== 0) throwError(state, "a line break is expected");
-	let contentIndent = detectedIndent ? indent : -1;
-	let maxLeadingIndent = 0;
-	const valueStart = state.position;
-	let valueEnd = state.position;
-	while (state.input.charCodeAt(state.position) !== 0) {
-		const linePosition = state.position;
-		let column = 0;
-		while (state.input.charCodeAt(linePosition + column) === 32) column++;
-		const first = state.input.charCodeAt(linePosition + column);
-		if (first === 0) {
-			if (contentIndent >= 0) {
-				if (column > contentIndent) valueEnd = linePosition + column;
-			} else if (column > 0) valueEnd = linePosition + column;
-			break;
-		}
-		if (linePosition === state.lineStart && testDocumentSeparator(state, linePosition)) break;
-		if (!detectedIndent && contentIndent === -1 && isEol(first)) maxLeadingIndent = Math.max(maxLeadingIndent, column);
-		if (!detectedIndent && contentIndent === -1 && !isEol(first)) {
-			if (first === 9 && column < parentIndent) {
-				state.position = linePosition + column;
-				throwError(state, "tab characters must not be used in indentation");
-			}
-			if (column < maxLeadingIndent) {
-				state.position = linePosition + column;
-				throwError(state, "bad indentation of a mapping entry");
-			}
-		}
-		if (contentIndent === -1 && first !== 0 && !isEol(first) && column < parentIndent) {
-			state.lineIndent = column;
-			state.position = linePosition + column;
-			break;
-		}
-		if (!detectedIndent && first !== 0 && !isEol(first) && contentIndent === -1) contentIndent = column;
-		const requiredIndent = contentIndent === -1 ? parentIndent + 1 : contentIndent;
-		if (first !== 0 && !isEol(first) && column < requiredIndent) {
-			state.lineIndent = column;
-			state.position = linePosition + column;
-			break;
-		}
-		skipUntilLineEnd(state);
-		valueEnd = state.position;
-		if (isEol(state.input.charCodeAt(state.position))) {
-			consumeLineBreak(state);
-			valueEnd = state.position;
-		}
-	}
-	checkPrintable(state, valueStart, valueEnd);
-	addScalarEvent(state, valueStart, valueEnd, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, style, chomping, contentIndent);
-	return true;
-}
-function canStartPlainScalar(state, nodeContext) {
-	const ch = state.input.charCodeAt(state.position);
-	const inFlow = nodeContext === CONTEXT_FLOW_IN;
-	if (ch === 0 || isWsOrEol(ch) || ch === 35 || ch === 38 || ch === 42 || ch === 33 || ch === 124 || ch === 62 || ch === 39 || ch === 34 || ch === 37 || ch === 64 || ch === 96 || inFlow && isFlowIndicator(ch)) return false;
-	if (ch === 63 || ch === 45) {
-		const following = state.input.charCodeAt(state.position + 1);
-		if (isWsOrEolOrEnd(following) || inFlow && isFlowIndicator(following)) return false;
-	}
-	return true;
-}
-function readPlainScalar(state, nodeIndent, nodeContext, props) {
-	if (!canStartPlainScalar(state, nodeContext)) return false;
-	const start = state.position;
-	let end = state.position;
-	let ch = state.input.charCodeAt(state.position);
-	const inFlow = nodeContext === CONTEXT_FLOW_IN;
-	let multiline = false;
-	while (ch !== 0) {
-		if (state.position === state.lineStart && testDocumentSeparator(state)) break;
-		if (ch === 58) {
-			const following = state.input.charCodeAt(state.position + 1);
-			if (isWsOrEolOrEnd(following) || inFlow && isFlowIndicator(following)) break;
-		} else if (ch === 35) {
-			if (isWsOrEol(state.input.charCodeAt(state.position - 1))) break;
-		} else if (inFlow && isFlowIndicator(ch)) break;
-		else if (isEol(ch)) {
-			const savedPosition = state.position;
-			const savedLine = state.line;
-			const savedLineStart = state.lineStart;
-			const savedLineIndent = state.lineIndent;
-			skipSeparationSpace(state, false);
-			if (state.lineIndent >= nodeIndent) {
-				multiline = true;
-				ch = state.input.charCodeAt(state.position);
-				continue;
-			}
-			state.position = savedPosition;
-			state.line = savedLine;
-			state.lineStart = savedLineStart;
-			state.lineIndent = savedLineIndent;
-			break;
-		}
-		if (!isWhiteSpace(ch)) end = state.position + 1;
-		ch = state.input.charCodeAt(++state.position);
-	}
-	if (end === start) return false;
-	checkPrintable(state, start, end);
-	addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1, 1, -1, !multiline);
-	return true;
-}
-function skipFlowSeparationSpace(state, nodeIndent) {
-	const startLine = state.line;
-	skipSeparationSpace(state, true);
-	if (state.line > startLine && state.lineIndent < nodeIndent || state.firstTabInLine !== -1 && state.lineIndent < nodeIndent) throwError(state, "deficient indentation");
-}
-function readFlowCollection(state, nodeIndent, props) {
-	const ch = state.input.charCodeAt(state.position);
-	const isMapping = ch === 123;
-	const start = state.position;
-	let readNext = true;
-	if (ch !== 91 && ch !== 123) return false;
-	const terminator = isMapping ? 125 : 93;
-	if (isMapping) addMappingEvent(state, start, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2);
-	else addSequenceEvent(state, start, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2);
-	state.position++;
-	while (state.input.charCodeAt(state.position) !== 0) {
-		skipFlowSeparationSpace(state, nodeIndent);
-		let ch = state.input.charCodeAt(state.position);
-		if (ch === terminator) {
-			state.position++;
-			addPopEvent(state);
-			return true;
-		} else if (!readNext) throwError(state, "missed comma between flow collection entries");
-		else if (ch === 44) throwError(state, "expected the node content, but found ','");
-		let isPair = false;
-		let isExplicitPair = false;
-		if (ch === 63 && isWsOrEol(state.input.charCodeAt(state.position + 1))) {
-			isPair = isExplicitPair = true;
-			state.position += 1;
-			skipFlowSeparationSpace(state, nodeIndent);
-		}
-		const entryLine = state.line;
-		const entryStart = snapshotState(state);
-		const keyWasRead = parseNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true);
-		skipFlowSeparationSpace(state, nodeIndent);
-		ch = state.input.charCodeAt(state.position);
-		if ((isMapping || isExplicitPair || state.line === entryLine) && ch === 58) {
-			isPair = true;
-			state.position++;
-			skipFlowSeparationSpace(state, nodeIndent);
-			if (!isMapping) {
-				insertFlowPairMappingEvent(state, entryStart);
-				if (!keyWasRead) addEmptyScalarEvent(state);
-			} else if (!keyWasRead) addEmptyScalarEvent(state);
-			if (!parseNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true)) addEmptyScalarEvent(state);
-			skipFlowSeparationSpace(state, nodeIndent);
-			if (!isMapping) addPopEvent(state);
-		} else if (isMapping && isPair) {
-			if (!keyWasRead) addEmptyScalarEvent(state);
-			addEmptyScalarEvent(state);
-		} else if (isMapping) addEmptyScalarEvent(state);
-		else if (isPair) {
-			insertFlowPairMappingEvent(state, entryStart);
-			if (!keyWasRead) addEmptyScalarEvent(state);
-			addEmptyScalarEvent(state);
-			addPopEvent(state);
-		}
-		ch = state.input.charCodeAt(state.position);
-		if (ch === 44) {
-			readNext = true;
-			state.position++;
-		} else readNext = false;
-	}
-	throwError(state, "unexpected end of the stream within a flow collection");
-}
-function readBlockSequence(state, nodeIndent, props) {
-	if (state.firstTabInLine !== -1 || state.input.charCodeAt(state.position) !== 45 || !isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) return false;
-	addSequenceEvent(state, state.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
-	while (state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) {
-		if (state.firstTabInLine !== -1) {
-			state.position = state.firstTabInLine;
-			throwError(state, "tab characters must not be used in indentation");
-		}
-		const entryLine = state.line;
-		state.position++;
-		const hadBreak = skipSeparationSpace(state, true) > 0;
-		if (state.firstTabInLine !== -1 && state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) throwError(state, "bad indentation of a sequence entry");
-		if (hadBreak && state.lineIndent <= nodeIndent) addEmptyScalarEvent(state);
-		else parseNode(state, nodeIndent, CONTEXT_BLOCK_IN, false, true);
-		skipSeparationSpace(state, true);
-		if (state.lineIndent < nodeIndent || state.position >= state.length) break;
-		if (state.lineIndent > nodeIndent) throwError(state, "bad indentation of a sequence entry");
-		if (state.line === entryLine && state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) throwError(state, "bad indentation of a sequence entry");
-	}
-	addPopEvent(state);
-	return true;
-}
-function readBlockMapping(state, nodeIndent, flowIndent, props) {
-	let atExplicitKey = false;
-	let detected = false;
-	let mappingOpened = false;
-	let pendingExplicitKey = false;
-	if (state.firstTabInLine !== -1) return false;
-	let ch = state.input.charCodeAt(state.position);
-	while (ch !== 0) {
-		if (!atExplicitKey && state.firstTabInLine !== -1) {
-			state.position = state.firstTabInLine;
-			throwError(state, "tab characters must not be used in indentation");
-		}
-		const following = state.input.charCodeAt(state.position + 1);
-		const entryLine = state.line;
-		if ((ch === 63 || ch === 58) && isWsOrEolOrEnd(following)) {
-			if (!mappingOpened) {
-				addMappingEvent(state, state.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
-				mappingOpened = true;
-			}
-			if (ch === 63) {
-				if (atExplicitKey) addEmptyScalarEvent(state);
-				detected = true;
-				atExplicitKey = true;
-			} else if (atExplicitKey) atExplicitKey = false;
-			else {
-				addEmptyScalarEvent(state);
-				detected = true;
-				atExplicitKey = false;
-			}
-			state.position += 1;
-			pendingExplicitKey = true;
-		} else {
-			if (atExplicitKey) {
-				addEmptyScalarEvent(state);
-				atExplicitKey = false;
-			}
-			const beforeKey = snapshotState(state);
-			if (!parseNode(state, flowIndent, CONTEXT_FLOW_OUT, false, true)) break;
-			if (state.line === entryLine) {
-				ch = state.input.charCodeAt(state.position);
-				while (isWhiteSpace(ch)) ch = state.input.charCodeAt(++state.position);
-				if (ch === 58) {
-					ch = state.input.charCodeAt(++state.position);
-					if (!isWsOrEolOrEnd(ch)) throwError(state, "a whitespace character is expected after the key-value separator within a block mapping");
-					if (!mappingOpened) {
-						restoreState(state, beforeKey);
-						addMappingEvent(state, beforeKey.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
-						mappingOpened = true;
-						parseNode(state, flowIndent, CONTEXT_FLOW_OUT, false, true);
-						ch = state.input.charCodeAt(state.position);
-						while (isWhiteSpace(ch)) ch = state.input.charCodeAt(++state.position);
-						state.position++;
-					}
-					detected = true;
-					atExplicitKey = false;
-					pendingExplicitKey = false;
-				} else if (detected) throwError(state, "expected ':' after a mapping key");
-				else {
-					if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) {
-						restoreState(state, beforeKey);
-						return false;
-					}
-					return true;
-				}
-			} else if (detected) throwError(state, "can not read a block mapping entry; a multiline key may not be an implicit key");
-			else {
-				if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) {
-					restoreState(state, beforeKey);
-					return false;
-				}
-				return true;
-			}
-		}
-		if (parseNode(state, nodeIndent, CONTEXT_BLOCK_OUT, true, pendingExplicitKey)) pendingExplicitKey = false;
-		if (!atExplicitKey) {
-			if (pendingExplicitKey) {
-				addEmptyScalarEvent(state);
-				pendingExplicitKey = false;
-			}
-		}
-		skipSeparationSpace(state, true);
-		ch = state.input.charCodeAt(state.position);
-		if ((state.line === entryLine || state.lineIndent > nodeIndent) && ch !== 0) throwError(state, "bad indentation of a mapping entry");
-		else if (state.lineIndent < nodeIndent) break;
-	}
-	if (!detected) return false;
-	if (atExplicitKey) addEmptyScalarEvent(state);
-	if (mappingOpened) addPopEvent(state);
-	return true;
-}
-function parseNode(state, parentIndent, nodeContext, allowToSeek, allowCompact, allowPropertyMapping = true) {
-	if (state.depth >= state.maxDepth) throwError(state, `nesting exceeded maxDepth (${state.maxDepth})`);
-	state.depth++;
-	let indentStatus = 1;
-	let atNewLine = false;
-	let hasContent = false;
-	let propertyStart = null;
-	const props = emptyProperties();
-	let allowBlockScalars = nodeContext === CONTEXT_BLOCK_OUT || nodeContext === CONTEXT_BLOCK_IN;
-	let allowBlockCollections = allowBlockScalars;
-	const allowBlockStyles = allowBlockScalars;
-	if (allowToSeek && skipSeparationSpace(state, true)) {
-		atNewLine = true;
-		if (state.lineIndent > parentIndent) indentStatus = 1;
-		else if (state.lineIndent === parentIndent) indentStatus = 0;
-		else indentStatus = -1;
-	}
-	if (indentStatus === 1) while (true) {
-		const ch = state.input.charCodeAt(state.position);
-		const propertyState = snapshotState(state);
-		if (atNewLine && indentStatus !== 1 && (ch === 33 || ch === 38)) break;
-		if (atNewLine && allowBlockStyles && (props.tagStart !== NO_RANGE$1 || props.anchorStart !== NO_RANGE$1) && (ch === 33 || ch === 38)) {
-			var _state$events$fallbac;
-			const fallbackState = snapshotState(state);
-			const flowIndent = parentIndent + 1;
-			if (readBlockMapping(state, state.position - state.lineStart, flowIndent, props) && ((_state$events$fallbac = state.events[fallbackState.eventsLength]) === null || _state$events$fallbac === void 0 ? void 0 : _state$events$fallbac.type) === 3) {
-				state.depth--;
-				return true;
-			}
-			restoreState(state, fallbackState);
-		}
-		if (atNewLine && (ch === 33 && props.tagStart !== NO_RANGE$1 || ch === 38 && props.anchorStart !== NO_RANGE$1)) break;
-		if (!readTagProperty(state, props, nodeContext === CONTEXT_FLOW_IN) && !readAnchorProperty(state, props)) break;
-		if (propertyStart === null) propertyStart = propertyState;
-		if (skipSeparationSpace(state, true)) {
-			atNewLine = true;
-			allowBlockCollections = allowBlockStyles;
-			if (state.lineIndent > parentIndent) indentStatus = 1;
-			else if (state.lineIndent === parentIndent) indentStatus = 0;
-			else indentStatus = -1;
-		} else allowBlockCollections = false;
-	}
-	if (allowBlockCollections) allowBlockCollections = atNewLine || allowCompact;
-	if (indentStatus === 1 || nodeContext === CONTEXT_BLOCK_OUT) {
-		const flowIndent = nodeContext === CONTEXT_FLOW_IN || nodeContext === CONTEXT_FLOW_OUT ? parentIndent : parentIndent + 1;
-		const blockIndent = state.position - state.lineStart;
-		if (indentStatus === 1) if (allowBlockCollections && (readBlockSequence(state, blockIndent, props) || readBlockMapping(state, blockIndent, flowIndent, props)) || readFlowCollection(state, flowIndent, props)) hasContent = true;
-		else {
-			const ch = state.input.charCodeAt(state.position);
-			if (propertyStart !== null && allowPropertyMapping && allowBlockStyles && !allowBlockCollections && ch !== 124 && ch !== 62) {
-				var _state$events$fallbac2;
-				const fallbackState = snapshotState(state);
-				const propertyIndent = propertyStart.position - propertyStart.lineStart;
-				restoreState(state, propertyStart);
-				if (readBlockMapping(state, propertyIndent, flowIndent, emptyProperties()) && ((_state$events$fallbac2 = state.events[fallbackState.eventsLength]) === null || _state$events$fallbac2 === void 0 ? void 0 : _state$events$fallbac2.type) === 3) hasContent = true;
-				else restoreState(state, fallbackState);
-			}
-			if (!hasContent && (allowBlockScalars && readBlockScalar(state, flowIndent, props) || readSingleQuotedScalar(state, flowIndent, props) || readDoubleQuotedScalar(state, flowIndent, props) || readAlias(state, props) || readPlainScalar(state, flowIndent, nodeContext, props))) hasContent = true;
-		}
-		else if (indentStatus === 0) hasContent = allowBlockCollections && readBlockSequence(state, blockIndent, props);
-	}
-	allowBlockScalars = allowBlockScalars && !hasContent;
-	if (!hasContent && (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1 || allowBlockScalars)) {
-		addScalarEvent(state, NO_RANGE$1, NO_RANGE$1, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
-		hasContent = true;
-	}
-	state.depth--;
-	return hasContent || props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1;
-}
-function readDirective(state) {
-	if (state.lineIndent > 0 || state.input.charCodeAt(state.position) !== 37) return false;
-	state.position++;
-	const nameStart = state.position;
-	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position))) state.position++;
-	const name = state.input.slice(nameStart, state.position);
-	const args = [];
-	if (name.length === 0) throwError(state, "directive name must not be less than one character in length");
-	while (state.input.charCodeAt(state.position) !== 0 && !isEol(state.input.charCodeAt(state.position))) {
-		while (isWhiteSpace(state.input.charCodeAt(state.position))) state.position++;
-		if (state.input.charCodeAt(state.position) === 35 || isEol(state.input.charCodeAt(state.position)) || state.input.charCodeAt(state.position) === 0) break;
-		const start = state.position;
-		while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position))) state.position++;
-		args.push(state.input.slice(start, state.position));
-	}
-	if (isEol(state.input.charCodeAt(state.position))) consumeLineBreak(state);
-	if (name === "YAML") {
-		if (state.directives.some((directive) => directive.kind === "yaml")) throwError(state, "duplication of %YAML directive");
-		if (args.length !== 1) throwError(state, "YAML directive accepts exactly one argument");
-		const match = /^([0-9]+)\.([0-9]+)$/.exec(args[0]);
-		if (match === null) throwError(state, "ill-formed argument of the YAML directive");
-		if (parseInt(match[1], 10) !== 1) throwError(state, "unacceptable YAML version of the document");
-		state.directives.push({
-			kind: "yaml",
-			version: args[0]
-		});
-	} else if (name === "TAG") {
-		if (args.length !== 2) throwError(state, "TAG directive accepts exactly two arguments");
-		const [handle, prefix] = args;
-		if (!PATTERN_TAG_HANDLE.test(handle)) throwError(state, "ill-formed tag handle (first argument) of the TAG directive");
-		if (HAS_OWN.call(state.tagHandlers, handle)) throwError(state, `there is a previously declared suffix for "${handle}" tag handle`);
-		if (!PATTERN_TAG_PREFIX.test(prefix)) throwError(state, "ill-formed tag prefix (second argument) of the TAG directive");
-		state.tagHandlers[handle] = prefix;
-		state.directives.push({
-			kind: "tag",
-			handle,
-			prefix
-		});
-	}
-	return true;
-}
-function readDocument(state) {
-	state.directives = [];
-	state.tagHandlers = Object.create(null);
-	let hasDirectives = false;
-	skipSeparationSpace(state, true);
-	while (readDirective(state)) {
-		hasDirectives = true;
-		skipSeparationSpace(state, true);
-	}
-	let explicitStart = false;
-	let explicitEnd = false;
-	let allowCompact = true;
-	if (state.lineIndent === 0 && state.input.charCodeAt(state.position) === 45 && state.input.charCodeAt(state.position + 1) === 45 && state.input.charCodeAt(state.position + 2) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 3))) {
-		explicitStart = true;
-		const markerLine = state.line;
-		state.position += 3;
-		skipSeparationSpace(state, true);
-		allowCompact = state.line > markerLine;
-	} else if (hasDirectives) throwError(state, "directives end mark is expected");
-	const documentEventIndex = state.events.length;
-	if (!explicitStart && state.position === state.lineStart && state.input.charCodeAt(state.position) === 46 && testDocumentSeparator(state)) {
-		state.position += 3;
-		skipSeparationSpace(state, true);
-		return;
-	}
-	addDocumentEvent(state, explicitStart, false);
-	if (!parseNode(state, state.lineIndent - 1, CONTEXT_BLOCK_OUT, false, allowCompact, allowCompact)) addEmptyScalarEvent(state);
-	skipSeparationSpace(state, true);
-	if (state.position === state.lineStart && testDocumentSeparator(state)) {
-		explicitEnd = state.input.charCodeAt(state.position) === 46;
-		if (explicitEnd) {
-			const markerLine = state.line;
-			state.position += 3;
-			skipSeparationSpace(state, true);
-			if (state.line === markerLine && state.position < state.length) throwError(state, "end of the stream or a document separator is expected");
-		}
-	}
-	const documentEvent = state.events[documentEventIndex];
-	if ((documentEvent === null || documentEvent === void 0 ? void 0 : documentEvent.type) === 1) documentEvent.explicitEnd = explicitEnd;
-	addPopEvent(state);
-	if (!explicitEnd && state.position < state.length && !(state.position === state.lineStart && testDocumentSeparator(state))) throwError(state, "end of the stream or a document separator is expected");
-}
-function parseEvents(input, options) {
-	const length = input.length;
-	const state = _objectSpread2(_objectSpread2(_objectSpread2({}, DEFAULT_PARSER_OPTIONS), options), {}, {
-		input: `${input}\0`,
-		length,
-		position: 0,
-		line: 0,
-		lineStart: 0,
-		lineIndent: 0,
-		firstTabInLine: -1,
-		depth: 0,
-		directives: [],
-		tagHandlers: Object.create(null),
-		events: []
-	});
-	const nullpos = input.indexOf("\0");
-	if (nullpos !== -1) throwErrorAt(input, nullpos, "null byte is not allowed in input", state.filename);
-	if (state.input.charCodeAt(state.position) === 65279) state.position++;
-	while (state.position < state.length) {
-		skipSeparationSpace(state, true);
-		if (state.position >= state.length) break;
-		const documentStart = state.position;
-		readDocument(state);
-		if (state.position === documentStart)
- /* c8 ignore next */
-		throwError(state, "can not read a document");
-	}
-	return state.events;
-}
-//#endregion
-//#region src/load.ts
-var DEFAULT_LOAD_OPTIONS = _objectSpread2(_objectSpread2({}, DEFAULT_PARSER_OPTIONS), DEFAULT_CONSTRUCTOR_OPTIONS);
-function loadDocuments(input, options = {}) {
-	const opts = _objectSpread2(_objectSpread2({}, DEFAULT_LOAD_OPTIONS), options);
-	const source = String(input);
-	const PARSER_OPT_KEYS = Object.keys(DEFAULT_PARSER_OPTIONS);
-	const CONSTRUCTOR_OPT_KEYS = Object.keys(DEFAULT_CONSTRUCTOR_OPTIONS);
-	return constructFromEvents(parseEvents(source, pick(opts, PARSER_OPT_KEYS)), _objectSpread2(_objectSpread2({}, pick(opts, CONSTRUCTOR_OPT_KEYS)), {}, { source }));
-}
-function loadAll(input, iteratorOrOptions, options) {
-	let iterator = null;
-	if (typeof iteratorOrOptions === "function") iterator = iteratorOrOptions;
-	else if (iteratorOrOptions !== null && typeof iteratorOrOptions === "object") options = iteratorOrOptions;
-	const documents = loadDocuments(input, options);
-	if (iterator === null) return documents;
-	for (const document of documents) iterator(document);
-}
-function load(input, options) {
-	const documents = loadDocuments(input, options);
-	if (documents.length === 0) throw new YAMLException("expected a document, but the input is empty");
-	if (documents.length === 1) return documents[0];
-	throw new YAMLException("expected a single document in the stream, but found more");
-}
-//#endregion
-//#region src/ast/nodes.ts
-var Style = class {
-	constructor() {
-		_defineProperty(this, "tagged", false);
-		_defineProperty(this, "flow", false);
-		_defineProperty(this, "singleQuoted", false);
-		_defineProperty(this, "doubleQuoted", false);
-		_defineProperty(this, "literal", false);
-		_defineProperty(this, "folded", false);
-	}
-};
-//#endregion
-//#region src/ast/from_js.ts
-var INVALID = Symbol("INVALID");
-function buildRepresentTypes(schema) {
-	const defaultTags = new Set([
-		schema.defaultScalarTag,
-		schema.defaultSequenceTag,
-		schema.defaultMappingTag
-	].filter((t) => t !== void 0));
-	const implicitScalars = schema.implicitScalarTags;
-	const explicitTags = schema.tags.filter((t) => !(t.nodeKind === "scalar" && t.implicit) && !defaultTags.has(t));
-	const defaultTagsLast = schema.tags.filter((t) => defaultTags.has(t));
-	return [
-		...implicitScalars.map((tag) => ({
-			tag,
-			implicitTag: true
-		})),
-		...explicitTags.map((tag) => ({
-			tag,
-			implicitTag: false
-		})),
-		...defaultTagsLast.map((tag) => ({
-			tag,
-			implicitTag: true
-		}))
-	];
-}
-function matchTag(state, object) {
-	for (let index = 0, length = state.representTypes.length; index < length; index += 1) {
-		const { tag, implicitTag } = state.representTypes[index];
-		if (tag.identify && tag.identify(object)) {
-			let tagName;
-			if (tag.matchByTagPrefix && tag.representTagName) tagName = tag.representTagName(object);
-			else tagName = tag.tagName;
-			return {
-				tag,
-				tagName,
-				implicitTag
-			};
-		}
-	}
-	return null;
-}
-function build(state, object) {
-	if (!state.noRefs && object !== null && typeof object === "object") {
-		const existing = state.refs.get(object);
-		if (existing) {
-			if (existing.anchor === void 0) existing.anchor = `ref_${state.refCounter++}`;
-			return {
-				kind: "alias",
-				tag: "",
-				style: new Style(),
-				anchor: existing.anchor
-			};
-		}
-	}
-	const matched = matchTag(state, object);
-	if (!matched) {
-		if (object === void 0) return INVALID;
-		if (state.skipInvalid) return INVALID;
-		throw new YAMLException(`unacceptable kind of an object to dump ${Object.prototype.toString.call(object)}`);
-	}
-	const { tag, tagName, implicitTag } = matched;
-	const nodeTagName = implicitTag ? tagName : tagNameShort(tagName);
-	if (tag.nodeKind === "scalar") {
-		const style = new Style();
-		style.tagged = !implicitTag;
-		return {
-			kind: "scalar",
-			tag: nodeTagName,
-			style,
-			value: tag.represent(object)
-		};
-	}
-	if (tag.nodeKind === "sequence") {
-		const container = tag.represent(object);
-		const style = new Style();
-		style.tagged = !implicitTag;
-		const node = {
-			kind: "sequence",
-			tag: nodeTagName,
-			style,
-			items: []
-		};
-		if (!state.noRefs) state.refs.set(object, node);
-		for (let index = 0, length = container.length; index < length; index += 1) {
-			let item = build(state, container[index]);
-			if (item === INVALID && container[index] === void 0) item = build(state, null);
-			if (item === INVALID) continue;
-			node.items.push(item);
-		}
-		return node;
-	}
-	const map = tag.represent(object);
-	const style = new Style();
-	style.tagged = !implicitTag;
-	const node = {
-		kind: "mapping",
-		tag: nodeTagName,
-		style,
-		items: []
-	};
-	if (!state.noRefs) state.refs.set(object, node);
-	for (const [objectKey, objectValue] of map) {
-		const key = build(state, objectKey);
-		if (key === INVALID) continue;
-		const value = build(state, objectValue);
-		if (value === INVALID) continue;
-		node.items.push({
-			key,
-			value
-		});
-	}
-	return node;
-}
-function jsToAst(input, schema, options = {}) {
-	var _options$noRefs, _options$skipInvalid;
-	const root = build({
-		representTypes: buildRepresentTypes(schema),
-		noRefs: (_options$noRefs = options.noRefs) !== null && _options$noRefs !== void 0 ? _options$noRefs : false,
-		skipInvalid: (_options$skipInvalid = options.skipInvalid) !== null && _options$skipInvalid !== void 0 ? _options$skipInvalid : false,
-		refs: /* @__PURE__ */ new Map(),
-		refCounter: 0
-	}, input);
-	return [{
-		contents: root === INVALID ? null : root,
-		directives: []
-	}];
-}
-//#endregion
-//#region src/ast/visit.ts
-var VISIT_BREAK = Symbol("visit:break");
-var VISIT_SKIP = Symbol("visit:skip");
-function visitNode(node, visitor, ctx) {
-	const control = visitor(node, ctx);
-	if (control === VISIT_BREAK) return true;
-	if (control === VISIT_SKIP) return false;
-	const depth = ctx.depth + 1;
-	switch (node.kind) {
-		case "sequence":
-			for (const item of node.items) if (visitNode(item, visitor, {
-				depth,
-				parent: node,
-				isKey: false
-			})) return true;
-			break;
-		case "mapping":
-			for (const { key, value } of node.items) {
-				if (visitNode(key, visitor, {
-					depth,
-					parent: node,
-					isKey: true
-				})) return true;
-				if (visitNode(value, visitor, {
-					depth,
-					parent: node,
-					isKey: false
-				})) return true;
-			}
-			break;
-	}
-	return false;
-}
-function visit(documents, visitor) {
-	for (const doc of documents) if (doc.contents && visitNode(doc.contents, visitor, {
-		depth: 0,
-		parent: null,
-		isKey: false
-	})) return;
-}
-//#endregion
-//#region src/ast/presenter.ts
-var CHAR_BOM = 65279;
-var CHAR_TAB = 9;
-var CHAR_LINE_FEED = 10;
-var CHAR_CARRIAGE_RETURN = 13;
-var CHAR_SPACE = 32;
-var CHAR_EXCLAMATION = 33;
-var CHAR_DOUBLE_QUOTE = 34;
-var CHAR_SHARP = 35;
-var CHAR_PERCENT = 37;
-var CHAR_AMPERSAND = 38;
-var CHAR_SINGLE_QUOTE = 39;
-var CHAR_ASTERISK = 42;
-var CHAR_COMMA = 44;
-var CHAR_MINUS = 45;
-var CHAR_COLON = 58;
-var CHAR_EQUALS = 61;
-var CHAR_GREATER_THAN = 62;
-var CHAR_QUESTION = 63;
-var CHAR_COMMERCIAL_AT = 64;
-var CHAR_LEFT_SQUARE_BRACKET = 91;
-var CHAR_RIGHT_SQUARE_BRACKET = 93;
-var CHAR_GRAVE_ACCENT = 96;
-var CHAR_LEFT_CURLY_BRACKET = 123;
-var CHAR_VERTICAL_LINE = 124;
-var CHAR_RIGHT_CURLY_BRACKET = 125;
-var ESCAPE_SEQUENCES = {};
-ESCAPE_SEQUENCES[0] = "\\0";
-ESCAPE_SEQUENCES[7] = "\\a";
-ESCAPE_SEQUENCES[8] = "\\b";
-ESCAPE_SEQUENCES[9] = "\\t";
-ESCAPE_SEQUENCES[10] = "\\n";
-ESCAPE_SEQUENCES[11] = "\\v";
-ESCAPE_SEQUENCES[12] = "\\f";
-ESCAPE_SEQUENCES[13] = "\\r";
-ESCAPE_SEQUENCES[27] = "\\e";
-ESCAPE_SEQUENCES[34] = "\\\"";
-ESCAPE_SEQUENCES[92] = "\\\\";
-ESCAPE_SEQUENCES[133] = "\\N";
-ESCAPE_SEQUENCES[160] = "\\_";
-ESCAPE_SEQUENCES[8232] = "\\L";
-ESCAPE_SEQUENCES[8233] = "\\P";
-var DEFAULT_PRESENTER_OPTIONS = {
-	indent: 2,
-	seqNoIndent: false,
-	seqInlineFirst: true,
-	sortKeys: false,
-	lineWidth: 80,
-	flowBracketPadding: false,
-	flowSkipCommaSpace: false,
-	flowSkipColonSpace: false,
-	quoteFlowKeys: false,
-	quoteStyle: "single",
-	forceQuotes: false,
-	tagBeforeAnchor: false
-};
-function nodeTagShort(node) {
-	return node.style.tagged ? node.tag : tagNameShort(node.tag);
-}
-function createPresenterState(options) {
-	const opts = _objectSpread2(_objectSpread2({}, DEFAULT_PRESENTER_OPTIONS), options);
-	return _objectSpread2(_objectSpread2({}, opts), {}, {
-		defaultScalarTagName: opts.schema.defaultScalarTag.tagName,
-		implicitResolvers: opts.schema.implicitScalarTags
-	});
-}
-function encodeNonPrintable(character) {
-	const string = character.toString(16).toUpperCase();
-	const handle = character <= 255 ? "x" : "u";
-	const length = character <= 255 ? 2 : 4;
-	return `\\${handle}${"0".repeat(length - string.length)}${string}`;
-}
-function indentString(string, spaces) {
-	const ind = " ".repeat(spaces);
-	let position = 0;
-	let result = "";
-	const length = string.length;
-	while (position < length) {
-		let line;
-		const next = string.indexOf("\n", position);
-		if (next === -1) {
-			line = string.slice(position);
-			position = length;
-		} else {
-			line = string.slice(position, next + 1);
-			position = next + 1;
-		}
-		if (line.length && line !== "\n") result += ind;
-		result += line;
-	}
-	return result;
-}
-function generateNextLine(state, level) {
-	return `\n${" ".repeat(state.indent * level)}`;
-}
-function scalarLayout(state, level) {
-	const indent = state.indent * Math.max(1, level);
-	return {
-		indent,
-		blockIndent: level === 0 ? state.indent + 1 : state.indent,
-		lineWidth: state.lineWidth === -1 ? -1 : Math.max(Math.min(state.lineWidth, 40), state.lineWidth - indent)
-	};
-}
-function resolveImplicitTag(state, str) {
-	for (let index = 0, length = state.implicitResolvers.length; index < length; index += 1) {
-		const tagDefinition = state.implicitResolvers[index];
-		if (tagDefinition.resolve(str, false, tagDefinition.tagName) !== NOT_RESOLVED) return tagDefinition.tagName;
-	}
-	return state.defaultScalarTagName;
-}
-function isWhitespace(c) {
-	return c === CHAR_SPACE || c === CHAR_TAB;
-}
-function startsWithDocumentSeparator(string) {
-	const marker = string.charCodeAt(0);
-	if (marker !== CHAR_MINUS && marker !== 46 || string.charCodeAt(1) !== marker || string.charCodeAt(2) !== marker) return false;
-	if (string.length === 3) return true;
-	const following = string.charCodeAt(3);
-	return isWhitespace(following) || following === CHAR_CARRIAGE_RETURN || following === CHAR_LINE_FEED;
-}
-function isPrintable(c) {
-	return c >= 32 && c <= 126 || c >= 161 && c <= 55295 && c !== 8232 && c !== 8233 || c >= 57344 && c <= 65533 && c !== CHAR_BOM || c >= 65536 && c <= 1114111;
-}
-function isNsCharOrWhitespace(c) {
-	return isPrintable(c) && c !== CHAR_BOM && c !== CHAR_CARRIAGE_RETURN && c !== CHAR_LINE_FEED;
-}
-function isPlainSafe(c, prev, inblock) {
-	const cIsNsCharOrWhitespace = isNsCharOrWhitespace(c);
-	const cIsNsChar = cIsNsCharOrWhitespace && !isWhitespace(c);
-	return (inblock ? cIsNsCharOrWhitespace : cIsNsCharOrWhitespace && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET) && c !== CHAR_SHARP && !(prev === CHAR_COLON && !cIsNsChar) || isNsCharOrWhitespace(prev) && !isWhitespace(prev) && c === CHAR_SHARP || prev === CHAR_COLON && cIsNsChar && (inblock || c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET);
-}
-function isPlainSafeFirst(c) {
-	return isPrintable(c) && c !== CHAR_BOM && !isWhitespace(c) && c !== CHAR_MINUS && c !== CHAR_QUESTION && c !== CHAR_COLON && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET && c !== CHAR_SHARP && c !== CHAR_AMPERSAND && c !== CHAR_ASTERISK && c !== CHAR_EXCLAMATION && c !== CHAR_VERTICAL_LINE && c !== CHAR_EQUALS && c !== CHAR_GREATER_THAN && c !== CHAR_SINGLE_QUOTE && c !== CHAR_DOUBLE_QUOTE && c !== CHAR_PERCENT && c !== CHAR_COMMERCIAL_AT && c !== CHAR_GRAVE_ACCENT;
-}
-function isPlainSafeAtStart(string, inblock) {
-	const first = codePointAt(string, 0);
-	if (isPlainSafeFirst(first)) return true;
-	if (string.length > 1 && (first === CHAR_MINUS || first === CHAR_QUESTION || first === CHAR_COLON)) {
-		const second = codePointAt(string, 1);
-		return !isWhitespace(second) && isPlainSafe(second, first, inblock);
-	}
-	return false;
-}
-function isPlainSafeLast(c) {
-	return !isWhitespace(c) && c !== CHAR_COLON;
-}
-function codePointAt(string, pos) {
-	const first = string.charCodeAt(pos);
-	let second;
-	if (first >= 55296 && first <= 56319 && pos + 1 < string.length) {
-		second = string.charCodeAt(pos + 1);
-		if (second >= 56320 && second <= 57343) return (first - 55296) * 1024 + second - 56320 + 65536;
-	}
-	return first;
-}
-function needIndentIndicator(string) {
-	return /^\n* /.test(string);
-}
-var STYLE_PLAIN = 1;
-var STYLE_SINGLE = 2;
-var STYLE_LITERAL = 3;
-var STYLE_FOLDED = 4;
-var STYLE_DOUBLE = 5;
-function chooseScalarStyle(state, string, layout, singleLineOnly, forceQuote, inblock) {
-	const { blockIndent, lineWidth } = layout;
-	let i;
-	let char = 0;
-	let prevChar = -1;
-	let hasLineBreak = false;
-	let hasFoldableLine = false;
-	const shouldTrackWidth = lineWidth !== -1;
-	let previousLineBreak = -1;
-	let plain = !startsWithDocumentSeparator(string) && isPlainSafeAtStart(string, inblock) && isPlainSafeLast(codePointAt(string, string.length - 1));
-	if (singleLineOnly || forceQuote) for (i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
-		char = codePointAt(string, i);
-		if (!isPrintable(char)) return STYLE_DOUBLE;
-		plain = plain && isPlainSafe(char, prevChar, inblock);
-		prevChar = char;
-	}
-	else {
-		for (i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
-			char = codePointAt(string, i);
-			if (char === CHAR_LINE_FEED) {
-				hasLineBreak = true;
-				if (shouldTrackWidth) {
-					hasFoldableLine = hasFoldableLine || i - previousLineBreak - 1 > lineWidth && !isMoreIndented(string[previousLineBreak + 1]);
-					previousLineBreak = i;
-				}
-			} else if (!isPrintable(char)) return STYLE_DOUBLE;
-			plain = plain && isPlainSafe(char, prevChar, inblock);
-			prevChar = char;
-		}
-		hasFoldableLine = hasFoldableLine || shouldTrackWidth && i - previousLineBreak - 1 > lineWidth && !isMoreIndented(string[previousLineBreak + 1]);
-	}
-	if (!hasLineBreak && !hasFoldableLine) {
-		if (plain && !forceQuote) return STYLE_PLAIN;
-		return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
-	}
-	if (blockIndent > 9 && needIndentIndicator(string)) return STYLE_DOUBLE;
-	return hasFoldableLine ? STYLE_FOLDED : STYLE_LITERAL;
-}
-function renderScalarStyle(string, style, layout) {
-	const { indent, blockIndent, lineWidth } = layout;
-	switch (style) {
-		case STYLE_PLAIN: return encodeFlowBreaks(string, indent);
-		case STYLE_SINGLE: return `'${encodeFlowBreaks(string, indent).replace(/'/g, "''")}'`;
-		case STYLE_LITERAL: return "|" + blockHeader(string, blockIndent) + dropEndingNewline(indentString(string, indent));
-		case STYLE_FOLDED: return ">" + blockHeader(string, blockIndent) + dropEndingNewline(indentString(foldBlockScalar(string, lineWidth), indent));
-		case STYLE_DOUBLE: return `"${escapeString(string)}"`;
-	}
-}
-function resolveScalarStyle(state, node, layout, iskey, inblock) {
-	const singleLineOnly = iskey || !inblock;
-	if (node.style.singleQuoted) return STYLE_SINGLE;
-	if (node.style.doubleQuoted) return STYLE_DOUBLE;
-	if (!singleLineOnly) {
-		if (node.style.literal) return STYLE_LITERAL;
-		if (node.style.folded) return STYLE_FOLDED;
-	}
-	const string = node.value;
-	if (string.length === 0) {
-		if (node.style.tagged || resolveImplicitTag(state, string) === node.tag) return STYLE_PLAIN;
-		return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
-	}
-	const style = chooseScalarStyle(state, string, layout, singleLineOnly, state.forceQuotes && !iskey, inblock);
-	if (style === STYLE_PLAIN && !node.style.tagged && resolveImplicitTag(state, string) !== node.tag) return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
-	return style;
-}
-function blockHeader(string, indentPerLevel) {
-	const indentIndicator = needIndentIndicator(string) ? String(indentPerLevel) : "";
-	const clip = string[string.length - 1] === "\n";
-	return `${indentIndicator}${clip && (string[string.length - 2] === "\n" || string === "\n") ? "+" : clip ? "" : "-"}\n`;
-}
-function encodeFlowBreaks(string, indent) {
-	let nextLF = string.indexOf("\n");
-	if (nextLF === -1) return string;
-	const pad = " ".repeat(indent);
-	let result = string.slice(0, nextLF);
-	const lineRe = /(\n+)([^\n]*)/g;
-	lineRe.lastIndex = nextLF;
-	let match;
-	while (match = lineRe.exec(string)) {
-		const breaks = match[1].length;
-		const line = match[2];
-		result += "\n".repeat(breaks + 1) + pad + line;
-	}
-	return result;
-}
-function dropEndingNewline(string) {
-	return string[string.length - 1] === "\n" ? string.slice(0, -1) : string;
-}
-function isMoreIndented(char) {
-	return char === " " || char === "	";
-}
-function foldBlockScalar(string, width) {
-	const lineRe = /(\n+)([^\n]*)/g;
-	let nextLF = string.indexOf("\n");
-	if (nextLF === -1) nextLF = string.length;
-	lineRe.lastIndex = nextLF;
-	let result = foldLine(string.slice(0, nextLF), width);
-	let prevMoreIndented = string[0] === "\n" || isMoreIndented(string[0]);
-	let moreIndented;
-	let match;
-	while (match = lineRe.exec(string)) {
-		const prefix = match[1];
-		const line = match[2];
-		moreIndented = line !== "" && isMoreIndented(line[0]);
-		result += prefix + (!prevMoreIndented && !moreIndented && line !== "" ? "\n" : "") + foldLine(line, width);
-		prevMoreIndented = moreIndented;
-	}
-	return result;
-}
-function foldLine(line, width) {
-	if (line === "" || isMoreIndented(line[0])) return line;
-	const breakRe = / [^ \t]/g;
-	let match;
-	let start = 0;
-	let end;
-	let curr = 0;
-	let next = 0;
-	let result = "";
-	while (match = breakRe.exec(line)) {
-		next = match.index;
-		if (next - start > width) {
-			end = curr > start ? curr : next;
-			result += `\n${line.slice(start, end)}`;
-			start = end + 1;
-		}
-		curr = next;
-	}
-	result += "\n";
-	if (line.length - start > width && curr > start) result += `${line.slice(start, curr)}\n${line.slice(curr + 1)}`;
-	else result += line.slice(start);
-	return result.slice(1);
-}
-function escapeString(string) {
-	let result = "";
-	let char = 0;
-	for (let i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
-		char = codePointAt(string, i);
-		const escapeSeq = ESCAPE_SEQUENCES[char];
-		if (escapeSeq) {
-			result += escapeSeq;
-			continue;
-		}
-		if (isPrintable(char)) {
-			result += string[i];
-			if (char >= 65536) result += string[i + 1];
-			continue;
-		}
-		result += encodeNonPrintable(char);
-	}
-	return result;
-}
-function writeFlowSequence(state, level, node) {
-	let result = "";
-	for (let index = 0, length = node.items.length; index < length; index += 1) {
-		const item = writeNode(state, level, node.items[index], {});
-		if (result !== "") result += `,${!state.flowSkipCommaSpace ? " " : ""}`;
-		result += item;
-	}
-	const pad = state.flowBracketPadding && result !== "" ? " " : "";
-	return `[${pad}${result}${pad}]`;
-}
-function writeBlockSequence(state, level, node, compact) {
-	let result = "";
-	for (let index = 0, length = node.items.length; index < length; index += 1) {
-		const item = writeNode(state, level + 1, node.items[index], {
-			block: true,
-			compact: state.seqInlineFirst,
-			isblockseq: true
-		});
-		if (!compact || result !== "") result += generateNextLine(state, level);
-		if (item === "" || CHAR_LINE_FEED === item.charCodeAt(0)) result += "-";
-		else result += "- ";
-		result += item;
-	}
-	return result;
-}
-function writeFlowMapping(state, level, node) {
-	let result = "";
-	const items = sortMappingItems(state, node.items);
-	for (const { key, value } of items) {
-		let pairBuffer = "";
-		if (result !== "") pairBuffer += `,${!state.flowSkipCommaSpace ? " " : ""}`;
-		const keyText = writeNode(state, level, key, { iskey: true });
-		const explicitPair = keyText.length > 1024;
-		if (explicitPair) pairBuffer += "? ";
-		else if (state.quoteFlowKeys) pairBuffer += "\"";
-		const valueText = writeNode(state, level, value, {});
-		const sep = state.flowSkipColonSpace || valueText === "" ? "" : " ";
-		pairBuffer += `${keyText}${state.quoteFlowKeys && !explicitPair ? "\"" : ""}:${sep}${valueText}`;
-		result += pairBuffer;
-	}
-	const pad = state.flowBracketPadding && result !== "" ? " " : "";
-	return `{${pad}${result}${pad}}`;
-}
-function sortKeyValue(key) {
-	return key.kind === "scalar" ? key.value : key;
-}
-function sortMappingItems(state, items) {
-	if (!state.sortKeys) return items;
-	const copy = items.slice();
-	if (state.sortKeys === true) copy.sort((a, b) => {
-		const x = sortKeyValue(a.key);
-		const y = sortKeyValue(b.key);
-		if (x < y) return -1;
-		if (x > y) return 1;
-		return 0;
-	});
-	else {
-		const fn = state.sortKeys;
-		copy.sort((a, b) => fn(sortKeyValue(a.key), sortKeyValue(b.key)));
-	}
-	return copy;
-}
-function writeBlockMapping(state, level, node, compact) {
-	let result = "";
-	const items = sortMappingItems(state, node.items);
-	for (let index = 0, length = items.length; index < length; index += 1) {
-		let pairBuffer = "";
-		if (!compact || result !== "") pairBuffer += generateNextLine(state, level);
-		const { key, value } = items[index];
-		const keyIsBlock = (key.kind === "mapping" || key.kind === "sequence") && !key.style.flow && key.items.length !== 0 || key.kind === "scalar" && (key.style.literal || key.style.folded);
-		const keyText = keyIsBlock ? writeNode(state, level + 1, key, {
-			block: true,
-			compact: true,
-			isblockseq: !cannotBeCompact(state, key, level + 1)
-		}) : writeNode(state, level + 1, key, {
-			block: true,
-			compact: true,
-			iskey: true
-		});
-		const keyHasLineBreak = key.kind === "scalar" && key.value.indexOf("\n") !== -1;
-		const explicitPair = keyIsBlock || keyHasLineBreak || keyText.length > 1024;
-		if (explicitPair) if (keyText && CHAR_LINE_FEED === keyText.charCodeAt(0)) pairBuffer += "?";
-		else pairBuffer += "? ";
-		pairBuffer += keyText;
-		if (explicitPair) pairBuffer += generateNextLine(state, level);
-		const valueText = writeNode(state, level + 1, value, {
-			block: true,
-			compact: explicitPair,
-			isblockseq: explicitPair && !cannotBeCompact(state, value, level + 1)
-		});
-		const keyIsBareProps = key.kind === "scalar" && key.value === "" && keyText !== "" && keyText.charCodeAt(keyText.length - 1) !== CHAR_SINGLE_QUOTE && keyText.charCodeAt(keyText.length - 1) !== CHAR_DOUBLE_QUOTE;
-		const keyColonSep = !explicitPair && (key.kind === "alias" || keyIsBareProps) ? " " : "";
-		if (valueText === "" || CHAR_LINE_FEED === valueText.charCodeAt(0)) pairBuffer += `${keyColonSep}:`;
-		else pairBuffer += `${keyColonSep}: `;
-		pairBuffer += valueText;
-		result += pairBuffer;
-	}
-	return result;
-}
-function cannotBeCompact(state, node, level) {
-	return node.style.tagged || node.anchor !== void 0 || state.indent < 2 && level > 0;
-}
-function writeNode(state, level, node, ctx) {
-	var _ctx$compact;
-	if (node.kind === "alias") return `*${node.anchor}`;
-	const { block = false, iskey = false, isblockseq = false } = ctx;
-	let compact = (_ctx$compact = ctx.compact) !== null && _ctx$compact !== void 0 ? _ctx$compact : false;
-	const hasAnchor = node.anchor !== void 0;
-	if (cannotBeCompact(state, node, level)) compact = false;
-	let body;
-	let shouldPrintTag = node.style.tagged;
-	const useBlockCollection = block && (node.kind === "mapping" || node.kind === "sequence") && !node.style.flow && node.items.length !== 0;
-	if (node.kind === "mapping") if (useBlockCollection) body = writeBlockMapping(state, level, node, compact);
-	else body = writeFlowMapping(state, level, node);
-	else if (node.kind === "sequence") if (useBlockCollection) if (state.seqNoIndent && !isblockseq && level > 0) body = writeBlockSequence(state, level - 1, node, compact);
-	else body = writeBlockSequence(state, level, node, compact);
-	else body = writeFlowSequence(state, level, node);
-	else {
-		const layout = scalarLayout(state, level);
-		const style = resolveScalarStyle(state, node, layout, iskey, block);
-		body = renderScalarStyle(node.value, style, layout);
-		shouldPrintTag = node.style.tagged || style !== STYLE_PLAIN && node.tag !== state.defaultScalarTagName;
-	}
-	if (useBlockCollection && compact && level > 0 && state.indent > 2) body = `${" ".repeat(state.indent - 2)}${body}`;
-	if (shouldPrintTag || hasAnchor) {
-		const props = [];
-		const tag = shouldPrintTag ? nodeTagShort(node) : null;
-		const anchor = hasAnchor ? `&${node.anchor}` : null;
-		if (state.tagBeforeAnchor) {
-			if (tag !== null) props.push(tag);
-			if (anchor !== null) props.push(anchor);
-		} else {
-			if (anchor !== null) props.push(anchor);
-			if (tag !== null) props.push(tag);
-		}
-		const sep = body === "" || body.charCodeAt(0) === CHAR_LINE_FEED ? "" : " ";
-		body = `${props.join(" ")}${sep}${body}`;
-	}
-	return body;
-}
-function rootStartsOwnLine(node) {
-	return (node.kind === "sequence" || node.kind === "mapping") && !node.style.flow && node.items.length !== 0 && !node.style.tagged && node.anchor === void 0;
-}
-function isOpenEnded(node) {
-	let leaf = node;
-	while ((leaf.kind === "sequence" || leaf.kind === "mapping") && !leaf.style.flow && leaf.items.length !== 0) leaf = leaf.kind === "sequence" ? leaf.items[leaf.items.length - 1] : leaf.items[leaf.items.length - 1].value;
-	if (leaf.kind !== "scalar" || !(leaf.style.literal || leaf.style.folded)) return false;
-	const { value } = leaf;
-	return value.endsWith("\n\n") || value === "\n";
-}
-function writeDocumentDirectives(doc) {
-	let result = "";
-	for (const directive of doc.directives) {
-		if (directive.kind === "yaml") {
-			result += `%YAML ${directive.version}\n`;
-			continue;
-		}
-		const { handle, prefix } = directive;
-		result += `%TAG ${handle} ${prefix}\n`;
-	}
-	return result;
-}
-function present(documents, options) {
-	const state = createPresenterState(options);
-	let result = "";
-	let previousEnded = false;
-	for (let index = 0; index < documents.length; index += 1) {
-		const doc = documents[index];
-		const directives = writeDocumentDirectives(doc);
-		const hasDirectives = directives !== "";
-		const marker = doc.explicitStart || hasDirectives || index > 0 && !previousEnded;
-		result += directives;
-		if (doc.contents === null) {
-			if (marker) result += "---\n";
-		} else if (marker) {
-			const body = writeNode(state, 0, doc.contents, {
-				block: true,
-				compact: true
-			});
-			const sep = body === "" ? "" : hasDirectives || rootStartsOwnLine(doc.contents) ? "\n" : " ";
-			result += `---${sep}${body}\n`;
-		} else result += writeNode(state, 0, doc.contents, {
-			block: true,
-			compact: true
-		}) + "\n";
-		previousEnded = doc.explicitEnd || doc.contents !== null && isOpenEnded(doc.contents);
-		if (previousEnded) result += "...\n";
-	}
-	return result;
-}
-//#endregion
-//#region src/dump.ts
-var DEFAULT_DUMP_SCHEMA = YAML11_SCHEMA.withTags(_objectSpread2(_objectSpread2({}, intYaml11Tag), {}, { resolve: (source, isExplicit, tagName) => {
-	const result = intYaml11Tag.resolve(source, isExplicit, tagName);
-	return result === NOT_RESOLVED ? intCoreTag.resolve(source, isExplicit, tagName) : result;
-} }), _objectSpread2(_objectSpread2({}, floatYaml11Tag), {}, { resolve: (source, isExplicit, tagName) => {
-	const result = floatYaml11Tag.resolve(source, isExplicit, tagName);
-	return result === NOT_RESOLVED ? floatCoreTag.resolve(source, isExplicit, tagName) : result;
-} }));
-var DEFAULT_DUMP_OPTIONS = _objectSpread2(_objectSpread2({}, DEFAULT_PRESENTER_OPTIONS), {}, {
-	schema: DEFAULT_DUMP_SCHEMA,
-	skipInvalid: false,
-	noRefs: false,
-	flowLevel: -1,
-	transform: () => {}
-});
-function dump(input, options = {}) {
-	const opts = _objectSpread2(_objectSpread2({}, DEFAULT_DUMP_OPTIONS), options);
-	const documents = jsToAst(input, opts.schema, {
-		noRefs: opts.noRefs,
-		skipInvalid: opts.skipInvalid
-	});
-	if (opts.flowLevel >= 0) visit(documents, (node, ctx) => {
-		if (ctx.depth < opts.flowLevel) return;
-		node.style.flow = true;
-		return VISIT_SKIP;
-	});
-	opts.transform(documents);
-	return present(documents, _objectSpread2(_objectSpread2({}, pick(opts, Object.keys(DEFAULT_PRESENTER_OPTIONS))), {}, { schema: opts.schema }));
-}
-//#endregion
-//#region src/ast/from_events.ts
-var NO_RANGE = -1;
-function eventPosition(event) {
-	if ("tagStart" in event && event.tagStart !== NO_RANGE) return event.tagStart;
-	if ("anchorStart" in event && event.anchorStart !== NO_RANGE) return event.anchorStart;
-	if ("valueStart" in event && event.valueStart !== NO_RANGE) return event.valueStart;
-	if ("start" in event) return event.start;
-	return 0;
-}
-function rawTag(state, event) {
-	return event.tagStart === NO_RANGE ? "" : state.source.slice(event.tagStart, event.tagEnd);
-}
-function anchorName(state, event) {
-	return event.anchorStart === NO_RANGE ? void 0 : state.source.slice(event.anchorStart, event.anchorEnd);
-}
-function implicitScalarTagName(state, source) {
-	var _schema$implicitScala;
-	const { schema } = state;
-	const candidates = (_schema$implicitScala = schema.implicitScalarByFirstChar.get(source.charAt(0))) !== null && _schema$implicitScala !== void 0 ? _schema$implicitScala : schema.implicitScalarAnyFirstChar;
-	for (const tag of candidates) if (tag.resolve(source, false, tag.tagName) !== NOT_RESOLVED) return tag.tagName;
-	return schema.defaultScalarTag.tagName;
-}
-function buildScalar(state, event) {
-	const value = getScalarValue(state.source, event);
-	const raw = rawTag(state, event);
-	const style = new Style();
-	switch (event.style) {
-		case 2:
-			style.singleQuoted = true;
-			break;
-		case 3:
-			style.doubleQuoted = true;
-			break;
-		case 4:
-			style.literal = true;
-			break;
-		case 5:
-			style.folded = true;
-			break;
-	}
-	let tag;
-	if (raw !== "") {
-		style.tagged = true;
-		tag = raw;
-	} else if (event.style === 1) tag = implicitScalarTagName(state, value);
-	else tag = state.schema.defaultScalarTag.tagName;
-	return {
-		kind: "scalar",
-		tag,
-		style,
-		anchor: anchorName(state, event),
-		value
-	};
-}
-function buildCollection(state, event, defaultTagName) {
-	const raw = rawTag(state, event);
-	const style = new Style();
-	if (event.style === 2) style.flow = true;
-	let tag;
-	if (raw === "") tag = defaultTagName;
-	else {
-		tag = raw;
-		style.tagged = true;
-	}
-	return {
-		tag,
-		style,
-		anchor: anchorName(state, event)
-	};
-}
-function addNode(state, node) {
-	const frame = state.frames[state.frames.length - 1];
-	if (frame.kind === "document") frame.doc.contents = node;
-	else if (frame.kind === "sequence") frame.node.items.push(node);
-	else if (frame.key) {
-		frame.node.items.push({
-			key: frame.key,
-			value: node
-		});
-		frame.key = null;
-	} else frame.key = node;
-}
-function eventsToAst(events, options) {
-	const state = {
-		source: options.source,
-		schema: options.schema,
-		eventIndex: 0,
-		position: 0,
-		frames: [],
-		documents: []
-	};
-	while (state.eventIndex < events.length) {
-		const event = events[state.eventIndex++];
-		state.position = eventPosition(event);
-		switch (event.type) {
-			case 1: {
-				const doc = {
-					contents: null,
-					explicitStart: event.explicitStart,
-					explicitEnd: event.explicitEnd,
-					directives: event.directives
-				};
-				state.frames.push({
-					kind: "document",
-					doc
-				});
-				break;
-			}
-			case 4:
-				addNode(state, buildScalar(state, event));
-				break;
-			case 2: {
-				const { tag, style, anchor } = buildCollection(state, event, "tag:yaml.org,2002:seq");
-				const node = {
-					kind: "sequence",
-					tag,
-					style,
-					anchor,
-					items: []
-				};
-				state.frames.push({
-					kind: "sequence",
-					node
-				});
-				break;
-			}
-			case 3: {
-				const { tag, style, anchor } = buildCollection(state, event, "tag:yaml.org,2002:map");
-				const node = {
-					kind: "mapping",
-					tag,
-					style,
-					anchor,
-					items: []
-				};
-				state.frames.push({
-					kind: "mapping",
-					node,
-					key: null
-				});
-				break;
-			}
-			case 5: {
-				const name = state.source.slice(event.anchorStart, event.anchorEnd);
-				addNode(state, {
-					kind: "alias",
-					tag: "",
-					style: new Style(),
-					anchor: name
-				});
-				break;
-			}
-			case 6: {
-				const frame = state.frames.pop();
-				if (frame.kind === "mapping" && frame.key) throw new Error("incomplete mapping pair in event stream");
-				if (frame.kind === "document") state.documents.push(frame.doc);
-				else addNode(state, frame.node);
-				break;
-			}
-		}
-	}
-	return state.documents;
-}
-//#endregion
-exports.CHOMPING_CLIP = CHOMPING_CLIP;
-exports.CHOMPING_KEEP = CHOMPING_KEEP;
-exports.CHOMPING_STRIP = CHOMPING_STRIP;
-exports.COLLECTION_STYLE_BLOCK = COLLECTION_STYLE_BLOCK;
-exports.COLLECTION_STYLE_FLOW = COLLECTION_STYLE_FLOW;
-exports.CORE_SCHEMA = CORE_SCHEMA;
-exports.EVENT_ALIAS = EVENT_ALIAS;
-exports.EVENT_DOCUMENT = EVENT_DOCUMENT;
-exports.EVENT_MAPPING = EVENT_MAPPING;
-exports.EVENT_POP = EVENT_POP;
-exports.EVENT_SCALAR = EVENT_SCALAR;
-exports.EVENT_SEQUENCE = EVENT_SEQUENCE;
-exports.FAILSAFE_SCHEMA = FAILSAFE_SCHEMA;
-exports.JSON_SCHEMA = JSON_SCHEMA;
-exports.MERGE_KEY = MERGE_KEY;
-exports.NOT_RESOLVED = NOT_RESOLVED;
-exports.SCALAR_STYLE_DOUBLE_QUOTED = SCALAR_STYLE_DOUBLE_QUOTED;
-exports.SCALAR_STYLE_FOLDED_BLOCK = SCALAR_STYLE_FOLDED_BLOCK;
-exports.SCALAR_STYLE_LITERAL_BLOCK = SCALAR_STYLE_LITERAL_BLOCK;
-exports.SCALAR_STYLE_PLAIN = SCALAR_STYLE_PLAIN;
-exports.SCALAR_STYLE_SINGLE_QUOTED = SCALAR_STYLE_SINGLE_QUOTED;
-exports.Schema = Schema;
-exports.Style = Style;
-exports.VISIT_BREAK = VISIT_BREAK;
-exports.VISIT_SKIP = VISIT_SKIP;
-exports.YAML11_SCHEMA = YAML11_SCHEMA;
-exports.YAMLException = YAMLException;
-exports.binaryTag = binaryTag;
-exports.boolCoreTag = boolCoreTag;
-exports.boolJsonTag = boolJsonTag;
-exports.boolYaml11Tag = boolYaml11Tag;
-exports.constructFromEvents = constructFromEvents;
-exports.defineMappingTag = defineMappingTag;
-exports.defineScalarTag = defineScalarTag;
-exports.defineSequenceTag = defineSequenceTag;
-exports.dump = dump;
-exports.eventsToAst = eventsToAst;
-exports.floatCoreTag = floatCoreTag;
-exports.floatJsonTag = floatJsonTag;
-exports.floatYaml11Tag = floatYaml11Tag;
-exports.getScalarValue = getScalarValue;
-exports.intCoreTag = intCoreTag;
-exports.intJsonTag = intJsonTag;
-exports.intYaml11Tag = intYaml11Tag;
-exports.jsToAst = jsToAst;
-exports.legacyMapTag = legacyMapTag;
-exports.load = load;
-exports.loadAll = loadAll;
-exports.mapTag = mapTag;
-exports.mergeTag = mergeTag;
-exports.nullCoreTag = nullCoreTag;
-exports.nullJsonTag = nullJsonTag;
-exports.nullYaml11Tag = nullYaml11Tag;
-exports.omapTag = omapTag;
-exports.pairsTag = pairsTag;
-exports.parseEvents = parseEvents;
-exports.present = present;
-exports.realMapTag = realMapTag;
-exports.seqTag = seqTag;
-exports.setTag = setTag;
-exports.strTag = strTag;
-exports.timestampTag = timestampTag;
-exports.visit = visit;
+"use strict";
 
-//# sourceMappingURL=js-yaml.cjs.js.map
+
+var has = Object.prototype.hasOwnProperty
+  , prefix = '~';
+
+/**
+ * Constructor to create a storage for our `EE` objects.
+ * An `Events` instance is a plain object whose properties are event names.
+ *
+ * @constructor
+ * @private
+ */
+function Events() {}
+
+//
+// We try to not inherit from `Object.prototype`. In some engines creating an
+// instance in this way is faster than calling `Object.create(null)` directly.
+// If `Object.create(null)` is not supported we prefix the event names with a
+// character to make sure that the built-in object properties are not
+// overridden or used as an attack vector.
+//
+if (Object.create) {
+  Events.prototype = Object.create(null);
+
+  //
+  // This hack is needed because the `__proto__` property is still inherited in
+  // some old browsers like Android 4, iPhone 5.1, Opera 11 and Safari 5.
+  //
+  if (!new Events().__proto__) prefix = false;
+}
+
+/**
+ * Representation of a single event listener.
+ *
+ * @param {Function} fn The listener function.
+ * @param {*} context The context to invoke the listener with.
+ * @param {Boolean} [once=false] Specify if the listener is a one-time listener.
+ * @constructor
+ * @private
+ */
+function EE(fn, context, once) {
+  this.fn = fn;
+  this.context = context;
+  this.once = once || false;
+}
+
+/**
+ * Add a listener for a given event.
+ *
+ * @param {EventEmitter} emitter Reference to the `EventEmitter` instance.
+ * @param {(String|Symbol)} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {*} context The context to invoke the listener with.
+ * @param {Boolean} once Specify if the listener is a one-time listener.
+ * @returns {EventEmitter}
+ * @private
+ */
+function addListener(emitter, event, fn, context, once) {
+  if (typeof fn !== 'function') {
+    throw new TypeError('The listener must be a function');
+  }
+
+  var listener = new EE(fn, context || emitter, once)
+    , evt = prefix ? prefix + event : event;
+
+  if (!emitter._events[evt]) emitter._events[evt] = listener, emitter._eventsCount++;
+  else if (!emitter._events[evt].fn) emitter._events[evt].push(listener);
+  else emitter._events[evt] = [emitter._events[evt], listener];
+
+  return emitter;
+}
+
+/**
+ * Clear event by name.
+ *
+ * @param {EventEmitter} emitter Reference to the `EventEmitter` instance.
+ * @param {(String|Symbol)} evt The Event name.
+ * @private
+ */
+function clearEvent(emitter, evt) {
+  if (--emitter._eventsCount === 0) emitter._events = new Events();
+  else delete emitter._events[evt];
+}
+
+/**
+ * Minimal `EventEmitter` interface that is molded against the Node.js
+ * `EventEmitter` interface.
+ *
+ * @constructor
+ * @public
+ */
+function EventEmitter() {
+  this._events = new Events();
+  this._eventsCount = 0;
+}
+
+/**
+ * Return an array listing the events for which the emitter has registered
+ * listeners.
+ *
+ * @returns {Array}
+ * @public
+ */
+EventEmitter.prototype.eventNames = function eventNames() {
+  var names = []
+    , events
+    , name;
+
+  if (this._eventsCount === 0) return names;
+
+  for (name in (events = this._events)) {
+    if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
+  }
+
+  if (Object.getOwnPropertySymbols) {
+    return names.concat(Object.getOwnPropertySymbols(events));
+  }
+
+  return names;
+};
+
+/**
+ * Return the listeners registered for a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @returns {Array} The registered listeners.
+ * @public
+ */
+EventEmitter.prototype.listeners = function listeners(event) {
+  var evt = prefix ? prefix + event : event
+    , handlers = this._events[evt];
+
+  if (!handlers) return [];
+  if (handlers.fn) return [handlers.fn];
+
+  for (var i = 0, l = handlers.length, ee = new Array(l); i < l; i++) {
+    ee[i] = handlers[i].fn;
+  }
+
+  return ee;
+};
+
+/**
+ * Return the number of listeners listening to a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @returns {Number} The number of listeners.
+ * @public
+ */
+EventEmitter.prototype.listenerCount = function listenerCount(event) {
+  var evt = prefix ? prefix + event : event
+    , listeners = this._events[evt];
+
+  if (!listeners) return 0;
+  if (listeners.fn) return 1;
+  return listeners.length;
+};
+
+/**
+ * Calls each of the listeners registered for a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @returns {Boolean} `true` if the event had listeners, else `false`.
+ * @public
+ */
+EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return false;
+
+  var listeners = this._events[evt]
+    , len = arguments.length
+    , args
+    , i;
+
+  if (listeners.fn) {
+    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
+
+    switch (len) {
+      case 1: return listeners.fn.call(listeners.context), true;
+      case 2: return listeners.fn.call(listeners.context, a1), true;
+      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
+      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
+      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
+      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
+    }
+
+    for (i = 1, args = new Array(len -1); i < len; i++) {
+      args[i - 1] = arguments[i];
+    }
+
+    listeners.fn.apply(listeners.context, args);
+  } else {
+    var length = listeners.length
+      , j;
+
+    for (i = 0; i < length; i++) {
+      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
+
+      switch (len) {
+        case 1: listeners[i].fn.call(listeners[i].context); break;
+        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
+        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
+        case 4: listeners[i].fn.call(listeners[i].context, a1, a2, a3); break;
+        default:
+          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
+            args[j - 1] = arguments[j];
+          }
+
+          listeners[i].fn.apply(listeners[i].context, args);
+      }
+    }
+  }
+
+  return true;
+};
+
+/**
+ * Add a listener for a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {*} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @public
+ */
+EventEmitter.prototype.on = function on(event, fn, context) {
+  return addListener(this, event, fn, context, false);
+};
+
+/**
+ * Add a one-time listener for a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @param {Function} fn The listener function.
+ * @param {*} [context=this] The context to invoke the listener with.
+ * @returns {EventEmitter} `this`.
+ * @public
+ */
+EventEmitter.prototype.once = function once(event, fn, context) {
+  return addListener(this, event, fn, context, true);
+};
+
+/**
+ * Remove the listeners of a given event.
+ *
+ * @param {(String|Symbol)} event The event name.
+ * @param {Function} fn Only remove the listeners that match this function.
+ * @param {*} context Only remove the listeners that have this context.
+ * @param {Boolean} once Only remove one-time listeners.
+ * @returns {EventEmitter} `this`.
+ * @public
+ */
+EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
+  var evt = prefix ? prefix + event : event;
+
+  if (!this._events[evt]) return this;
+  if (!fn) {
+    clearEvent(this, evt);
+    return this;
+  }
+
+  var listeners = this._events[evt];
+
+  if (listeners.fn) {
+    if (
+      listeners.fn === fn &&
+      (!once || listeners.once) &&
+      (!context || listeners.context === context)
+    ) {
+      clearEvent(this, evt);
+    }
+  } else {
+    for (var i = 0, events = [], length = listeners.length; i < length; i++) {
+      if (
+        listeners[i].fn !== fn ||
+        (once && !listeners[i].once) ||
+        (context && listeners[i].context !== context)
+      ) {
+        events.push(listeners[i]);
+      }
+    }
+
+    //
+    // Reset the array, or remove it completely if we have no more listeners.
+    //
+    if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+    else clearEvent(this, evt);
+  }
+
+  return this;
+};
+
+/**
+ * Remove all listeners, or those of the specified event.
+ *
+ * @param {(String|Symbol)} [event] The event name.
+ * @returns {EventEmitter} `this`.
+ * @public
+ */
+EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
+  var evt;
+
+  if (event) {
+    evt = prefix ? prefix + event : event;
+    if (this._events[evt]) clearEvent(this, evt);
+  } else {
+    this._events = new Events();
+    this._eventsCount = 0;
+  }
+
+  return this;
+};
+
+//
+// Alias methods names because people roll like that.
+//
+EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
+EventEmitter.prototype.addListener = EventEmitter.prototype.on;
+
+//
+// Expose the prefix.
+//
+EventEmitter.prefixed = prefix;
+
+//
+// Allow `EventEmitter` to be imported as module namespace.
+//
+EventEmitter.EventEmitter = EventEmitter;
+
+//
+// Expose the module.
+//
+if (true) {
+  module.exports = EventEmitter;
+}
+
 
 /***/ }),
 
-/***/ 2766:
+/***/ 4374:
 /***/ ((module) => {
 
 "use strict";
@@ -10962,15 +8035,15 @@ module.exports = (promise, onFinally) => {
 
 /***/ }),
 
-/***/ 6459:
+/***/ 8278:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const EventEmitter = __nccwpck_require__(301);
-const p_timeout_1 = __nccwpck_require__(4802);
-const priority_queue_1 = __nccwpck_require__(5905);
+const EventEmitter = __nccwpck_require__(870);
+const p_timeout_1 = __nccwpck_require__(9182);
+const priority_queue_1 = __nccwpck_require__(5002);
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const empty = () => { };
 const timeoutError = new p_timeout_1.TimeoutError();
@@ -11249,7 +8322,7 @@ exports["default"] = PQueue;
 
 /***/ }),
 
-/***/ 9015:
+/***/ 10:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -11278,13 +8351,13 @@ exports["default"] = lowerBound;
 
 /***/ }),
 
-/***/ 5905:
+/***/ 5002:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const lower_bound_1 = __nccwpck_require__(9015);
+const lower_bound_1 = __nccwpck_require__(10);
 class PriorityQueue {
     constructor() {
         this._queue = [];
@@ -11318,356 +8391,12 @@ exports["default"] = PriorityQueue;
 
 /***/ }),
 
-/***/ 301:
-/***/ ((module) => {
-
-"use strict";
-
-
-var has = Object.prototype.hasOwnProperty
-  , prefix = '~';
-
-/**
- * Constructor to create a storage for our `EE` objects.
- * An `Events` instance is a plain object whose properties are event names.
- *
- * @constructor
- * @private
- */
-function Events() {}
-
-//
-// We try to not inherit from `Object.prototype`. In some engines creating an
-// instance in this way is faster than calling `Object.create(null)` directly.
-// If `Object.create(null)` is not supported we prefix the event names with a
-// character to make sure that the built-in object properties are not
-// overridden or used as an attack vector.
-//
-if (Object.create) {
-  Events.prototype = Object.create(null);
-
-  //
-  // This hack is needed because the `__proto__` property is still inherited in
-  // some old browsers like Android 4, iPhone 5.1, Opera 11 and Safari 5.
-  //
-  if (!new Events().__proto__) prefix = false;
-}
-
-/**
- * Representation of a single event listener.
- *
- * @param {Function} fn The listener function.
- * @param {*} context The context to invoke the listener with.
- * @param {Boolean} [once=false] Specify if the listener is a one-time listener.
- * @constructor
- * @private
- */
-function EE(fn, context, once) {
-  this.fn = fn;
-  this.context = context;
-  this.once = once || false;
-}
-
-/**
- * Add a listener for a given event.
- *
- * @param {EventEmitter} emitter Reference to the `EventEmitter` instance.
- * @param {(String|Symbol)} event The event name.
- * @param {Function} fn The listener function.
- * @param {*} context The context to invoke the listener with.
- * @param {Boolean} once Specify if the listener is a one-time listener.
- * @returns {EventEmitter}
- * @private
- */
-function addListener(emitter, event, fn, context, once) {
-  if (typeof fn !== 'function') {
-    throw new TypeError('The listener must be a function');
-  }
-
-  var listener = new EE(fn, context || emitter, once)
-    , evt = prefix ? prefix + event : event;
-
-  if (!emitter._events[evt]) emitter._events[evt] = listener, emitter._eventsCount++;
-  else if (!emitter._events[evt].fn) emitter._events[evt].push(listener);
-  else emitter._events[evt] = [emitter._events[evt], listener];
-
-  return emitter;
-}
-
-/**
- * Clear event by name.
- *
- * @param {EventEmitter} emitter Reference to the `EventEmitter` instance.
- * @param {(String|Symbol)} evt The Event name.
- * @private
- */
-function clearEvent(emitter, evt) {
-  if (--emitter._eventsCount === 0) emitter._events = new Events();
-  else delete emitter._events[evt];
-}
-
-/**
- * Minimal `EventEmitter` interface that is molded against the Node.js
- * `EventEmitter` interface.
- *
- * @constructor
- * @public
- */
-function EventEmitter() {
-  this._events = new Events();
-  this._eventsCount = 0;
-}
-
-/**
- * Return an array listing the events for which the emitter has registered
- * listeners.
- *
- * @returns {Array}
- * @public
- */
-EventEmitter.prototype.eventNames = function eventNames() {
-  var names = []
-    , events
-    , name;
-
-  if (this._eventsCount === 0) return names;
-
-  for (name in (events = this._events)) {
-    if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
-  }
-
-  if (Object.getOwnPropertySymbols) {
-    return names.concat(Object.getOwnPropertySymbols(events));
-  }
-
-  return names;
-};
-
-/**
- * Return the listeners registered for a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @returns {Array} The registered listeners.
- * @public
- */
-EventEmitter.prototype.listeners = function listeners(event) {
-  var evt = prefix ? prefix + event : event
-    , handlers = this._events[evt];
-
-  if (!handlers) return [];
-  if (handlers.fn) return [handlers.fn];
-
-  for (var i = 0, l = handlers.length, ee = new Array(l); i < l; i++) {
-    ee[i] = handlers[i].fn;
-  }
-
-  return ee;
-};
-
-/**
- * Return the number of listeners listening to a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @returns {Number} The number of listeners.
- * @public
- */
-EventEmitter.prototype.listenerCount = function listenerCount(event) {
-  var evt = prefix ? prefix + event : event
-    , listeners = this._events[evt];
-
-  if (!listeners) return 0;
-  if (listeners.fn) return 1;
-  return listeners.length;
-};
-
-/**
- * Calls each of the listeners registered for a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @returns {Boolean} `true` if the event had listeners, else `false`.
- * @public
- */
-EventEmitter.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
-  var evt = prefix ? prefix + event : event;
-
-  if (!this._events[evt]) return false;
-
-  var listeners = this._events[evt]
-    , len = arguments.length
-    , args
-    , i;
-
-  if (listeners.fn) {
-    if (listeners.once) this.removeListener(event, listeners.fn, undefined, true);
-
-    switch (len) {
-      case 1: return listeners.fn.call(listeners.context), true;
-      case 2: return listeners.fn.call(listeners.context, a1), true;
-      case 3: return listeners.fn.call(listeners.context, a1, a2), true;
-      case 4: return listeners.fn.call(listeners.context, a1, a2, a3), true;
-      case 5: return listeners.fn.call(listeners.context, a1, a2, a3, a4), true;
-      case 6: return listeners.fn.call(listeners.context, a1, a2, a3, a4, a5), true;
-    }
-
-    for (i = 1, args = new Array(len -1); i < len; i++) {
-      args[i - 1] = arguments[i];
-    }
-
-    listeners.fn.apply(listeners.context, args);
-  } else {
-    var length = listeners.length
-      , j;
-
-    for (i = 0; i < length; i++) {
-      if (listeners[i].once) this.removeListener(event, listeners[i].fn, undefined, true);
-
-      switch (len) {
-        case 1: listeners[i].fn.call(listeners[i].context); break;
-        case 2: listeners[i].fn.call(listeners[i].context, a1); break;
-        case 3: listeners[i].fn.call(listeners[i].context, a1, a2); break;
-        case 4: listeners[i].fn.call(listeners[i].context, a1, a2, a3); break;
-        default:
-          if (!args) for (j = 1, args = new Array(len -1); j < len; j++) {
-            args[j - 1] = arguments[j];
-          }
-
-          listeners[i].fn.apply(listeners[i].context, args);
-      }
-    }
-  }
-
-  return true;
-};
-
-/**
- * Add a listener for a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @param {Function} fn The listener function.
- * @param {*} [context=this] The context to invoke the listener with.
- * @returns {EventEmitter} `this`.
- * @public
- */
-EventEmitter.prototype.on = function on(event, fn, context) {
-  return addListener(this, event, fn, context, false);
-};
-
-/**
- * Add a one-time listener for a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @param {Function} fn The listener function.
- * @param {*} [context=this] The context to invoke the listener with.
- * @returns {EventEmitter} `this`.
- * @public
- */
-EventEmitter.prototype.once = function once(event, fn, context) {
-  return addListener(this, event, fn, context, true);
-};
-
-/**
- * Remove the listeners of a given event.
- *
- * @param {(String|Symbol)} event The event name.
- * @param {Function} fn Only remove the listeners that match this function.
- * @param {*} context Only remove the listeners that have this context.
- * @param {Boolean} once Only remove one-time listeners.
- * @returns {EventEmitter} `this`.
- * @public
- */
-EventEmitter.prototype.removeListener = function removeListener(event, fn, context, once) {
-  var evt = prefix ? prefix + event : event;
-
-  if (!this._events[evt]) return this;
-  if (!fn) {
-    clearEvent(this, evt);
-    return this;
-  }
-
-  var listeners = this._events[evt];
-
-  if (listeners.fn) {
-    if (
-      listeners.fn === fn &&
-      (!once || listeners.once) &&
-      (!context || listeners.context === context)
-    ) {
-      clearEvent(this, evt);
-    }
-  } else {
-    for (var i = 0, events = [], length = listeners.length; i < length; i++) {
-      if (
-        listeners[i].fn !== fn ||
-        (once && !listeners[i].once) ||
-        (context && listeners[i].context !== context)
-      ) {
-        events.push(listeners[i]);
-      }
-    }
-
-    //
-    // Reset the array, or remove it completely if we have no more listeners.
-    //
-    if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
-    else clearEvent(this, evt);
-  }
-
-  return this;
-};
-
-/**
- * Remove all listeners, or those of the specified event.
- *
- * @param {(String|Symbol)} [event] The event name.
- * @returns {EventEmitter} `this`.
- * @public
- */
-EventEmitter.prototype.removeAllListeners = function removeAllListeners(event) {
-  var evt;
-
-  if (event) {
-    evt = prefix ? prefix + event : event;
-    if (this._events[evt]) clearEvent(this, evt);
-  } else {
-    this._events = new Events();
-    this._eventsCount = 0;
-  }
-
-  return this;
-};
-
-//
-// Alias methods names because people roll like that.
-//
-EventEmitter.prototype.off = EventEmitter.prototype.removeListener;
-EventEmitter.prototype.addListener = EventEmitter.prototype.on;
-
-//
-// Expose the prefix.
-//
-EventEmitter.prefixed = prefix;
-
-//
-// Allow `EventEmitter` to be imported as module namespace.
-//
-EventEmitter.EventEmitter = EventEmitter;
-
-//
-// Expose the module.
-//
-if (true) {
-  module.exports = EventEmitter;
-}
-
-
-/***/ }),
-
-/***/ 2103:
+/***/ 6545:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
-const retry = __nccwpck_require__(5546);
+const retry = __nccwpck_require__(7752);
 
 const networkErrorMsgs = [
 	'Failed to fetch', // Chrome
@@ -11755,13 +8484,13 @@ module.exports.AbortError = AbortError;
 
 /***/ }),
 
-/***/ 4802:
+/***/ 9182:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const pFinally = __nccwpck_require__(2766);
+const pFinally = __nccwpck_require__(4374);
 
 class TimeoutError extends Error {
 	constructor(message) {
@@ -11820,17 +8549,17 @@ module.exports.TimeoutError = TimeoutError;
 
 /***/ }),
 
-/***/ 5546:
+/***/ 7752:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(7084);
+module.exports = __nccwpck_require__(630);
 
 /***/ }),
 
-/***/ 7084:
+/***/ 630:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-var RetryOperation = __nccwpck_require__(9538);
+var RetryOperation = __nccwpck_require__(5672);
 
 exports.operation = function(options) {
   var timeouts = exports.timeouts(options);
@@ -11934,7 +8663,7 @@ exports.wrap = function(obj, options, methods) {
 
 /***/ }),
 
-/***/ 9538:
+/***/ 5672:
 /***/ ((module) => {
 
 function RetryOperation(timeouts, options) {
@@ -12103,15 +8832,15 @@ RetryOperation.prototype.mainError = function() {
 
 /***/ }),
 
-/***/ 770:
+/***/ 2345:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(218);
+module.exports = __nccwpck_require__(6979);
 
 
 /***/ }),
 
-/***/ 218:
+/***/ 6979:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -12383,34 +9112,34 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 6752:
+/***/ 4485:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Client = __nccwpck_require__(3701)
-const Dispatcher = __nccwpck_require__(883)
-const Pool = __nccwpck_require__(628)
-const BalancedPool = __nccwpck_require__(837)
-const Agent = __nccwpck_require__(7405)
-const ProxyAgent = __nccwpck_require__(6672)
-const EnvHttpProxyAgent = __nccwpck_require__(3137)
-const RetryAgent = __nccwpck_require__(50)
-const errors = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
+const Client = __nccwpck_require__(9068)
+const Dispatcher = __nccwpck_require__(6334)
+const Pool = __nccwpck_require__(2129)
+const BalancedPool = __nccwpck_require__(3558)
+const Agent = __nccwpck_require__(6978)
+const ProxyAgent = __nccwpck_require__(5163)
+const EnvHttpProxyAgent = __nccwpck_require__(8992)
+const RetryAgent = __nccwpck_require__(9401)
+const errors = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
 const { InvalidArgumentError } = errors
-const api = __nccwpck_require__(6615)
-const buildConnector = __nccwpck_require__(9136)
-const MockClient = __nccwpck_require__(7365)
-const MockAgent = __nccwpck_require__(7501)
-const MockPool = __nccwpck_require__(4004)
-const mockErrors = __nccwpck_require__(2429)
-const RetryHandler = __nccwpck_require__(7816)
-const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(2581)
-const DecoratorHandler = __nccwpck_require__(8155)
-const RedirectHandler = __nccwpck_require__(8754)
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const api = __nccwpck_require__(1686)
+const buildConnector = __nccwpck_require__(3887)
+const MockClient = __nccwpck_require__(418)
+const MockAgent = __nccwpck_require__(20)
+const MockPool = __nccwpck_require__(6863)
+const mockErrors = __nccwpck_require__(5022)
+const RetryHandler = __nccwpck_require__(1773)
+const { getGlobalDispatcher, setGlobalDispatcher } = __nccwpck_require__(8282)
+const DecoratorHandler = __nccwpck_require__(6198)
+const RedirectHandler = __nccwpck_require__(7293)
+const createRedirectInterceptor = __nccwpck_require__(4391)
 
 Object.assign(Dispatcher.prototype, api)
 
@@ -12428,10 +9157,10 @@ module.exports.DecoratorHandler = DecoratorHandler
 module.exports.RedirectHandler = RedirectHandler
 module.exports.createRedirectInterceptor = createRedirectInterceptor
 module.exports.interceptors = {
-  redirect: __nccwpck_require__(1514),
-  retry: __nccwpck_require__(2026),
-  dump: __nccwpck_require__(8060),
-  dns: __nccwpck_require__(379)
+  redirect: __nccwpck_require__(3353),
+  retry: __nccwpck_require__(9663),
+  dump: __nccwpck_require__(9847),
+  dns: __nccwpck_require__(3670)
 }
 
 module.exports.buildConnector = buildConnector
@@ -12493,7 +9222,7 @@ function makeDispatcher (fn) {
 module.exports.setGlobalDispatcher = setGlobalDispatcher
 module.exports.getGlobalDispatcher = getGlobalDispatcher
 
-const fetchImpl = (__nccwpck_require__(4398).fetch)
+const fetchImpl = (__nccwpck_require__(9295).fetch)
 module.exports.fetch = async function fetch (init, options = undefined) {
   try {
     return await fetchImpl(init, options)
@@ -12505,39 +9234,39 @@ module.exports.fetch = async function fetch (init, options = undefined) {
     throw err
   }
 }
-module.exports.Headers = __nccwpck_require__(660).Headers
-module.exports.Response = __nccwpck_require__(9051).Response
-module.exports.Request = __nccwpck_require__(9967).Request
-module.exports.FormData = __nccwpck_require__(5910).FormData
+module.exports.Headers = __nccwpck_require__(6017).Headers
+module.exports.Response = __nccwpck_require__(4136).Response
+module.exports.Request = __nccwpck_require__(9990).Request
+module.exports.FormData = __nccwpck_require__(125).FormData
 module.exports.File = globalThis.File ?? (__nccwpck_require__(4573).File)
-module.exports.FileReader = __nccwpck_require__(8355).FileReader
+module.exports.FileReader = __nccwpck_require__(548).FileReader
 
-const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(1059)
+const { setGlobalOrigin, getGlobalOrigin } = __nccwpck_require__(8624)
 
 module.exports.setGlobalOrigin = setGlobalOrigin
 module.exports.getGlobalOrigin = getGlobalOrigin
 
-const { CacheStorage } = __nccwpck_require__(3245)
-const { kConstruct } = __nccwpck_require__(109)
+const { CacheStorage } = __nccwpck_require__(5758)
+const { kConstruct } = __nccwpck_require__(8364)
 
 // Cache & CacheStorage are tightly coupled with fetch. Even if it may run
 // in an older version of Node, it doesn't have any use without fetch.
 module.exports.caches = new CacheStorage(kConstruct)
 
-const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(9061)
+const { deleteCookie, getCookies, getSetCookies, setCookie } = __nccwpck_require__(8180)
 
 module.exports.deleteCookie = deleteCookie
 module.exports.getCookies = getCookies
 module.exports.getSetCookies = getSetCookies
 module.exports.setCookie = setCookie
 
-const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(1900)
+const { parseMIMEType, serializeAMimeType } = __nccwpck_require__(4003)
 
 module.exports.parseMIMEType = parseMIMEType
 module.exports.serializeAMimeType = serializeAMimeType
 
-const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(5188)
-module.exports.WebSocket = __nccwpck_require__(3726).WebSocket
+const { CloseEvent, ErrorEvent, MessageEvent } = __nccwpck_require__(2875)
+module.exports.WebSocket = __nccwpck_require__(2567).WebSocket
 module.exports.CloseEvent = CloseEvent
 module.exports.ErrorEvent = ErrorEvent
 module.exports.MessageEvent = MessageEvent
@@ -12553,18 +9282,18 @@ module.exports.MockPool = MockPool
 module.exports.MockAgent = MockAgent
 module.exports.mockErrors = mockErrors
 
-const { EventSource } = __nccwpck_require__(1238)
+const { EventSource } = __nccwpck_require__(7615)
 
 module.exports.EventSource = EventSource
 
 
 /***/ }),
 
-/***/ 158:
+/***/ 8685:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { addAbortListener } = __nccwpck_require__(3440)
-const { RequestAbortedError } = __nccwpck_require__(8707)
+const { addAbortListener } = __nccwpck_require__(4393)
+const { RequestAbortedError } = __nccwpck_require__(6246)
 
 const kListener = Symbol('kListener')
 const kSignal = Symbol('kSignal')
@@ -12624,7 +9353,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2279:
+/***/ 8849:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -12632,9 +9361,9 @@ module.exports = {
 
 const assert = __nccwpck_require__(4589)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
+const { addSignal, removeSignal } = __nccwpck_require__(8685)
 
 class ConnectHandler extends AsyncResource {
   constructor (opts, callback) {
@@ -12740,7 +9469,7 @@ module.exports = connect
 
 /***/ }),
 
-/***/ 6862:
+/***/ 9193:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -12755,10 +9484,10 @@ const {
   InvalidArgumentError,
   InvalidReturnValueError,
   RequestAbortedError
-} = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
+} = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const { addSignal, removeSignal } = __nccwpck_require__(8685)
 const assert = __nccwpck_require__(4589)
 
 const kResume = Symbol('resume')
@@ -12999,17 +9728,17 @@ module.exports = pipeline
 
 /***/ }),
 
-/***/ 4043:
+/***/ 3666:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { Readable } = __nccwpck_require__(9927)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(7655)
+const { Readable } = __nccwpck_require__(3980)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(2776)
 const { AsyncResource } = __nccwpck_require__(6698)
 
 class RequestHandler extends AsyncResource {
@@ -13221,7 +9950,7 @@ module.exports.RequestHandler = RequestHandler
 
 /***/ }),
 
-/***/ 3560:
+/***/ 6119:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -13229,11 +9958,11 @@ module.exports.RequestHandler = RequestHandler
 
 const assert = __nccwpck_require__(4589)
 const { finished, PassThrough } = __nccwpck_require__(7075)
-const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
-const { getResolveErrorBodyCallback } = __nccwpck_require__(7655)
+const { InvalidArgumentError, InvalidReturnValueError } = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
+const { getResolveErrorBodyCallback } = __nccwpck_require__(2776)
 const { AsyncResource } = __nccwpck_require__(6698)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const { addSignal, removeSignal } = __nccwpck_require__(8685)
 
 class StreamHandler extends AsyncResource {
   constructor (opts, factory, callback) {
@@ -13449,16 +10178,16 @@ module.exports = stream
 
 /***/ }),
 
-/***/ 1882:
+/***/ 2843:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { InvalidArgumentError, SocketError } = __nccwpck_require__(8707)
+const { InvalidArgumentError, SocketError } = __nccwpck_require__(6246)
 const { AsyncResource } = __nccwpck_require__(6698)
-const util = __nccwpck_require__(3440)
-const { addSignal, removeSignal } = __nccwpck_require__(158)
+const util = __nccwpck_require__(4393)
+const { addSignal, removeSignal } = __nccwpck_require__(8685)
 const assert = __nccwpck_require__(4589)
 
 class UpgradeHandler extends AsyncResource {
@@ -13565,22 +10294,22 @@ module.exports = upgrade
 
 /***/ }),
 
-/***/ 6615:
+/***/ 1686:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-module.exports.request = __nccwpck_require__(4043)
-module.exports.stream = __nccwpck_require__(3560)
-module.exports.pipeline = __nccwpck_require__(6862)
-module.exports.upgrade = __nccwpck_require__(1882)
-module.exports.connect = __nccwpck_require__(2279)
+module.exports.request = __nccwpck_require__(3666)
+module.exports.stream = __nccwpck_require__(6119)
+module.exports.pipeline = __nccwpck_require__(9193)
+module.exports.upgrade = __nccwpck_require__(2843)
+module.exports.connect = __nccwpck_require__(8849)
 
 
 /***/ }),
 
-/***/ 9927:
+/***/ 3980:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -13590,9 +10319,9 @@ module.exports.connect = __nccwpck_require__(2279)
 
 const assert = __nccwpck_require__(4589)
 const { Readable } = __nccwpck_require__(7075)
-const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
-const { ReadableStreamFrom } = __nccwpck_require__(3440)
+const { RequestAbortedError, NotSupportedError, InvalidArgumentError, AbortError } = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
+const { ReadableStreamFrom } = __nccwpck_require__(4393)
 
 const kConsume = Symbol('kConsume')
 const kReading = Symbol('kReading')
@@ -13973,15 +10702,15 @@ module.exports = { Readable: BodyReadable, chunksDecode }
 
 /***/ }),
 
-/***/ 7655:
+/***/ 2776:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const assert = __nccwpck_require__(4589)
 const {
   ResponseStatusCodeError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(6246)
 
-const { chunksDecode } = __nccwpck_require__(9927)
+const { chunksDecode } = __nccwpck_require__(3980)
 const CHUNK_LIMIT = 128 * 1024
 
 async function getResolveErrorBodyCallback ({ callback, body, contentType, statusCode, statusMessage, headers }) {
@@ -14073,7 +10802,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9136:
+/***/ 3887:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -14081,9 +10810,9 @@ module.exports = {
 
 const net = __nccwpck_require__(7030)
 const assert = __nccwpck_require__(4589)
-const util = __nccwpck_require__(3440)
-const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(8707)
-const timers = __nccwpck_require__(6603)
+const util = __nccwpck_require__(4393)
+const { InvalidArgumentError, ConnectTimeoutError } = __nccwpck_require__(6246)
+const timers = __nccwpck_require__(6318)
 
 function noop () {}
 
@@ -14321,7 +11050,7 @@ module.exports = buildConnector
 
 /***/ }),
 
-/***/ 735:
+/***/ 1576:
 /***/ ((module) => {
 
 "use strict";
@@ -14447,7 +11176,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2414:
+/***/ 7597:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -14657,7 +11386,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8707:
+/***/ 6246:
 /***/ ((module) => {
 
 "use strict";
@@ -15090,7 +11819,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4655:
+/***/ 9780:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -15099,7 +11828,7 @@ module.exports = {
 const {
   InvalidArgumentError,
   NotSupportedError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(6246)
 const assert = __nccwpck_require__(4589)
 const {
   isValidHTTPToken,
@@ -15114,9 +11843,9 @@ const {
   validateHandler,
   getServerName,
   normalizedMethodRecords
-} = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(735)
+} = __nccwpck_require__(4393)
+const { channels } = __nccwpck_require__(7597)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(1576)
 
 // Verifies that a given path is valid does not contain control chars \x00 to \x20
 const invalidPathRegex = /[^\u0021-\u00ff]/
@@ -15514,7 +12243,7 @@ module.exports = Request
 
 /***/ }),
 
-/***/ 6443:
+/***/ 4776:
 /***/ ((module) => {
 
 module.exports = {
@@ -15588,7 +12317,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7752:
+/***/ 4209:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -15597,7 +12326,7 @@ module.exports = {
 const {
   wellknownHeaderNames,
   headerNameLowerCasedRecord
-} = __nccwpck_require__(735)
+} = __nccwpck_require__(1576)
 
 class TstNode {
   /** @type {any} */
@@ -15748,14 +12477,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3440:
+/***/ 4393:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(6443)
+const { kDestroyed, kBodyUsed, kListeners, kBody } = __nccwpck_require__(4776)
 const { IncomingMessage } = __nccwpck_require__(7067)
 const stream = __nccwpck_require__(7075)
 const net = __nccwpck_require__(7030)
@@ -15763,9 +12492,9 @@ const { Blob } = __nccwpck_require__(4573)
 const nodeUtil = __nccwpck_require__(7975)
 const { stringify } = __nccwpck_require__(1792)
 const { EventEmitter: EE } = __nccwpck_require__(8474)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const { headerNameLowerCasedRecord } = __nccwpck_require__(735)
-const { tree } = __nccwpck_require__(7752)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
+const { headerNameLowerCasedRecord } = __nccwpck_require__(1576)
+const { tree } = __nccwpck_require__(4209)
 
 const [nodeMajor, nodeMinor] = process.versions.node.split('.').map(v => Number(v))
 
@@ -16475,19 +13204,19 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7405:
+/***/ 6978:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(6443)
-const DispatcherBase = __nccwpck_require__(1841)
-const Pool = __nccwpck_require__(628)
-const Client = __nccwpck_require__(3701)
-const util = __nccwpck_require__(3440)
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
+const { kClients, kRunning, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(4776)
+const DispatcherBase = __nccwpck_require__(1566)
+const Pool = __nccwpck_require__(2129)
+const Client = __nccwpck_require__(9068)
+const util = __nccwpck_require__(4393)
+const createRedirectInterceptor = __nccwpck_require__(4391)
 
 const kOnConnect = Symbol('onConnect')
 const kOnDisconnect = Symbol('onDisconnect')
@@ -16612,7 +13341,7 @@ module.exports = Agent
 
 /***/ }),
 
-/***/ 837:
+/***/ 3558:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -16621,7 +13350,7 @@ module.exports = Agent
 const {
   BalancedPoolMissingUpstreamError,
   InvalidArgumentError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(6246)
 const {
   PoolBase,
   kClients,
@@ -16629,10 +13358,10 @@ const {
   kAddClient,
   kRemoveClient,
   kGetDispatcher
-} = __nccwpck_require__(2128)
-const Pool = __nccwpck_require__(628)
-const { kUrl, kInterceptors } = __nccwpck_require__(6443)
-const { parseOrigin } = __nccwpck_require__(3440)
+} = __nccwpck_require__(2027)
+const Pool = __nccwpck_require__(2129)
+const { kUrl, kInterceptors } = __nccwpck_require__(4776)
+const { parseOrigin } = __nccwpck_require__(4393)
 const kFactory = Symbol('factory')
 
 const kOptions = Symbol('options')
@@ -16829,7 +13558,7 @@ module.exports = BalancedPool
 
 /***/ }),
 
-/***/ 637:
+/***/ 938:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -16838,9 +13567,9 @@ module.exports = BalancedPool
 /* global WebAssembly */
 
 const assert = __nccwpck_require__(4589)
-const util = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const timers = __nccwpck_require__(6603)
+const util = __nccwpck_require__(4393)
+const { channels } = __nccwpck_require__(7597)
+const timers = __nccwpck_require__(6318)
 const {
   RequestContentLengthMismatchError,
   ResponseContentLengthMismatchError,
@@ -16853,7 +13582,7 @@ const {
   BodyTimeoutError,
   HTTPParserError,
   ResponseExceededMaxSizeError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(6246)
 const {
   kUrl,
   kReset,
@@ -16886,9 +13615,9 @@ const {
   kOnError,
   kResume,
   kHTTPContext
-} = __nccwpck_require__(6443)
+} = __nccwpck_require__(4776)
 
-const constants = __nccwpck_require__(2824)
+const constants = __nccwpck_require__(1555)
 const EMPTY_BUF = Buffer.alloc(0)
 const FastBuffer = Buffer[Symbol.species]
 const addListener = util.addListener
@@ -16900,11 +13629,11 @@ const kSocketUsed = Symbol('kSocketUsed')
 let extractBody
 
 async function lazyllhttp () {
-  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(3870) : undefined
+  const llhttpWasmData = process.env.JEST_WORKER_ID ? __nccwpck_require__(285) : undefined
 
   let mod
   try {
-    mod = await WebAssembly.compile(__nccwpck_require__(3434))
+    mod = await WebAssembly.compile(__nccwpck_require__(5631))
   } catch (e) {
     /* istanbul ignore next */
 
@@ -16912,7 +13641,7 @@ async function lazyllhttp () {
     // being enabled, but the occurring of this other error
     // * https://github.com/emscripten-core/emscripten/issues/11495
     // got me to remove that check to avoid breaking Node 12.
-    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(3870))
+    mod = await WebAssembly.compile(llhttpWasmData || __nccwpck_require__(285))
   }
 
   return await WebAssembly.instantiate(mod, {
@@ -17820,7 +14549,7 @@ function writeH1 (client, request) {
 
   if (util.isFormDataLike(body)) {
     if (!extractBody) {
-      extractBody = (__nccwpck_require__(4492).extractBody)
+      extractBody = (__nccwpck_require__(5023).extractBody)
     }
 
     const [bodyStream, contentType] = extractBody(body)
@@ -18333,7 +15062,7 @@ module.exports = connectH1
 
 /***/ }),
 
-/***/ 8788:
+/***/ 3511:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -18341,13 +15070,13 @@ module.exports = connectH1
 
 const assert = __nccwpck_require__(4589)
 const { pipeline } = __nccwpck_require__(7075)
-const util = __nccwpck_require__(3440)
+const util = __nccwpck_require__(4393)
 const {
   RequestContentLengthMismatchError,
   RequestAbortedError,
   SocketError,
   InformationalError
-} = __nccwpck_require__(8707)
+} = __nccwpck_require__(6246)
 const {
   kUrl,
   kReset,
@@ -18366,7 +15095,7 @@ const {
   kResume,
   kSize,
   kHTTPContext
-} = __nccwpck_require__(6443)
+} = __nccwpck_require__(4776)
 
 const kOpenStreams = Symbol('open streams')
 
@@ -18725,7 +15454,7 @@ function writeH2 (client, request) {
   let contentLength = util.bodyLength(body)
 
   if (util.isFormDataLike(body)) {
-    extractBody ??= (__nccwpck_require__(4492).extractBody)
+    extractBody ??= (__nccwpck_require__(5023).extractBody)
 
     const [bodyStream, contentType] = extractBody(body)
     headers['content-type'] = contentType
@@ -19085,7 +15814,7 @@ module.exports = connectH2
 
 /***/ }),
 
-/***/ 3701:
+/***/ 9068:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -19096,16 +15825,16 @@ module.exports = connectH2
 const assert = __nccwpck_require__(4589)
 const net = __nccwpck_require__(7030)
 const http = __nccwpck_require__(7067)
-const util = __nccwpck_require__(3440)
-const { channels } = __nccwpck_require__(2414)
-const Request = __nccwpck_require__(4655)
-const DispatcherBase = __nccwpck_require__(1841)
+const util = __nccwpck_require__(4393)
+const { channels } = __nccwpck_require__(7597)
+const Request = __nccwpck_require__(9780)
+const DispatcherBase = __nccwpck_require__(1566)
 const {
   InvalidArgumentError,
   InformationalError,
   ClientDestroyedError
-} = __nccwpck_require__(8707)
-const buildConnector = __nccwpck_require__(9136)
+} = __nccwpck_require__(6246)
+const buildConnector = __nccwpck_require__(3887)
 const {
   kUrl,
   kServerName,
@@ -19147,9 +15876,9 @@ const {
   kHTTPContext,
   kMaxConcurrentStreams,
   kResume
-} = __nccwpck_require__(6443)
-const connectH1 = __nccwpck_require__(637)
-const connectH2 = __nccwpck_require__(8788)
+} = __nccwpck_require__(4776)
+const connectH1 = __nccwpck_require__(938)
+const connectH2 = __nccwpck_require__(3511)
 let deprecatedInterceptorWarned = false
 
 const kClosedResolve = Symbol('kClosedResolve')
@@ -19456,7 +16185,7 @@ class Client extends DispatcherBase {
   }
 }
 
-const createRedirectInterceptor = __nccwpck_require__(5092)
+const createRedirectInterceptor = __nccwpck_require__(4391)
 
 function onError (client, err) {
   if (
@@ -19716,19 +16445,19 @@ module.exports = Client
 
 /***/ }),
 
-/***/ 1841:
+/***/ 1566:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Dispatcher = __nccwpck_require__(883)
+const Dispatcher = __nccwpck_require__(6334)
 const {
   ClientDestroyedError,
   ClientClosedError,
   InvalidArgumentError
-} = __nccwpck_require__(8707)
-const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(6443)
+} = __nccwpck_require__(6246)
+const { kDestroy, kClose, kClosed, kDestroyed, kDispatch, kInterceptors } = __nccwpck_require__(4776)
 
 const kOnDestroyed = Symbol('onDestroyed')
 const kOnClosed = Symbol('onClosed')
@@ -19923,7 +16652,7 @@ module.exports = DispatcherBase
 
 /***/ }),
 
-/***/ 883:
+/***/ 6334:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -19996,16 +16725,16 @@ module.exports = Dispatcher
 
 /***/ }),
 
-/***/ 3137:
+/***/ 8992:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const DispatcherBase = __nccwpck_require__(1841)
-const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(6443)
-const ProxyAgent = __nccwpck_require__(6672)
-const Agent = __nccwpck_require__(7405)
+const DispatcherBase = __nccwpck_require__(1566)
+const { kClose, kDestroy, kClosed, kDestroyed, kDispatch, kNoProxyAgent, kHttpProxyAgent, kHttpsProxyAgent } = __nccwpck_require__(4776)
+const ProxyAgent = __nccwpck_require__(5163)
+const Agent = __nccwpck_require__(6978)
 
 const DEFAULT_PORTS = {
   'http:': 80,
@@ -20164,7 +16893,7 @@ module.exports = EnvHttpProxyAgent
 
 /***/ }),
 
-/***/ 4660:
+/***/ 6159:
 /***/ ((module) => {
 
 "use strict";
@@ -20289,16 +17018,16 @@ module.exports = class FixedQueue {
 
 /***/ }),
 
-/***/ 2128:
+/***/ 2027:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const DispatcherBase = __nccwpck_require__(1841)
-const FixedQueue = __nccwpck_require__(4660)
-const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(6443)
-const PoolStats = __nccwpck_require__(3246)
+const DispatcherBase = __nccwpck_require__(1566)
+const FixedQueue = __nccwpck_require__(6159)
+const { kConnected, kSize, kRunning, kPending, kQueued, kBusy, kFree, kUrl, kClose, kDestroy, kDispatch } = __nccwpck_require__(4776)
+const PoolStats = __nccwpck_require__(3479)
 
 const kClients = Symbol('clients')
 const kNeedDrain = Symbol('needDrain')
@@ -20491,10 +17220,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3246:
+/***/ 3479:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(6443)
+const { kFree, kConnected, kPending, kQueued, kRunning, kSize } = __nccwpck_require__(4776)
 const kPool = Symbol('pool')
 
 class PoolStats {
@@ -20532,7 +17261,7 @@ module.exports = PoolStats
 
 /***/ }),
 
-/***/ 628:
+/***/ 2129:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -20544,14 +17273,14 @@ const {
   kNeedDrain,
   kAddClient,
   kGetDispatcher
-} = __nccwpck_require__(2128)
-const Client = __nccwpck_require__(3701)
+} = __nccwpck_require__(2027)
+const Client = __nccwpck_require__(9068)
 const {
   InvalidArgumentError
-} = __nccwpck_require__(8707)
-const util = __nccwpck_require__(3440)
-const { kUrl, kInterceptors } = __nccwpck_require__(6443)
-const buildConnector = __nccwpck_require__(9136)
+} = __nccwpck_require__(6246)
+const util = __nccwpck_require__(4393)
+const { kUrl, kInterceptors } = __nccwpck_require__(4776)
+const buildConnector = __nccwpck_require__(3887)
 
 const kOptions = Symbol('options')
 const kConnections = Symbol('connections')
@@ -20647,20 +17376,20 @@ module.exports = Pool
 
 /***/ }),
 
-/***/ 6672:
+/***/ 5163:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(6443)
+const { kProxy, kClose, kDestroy, kDispatch, kInterceptors } = __nccwpck_require__(4776)
 const { URL } = __nccwpck_require__(3136)
-const Agent = __nccwpck_require__(7405)
-const Pool = __nccwpck_require__(628)
-const DispatcherBase = __nccwpck_require__(1841)
-const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(8707)
-const buildConnector = __nccwpck_require__(9136)
-const Client = __nccwpck_require__(3701)
+const Agent = __nccwpck_require__(6978)
+const Pool = __nccwpck_require__(2129)
+const DispatcherBase = __nccwpck_require__(1566)
+const { InvalidArgumentError, RequestAbortedError, SecureProxyConnectionError } = __nccwpck_require__(6246)
+const buildConnector = __nccwpck_require__(3887)
+const Client = __nccwpck_require__(9068)
 
 const kAgent = Symbol('proxy agent')
 const kClient = Symbol('proxy client')
@@ -20929,14 +17658,14 @@ module.exports = ProxyAgent
 
 /***/ }),
 
-/***/ 50:
+/***/ 9401:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const Dispatcher = __nccwpck_require__(883)
-const RetryHandler = __nccwpck_require__(7816)
+const Dispatcher = __nccwpck_require__(6334)
+const RetryHandler = __nccwpck_require__(1773)
 
 class RetryAgent extends Dispatcher {
   #agent = null
@@ -20972,7 +17701,7 @@ module.exports = RetryAgent
 
 /***/ }),
 
-/***/ 2581:
+/***/ 8282:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -20981,8 +17710,8 @@ module.exports = RetryAgent
 // We include a version number for the Dispatcher API. In case of breaking changes,
 // this version number must be increased to avoid conflicts.
 const globalDispatcher = Symbol.for('undici.globalDispatcher.1')
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const Agent = __nccwpck_require__(7405)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
+const Agent = __nccwpck_require__(6978)
 
 if (getGlobalDispatcher() === undefined) {
   setGlobalDispatcher(new Agent())
@@ -21012,7 +17741,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8155:
+/***/ 6198:
 /***/ ((module) => {
 
 "use strict";
@@ -21064,16 +17793,16 @@ module.exports = class DecoratorHandler {
 
 /***/ }),
 
-/***/ 8754:
+/***/ 7293:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(3440)
-const { kBodyUsed } = __nccwpck_require__(6443)
+const util = __nccwpck_require__(4393)
+const { kBodyUsed } = __nccwpck_require__(4776)
 const assert = __nccwpck_require__(4589)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
 const EE = __nccwpck_require__(8474)
 
 const redirectableStatusCodes = [300, 301, 302, 303, 307, 308]
@@ -21304,21 +18033,21 @@ module.exports = RedirectHandler
 
 /***/ }),
 
-/***/ 7816:
+/***/ 1773:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const assert = __nccwpck_require__(4589)
 
-const { kRetryHandlerDefaultRetry } = __nccwpck_require__(6443)
-const { RequestRetryError } = __nccwpck_require__(8707)
+const { kRetryHandlerDefaultRetry } = __nccwpck_require__(4776)
+const { RequestRetryError } = __nccwpck_require__(6246)
 const {
   isDisturbed,
   parseHeaders,
   parseRangeHeader,
   wrapRequestBody
-} = __nccwpck_require__(3440)
+} = __nccwpck_require__(4393)
 
 function calculateRetryAfterHeader (retryAfter) {
   const current = Date.now()
@@ -21720,15 +18449,15 @@ module.exports = RetryHandler
 
 /***/ }),
 
-/***/ 379:
+/***/ 3670:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const { isIP } = __nccwpck_require__(7030)
 const { lookup } = __nccwpck_require__(610)
-const DecoratorHandler = __nccwpck_require__(8155)
-const { InvalidArgumentError, InformationalError } = __nccwpck_require__(8707)
+const DecoratorHandler = __nccwpck_require__(6198)
+const { InvalidArgumentError, InformationalError } = __nccwpck_require__(6246)
 const maxInt = Math.pow(2, 31) - 1
 
 class DNSInstance {
@@ -22103,15 +18832,15 @@ module.exports = interceptorOpts => {
 
 /***/ }),
 
-/***/ 8060:
+/***/ 9847:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(3440)
-const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(8707)
-const DecoratorHandler = __nccwpck_require__(8155)
+const util = __nccwpck_require__(4393)
+const { InvalidArgumentError, RequestAbortedError } = __nccwpck_require__(6246)
+const DecoratorHandler = __nccwpck_require__(6198)
 
 class DumpHandler extends DecoratorHandler {
   #maxSize = 1024 * 1024
@@ -22234,13 +18963,13 @@ module.exports = createDumpInterceptor
 
 /***/ }),
 
-/***/ 5092:
+/***/ 4391:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const RedirectHandler = __nccwpck_require__(8754)
+const RedirectHandler = __nccwpck_require__(7293)
 
 function createRedirectInterceptor ({ maxRedirections: defaultMaxRedirections }) {
   return (dispatch) => {
@@ -22263,12 +18992,12 @@ module.exports = createRedirectInterceptor
 
 /***/ }),
 
-/***/ 1514:
+/***/ 3353:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
-const RedirectHandler = __nccwpck_require__(8754)
+const RedirectHandler = __nccwpck_require__(7293)
 
 module.exports = opts => {
   const globalMaxRedirections = opts?.maxRedirections
@@ -22295,12 +19024,12 @@ module.exports = opts => {
 
 /***/ }),
 
-/***/ 2026:
+/***/ 9663:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
-const RetryHandler = __nccwpck_require__(7816)
+const RetryHandler = __nccwpck_require__(1773)
 
 module.exports = globalOpts => {
   return dispatch => {
@@ -22322,14 +19051,14 @@ module.exports = globalOpts => {
 
 /***/ }),
 
-/***/ 2824:
+/***/ 1555:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SPECIAL_HEADERS = exports.HEADER_STATE = exports.MINOR = exports.MAJOR = exports.CONNECTION_TOKEN_CHARS = exports.HEADER_CHARS = exports.TOKEN = exports.STRICT_TOKEN = exports.HEX = exports.URL_CHAR = exports.STRICT_URL_CHAR = exports.USERINFO_CHARS = exports.MARK = exports.ALPHANUM = exports.NUM = exports.HEX_MAP = exports.NUM_MAP = exports.ALPHA = exports.FINISH = exports.H_METHOD_MAP = exports.METHOD_MAP = exports.METHODS_RTSP = exports.METHODS_ICE = exports.METHODS_HTTP = exports.METHODS = exports.LENIENT_FLAGS = exports.FLAGS = exports.TYPE = exports.ERROR = void 0;
-const utils_1 = __nccwpck_require__(172);
+const utils_1 = __nccwpck_require__(867);
 // C headers
 var ERROR;
 (function (ERROR) {
@@ -22607,7 +19336,7 @@ exports.SPECIAL_HEADERS = {
 
 /***/ }),
 
-/***/ 3870:
+/***/ 285:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -22620,7 +19349,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 3434:
+/***/ 5631:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -22633,7 +19362,7 @@ module.exports = Buffer.from('AGFzbQEAAAABJwdgAX8Bf2ADf39/AX9gAX8AYAJ/fwBgBH9/f3
 
 /***/ }),
 
-/***/ 172:
+/***/ 867:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -22655,14 +19384,14 @@ exports.enumToMap = enumToMap;
 
 /***/ }),
 
-/***/ 7501:
+/***/ 20:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kClients } = __nccwpck_require__(6443)
-const Agent = __nccwpck_require__(7405)
+const { kClients } = __nccwpck_require__(4776)
+const Agent = __nccwpck_require__(6978)
 const {
   kAgent,
   kMockAgentSet,
@@ -22673,14 +19402,14 @@ const {
   kGetNetConnect,
   kOptions,
   kFactory
-} = __nccwpck_require__(1117)
-const MockClient = __nccwpck_require__(7365)
-const MockPool = __nccwpck_require__(4004)
-const { matchValue, buildMockOptions } = __nccwpck_require__(3397)
-const { InvalidArgumentError, UndiciError } = __nccwpck_require__(8707)
-const Dispatcher = __nccwpck_require__(883)
-const Pluralizer = __nccwpck_require__(1529)
-const PendingInterceptorsFormatter = __nccwpck_require__(6142)
+} = __nccwpck_require__(3552)
+const MockClient = __nccwpck_require__(418)
+const MockPool = __nccwpck_require__(6863)
+const { matchValue, buildMockOptions } = __nccwpck_require__(1572)
+const { InvalidArgumentError, UndiciError } = __nccwpck_require__(6246)
+const Dispatcher = __nccwpck_require__(6334)
+const Pluralizer = __nccwpck_require__(3716)
+const PendingInterceptorsFormatter = __nccwpck_require__(9059)
 
 class MockAgent extends Dispatcher {
   constructor (opts) {
@@ -22823,15 +19552,15 @@ module.exports = MockAgent
 
 /***/ }),
 
-/***/ 7365:
+/***/ 418:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { promisify } = __nccwpck_require__(7975)
-const Client = __nccwpck_require__(3701)
-const { buildMockDispatch } = __nccwpck_require__(3397)
+const Client = __nccwpck_require__(9068)
+const { buildMockDispatch } = __nccwpck_require__(1572)
 const {
   kDispatches,
   kMockAgent,
@@ -22840,10 +19569,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(1117)
-const { MockInterceptor } = __nccwpck_require__(1511)
-const Symbols = __nccwpck_require__(6443)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(3552)
+const { MockInterceptor } = __nccwpck_require__(2526)
+const Symbols = __nccwpck_require__(4776)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
 
 /**
  * MockClient provides an API that extends the Client to influence the mockDispatches.
@@ -22890,13 +19619,13 @@ module.exports = MockClient
 
 /***/ }),
 
-/***/ 2429:
+/***/ 5022:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { UndiciError } = __nccwpck_require__(8707)
+const { UndiciError } = __nccwpck_require__(6246)
 
 const kMockNotMatchedError = Symbol.for('undici.error.UND_MOCK_ERR_MOCK_NOT_MATCHED')
 
@@ -22926,13 +19655,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1511:
+/***/ 2526:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(3397)
+const { getResponseData, buildKey, addMockDispatch } = __nccwpck_require__(1572)
 const {
   kDispatches,
   kDispatchKey,
@@ -22940,9 +19669,9 @@ const {
   kDefaultTrailers,
   kContentLength,
   kMockDispatch
-} = __nccwpck_require__(1117)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
-const { buildURL } = __nccwpck_require__(3440)
+} = __nccwpck_require__(3552)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
+const { buildURL } = __nccwpck_require__(4393)
 
 /**
  * Defines the scope API for an interceptor reply
@@ -23141,15 +19870,15 @@ module.exports.MockScope = MockScope
 
 /***/ }),
 
-/***/ 4004:
+/***/ 6863:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { promisify } = __nccwpck_require__(7975)
-const Pool = __nccwpck_require__(628)
-const { buildMockDispatch } = __nccwpck_require__(3397)
+const Pool = __nccwpck_require__(2129)
+const { buildMockDispatch } = __nccwpck_require__(1572)
 const {
   kDispatches,
   kMockAgent,
@@ -23158,10 +19887,10 @@ const {
   kOrigin,
   kOriginalDispatch,
   kConnected
-} = __nccwpck_require__(1117)
-const { MockInterceptor } = __nccwpck_require__(1511)
-const Symbols = __nccwpck_require__(6443)
-const { InvalidArgumentError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(3552)
+const { MockInterceptor } = __nccwpck_require__(2526)
+const Symbols = __nccwpck_require__(4776)
+const { InvalidArgumentError } = __nccwpck_require__(6246)
 
 /**
  * MockPool provides an API that extends the Pool to influence the mockDispatches.
@@ -23208,7 +19937,7 @@ module.exports = MockPool
 
 /***/ }),
 
-/***/ 1117:
+/***/ 3552:
 /***/ ((module) => {
 
 "use strict";
@@ -23239,21 +19968,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3397:
+/***/ 1572:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { MockNotMatchedError } = __nccwpck_require__(2429)
+const { MockNotMatchedError } = __nccwpck_require__(5022)
 const {
   kDispatches,
   kMockAgent,
   kOriginalDispatch,
   kOrigin,
   kGetNetConnect
-} = __nccwpck_require__(1117)
-const { buildURL } = __nccwpck_require__(3440)
+} = __nccwpck_require__(3552)
+const { buildURL } = __nccwpck_require__(4393)
 const { STATUS_CODES } = __nccwpck_require__(7067)
 const {
   types: {
@@ -23614,7 +20343,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6142:
+/***/ 9059:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -23665,7 +20394,7 @@ module.exports = class PendingInterceptorsFormatter {
 
 /***/ }),
 
-/***/ 1529:
+/***/ 3716:
 /***/ ((module) => {
 
 "use strict";
@@ -23702,7 +20431,7 @@ module.exports = class Pluralizer {
 
 /***/ }),
 
-/***/ 6603:
+/***/ 6318:
 /***/ ((module) => {
 
 "use strict";
@@ -24133,21 +20862,21 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9634:
+/***/ 3779:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConstruct } = __nccwpck_require__(109)
-const { urlEquals, getFieldValues } = __nccwpck_require__(6798)
-const { kEnumerableProperty, isDisturbed } = __nccwpck_require__(3440)
-const { webidl } = __nccwpck_require__(5893)
-const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(9051)
-const { Request, fromInnerRequest } = __nccwpck_require__(9967)
-const { kState } = __nccwpck_require__(3627)
-const { fetching } = __nccwpck_require__(4398)
-const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(3168)
+const { kConstruct } = __nccwpck_require__(8364)
+const { urlEquals, getFieldValues } = __nccwpck_require__(5989)
+const { kEnumerableProperty, isDisturbed } = __nccwpck_require__(4393)
+const { webidl } = __nccwpck_require__(8290)
+const { Response, cloneResponse, fromInnerResponse } = __nccwpck_require__(4136)
+const { Request, fromInnerRequest } = __nccwpck_require__(9990)
+const { kState } = __nccwpck_require__(9986)
+const { fetching } = __nccwpck_require__(9295)
+const { urlIsHttpHttpsScheme, createDeferredPromise, readAllBytes } = __nccwpck_require__(943)
 const assert = __nccwpck_require__(4589)
 
 /**
@@ -25000,16 +21729,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3245:
+/***/ 5758:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConstruct } = __nccwpck_require__(109)
-const { Cache } = __nccwpck_require__(9634)
-const { webidl } = __nccwpck_require__(5893)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
+const { kConstruct } = __nccwpck_require__(8364)
+const { Cache } = __nccwpck_require__(3779)
+const { webidl } = __nccwpck_require__(8290)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
 
 class CacheStorage {
   /**
@@ -25160,28 +21889,28 @@ module.exports = {
 
 /***/ }),
 
-/***/ 109:
+/***/ 8364:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 module.exports = {
-  kConstruct: (__nccwpck_require__(6443).kConstruct)
+  kConstruct: (__nccwpck_require__(4776).kConstruct)
 }
 
 
 /***/ }),
 
-/***/ 6798:
+/***/ 5989:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const assert = __nccwpck_require__(4589)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { isValidHeaderName } = __nccwpck_require__(3168)
+const { URLSerializer } = __nccwpck_require__(4003)
+const { isValidHeaderName } = __nccwpck_require__(943)
 
 /**
  * @see https://url.spec.whatwg.org/#concept-url-equals
@@ -25226,7 +21955,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1276:
+/***/ 3609:
 /***/ ((module) => {
 
 "use strict";
@@ -25246,16 +21975,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9061:
+/***/ 8180:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { parseSetCookie } = __nccwpck_require__(1978)
-const { stringify } = __nccwpck_require__(7797)
-const { webidl } = __nccwpck_require__(5893)
-const { Headers } = __nccwpck_require__(660)
+const { parseSetCookie } = __nccwpck_require__(6135)
+const { stringify } = __nccwpck_require__(3830)
+const { webidl } = __nccwpck_require__(8290)
+const { Headers } = __nccwpck_require__(6017)
 
 /**
  * @typedef {Object} Cookie
@@ -25438,15 +22167,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1978:
+/***/ 6135:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(1276)
-const { isCTLExcludingHtab } = __nccwpck_require__(7797)
-const { collectASequenceOfCodePointsFast } = __nccwpck_require__(1900)
+const { maxNameValuePairSize, maxAttributeValueSize } = __nccwpck_require__(3609)
+const { isCTLExcludingHtab } = __nccwpck_require__(3830)
+const { collectASequenceOfCodePointsFast } = __nccwpck_require__(4003)
 const assert = __nccwpck_require__(4589)
 
 /**
@@ -25756,7 +22485,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 7797:
+/***/ 3830:
 /***/ ((module) => {
 
 "use strict";
@@ -26116,13 +22845,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4031:
+/***/ 5804:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 const { Transform } = __nccwpck_require__(7075)
-const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(4811)
+const { isASCIINumber, isValidLastEventId } = __nccwpck_require__(8464)
 
 /**
  * @type {number[]} BOM
@@ -26522,23 +23251,23 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1238:
+/***/ 7615:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { pipeline } = __nccwpck_require__(7075)
-const { fetching } = __nccwpck_require__(4398)
-const { makeRequest } = __nccwpck_require__(9967)
-const { webidl } = __nccwpck_require__(5893)
-const { EventSourceStream } = __nccwpck_require__(4031)
-const { parseMIMEType } = __nccwpck_require__(1900)
-const { createFastMessageEvent } = __nccwpck_require__(5188)
-const { isNetworkError } = __nccwpck_require__(9051)
-const { delay } = __nccwpck_require__(4811)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { environmentSettingsObject } = __nccwpck_require__(3168)
+const { fetching } = __nccwpck_require__(9295)
+const { makeRequest } = __nccwpck_require__(9990)
+const { webidl } = __nccwpck_require__(8290)
+const { EventSourceStream } = __nccwpck_require__(5804)
+const { parseMIMEType } = __nccwpck_require__(4003)
+const { createFastMessageEvent } = __nccwpck_require__(2875)
+const { isNetworkError } = __nccwpck_require__(4136)
+const { delay } = __nccwpck_require__(8464)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
+const { environmentSettingsObject } = __nccwpck_require__(943)
 
 let experimentalWarned = false
 
@@ -27010,7 +23739,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4811:
+/***/ 8464:
 /***/ ((module) => {
 
 "use strict";
@@ -27055,13 +23784,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4492:
+/***/ 5023:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const util = __nccwpck_require__(3440)
+const util = __nccwpck_require__(4393)
 const {
   ReadableStreamFrom,
   isBlobLike,
@@ -27071,16 +23800,16 @@ const {
   fullyReadBody,
   extractMimeType,
   utf8DecodeBytes
-} = __nccwpck_require__(3168)
-const { FormData } = __nccwpck_require__(5910)
-const { kState } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
+} = __nccwpck_require__(943)
+const { FormData } = __nccwpck_require__(125)
+const { kState } = __nccwpck_require__(9986)
+const { webidl } = __nccwpck_require__(8290)
 const { Blob } = __nccwpck_require__(4573)
 const assert = __nccwpck_require__(4589)
 const { isErrored, isDisturbed } = __nccwpck_require__(7075)
 const { isArrayBuffer } = __nccwpck_require__(3429)
-const { serializeAMimeType } = __nccwpck_require__(1900)
-const { multipartFormDataParser } = __nccwpck_require__(116)
+const { serializeAMimeType } = __nccwpck_require__(4003)
+const { multipartFormDataParser } = __nccwpck_require__(6885)
 let random
 
 try {
@@ -27592,7 +24321,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4495:
+/***/ 4578:
 /***/ ((module) => {
 
 "use strict";
@@ -27724,7 +24453,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1900:
+/***/ 4003:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -28476,13 +25205,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6653:
+/***/ 2474:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kConnected, kSize } = __nccwpck_require__(6443)
+const { kConnected, kSize } = __nccwpck_require__(4776)
 
 class CompatWeakRef {
   constructor (value) {
@@ -28530,15 +25259,15 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ 7114:
+/***/ 7549:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { Blob, File } = __nccwpck_require__(4573)
-const { kState } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
+const { kState } = __nccwpck_require__(9986)
+const { webidl } = __nccwpck_require__(8290)
 
 // TODO(@KhafraDev): remove
 class FileLike {
@@ -28664,17 +25393,17 @@ module.exports = { FileLike, isFileLike }
 
 /***/ }),
 
-/***/ 116:
+/***/ 6885:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { isUSVString, bufferToLowerCasedHeaderName } = __nccwpck_require__(3440)
-const { utf8DecodeBytes } = __nccwpck_require__(3168)
-const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(1900)
-const { isFileLike } = __nccwpck_require__(7114)
-const { makeEntry } = __nccwpck_require__(5910)
+const { isUSVString, bufferToLowerCasedHeaderName } = __nccwpck_require__(4393)
+const { utf8DecodeBytes } = __nccwpck_require__(943)
+const { HTTP_TOKEN_CODEPOINTS, isomorphicDecode } = __nccwpck_require__(4003)
+const { isFileLike } = __nccwpck_require__(7549)
+const { makeEntry } = __nccwpck_require__(125)
 const assert = __nccwpck_require__(4589)
 const { File: NodeFile } = __nccwpck_require__(4573)
 
@@ -29146,17 +25875,17 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5910:
+/***/ 125:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { isBlobLike, iteratorMixin } = __nccwpck_require__(3168)
-const { kState } = __nccwpck_require__(3627)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { FileLike, isFileLike } = __nccwpck_require__(7114)
-const { webidl } = __nccwpck_require__(5893)
+const { isBlobLike, iteratorMixin } = __nccwpck_require__(943)
+const { kState } = __nccwpck_require__(9986)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
+const { FileLike, isFileLike } = __nccwpck_require__(7549)
+const { webidl } = __nccwpck_require__(8290)
 const { File: NativeFile } = __nccwpck_require__(4573)
 const nodeUtil = __nccwpck_require__(7975)
 
@@ -29406,7 +26135,7 @@ module.exports = { FormData, makeEntry }
 
 /***/ }),
 
-/***/ 1059:
+/***/ 8624:
 /***/ ((module) => {
 
 "use strict";
@@ -29454,7 +26183,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 660:
+/***/ 6017:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -29462,14 +26191,14 @@ module.exports = {
 
 
 
-const { kConstruct } = __nccwpck_require__(6443)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
+const { kConstruct } = __nccwpck_require__(4776)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
 const {
   iteratorMixin,
   isValidHeaderName,
   isValidHeaderValue
-} = __nccwpck_require__(3168)
-const { webidl } = __nccwpck_require__(5893)
+} = __nccwpck_require__(943)
+const { webidl } = __nccwpck_require__(8290)
 const assert = __nccwpck_require__(4589)
 const util = __nccwpck_require__(7975)
 
@@ -30149,7 +26878,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4398:
+/***/ 9295:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -30163,9 +26892,9 @@ const {
   filterResponse,
   makeResponse,
   fromInnerResponse
-} = __nccwpck_require__(9051)
-const { HeadersList } = __nccwpck_require__(660)
-const { Request, cloneRequest } = __nccwpck_require__(9967)
+} = __nccwpck_require__(4136)
+const { HeadersList } = __nccwpck_require__(6017)
+const { Request, cloneRequest } = __nccwpck_require__(9990)
 const zlib = __nccwpck_require__(8522)
 const {
   bytesMatch,
@@ -30201,23 +26930,23 @@ const {
   buildContentRange,
   createInflate,
   extractMimeType
-} = __nccwpck_require__(3168)
-const { kState, kDispatcher } = __nccwpck_require__(3627)
+} = __nccwpck_require__(943)
+const { kState, kDispatcher } = __nccwpck_require__(9986)
 const assert = __nccwpck_require__(4589)
-const { safelyExtractBody, extractBody } = __nccwpck_require__(4492)
+const { safelyExtractBody, extractBody } = __nccwpck_require__(5023)
 const {
   redirectStatusSet,
   nullBodyStatus,
   safeMethodsSet,
   requestBodyHeader,
   subresourceSet
-} = __nccwpck_require__(4495)
+} = __nccwpck_require__(4578)
 const EE = __nccwpck_require__(8474)
 const { Readable, pipeline, finished } = __nccwpck_require__(7075)
-const { addAbortListener, isErrored, isReadable, bufferToLowerCasedHeaderName } = __nccwpck_require__(3440)
-const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(1900)
-const { getGlobalDispatcher } = __nccwpck_require__(2581)
-const { webidl } = __nccwpck_require__(5893)
+const { addAbortListener, isErrored, isReadable, bufferToLowerCasedHeaderName } = __nccwpck_require__(4393)
+const { dataURLProcessor, serializeAMimeType, minimizeSupportedMimeType } = __nccwpck_require__(4003)
+const { getGlobalDispatcher } = __nccwpck_require__(8282)
+const { webidl } = __nccwpck_require__(8290)
 const { STATUS_CODES } = __nccwpck_require__(7067)
 const GET_OR_HEAD = ['GET', 'HEAD']
 
@@ -32429,7 +29158,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9967:
+/***/ 9990:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -32437,16 +29166,16 @@ module.exports = {
 
 
 
-const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(4492)
-const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(660)
-const { FinalizationRegistry } = __nccwpck_require__(6653)()
-const util = __nccwpck_require__(3440)
+const { extractBody, mixinBody, cloneBody, bodyUnusable } = __nccwpck_require__(5023)
+const { Headers, fill: fillHeaders, HeadersList, setHeadersGuard, getHeadersGuard, setHeadersList, getHeadersList } = __nccwpck_require__(6017)
+const { FinalizationRegistry } = __nccwpck_require__(2474)()
+const util = __nccwpck_require__(4393)
 const nodeUtil = __nccwpck_require__(7975)
 const {
   isValidHTTPToken,
   sameOrigin,
   environmentSettingsObject
-} = __nccwpck_require__(3168)
+} = __nccwpck_require__(943)
 const {
   forbiddenMethodsSet,
   corsSafeListedMethodsSet,
@@ -32456,12 +29185,12 @@ const {
   requestCredentials,
   requestCache,
   requestDuplex
-} = __nccwpck_require__(4495)
+} = __nccwpck_require__(4578)
 const { kEnumerableProperty, normalizedMethodRecordsBase, normalizedMethodRecords } = util
-const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { kConstruct } = __nccwpck_require__(6443)
+const { kHeaders, kSignal, kState, kDispatcher } = __nccwpck_require__(9986)
+const { webidl } = __nccwpck_require__(8290)
+const { URLSerializer } = __nccwpck_require__(4003)
+const { kConstruct } = __nccwpck_require__(4776)
 const assert = __nccwpck_require__(4589)
 const { getMaxListeners, setMaxListeners, getEventListeners, defaultMaxListeners } = __nccwpck_require__(8474)
 
@@ -33474,15 +30203,15 @@ module.exports = { Request, makeRequest, fromInnerRequest, cloneRequest }
 
 /***/ }),
 
-/***/ 9051:
+/***/ 4136:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(660)
-const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(4492)
-const util = __nccwpck_require__(3440)
+const { Headers, HeadersList, fill, getHeadersGuard, setHeadersGuard, setHeadersList } = __nccwpck_require__(6017)
+const { extractBody, cloneBody, mixinBody, hasFinalizationRegistry, streamRegistry, bodyUnusable } = __nccwpck_require__(5023)
+const util = __nccwpck_require__(4393)
 const nodeUtil = __nccwpck_require__(7975)
 const { kEnumerableProperty } = util
 const {
@@ -33494,16 +30223,16 @@ const {
   isErrorLike,
   isomorphicEncode,
   environmentSettingsObject: relevantRealm
-} = __nccwpck_require__(3168)
+} = __nccwpck_require__(943)
 const {
   redirectStatusSet,
   nullBodyStatus
-} = __nccwpck_require__(4495)
-const { kState, kHeaders } = __nccwpck_require__(3627)
-const { webidl } = __nccwpck_require__(5893)
-const { FormData } = __nccwpck_require__(5910)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { kConstruct } = __nccwpck_require__(6443)
+} = __nccwpck_require__(4578)
+const { kState, kHeaders } = __nccwpck_require__(9986)
+const { webidl } = __nccwpck_require__(8290)
+const { FormData } = __nccwpck_require__(125)
+const { URLSerializer } = __nccwpck_require__(4003)
+const { kConstruct } = __nccwpck_require__(4776)
 const assert = __nccwpck_require__(4589)
 const { types } = __nccwpck_require__(7975)
 
@@ -34092,7 +30821,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3627:
+/***/ 9986:
 /***/ ((module) => {
 
 "use strict";
@@ -34109,7 +30838,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3168:
+/***/ 943:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -34117,14 +30846,14 @@ module.exports = {
 
 const { Transform } = __nccwpck_require__(7075)
 const zlib = __nccwpck_require__(8522)
-const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(4495)
-const { getGlobalOrigin } = __nccwpck_require__(1059)
-const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(1900)
+const { redirectStatusSet, referrerPolicySet: referrerPolicyTokens, badPortsSet } = __nccwpck_require__(4578)
+const { getGlobalOrigin } = __nccwpck_require__(8624)
+const { collectASequenceOfCodePoints, collectAnHTTPQuotedString, removeChars, parseMIMEType } = __nccwpck_require__(4003)
 const { performance } = __nccwpck_require__(643)
-const { isBlobLike, ReadableStreamFrom, isValidHTTPToken, normalizedMethodRecordsBase } = __nccwpck_require__(3440)
+const { isBlobLike, ReadableStreamFrom, isValidHTTPToken, normalizedMethodRecordsBase } = __nccwpck_require__(4393)
 const assert = __nccwpck_require__(4589)
 const { isUint8Array } = __nccwpck_require__(3429)
-const { webidl } = __nccwpck_require__(5893)
+const { webidl } = __nccwpck_require__(8290)
 
 let supportedHashes = []
 
@@ -35749,7 +32478,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5893:
+/***/ 8290:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -35757,7 +32486,7 @@ module.exports = {
 
 const { types, inspect } = __nccwpck_require__(7975)
 const { markAsUncloneable } = __nccwpck_require__(5919)
-const { toUSVString } = __nccwpck_require__(3440)
+const { toUSVString } = __nccwpck_require__(4393)
 
 /** @type {import('../../../types/webidl').Webidl} */
 const webidl = {}
@@ -36452,7 +33181,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2607:
+/***/ 7808:
 /***/ ((module) => {
 
 "use strict";
@@ -36750,7 +33479,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8355:
+/***/ 548:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -36760,16 +33489,16 @@ const {
   staticPropertyDescriptors,
   readOperation,
   fireAProgressEvent
-} = __nccwpck_require__(3610)
+} = __nccwpck_require__(7297)
 const {
   kState,
   kError,
   kResult,
   kEvents,
   kAborted
-} = __nccwpck_require__(961)
-const { webidl } = __nccwpck_require__(5893)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
+} = __nccwpck_require__(9872)
+const { webidl } = __nccwpck_require__(8290)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
 
 class FileReader extends EventTarget {
   constructor () {
@@ -37102,13 +33831,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8573:
+/***/ 2708:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(5893)
+const { webidl } = __nccwpck_require__(8290)
 
 const kState = Symbol('ProgressEvent state')
 
@@ -37188,7 +33917,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 961:
+/***/ 9872:
 /***/ ((module) => {
 
 "use strict";
@@ -37206,7 +33935,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3610:
+/***/ 7297:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -37218,10 +33947,10 @@ const {
   kResult,
   kAborted,
   kLastProgressEventFired
-} = __nccwpck_require__(961)
-const { ProgressEvent } = __nccwpck_require__(8573)
-const { getEncoding } = __nccwpck_require__(2607)
-const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(1900)
+} = __nccwpck_require__(9872)
+const { ProgressEvent } = __nccwpck_require__(2708)
+const { getEncoding } = __nccwpck_require__(7808)
+const { serializeAMimeType, parseMIMEType } = __nccwpck_require__(4003)
 const { types } = __nccwpck_require__(7975)
 const { StringDecoder } = __nccwpck_require__(3193)
 const { btoa } = __nccwpck_require__(4573)
@@ -37605,28 +34334,28 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6897:
+/***/ 1874:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(736)
+const { uid, states, sentCloseFrameState, emptyBuffer, opcodes } = __nccwpck_require__(8397)
 const {
   kReadyState,
   kSentClose,
   kByteParser,
   kReceivedClose,
   kResponse
-} = __nccwpck_require__(1216)
-const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(8625)
-const { channels } = __nccwpck_require__(2414)
-const { CloseEvent } = __nccwpck_require__(5188)
-const { makeRequest } = __nccwpck_require__(9967)
-const { fetching } = __nccwpck_require__(4398)
-const { Headers, getHeadersList } = __nccwpck_require__(660)
-const { getDecodeSplit } = __nccwpck_require__(3168)
-const { WebsocketFrameSend } = __nccwpck_require__(3264)
+} = __nccwpck_require__(7609)
+const { fireEvent, failWebsocketConnection, isClosing, isClosed, isEstablished, parseExtensions } = __nccwpck_require__(8098)
+const { channels } = __nccwpck_require__(7597)
+const { CloseEvent } = __nccwpck_require__(2875)
+const { makeRequest } = __nccwpck_require__(9990)
+const { fetching } = __nccwpck_require__(9295)
+const { Headers, getHeadersList } = __nccwpck_require__(6017)
+const { getDecodeSplit } = __nccwpck_require__(943)
+const { WebsocketFrameSend } = __nccwpck_require__(9321)
 
 /** @type {import('crypto')} */
 let crypto
@@ -37984,7 +34713,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 736:
+/***/ 8397:
 /***/ ((module) => {
 
 "use strict";
@@ -38058,15 +34787,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5188:
+/***/ 2875:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(5893)
-const { kEnumerableProperty } = __nccwpck_require__(3440)
-const { kConstruct } = __nccwpck_require__(6443)
+const { webidl } = __nccwpck_require__(8290)
+const { kEnumerableProperty } = __nccwpck_require__(4393)
+const { kConstruct } = __nccwpck_require__(4776)
 const { MessagePort } = __nccwpck_require__(5919)
 
 /**
@@ -38395,13 +35124,13 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3264:
+/***/ 9321:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { maxUnsigned16Bit } = __nccwpck_require__(736)
+const { maxUnsigned16Bit } = __nccwpck_require__(8397)
 
 const BUFFER_SIZE = 16386
 
@@ -38499,15 +35228,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 9469:
+/***/ 6286:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
 const { createInflateRaw, Z_DEFAULT_WINDOWBITS } = __nccwpck_require__(8522)
-const { isValidClientWindowBits } = __nccwpck_require__(8625)
-const { MessageSizeExceededError } = __nccwpck_require__(8707)
+const { isValidClientWindowBits } = __nccwpck_require__(8098)
+const { MessageSizeExceededError } = __nccwpck_require__(6246)
 
 const tail = Buffer.from([0x00, 0x00, 0xff, 0xff])
 const kBuffer = Symbol('kBuffer')
@@ -38607,7 +35336,7 @@ module.exports = { PerMessageDeflate }
 
 /***/ }),
 
-/***/ 1652:
+/***/ 5975:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
@@ -38615,9 +35344,9 @@ module.exports = { PerMessageDeflate }
 
 const { Writable } = __nccwpck_require__(7075)
 const assert = __nccwpck_require__(4589)
-const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(736)
-const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(1216)
-const { channels } = __nccwpck_require__(2414)
+const { parserStates, opcodes, states, emptyBuffer, sentCloseFrameState } = __nccwpck_require__(8397)
+const { kReadyState, kSentClose, kResponse, kReceivedClose } = __nccwpck_require__(7609)
+const { channels } = __nccwpck_require__(7597)
 const {
   isValidStatusCode,
   isValidOpcode,
@@ -38627,11 +35356,11 @@ const {
   isControlFrame,
   isTextBinaryFrame,
   isContinuationFrame
-} = __nccwpck_require__(8625)
-const { WebsocketFrameSend } = __nccwpck_require__(3264)
-const { closeWebSocketConnection } = __nccwpck_require__(6897)
-const { PerMessageDeflate } = __nccwpck_require__(9469)
-const { MessageSizeExceededError } = __nccwpck_require__(8707)
+} = __nccwpck_require__(8098)
+const { WebsocketFrameSend } = __nccwpck_require__(9321)
+const { closeWebSocketConnection } = __nccwpck_require__(1874)
+const { PerMessageDeflate } = __nccwpck_require__(6286)
+const { MessageSizeExceededError } = __nccwpck_require__(6246)
 
 function failWebsocketConnectionWithCode (ws, code, reason) {
   closeWebSocketConnection(ws, code, reason, Buffer.byteLength(reason))
@@ -39128,15 +35857,15 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3900:
+/***/ 9795:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { WebsocketFrameSend } = __nccwpck_require__(3264)
-const { opcodes, sendHints } = __nccwpck_require__(736)
-const FixedQueue = __nccwpck_require__(4660)
+const { WebsocketFrameSend } = __nccwpck_require__(9321)
+const { opcodes, sendHints } = __nccwpck_require__(8397)
+const FixedQueue = __nccwpck_require__(6159)
 
 /** @type {typeof Uint8Array} */
 const FastBuffer = Buffer[Symbol.species]
@@ -39240,7 +35969,7 @@ module.exports = { SendQueue }
 
 /***/ }),
 
-/***/ 1216:
+/***/ 7609:
 /***/ ((module) => {
 
 "use strict";
@@ -39260,17 +35989,17 @@ module.exports = {
 
 /***/ }),
 
-/***/ 8625:
+/***/ 8098:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(1216)
-const { states, opcodes } = __nccwpck_require__(736)
-const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(5188)
+const { kReadyState, kController, kResponse, kBinaryType, kWebSocketURL } = __nccwpck_require__(7609)
+const { states, opcodes } = __nccwpck_require__(8397)
+const { ErrorEvent, createFastMessageEvent } = __nccwpck_require__(2875)
 const { isUtf8 } = __nccwpck_require__(4573)
-const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(1900)
+const { collectASequenceOfCodePointsFast, removeHTTPWhitespace } = __nccwpck_require__(4003)
 
 /* globals Blob */
 
@@ -39590,16 +36319,16 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3726:
+/***/ 2567:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
 
 
-const { webidl } = __nccwpck_require__(5893)
-const { URLSerializer } = __nccwpck_require__(1900)
-const { environmentSettingsObject } = __nccwpck_require__(3168)
-const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(736)
+const { webidl } = __nccwpck_require__(8290)
+const { URLSerializer } = __nccwpck_require__(4003)
+const { environmentSettingsObject } = __nccwpck_require__(943)
+const { staticPropertyDescriptors, states, sentCloseFrameState, sendHints } = __nccwpck_require__(8397)
 const {
   kWebSocketURL,
   kReadyState,
@@ -39608,21 +36337,21 @@ const {
   kResponse,
   kSentClose,
   kByteParser
-} = __nccwpck_require__(1216)
+} = __nccwpck_require__(7609)
 const {
   isConnecting,
   isEstablished,
   isClosing,
   isValidSubprotocol,
   fireEvent
-} = __nccwpck_require__(8625)
-const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(6897)
-const { ByteParser } = __nccwpck_require__(1652)
-const { kEnumerableProperty, isBlobLike } = __nccwpck_require__(3440)
-const { getGlobalDispatcher } = __nccwpck_require__(2581)
+} = __nccwpck_require__(8098)
+const { establishWebSocketConnection, closeWebSocketConnection } = __nccwpck_require__(1874)
+const { ByteParser } = __nccwpck_require__(5975)
+const { kEnumerableProperty, isBlobLike } = __nccwpck_require__(4393)
+const { getGlobalDispatcher } = __nccwpck_require__(8282)
 const { types } = __nccwpck_require__(7975)
-const { ErrorEvent, CloseEvent } = __nccwpck_require__(5188)
-const { SendQueue } = __nccwpck_require__(3900)
+const { ErrorEvent, CloseEvent } = __nccwpck_require__(2875)
+const { SendQueue } = __nccwpck_require__(9795)
 
 // https://websockets.spec.whatwg.org/#interface-definition
 class WebSocket extends EventTarget {
@@ -40193,717 +36922,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1730:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __nccwpck_require__(7484);
-const github_1 = __nccwpck_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@actions/github'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-const web_api_1 = __nccwpck_require__(5105);
-const util_1 = __nccwpck_require__(9023);
-const github = __importStar(__nccwpck_require__(6246));
-const log = __importStar(__nccwpck_require__(6555));
-const state = __importStar(__nccwpck_require__(6236));
-const slack_1 = __nccwpck_require__(5873);
-const run = async () => {
-    const currentJob = await github.getCurrentJobForWorkflowRun();
-    // Store our GitHub token for later use.
-    state.setGithubToken(state.githubToken);
-    // If 'token' is set, it means we likely want to send the initial message (or update it)
-    if (state.slackToken) {
-        const slack = new web_api_1.WebClient(state.slackToken);
-        // Ensure that either channel-id or channel-name is set
-        if (!state.channelId && !state.channelName) {
-            return (0, core_1.setFailed)(`Either 'channel-id' or 'channel-name' must be set.`);
-        }
-        // Get our channel ID. If specified as a name, see if we can look it up.
-        const channel = state.channelId || (await (0, slack_1.lookupChannel)(slack, state.channelName));
-        // If channel is undefined, it means we used a channel name and could not find it.
-        if (!channel) {
-            return (0, core_1.setFailed)(`Channel ${state.channelName} could not be found`);
-        }
-        else {
-            // Ensure the channel ID is saved to state
-            state.setChannelId(channel);
-        }
-        let apiMethod = 'postMessage';
-        let extraArgs = {};
-        if (state.messageId) {
-            apiMethod = 'update';
-            extraArgs = {
-                ts: state.messageId,
-            };
-        }
-        const status = (await github.getJobJustStarted(currentJob)) ? 'started' : 'in_progress';
-        const attachments = (0, slack_1.buildAttachmentsMessage)({
-            status,
-            jobId: currentJob?.id,
-        });
-        const args = {
-            channel,
-            attachments,
-            ...extraArgs,
-        };
-        try {
-            const response = await slack.chat[apiMethod](args);
-            if (response.ts) {
-                // We received our message ID, save it to state so we can update it later.
-                state.setMessageId(response.ts);
-            }
-        }
-        catch (error) {
-            (0, core_1.setFailed)(error);
-        }
-    }
-};
-/**
- * Set a promise to resolve after a certain time, making it a crude sleepms implementation
- * @param ms the time to sleep
- */
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-const cleanup = async () => {
-    // We wait for a few seconds to ensure that all our API calls will reflect the most current data.
-    // Occasionally we are so fast with polling the API that it has not yet caught up on the current state
-    // giving us outdated information (sometimes even leading to false success runs)
-    await sleep(5000);
-    const currentJob = await github.getCurrentJobForWorkflowRun();
-    if (state.messageId && state.githubToken && state.slackToken && state.channelId) {
-        const status = await github.getCurrentJobConclusion(currentJob);
-        const slack = new web_api_1.WebClient(state.slackToken);
-        const attachments = (0, slack_1.buildAttachmentsMessage)({
-            status,
-            jobId: currentJob?.id,
-        });
-        const args = {
-            channel: state.channelId,
-            attachments,
-            ts: state.messageId,
-        };
-        try {
-            await slack.chat.update(args);
-        }
-        catch (error) {
-            (0, core_1.setFailed)(error);
-        }
-    }
-    else {
-        // TODO: Notify user we never sent a message.
-    }
-};
-async function main() {
-    if (log.isDebug) {
-        log.startGroup('State information');
-        log.debug((0, util_1.inspect)(state.currentState(), false, null));
-        log.endGroup();
-        log.startGroup('Job information');
-        log.debug((0, util_1.inspect)(github_1.context, false, null));
-        log.endGroup();
-    }
-    if (state.isPost) {
-        await log.group('Cleaning up...', cleanup);
-    }
-    else {
-        await log.group('Processing', run);
-    }
-}
-main();
-
-
-/***/ }),
-
-/***/ 6246:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.getJobJustStarted = exports.getCurrentJobConclusion = exports.getCurrentJobForWorkflowRun = exports.matchJobByName = exports.listCurrentJobsForWorkflowRun = exports.getOctokit = void 0;
-const github_1 = __nccwpck_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@actions/github'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-const util_1 = __nccwpck_require__(9023);
-const js_yaml_1 = __nccwpck_require__(4484);
-const fs_1 = __nccwpck_require__(9896);
-const path_1 = __nccwpck_require__(6928);
-const state = __importStar(__nccwpck_require__(6236));
-const log = __importStar(__nccwpck_require__(6555));
-const { apiUrl: baseUrl, job, workflow: workflowName, payload: { workflow }, } = github_1.context;
-const getWorkflowFile = () => {
-    if (workflow)
-        return workflow;
-    if (workflowName.startsWith('.github/workflows/'))
-        return workflowName;
-    log.debug(`No workflow payload, detecting workflow file from ${workflowName}`);
-    try {
-        const dname = (0, path_1.resolve)('.github/workflows/');
-        const files = (0, fs_1.readdirSync)(dname);
-        for (const fname of files) {
-            const path = (0, path_1.join)(dname, fname);
-            if (fname.endsWith('.yml') || fname.endsWith('.yaml')) {
-                const contents = (0, fs_1.readFileSync)(path, 'utf8');
-                const data = (0, js_yaml_1.load)(contents);
-                if (data.name === workflowName) {
-                    return (0, path_1.join)('.github/workflows/', fname);
-                }
-            }
-        }
-    }
-    catch (e) {
-        log.error(`Unable to detect workflow file: ${e}`);
-        log.warning('Be sure to run actions/checkout@v3 _before_ this action.');
-    }
-};
-if (Object.entries(state.jobNames).length === 0) {
-    log.debug((0, util_1.inspect)(github_1.context));
-    const fname = getWorkflowFile();
-    if (!fname) {
-        log.error('Unable to detect workflow file');
-    }
-    else {
-        log.debug(`No job names found in state, attempting to parse workflow file ${fname}`);
-        try {
-            const contents = (0, fs_1.readFileSync)(fname, 'utf8');
-            const data = (0, js_yaml_1.load)(contents);
-            for (const [jobKey, jobItem] of Object.entries(data.jobs)) {
-                state.jobNames[jobKey] = jobItem.name ?? jobKey;
-            }
-            state.setJobNames(state.jobNames);
-        }
-        catch (e) {
-            log.error(`Unable to parse workflow file ${fname}: ${e}`);
-            log.warning('Be sure to run actions/checkout@v3 _before_ this action.');
-        }
-    }
-}
-const jobName = state.jobNames[job] ?? job;
-if (jobName.indexOf('${{') !== -1) {
-    log.warning('Job name contains a matrix variable. This is not supported.');
-}
-const attempt_number = parseInt(process.env.GITHUB_RUN_ATTEMPT || '1', 10);
-const getOctokit = (options) => (0, github_1.getOctokit)(state.githubToken, { baseUrl, ...(options || {}) });
-exports.getOctokit = getOctokit;
-const listCurrentJobsForWorkflowRun = async () => {
-    const octokit = (0, exports.getOctokit)();
-    const { runId: run_id, repo: { owner, repo }, } = github_1.context;
-    return await octokit.rest.actions.listJobsForWorkflowRun({
-        owner,
-        repo,
-        run_id,
-        attempt_number,
-    });
-};
-exports.listCurrentJobsForWorkflowRun = listCurrentJobsForWorkflowRun;
-const jobMatcher = /(?<name>\w+) \((?<matrix>[^()]+)\)/;
-const getMatrixData = () => {
-    const values = Object.values(state.matrix);
-    if (values.length === 0)
-        return;
-    return values.flat();
-};
-/**
- * GitHub does not provide the matrix information or a _full_ job name if you are
- * running inside a matrix. We work around this by passing the matrix data as json
- * as an input, and doing some matching magic in this function.
- *
- * If there is no matrix data, we simply match on the name of the job.
- * If there is matrix data, we extract the name and the matrix data from the
- * full name, and see if that matches.
- *
- * @param jobItem The item to match
- * @returns True if the job is the current one based on matrix data
- */
-const matchJobByName = (jobItem) => {
-    if (jobItem.name === jobName)
-        return true;
-    const matrixData = getMatrixData();
-    log.debug(`Matrix fields: ${(0, util_1.inspect)(matrixData, false, null)}`);
-    if (matrixData) {
-        const { name = '', matrix = '' } = jobItem.name.match(jobMatcher)?.groups || {};
-        log.debug(`Job name: '${name.trim()}'`);
-        log.debug(`Expected job name: ${jobName}`);
-        if (name.trim().localeCompare(jobName, undefined, { sensitivity: 'base' }) !== 0)
-            return false;
-        const matrixParts = matrix.split(', ');
-        log.debug(`Job matrix fields: ${(0, util_1.inspect)(matrixParts, false, null)}`);
-        return matrixParts.every((x) => matrixData.indexOf(x) !== -1);
-    }
-    return false;
-};
-exports.matchJobByName = matchJobByName;
-const getCurrentJobForWorkflowRun = async () => {
-    const { data: { jobs }, status, } = await (0, exports.listCurrentJobsForWorkflowRun)();
-    if (status != 200) {
-        log.warning(`Failed to get current job for workflow run: ${status}`);
-        if (status === 403) {
-            log.warning(`Make sure the token has the 'actions:read' scope, and that a valid token is provided.`);
-        }
-        return undefined;
-    }
-    const found = jobs.find(exports.matchJobByName);
-    if (!found) {
-        log.startGroup('Current job not found');
-        log.info((0, util_1.inspect)(jobs, false, null));
-        log.info('Matrix data:');
-        log.info((0, util_1.inspect)(getMatrixData(), false, null));
-        log.endGroup();
-    }
-    return found;
-};
-exports.getCurrentJobForWorkflowRun = getCurrentJobForWorkflowRun;
-const getCurrentJobConclusion = async (currentJob) => {
-    const job = currentJob ?? (await (0, exports.getCurrentJobForWorkflowRun)());
-    log.startGroup('Current job');
-    log.info((0, util_1.inspect)(job?.steps || [], false, null));
-    log.endGroup();
-    // Since we are checking the current running job, we can not trust
-    // the `conclusion` field as it will remain `null` until the job has
-    // completed.
-    // Instead, we need to iterate over the current steps, and check if
-    // there are any failed steps.
-    // To make it easier, we check only the completed steps, more
-    // specifically, those that have not been skipped.
-    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
-    if (steps.find((x) => x.conclusion === 'failure'))
-        return 'failure';
-    if (steps.find((x) => x.conclusion === 'cancelled'))
-        return 'cancelled';
-    // There should always be a 'Set up job' task, so we should always
-    // have at least one success conclusion in our list of completed
-    // steps.
-    if (steps.filter((x) => x.conclusion === 'success').length > 0)
-        return 'success';
-    // If we don't, we try to use the job conclusion, or fall back to 'unknown'
-    return job?.conclusion ?? 'unknown';
-};
-exports.getCurrentJobConclusion = getCurrentJobConclusion;
-const getJobJustStarted = async (currentJob) => {
-    // Here we check how many tasks have already been completed
-    // to check if we have just started or not.
-    // Ideally we would want this action to be called
-    // as early as possible to notify the start of the workflow.
-    const job = currentJob ?? (await (0, exports.getCurrentJobForWorkflowRun)());
-    // To make it easier, we check only the completed steps, more
-    // specifically, those that have not been skipped.
-    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
-    // There should always be a 'Set up job' task at the start of
-    // the tasks list. We compare against 2 because in some cases,
-    // like our own repo, we must checkout before we can run the
-    // action.
-    return steps.length <= 2;
-};
-exports.getJobJustStarted = getJobJustStarted;
-
-
-/***/ }),
-
-/***/ 6555:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.withDebug = exports.isDebug = exports.group = exports.endGroup = exports.startGroup = exports.notice = exports.info = exports.error = exports.warning = exports.debug = void 0;
-var core_1 = __nccwpck_require__(7484);
-Object.defineProperty(exports, "debug", ({ enumerable: true, get: function () { return core_1.debug; } }));
-Object.defineProperty(exports, "warning", ({ enumerable: true, get: function () { return core_1.warning; } }));
-Object.defineProperty(exports, "error", ({ enumerable: true, get: function () { return core_1.error; } }));
-Object.defineProperty(exports, "info", ({ enumerable: true, get: function () { return core_1.info; } }));
-Object.defineProperty(exports, "notice", ({ enumerable: true, get: function () { return core_1.notice; } }));
-Object.defineProperty(exports, "startGroup", ({ enumerable: true, get: function () { return core_1.startGroup; } }));
-Object.defineProperty(exports, "endGroup", ({ enumerable: true, get: function () { return core_1.endGroup; } }));
-Object.defineProperty(exports, "group", ({ enumerable: true, get: function () { return core_1.group; } }));
-exports.isDebug = process.env['RUNNER_DEBUG'] === '1';
-const withDebug = (func) => {
-    if (exports.isDebug)
-        func();
-};
-exports.withDebug = withDebug;
-
-
-/***/ }),
-
-/***/ 5873:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.buildAttachmentsMessage = exports.lookupChannel = exports.ensureChannelName = void 0;
-const github_1 = __nccwpck_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@actions/github'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-const state = __importStar(__nccwpck_require__(6236));
-const ensureChannelName = (channelName) => channelName.replace(/[#@]/g, '');
-exports.ensureChannelName = ensureChannelName;
-const lookupChannel = async (slack, channelName) => {
-    const name = (0, exports.ensureChannelName)(channelName);
-    for await (const page of slack.paginate('conversations.list', {
-        types: 'public_channel, private_channel',
-    })) {
-        const match = page?.channels?.find((x) => x.name === name);
-        if (match) {
-            return match.id;
-        }
-    }
-    return undefined;
-};
-exports.lookupChannel = lookupChannel;
-const capitalize = (text) => text.slice(0, 1).toUpperCase() + text.slice(1, text.length);
-const snakeToPascal = (word) => {
-    return word.split('_').map(capitalize).join(' ');
-};
-const { payload, ref, workflow, eventName, serverUrl, runId, sha, actor, job } = github_1.context;
-const { owner, repo } = github_1.context.repo;
-const branchName = ref.replace('refs/heads/', '');
-const eventTitle = snakeToPascal(eventName);
-const repository = `${owner}/${repo}`;
-const repoUrl = `${serverUrl}/${repository}`;
-const repoField = {
-    title: 'Repo',
-    value: `<${repoUrl} | ${repository}>`,
-    short: true,
-};
-const workflowField = {
-    title: 'Workflow',
-    value: `<${repoUrl}/actions/runs/${runId} | ${workflow}>`,
-    short: true,
-};
-const buildTitle = () => {
-    if (state.messageTitle) {
-        return {
-            title: state.messageTitle,
-            title_link: state.messageLink ?? undefined,
-        };
-    }
-    switch (eventName) {
-        case 'pull_request':
-            return {
-                title: `${eventTitle} [${payload.action}]: ${payload.pull_request?.title}`,
-                title_link: payload.pull_request?.html_url,
-            };
-        case 'release':
-            return {
-                title: `${eventTitle}: ${payload.release.name} [${payload.release.tag_name}]`,
-                title_link: payload.release.html_url,
-            };
-        case 'push':
-            return {
-                title: `${eventTitle}: ${payload.head_commit.message} [${branchName}]`,
-                title_link: payload.compare,
-            };
-        default:
-            return {
-                title: `${eventTitle}: ${branchName}`,
-                title_link: `${repoUrl}/commit/${sha}`,
-            };
-    }
-};
-const statusColors = {
-    started: '#c0c0c0',
-    skipped: '#c0c0c0',
-    unknown: '#800080',
-    cancelled: 'warning',
-    in_progress: '#0000cc',
-    completed: 'warning',
-    success: 'good',
-    failure: 'danger',
-};
-const buildStatusField = (status) => {
-    return {
-        title: 'Status',
-        value: capitalize(status),
-        short: true,
-    };
-};
-const buildJobField = (jobId) => {
-    return {
-        title: 'Job',
-        value: `<${repoUrl}/runs/${jobId}?check_suite_focus=true | ${job}>`,
-        short: true,
-    };
-};
-const buildMatrixField = (matrix) => {
-    return {
-        title: 'Matrix',
-        value: Object.entries(matrix)
-            .map(([k, v]) => `${k}: ${v}`)
-            .join(', '),
-        short: true,
-    };
-};
-const buildCustomMessageField = (message) => {
-    return {
-        title: 'Extra',
-        value: message,
-        short: true,
-    };
-};
-const buildAttachmentsMessage = ({ status, jobId }) => {
-    const color = statusColors[status];
-    const fields = [repoField, buildStatusField(status), workflowField];
-    if (jobId)
-        fields.push(buildJobField(jobId));
-    if (state.matrix && Object.entries(state.matrix).length)
-        fields.push(buildMatrixField(state.matrix));
-    if (state.customMessage)
-        fields.push(buildCustomMessageField(state.customMessage));
-    const footer = state.showFooter
-        ? {
-            footer_icon: 'https://github.githubassets.com/favicon.ico',
-            footer: `<${repoUrl} | ${repository}>`,
-        }
-        : {};
-    return [
-        {
-            color,
-            fields: state.messageType === 'rich' ? fields : undefined,
-            author_name: actor,
-            author_link: `${serverUrl}/${actor}`,
-            ts: `${Math.floor(Date.now() / 1000)}`,
-            mrkdwn_in: ['pretext', 'text'],
-            pretext: state.text || undefined,
-            text: state.summary || undefined,
-            ...footer,
-            ...buildTitle(),
-        },
-    ];
-};
-exports.buildAttachmentsMessage = buildAttachmentsMessage;
-
-
-/***/ }),
-
-/***/ 9129:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.EXPORT_VAR_PREFIX = void 0;
-const core_1 = __nccwpck_require__(7484);
-exports.EXPORT_VAR_PREFIX = 'SLACK_NOTIFICATION_';
-// We set this state in `state.ts`, but we want to have the value here to avoid exporting during post processing
-const IS_POST_PROCESSING = !!process.env[`STATE_is-post`];
-const _getName = (name) => `${name.replace(/ /g, '_').toUpperCase()}`;
-const getStateBase = (name) => process.env[`${exports.EXPORT_VAR_PREFIX}${_getName(name)}`];
-const saveStateBase = (name, value) => {
-    if (!IS_POST_PROCESSING)
-        (0, core_1.exportVariable)(`${exports.EXPORT_VAR_PREFIX}${_getName(name)}`, value);
-};
-const stateHelper = (name, options) => {
-    const { defaultValue = undefined, toValue, fromValue, required, output = false, useFromInput = true, storeFromInput = true, isSensitive = false, saveState = saveStateBase, getState = getStateBase, } = options || {};
-    const setState = (value) => {
-        const processedValue = (fromValue ? fromValue(value) : value);
-        if (isSensitive) {
-            (0, core_1.setSecret)(processedValue);
-        }
-        saveState(name, processedValue);
-        if (output) {
-            (0, core_1.setOutput)(name, processedValue);
-        }
-    };
-    let current = defaultValue;
-    let found = false;
-    if (useFromInput) {
-        const fromInput = (0, core_1.getInput)(name, { required });
-        if (fromInput) {
-            const parsed = toValue ? toValue(fromInput) : fromInput;
-            if (parsed) {
-                current = parsed;
-                found = true;
-                if (storeFromInput)
-                    setState(parsed);
-            }
-        }
-    }
-    // If we're post-processing, we will always try to load from state to ensure the latest saved data is used
-    if (!found || IS_POST_PROCESSING) {
-        const value = getState(name);
-        if (value) {
-            const parsed = toValue ? toValue(value) : value;
-            if (parsed) {
-                current = parsed;
-                found = true;
-            }
-        }
-    }
-    return [current, setState, found];
-};
-exports["default"] = stateHelper;
-
-
-/***/ }),
-
-/***/ 6236:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p;
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.currentState = exports.setText = exports.text = exports.setSummary = exports.summary = exports.setCustomMessage = exports.customMessage = exports.setMessageType = exports.messageType = exports.setShowFooter = exports.showFooter = exports.setMessageLink = exports.messageLink = exports.setMessageTitle = exports.messageTitle = exports.setMessageId = exports.messageId = exports.setChannelId = exports.channelId = exports.channelName = exports.setJobNames = exports.jobNames = exports.setMatrix = exports.matrix = exports.setGithubToken = exports.githubToken = exports.setSlackToken = exports.slackToken = exports.setIsPost = exports.isPost = void 0;
-const core_1 = __nccwpck_require__(7484);
-const state_helper_1 = __importDefault(__nccwpck_require__(9129));
-const getState = (name) => process.env[`STATE_${name}`];
-_a = (0, state_helper_1.default)('is-post', {
-    toValue: (val) => !!val,
-    fromValue: (val) => `${val}`,
-    defaultValue: false,
-    useFromInput: false,
-    saveState: core_1.saveState,
-    getState: getState,
-}), exports.isPost = _a[0], exports.setIsPost = _a[1];
-// Setting this does not update `isPost`, it merely makes sure that we can detect if we're in the post action.
-(0, exports.setIsPost)(true);
-const jsonStateHelper = (name, options) => (0, state_helper_1.default)(name, {
-    ...options,
-    toValue: (val) => {
-        if (typeof val !== 'string')
-            return val;
-        return JSON.parse(val);
-    },
-    fromValue: (val) => JSON.stringify(val),
-});
-_b = (0, state_helper_1.default)('slack-token', { isSensitive: true }), exports.slackToken = _b[0], exports.setSlackToken = _b[1];
-_c = (0, state_helper_1.default)('github-token', { required: true, isSensitive: true }), exports.githubToken = _c[0], exports.setGithubToken = _c[1];
-_d = jsonStateHelper('matrix', { defaultValue: {} }), exports.matrix = _d[0], exports.setMatrix = _d[1];
-_e = jsonStateHelper('job-names', {
-    defaultValue: {},
-    useFromInput: false,
-}), exports.jobNames = _e[0], exports.setJobNames = _e[1];
-exports.channelName = (0, core_1.getInput)('channel-name');
-_f = (0, state_helper_1.default)('channel-id', { output: true }), exports.channelId = _f[0], exports.setChannelId = _f[1];
-_g = (0, state_helper_1.default)('message-id', { output: true }), exports.messageId = _g[0], exports.setMessageId = _g[1];
-_h = (0, state_helper_1.default)('message-title'), exports.messageTitle = _h[0], exports.setMessageTitle = _h[1];
-_j = (0, state_helper_1.default)('message-link'), exports.messageLink = _j[0], exports.setMessageLink = _j[1];
-_k = jsonStateHelper('show-footer', { defaultValue: true }), exports.showFooter = _k[0], exports.setShowFooter = _k[1];
-_l = (0, state_helper_1.default)('message-type', { defaultValue: 'rich' }), exports.messageType = _l[0], exports.setMessageType = _l[1];
-_m = (0, state_helper_1.default)('message-custom'), exports.customMessage = _m[0], exports.setCustomMessage = _m[1];
-_o = (0, state_helper_1.default)('message-summary'), exports.summary = _o[0], exports.setSummary = _o[1];
-_p = (0, state_helper_1.default)('message-text'), exports.text = _p[0], exports.setText = _p[1];
-const currentState = () => {
-    // Instead of just dumping the entire state, we sanitize it a bit, adding some more descriptive names.
-    return {
-        'is-post-processing': exports.isPost,
-        'slack-token-provided': Boolean(exports.slackToken),
-        'github-token-provided': Boolean(exports.githubToken),
-        matrix: exports.matrix,
-        'channel-name': exports.channelName,
-        'channel-id': exports.channelId,
-        'message-id': exports.messageId,
-        'message-title': exports.messageTitle,
-        'message-link': exports.messageLink,
-        'message-custom': exports.customMessage,
-        'message-summary': exports.summary,
-        'message-text': exports.text,
-        'show-footer': exports.showFooter,
-    };
-};
-exports.currentState = currentState;
-
-
-/***/ }),
-
 /***/ 2613:
 /***/ ((module) => {
 
@@ -41200,7 +37218,185 @@ module.exports = require("util");
 
 /***/ }),
 
-/***/ 6734:
+/***/ 2097:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+var __webpack_unused_export__;
+
+/*!
+ * content-type
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+__webpack_unused_export__ = ({ value: true });
+__webpack_unused_export__ = format;
+exports.qg = parse;
+const TEXT_REGEXP = /^[\u0009\u0020-\u007e\u0080-\u00ff]*$/;
+const TOKEN_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
+/**
+ * RegExp to match chars that must be quoted-pair in RFC 9110 sec 5.6.4
+ */
+const QUOTE_REGEXP = /[\\"]/g;
+/**
+ * RegExp to match type in RFC 9110 sec 8.3.1
+ *
+ * media-type = type "/" subtype
+ * type       = token
+ * subtype    = token
+ */
+const TYPE_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+\/[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
+/**
+ * Null object perf optimization. Faster than `Object.create(null)` and `{ __proto__: null }`.
+ */
+const NullObject = /* @__PURE__ */ (() => {
+    const C = function () { };
+    C.prototype = Object.create(null);
+    return C;
+})();
+/**
+ * Format an object into a `Content-Type` header.
+ */
+function format(obj) {
+    const { type, parameters } = obj;
+    if (!type || !TYPE_REGEXP.test(type)) {
+        throw new TypeError(`Invalid type: ${type}`);
+    }
+    let result = type;
+    if (parameters) {
+        for (const param of Object.keys(parameters)) {
+            if (!TOKEN_REGEXP.test(param)) {
+                throw new TypeError(`Invalid parameter name: ${param}`);
+            }
+            result += `; ${param}=${qstring(parameters[param])}`;
+        }
+    }
+    return result;
+}
+/**
+ * Parse a `Content-Type` header.
+ */
+function parse(header, options) {
+    const len = header.length;
+    let index = skipOWS(header, 0, len);
+    const valueStart = index;
+    index = skipValue(header, index, len);
+    const valueEnd = trailingOWS(header, valueStart, index);
+    const type = header.slice(valueStart, valueEnd).toLowerCase();
+    const parameters = options?.parameters === false
+        ? new NullObject()
+        : parseParameters(header, index, len);
+    return { type, parameters };
+}
+const SP = 32; // " "
+const HTAB = 9; // "\t"
+const SEMI = 59; // ";"
+const EQ = 61; // "="
+const DQUOTE = 34; // '"'
+const BSLASH = 92; // "\\"
+/**
+ * Parses the parameters of a `Content-Type` header starting at the given index.
+ */
+function parseParameters(header, index, len) {
+    const parameters = new NullObject();
+    parameter: while (index < len) {
+        index = skipOWS(header, index + 1 /* Skip over ; */, len);
+        const keyStart = index;
+        while (index < len) {
+            const code = header.charCodeAt(index);
+            if (code === SEMI)
+                continue parameter;
+            if (code === EQ) {
+                const keyEnd = trailingOWS(header, keyStart, index);
+                const key = header.slice(keyStart, keyEnd).toLowerCase();
+                index = skipOWS(header, index + 1, len);
+                if (index < len && header.charCodeAt(index) === DQUOTE) {
+                    index++;
+                    let value = "";
+                    while (index < len) {
+                        const code = header.charCodeAt(index++);
+                        if (code === DQUOTE) {
+                            index = skipValue(header, index, len);
+                            if (parameters[key] === undefined)
+                                parameters[key] = value;
+                            break;
+                        }
+                        if (code === BSLASH && index < len) {
+                            value += header[index++];
+                            continue;
+                        }
+                        value += String.fromCharCode(code);
+                    }
+                    continue parameter;
+                }
+                const valueStart = index;
+                index = skipValue(header, index, len);
+                if (parameters[key] === undefined) {
+                    const valueEnd = trailingOWS(header, valueStart, index);
+                    parameters[key] = header.slice(valueStart, valueEnd);
+                }
+                continue parameter;
+            }
+            index++;
+        }
+    }
+    return parameters;
+}
+/**
+ * Skip over characters until a semicolon.
+ */
+function skipValue(str, index, len) {
+    while (index < len) {
+        const char = str.charCodeAt(index);
+        if (char === SEMI)
+            break;
+        index++;
+    }
+    return index;
+}
+/**
+ * Skip optional whitespace (OWS) in an HTTP header value.
+ *
+ * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
+ */
+function skipOWS(header, index, len) {
+    while (index < len) {
+        const char = header.charCodeAt(index);
+        if (char !== SP && char !== HTAB)
+            break;
+        index++;
+    }
+    return index;
+}
+/**
+ * Trim optional whitespace (OWS) from the end of a substring.
+ *
+ * OWS is defined in RFC 9110 sec 5.6.3 as SP (" ") or HTAB ("\t").
+ */
+function trailingOWS(header, start, end) {
+    while (end > start) {
+        const char = header.charCodeAt(end - 1);
+        if (char !== SP && char !== HTAB)
+            break;
+        end--;
+    }
+    return end;
+}
+/**
+ * Serialize a parameter value.
+ */
+function qstring(str) {
+    if (TOKEN_REGEXP.test(str))
+        return str;
+    if (TEXT_REGEXP.test(str))
+        return `"${str.replace(QUOTE_REGEXP, "\\$&")}"`;
+    throw new TypeError(`Invalid parameter value: ${str}`);
+}
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 4158:
 /***/ ((module) => {
 
 "use strict";
@@ -41246,12 +37442,8433 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"@slack/web-api","version":"8.
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(1730);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+core@2.0.3/node_modules/@actions/core/lib/core.js
+var core = __nccwpck_require__(3841);
+// EXTERNAL MODULE: external "fs"
+var external_fs_ = __nccwpck_require__(9896);
+// EXTERNAL MODULE: external "os"
+var external_os_ = __nccwpck_require__(857);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/context.js
+
+
+class Context {
+    /**
+     * Hydrate the context from the environment
+     */
+    constructor() {
+        var _a, _b, _c;
+        this.payload = {};
+        if (process.env.GITHUB_EVENT_PATH) {
+            if ((0,external_fs_.existsSync)(process.env.GITHUB_EVENT_PATH)) {
+                this.payload = JSON.parse((0,external_fs_.readFileSync)(process.env.GITHUB_EVENT_PATH, { encoding: 'utf8' }));
+            }
+            else {
+                const path = process.env.GITHUB_EVENT_PATH;
+                process.stdout.write(`GITHUB_EVENT_PATH ${path} does not exist${external_os_.EOL}`);
+            }
+        }
+        this.eventName = process.env.GITHUB_EVENT_NAME;
+        this.sha = process.env.GITHUB_SHA;
+        this.ref = process.env.GITHUB_REF;
+        this.workflow = process.env.GITHUB_WORKFLOW;
+        this.action = process.env.GITHUB_ACTION;
+        this.actor = process.env.GITHUB_ACTOR;
+        this.job = process.env.GITHUB_JOB;
+        this.runAttempt = parseInt(process.env.GITHUB_RUN_ATTEMPT, 10);
+        this.runNumber = parseInt(process.env.GITHUB_RUN_NUMBER, 10);
+        this.runId = parseInt(process.env.GITHUB_RUN_ID, 10);
+        this.apiUrl = (_a = process.env.GITHUB_API_URL) !== null && _a !== void 0 ? _a : `https://api.github.com`;
+        this.serverUrl = (_b = process.env.GITHUB_SERVER_URL) !== null && _b !== void 0 ? _b : `https://github.com`;
+        this.graphqlUrl =
+            (_c = process.env.GITHUB_GRAPHQL_URL) !== null && _c !== void 0 ? _c : `https://api.github.com/graphql`;
+    }
+    get issue() {
+        const payload = this.payload;
+        return Object.assign(Object.assign({}, this.repo), { number: (payload.issue || payload.pull_request || payload).number });
+    }
+    get repo() {
+        if (process.env.GITHUB_REPOSITORY) {
+            const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+            return { owner, repo };
+        }
+        if (this.payload.repository) {
+            return {
+                owner: this.payload.repository.owner.login,
+                repo: this.payload.repository.name
+            };
+        }
+        throw new Error("context.repo requires a GITHUB_REPOSITORY environment variable like 'owner/repo'");
+    }
+}
+//# sourceMappingURL=context.js.map
+// EXTERNAL MODULE: ./node_modules/.pnpm/@actions+http-client@3.0.2/node_modules/@actions/http-client/lib/index.js
+var lib = __nccwpck_require__(1212);
+// EXTERNAL MODULE: ./node_modules/.pnpm/undici@6.28.0/node_modules/undici/index.js
+var undici = __nccwpck_require__(4485);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/internal/utils.js
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+
+
+function getAuthString(token, options) {
+    if (!token && !options.auth) {
+        throw new Error('Parameter token or opts.auth is required');
+    }
+    else if (token && options.auth) {
+        throw new Error('Parameters token and opts.auth may not both be specified');
+    }
+    return typeof options.auth === 'string' ? options.auth : `token ${token}`;
+}
+function getProxyAgent(destinationUrl) {
+    const hc = new lib.HttpClient();
+    return hc.getAgent(destinationUrl);
+}
+function getProxyAgentDispatcher(destinationUrl) {
+    const hc = new lib.HttpClient();
+    return hc.getAgentDispatcher(destinationUrl);
+}
+function getProxyFetch(destinationUrl) {
+    const httpDispatcher = getProxyAgentDispatcher(destinationUrl);
+    const proxyFetch = (url, opts) => __awaiter(this, void 0, void 0, function* () {
+        return (0,undici.fetch)(url, Object.assign(Object.assign({}, opts), { dispatcher: httpDispatcher }));
+    });
+    return proxyFetch;
+}
+function getApiBaseUrl() {
+    return process.env['GITHUB_API_URL'] || 'https://api.github.com';
+}
+function getUserAgentWithOrchestrationId(baseUserAgent) {
+    var _a;
+    const orchId = (_a = process.env['ACTIONS_ORCHESTRATION_ID']) === null || _a === void 0 ? void 0 : _a.trim();
+    if (orchId) {
+        const sanitizedId = orchId.replace(/[^a-z0-9_.-]/gi, '_');
+        const tag = `actions_orchestration_id/${sanitizedId}`;
+        if (baseUserAgent === null || baseUserAgent === void 0 ? void 0 : baseUserAgent.includes(tag))
+            return baseUserAgent;
+        const ua = baseUserAgent ? `${baseUserAgent} ` : '';
+        return `${ua}${tag}`;
+    }
+    return baseUserAgent;
+}
+//# sourceMappingURL=utils.js.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/universal-user-agent@7.0.3/node_modules/universal-user-agent/index.js
+function getUserAgent() {
+  if (typeof navigator === "object" && "userAgent" in navigator) {
+    return navigator.userAgent;
+  }
+
+  if (typeof process === "object" && process.version !== undefined) {
+    return `Node.js/${process.version.substr(1)} (${process.platform}; ${
+      process.arch
+    })`;
+  }
+
+  return "<environment undetectable>";
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/before-after-hook@4.0.0/node_modules/before-after-hook/lib/register.js
+// @ts-check
+
+function register(state, name, method, options) {
+  if (typeof method !== "function") {
+    throw new Error("method for before hook must be a function");
+  }
+
+  if (!options) {
+    options = {};
+  }
+
+  if (Array.isArray(name)) {
+    return name.reverse().reduce((callback, name) => {
+      return register.bind(null, state, name, callback, options);
+    }, method)();
+  }
+
+  return Promise.resolve().then(() => {
+    if (!state.registry[name]) {
+      return method(options);
+    }
+
+    return state.registry[name].reduce((method, registered) => {
+      return registered.hook.bind(null, method, options);
+    }, method)();
+  });
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/before-after-hook@4.0.0/node_modules/before-after-hook/lib/add.js
+// @ts-check
+
+function addHook(state, kind, name, hook) {
+  const orig = hook;
+  if (!state.registry[name]) {
+    state.registry[name] = [];
+  }
+
+  if (kind === "before") {
+    hook = (method, options) => {
+      return Promise.resolve()
+        .then(orig.bind(null, options))
+        .then(method.bind(null, options));
+    };
+  }
+
+  if (kind === "after") {
+    hook = (method, options) => {
+      let result;
+      return Promise.resolve()
+        .then(method.bind(null, options))
+        .then((result_) => {
+          result = result_;
+          return orig(result, options);
+        })
+        .then(() => {
+          return result;
+        });
+    };
+  }
+
+  if (kind === "error") {
+    hook = (method, options) => {
+      return Promise.resolve()
+        .then(method.bind(null, options))
+        .catch((error) => {
+          return orig(error, options);
+        });
+    };
+  }
+
+  state.registry[name].push({
+    hook: hook,
+    orig: orig,
+  });
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/before-after-hook@4.0.0/node_modules/before-after-hook/lib/remove.js
+// @ts-check
+
+function removeHook(state, name, method) {
+  if (!state.registry[name]) {
+    return;
+  }
+
+  const index = state.registry[name]
+    .map((registered) => {
+      return registered.orig;
+    })
+    .indexOf(method);
+
+  if (index === -1) {
+    return;
+  }
+
+  state.registry[name].splice(index, 1);
+}
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/before-after-hook@4.0.0/node_modules/before-after-hook/index.js
+// @ts-check
+
+
+
+
+
+// bind with array of arguments: https://stackoverflow.com/a/21792913
+const bind = Function.bind;
+const bindable = bind.bind(bind);
+
+function bindApi(hook, state, name) {
+  const removeHookRef = bindable(removeHook, null).apply(
+    null,
+    name ? [state, name] : [state]
+  );
+  hook.api = { remove: removeHookRef };
+  hook.remove = removeHookRef;
+  ["before", "error", "after", "wrap"].forEach((kind) => {
+    const args = name ? [state, kind, name] : [state, kind];
+    hook[kind] = hook.api[kind] = bindable(addHook, null).apply(null, args);
+  });
+}
+
+function Singular() {
+  const singularHookName = Symbol("Singular");
+  const singularHookState = {
+    registry: {},
+  };
+  const singularHook = register.bind(null, singularHookState, singularHookName);
+  bindApi(singularHook, singularHookState, singularHookName);
+  return singularHook;
+}
+
+function Collection() {
+  const state = {
+    registry: {},
+  };
+
+  const hook = register.bind(null, state);
+  bindApi(hook, state);
+
+  return hook;
+}
+
+/* harmony default export */ const before_after_hook = ({ Singular, Collection });
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+endpoint@11.0.4/node_modules/@octokit/endpoint/dist-bundle/index.js
+// pkg/dist-src/defaults.js
+
+
+// pkg/dist-src/version.js
+var VERSION = "0.0.0-development";
+
+// pkg/dist-src/defaults.js
+var userAgent = `octokit-endpoint.js/${VERSION} ${getUserAgent()}`;
+var DEFAULTS = {
+  method: "GET",
+  baseUrl: "https://api.github.com",
+  headers: {
+    accept: "application/vnd.github.v3+json",
+    "user-agent": userAgent
+  },
+  mediaType: {
+    format: ""
+  }
+};
+
+// pkg/dist-src/util/lowercase-keys.js
+function lowercaseKeys(object) {
+  if (!object) {
+    return {};
+  }
+  return Object.keys(object).reduce((newObj, key) => {
+    newObj[key.toLowerCase()] = object[key];
+    return newObj;
+  }, {});
+}
+
+// pkg/dist-src/util/is-plain-object.js
+function isPlainObject(value) {
+  if (typeof value !== "object" || value === null) return false;
+  if (Object.prototype.toString.call(value) !== "[object Object]") return false;
+  const proto = Object.getPrototypeOf(value);
+  if (proto === null) return true;
+  const Ctor = Object.prototype.hasOwnProperty.call(proto, "constructor") && proto.constructor;
+  return typeof Ctor === "function" && Ctor instanceof Ctor && Function.prototype.call(Ctor) === Function.prototype.call(value);
+}
+
+// pkg/dist-src/util/merge-deep.js
+function mergeDeep(defaults, options) {
+  const result = Object.assign({}, defaults);
+  Object.keys(options).forEach((key) => {
+    if (isPlainObject(options[key])) {
+      if (!(key in defaults)) Object.assign(result, { [key]: options[key] });
+      else result[key] = mergeDeep(defaults[key], options[key]);
+    } else {
+      Object.assign(result, { [key]: options[key] });
+    }
+  });
+  return result;
+}
+
+// pkg/dist-src/util/remove-undefined-properties.js
+function removeUndefinedProperties(obj) {
+  for (const key in obj) {
+    if (obj[key] === void 0) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+
+// pkg/dist-src/merge.js
+function merge(defaults, route, options) {
+  if (typeof route === "string") {
+    let [method, url] = route.split(" ");
+    options = Object.assign(url ? { method, url } : { url: method }, options);
+  } else {
+    options = Object.assign({}, route);
+  }
+  options.headers = lowercaseKeys(options.headers);
+  removeUndefinedProperties(options);
+  removeUndefinedProperties(options.headers);
+  const mergedOptions = mergeDeep(defaults || {}, options);
+  if (options.url === "/graphql") {
+    if (defaults && defaults.mediaType.previews?.length) {
+      mergedOptions.mediaType.previews = defaults.mediaType.previews.filter(
+        (preview) => !mergedOptions.mediaType.previews.includes(preview)
+      ).concat(mergedOptions.mediaType.previews);
+    }
+    mergedOptions.mediaType.previews = (mergedOptions.mediaType.previews || []).map((preview) => preview.replace(/-preview/, ""));
+  }
+  return mergedOptions;
+}
+
+// pkg/dist-src/util/add-query-parameters.js
+function addQueryParameters(url, parameters) {
+  const separator = /\?/.test(url) ? "&" : "?";
+  const names = Object.keys(parameters);
+  if (names.length === 0) {
+    return url;
+  }
+  return url + separator + names.map((name) => {
+    if (name === "q") {
+      return "q=" + parameters.q.split("+").map(encodeURIComponent).join("+");
+    }
+    return `${name}=${encodeURIComponent(parameters[name])}`;
+  }).join("&");
+}
+
+// pkg/dist-src/util/extract-url-variable-names.js
+var urlVariableRegex = /\{[^{}}]+\}/g;
+function removeNonChars(variableName) {
+  return variableName.replace(/(?:^\W+)|(?:(?<!\W)\W+$)/g, "").split(/,/);
+}
+function extractUrlVariableNames(url) {
+  const matches = url.match(urlVariableRegex);
+  if (!matches) {
+    return [];
+  }
+  return matches.map(removeNonChars).reduce((a, b) => a.concat(b), []);
+}
+
+// pkg/dist-src/util/omit.js
+function omit(object, keysToOmit) {
+  const result = { __proto__: null };
+  for (const key of Object.keys(object)) {
+    if (keysToOmit.indexOf(key) === -1) {
+      result[key] = object[key];
+    }
+  }
+  return result;
+}
+
+// pkg/dist-src/util/url-template.js
+function encodeReserved(str) {
+  return str.split(/(%[0-9A-Fa-f]{2})/g).map(function(part) {
+    if (!/%[0-9A-Fa-f]/.test(part)) {
+      part = encodeURI(part).replace(/%5B/g, "[").replace(/%5D/g, "]");
+    }
+    return part;
+  }).join("");
+}
+function encodeUnreserved(str) {
+  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+    return "%" + c.charCodeAt(0).toString(16).toUpperCase();
+  });
+}
+function encodeValue(operator, value, key) {
+  value = operator === "+" || operator === "#" ? encodeReserved(value) : encodeUnreserved(value);
+  if (key) {
+    return encodeUnreserved(key) + "=" + value;
+  } else {
+    return value;
+  }
+}
+function isDefined(value) {
+  return value !== void 0 && value !== null;
+}
+function isKeyOperator(operator) {
+  return operator === ";" || operator === "&" || operator === "?";
+}
+function getValues(context, operator, key, modifier) {
+  var value = context[key], result = [];
+  if (isDefined(value) && value !== "") {
+    if (typeof value === "string" || typeof value === "number" || typeof value === "bigint" || typeof value === "boolean") {
+      value = value.toString();
+      if (modifier && modifier !== "*") {
+        value = value.substring(0, parseInt(modifier, 10));
+      }
+      result.push(
+        encodeValue(operator, value, isKeyOperator(operator) ? key : "")
+      );
+    } else {
+      if (modifier === "*") {
+        if (Array.isArray(value)) {
+          value.filter(isDefined).forEach(function(value2) {
+            result.push(
+              encodeValue(operator, value2, isKeyOperator(operator) ? key : "")
+            );
+          });
+        } else {
+          Object.keys(value).forEach(function(k) {
+            if (isDefined(value[k])) {
+              result.push(encodeValue(operator, value[k], k));
+            }
+          });
+        }
+      } else {
+        const tmp = [];
+        if (Array.isArray(value)) {
+          value.filter(isDefined).forEach(function(value2) {
+            tmp.push(encodeValue(operator, value2));
+          });
+        } else {
+          Object.keys(value).forEach(function(k) {
+            if (isDefined(value[k])) {
+              tmp.push(encodeUnreserved(k));
+              tmp.push(encodeValue(operator, value[k].toString()));
+            }
+          });
+        }
+        if (isKeyOperator(operator)) {
+          result.push(encodeUnreserved(key) + "=" + tmp.join(","));
+        } else if (tmp.length !== 0) {
+          result.push(tmp.join(","));
+        }
+      }
+    }
+  } else {
+    if (operator === ";") {
+      if (isDefined(value)) {
+        result.push(encodeUnreserved(key));
+      }
+    } else if (value === "" && (operator === "&" || operator === "?")) {
+      result.push(encodeUnreserved(key) + "=");
+    } else if (value === "") {
+      result.push("");
+    }
+  }
+  return result;
+}
+function parseUrl(template) {
+  return {
+    expand: expand.bind(null, template)
+  };
+}
+function expand(template, context) {
+  var operators = ["+", "#", ".", "/", ";", "?", "&"];
+  template = template.replace(
+    /\{([^\{\}]+)\}|([^\{\}]+)/g,
+    function(_, expression, literal) {
+      if (expression) {
+        let operator = "";
+        const values = [];
+        if (operators.indexOf(expression.charAt(0)) !== -1) {
+          operator = expression.charAt(0);
+          expression = expression.substr(1);
+        }
+        expression.split(/,/g).forEach(function(variable) {
+          var tmp = /([^:\*]*)(?::(\d+)|(\*))?/.exec(variable);
+          values.push(getValues(context, operator, tmp[1], tmp[2] || tmp[3]));
+        });
+        if (operator && operator !== "+") {
+          var separator = ",";
+          if (operator === "?") {
+            separator = "&";
+          } else if (operator !== "#") {
+            separator = operator;
+          }
+          return (values.length !== 0 ? operator : "") + values.join(separator);
+        } else {
+          return values.join(",");
+        }
+      } else {
+        return encodeReserved(literal);
+      }
+    }
+  );
+  if (template === "/") {
+    return template;
+  } else {
+    return template.replace(/\/$/, "");
+  }
+}
+
+// pkg/dist-src/parse.js
+function parse(options) {
+  let method = options.method.toUpperCase();
+  let url = (options.url || "/").replace(/:([a-z]\w+)/g, "{$1}");
+  let headers = Object.assign({}, options.headers);
+  let body;
+  let parameters = omit(options, [
+    "method",
+    "baseUrl",
+    "url",
+    "headers",
+    "request",
+    "mediaType"
+  ]);
+  const urlVariableNames = extractUrlVariableNames(url);
+  url = parseUrl(url).expand(parameters);
+  if (!/^http/.test(url)) {
+    url = options.baseUrl + url;
+  }
+  const omittedParameters = Object.keys(options).filter((option) => urlVariableNames.includes(option)).concat("baseUrl");
+  const remainingParameters = omit(parameters, omittedParameters);
+  const isBinaryRequest = /application\/octet-stream/i.test(headers.accept);
+  if (!isBinaryRequest) {
+    if (options.mediaType.format) {
+      headers.accept = headers.accept.split(/,/).map(
+        (format) => format.replace(
+          /application\/vnd(\.\w+)(\.v3)?(\.\w+)?(\+json)?$/,
+          `application/vnd$1$2.${options.mediaType.format}`
+        )
+      ).join(",");
+    }
+    if (url.endsWith("/graphql")) {
+      if (options.mediaType.previews?.length) {
+        const previewsFromAcceptHeader = headers.accept.match(/(?<![\w-])[\w-]+(?=-preview)/g) || [];
+        headers.accept = previewsFromAcceptHeader.concat(options.mediaType.previews).map((preview) => {
+          const format = options.mediaType.format ? `.${options.mediaType.format}` : "+json";
+          return `application/vnd.github.${preview}-preview${format}`;
+        }).join(",");
+      }
+    }
+  }
+  if (["GET", "HEAD"].includes(method)) {
+    url = addQueryParameters(url, remainingParameters);
+  } else {
+    if ("data" in remainingParameters) {
+      body = remainingParameters.data;
+    } else {
+      if (Object.keys(remainingParameters).length) {
+        body = remainingParameters;
+      }
+    }
+  }
+  if (!headers["content-type"] && typeof body !== "undefined") {
+    headers["content-type"] = "application/json; charset=utf-8";
+  }
+  if (["PATCH", "PUT"].includes(method) && typeof body === "undefined") {
+    body = "";
+  }
+  return Object.assign(
+    { method, url, headers },
+    typeof body !== "undefined" ? { body } : null,
+    options.request ? { request: options.request } : null
+  );
+}
+
+// pkg/dist-src/endpoint-with-defaults.js
+function endpointWithDefaults(defaults, route, options) {
+  return parse(merge(defaults, route, options));
+}
+
+// pkg/dist-src/with-defaults.js
+function withDefaults(oldDefaults, newDefaults) {
+  const DEFAULTS2 = merge(oldDefaults, newDefaults);
+  const endpoint2 = endpointWithDefaults.bind(null, DEFAULTS2);
+  return Object.assign(endpoint2, {
+    DEFAULTS: DEFAULTS2,
+    defaults: withDefaults.bind(null, DEFAULTS2),
+    merge: merge.bind(null, DEFAULTS2),
+    parse
+  });
+}
+
+// pkg/dist-src/index.js
+var endpoint = withDefaults(null, DEFAULTS);
+
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/content-type@2.0.0/node_modules/content-type/dist/index.js
+var dist = __nccwpck_require__(2097);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/json-with-bigint@3.5.10/node_modules/json-with-bigint/json-with-bigint.js
+const intRegex = /^-?\d+$/;
+const noiseValue = /^-?\d+n+$/; // Noise - strings that match the custom format before being converted to it
+const originalStringify = JSON.stringify;
+const originalParse = JSON.parse;
+const customFormat = /^-?\d+n$/;
+
+const bigIntsStringify = /([\[:])?"(-?\d+)n"($|\s*[,\}\]])/g;
+const noiseStringify = /([\[:])?("-?\d+n+)n("$|"\s*[,\}\]])/g;
+
+/**
+ * @typedef {(this: any, key: string | number | undefined, value: any) => any} Replacer
+ * @typedef {(key: string | number | undefined, value: any, context?: { source: string }) => any} Reviver
+ */
+
+/**
+ * Checks if a value is unstringifiable according to native JSON.stringify rules.
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is undefined, a function, or a symbol.
+ */
+const isUnstringifiable = (val) =>
+  val === undefined || typeof val === "function" || typeof val === "symbol";
+
+/**
+ * Checks if a value is a native JSON.rawJSON object (Node.js 22+).
+ *
+ * @param {any} val The value to check.
+ * @returns {boolean} True if the value is a RawJSON instance.
+ */
+const isRawJSON = (val) =>
+  val !== null &&
+  typeof val === "object" &&
+  val.constructor &&
+  val.constructor.name === "RawJSON";
+
+/**
+ * Iteratively converts a JS value to a JSON string.
+ * Used as a fallback when the native JSON.stringify hits the Maximum Call Stack size.
+ * Fully compliant with JSON formatting (space), replacers, and toJSON behaviors.
+ *
+ * @param {any} rootValue The value to stringify.
+ * @param {Replacer | Array<string | number> | null} [replacer] User's custom replacer function.
+ * @param {string | number} [spaceParam] Indentation for pretty-printing.
+ * @returns {string | undefined} The generated JSON string.
+ */
+const stringifyIteratively = (rootValue, replacer, spaceParam) => {
+  let space = "";
+
+  if (typeof spaceParam === "number") {
+    space = " ".repeat(Math.min(10, Math.max(0, Math.floor(spaceParam))));
+  } else if (typeof spaceParam === "string") {
+    space = spaceParam.slice(0, 10);
+  }
+
+  const isFunctionReplacer = typeof replacer === "function";
+  const propertyList = Array.isArray(replacer)
+    ? new Set(replacer.map(String))
+    : null;
+
+  /**
+   * Prepares a value for stringification by resolving toJSON, handling BigInts,
+   * applying custom replacers, and unwrapping primitive objects.
+   *
+   * @param {object|Array} parent The parent object or array holding the value.
+   * @param {string} key The key associated with the value.
+   * @param {any} val The raw value to process.
+   * @returns {any} The processed value ready for stringification.
+   */
+  const prepareVal = (parent, key, val) => {
+    const isObject = val !== null && typeof val === "object";
+    const hasToJSON = isObject && typeof val.toJSON === "function";
+
+    if (hasToJSON) {
+      val = val.toJSON(key);
+    }
+
+    const isNoise = typeof val === "string" && noiseValue.test(val);
+
+    if (isNoise) return val + "n";
+
+    const isBigInt = typeof val === "bigint";
+
+    if (isBigInt) {
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return JSON.rawJSON(val.toString());
+
+      return val.toString() + "n";
+    }
+
+    if (isFunctionReplacer) {
+      val = replacer.call(parent, key, val);
+    }
+
+    const isPostReplacerObject = val !== null && typeof val === "object";
+
+    if (isPostReplacerObject) {
+      const isPrimitiveWrapper =
+        val instanceof Number ||
+        val instanceof String ||
+        val instanceof Boolean;
+
+      if (isPrimitiveWrapper) {
+        val = val.valueOf();
+      }
+    }
+
+    return val;
+  };
+
+  const rootProcessed = prepareVal({ "": rootValue }, "", rootValue);
+
+  if (isUnstringifiable(rootProcessed)) {
+    return undefined;
+  }
+
+  const isRootPrimitive =
+    rootProcessed === null || typeof rootProcessed !== "object";
+  const isRootNativeRawJSON = isRawJSON(rootProcessed);
+
+  if (isRootPrimitive || isRootNativeRawJSON) {
+    return originalStringify(rootProcessed);
+  }
+
+  const chunks = [];
+  let level = 0;
+
+  const stack = [
+    {
+      parent: { "": rootProcessed },
+      key: "",
+      val: rootProcessed,
+      isArray: Array.isArray(rootProcessed),
+      keys: Array.isArray(rootProcessed) ? null : Object.keys(rootProcessed),
+      index: 0,
+      first: true,
+    },
+  ];
+
+  const visited = new WeakSet([rootProcessed]);
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (node.index === 0) {
+      chunks.push(node.isArray ? "[" : "{");
+      level++;
+    }
+
+    let isDone = false;
+
+    if (node.isArray) {
+      if (node.index < node.val.length) {
+        if (!node.first) chunks.push(",");
+
+        if (space) chunks.push("\n" + space.repeat(level));
+
+        const childRaw = node.val[node.index];
+        const childVal = prepareVal(node.val, String(node.index), childRaw);
+
+        if (isUnstringifiable(childVal)) {
+          chunks.push("null");
+          node.first = false;
+          node.index++;
+        } else {
+          const isComplexObject =
+            childVal !== null && typeof childVal === "object";
+          const isNativeRaw = isRawJSON(childVal);
+
+          if (isComplexObject && !isNativeRaw) {
+            if (visited.has(childVal)) {
+              throw new TypeError("Converting circular structure to JSON");
+            }
+
+            visited.add(childVal);
+
+            stack.push({
+              parent: node.val,
+              key: String(node.index),
+              val: childVal,
+              isArray: Array.isArray(childVal),
+              keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+              index: 0,
+              first: true,
+            });
+
+            node.first = false;
+            node.index++;
+          } else {
+            chunks.push(originalStringify(childVal));
+            node.first = false;
+            node.index++;
+          }
+        }
+      } else {
+        isDone = true;
+      }
+    } else {
+      while (node.index < node.keys.length) {
+        const k = node.keys[node.index++];
+
+        const isFilteredOutByArray = propertyList && !propertyList.has(k);
+
+        if (isFilteredOutByArray) continue;
+
+        const childRaw = node.val[k];
+        const childVal = prepareVal(node.val, k, childRaw);
+
+        if (isUnstringifiable(childVal)) continue;
+
+        if (!node.first) chunks.push(",");
+
+        if (space) {
+          chunks.push("\n" + space.repeat(level) + originalStringify(k) + ": ");
+        } else {
+          chunks.push(originalStringify(k) + ":");
+        }
+
+        const isComplexObject =
+          childVal !== null && typeof childVal === "object";
+        const isNativeRaw = isRawJSON(childVal);
+
+        if (isComplexObject && !isNativeRaw) {
+          if (visited.has(childVal)) {
+            throw new TypeError("Converting circular structure to JSON");
+          }
+
+          visited.add(childVal);
+
+          stack.push({
+            parent: node.val,
+            key: k,
+            val: childVal,
+            isArray: Array.isArray(childVal),
+            keys: Array.isArray(childVal) ? null : Object.keys(childVal),
+            index: 0,
+            first: true,
+          });
+
+          node.first = false;
+
+          break; // Stop current loop level to process the newly pushed stack node
+        } else {
+          chunks.push(originalStringify(childVal));
+          node.first = false;
+        }
+      }
+
+      const isNodeFullyProcessed =
+        node.index >= node.keys.length && stack[stack.length - 1] === node;
+
+      if (isNodeFullyProcessed) {
+        isDone = true;
+      }
+    }
+
+    if (isDone) {
+      level--;
+
+      if (!node.first && space) chunks.push("\n" + space.repeat(level));
+
+      chunks.push(node.isArray ? "]" : "}");
+      visited.delete(node.val);
+      stack.pop();
+    }
+  }
+
+  return chunks.join("");
+};
+
+/**
+ * Converts a JavaScript value to a JSON string.
+ *
+ * Supports serialization of BigInt values using two strategies:
+ * 1. Custom format "123n" → "123" (universal fallback)
+ * 2. Native JSON.rawJSON() (Node.js 22+, fastest) when available
+ *
+ * All other values are serialized exactly like native JSON.stringify().
+ *
+ * @param {*} value The value to convert to a JSON string.
+ * @param {Replacer | Array<string | number> | null} [replacer]
+ * A function that alters the behavior of the stringification process,
+ * or an array of strings/numbers to indicate properties to exclude.
+ * @param {string | number} [space]
+ * A string or number to specify indentation or pretty-printing.
+ * @returns {string} The JSON string representation.
+ */
+const JSONStringify = (value, replacer, space) => {
+  try {
+    const supportsRawJSON = "rawJSON" in JSON;
+
+    if (supportsRawJSON) {
+      return originalStringify(
+        value,
+        (key, val) => {
+          if (typeof val === "bigint") return JSON.rawJSON(val.toString());
+
+          const hasFunctionReplacer = typeof replacer === "function";
+
+          if (hasFunctionReplacer) return replacer(key, val);
+
+          const isKeyInArrayReplacer =
+            Array.isArray(replacer) && replacer.includes(key);
+
+          if (isKeyInArrayReplacer) return val;
+
+          return val;
+        },
+        space,
+      );
+    }
+
+    if (!value) return originalStringify(value, replacer, space);
+
+    const convertedToCustomJSON = originalStringify(
+      value,
+      (key, val) => {
+        const isNoise = typeof val === "string" && noiseValue.test(val);
+
+        if (isNoise) return val.toString() + "n"; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+
+        if (typeof val === "bigint") return val.toString() + "n";
+
+        const hasFunctionReplacer = typeof replacer === "function";
+
+        if (hasFunctionReplacer) return replacer(key, val);
+
+        const isKeyInArrayReplacer =
+          Array.isArray(replacer) && replacer.includes(key);
+
+        if (isKeyInArrayReplacer) return val;
+
+        return val;
+      },
+      space,
+    );
+
+    const processedJSON = convertedToCustomJSON.replace(
+      bigIntsStringify,
+      "$1$2$3",
+    ); // Delete one "n" off the end of every BigInt value
+
+    const denoisedJSON = processedJSON.replace(noiseStringify, "$1$2$3"); // Remove one "n" off the end of every noisy string
+
+    return denoisedJSON;
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const convertedJSON = stringifyIteratively(value, replacer, space);
+
+      if (convertedJSON === undefined) return undefined;
+
+      const supportsRawJSON = "rawJSON" in JSON;
+
+      if (supportsRawJSON) return convertedJSON;
+
+      const processedJSON = convertedJSON.replace(bigIntsStringify, "$1$2$3");
+
+      return processedJSON.replace(noiseStringify, "$1$2$3");
+    }
+
+    throw error;
+  }
+};
+
+const featureCache = new Map();
+
+/**
+ * Detects if the current JSON.parse implementation supports the context.source feature.
+ *
+ * Uses toString() fingerprinting to cache results and automatically detect runtime
+ * replacements of JSON.parse (polyfills, mocks, etc.).
+ *
+ * @returns {boolean} true if context.source is supported, false otherwise.
+ */
+const isContextSourceSupported = () => {
+  const parseFingerprint = JSON.parse.toString();
+
+  if (featureCache.has(parseFingerprint)) {
+    return featureCache.get(parseFingerprint);
+  }
+
+  try {
+    const result = JSON.parse(
+      "1",
+      (_, __, context) => !!context?.source && context.source === "1",
+    );
+    featureCache.set(parseFingerprint, result);
+
+    return result;
+  } catch {
+    featureCache.set(parseFingerprint, false);
+
+    return false;
+  }
+};
+
+/**
+ * Reviver function that converts custom-format BigInt strings back to BigInt values.
+ * Also handles "noise" strings that accidentally match the BigInt format.
+ *
+ * @param {string | number | undefined} key The object key.
+ * @param {*} value The value being parsed.
+ * @param {object} [context] Parse context (if supported by JSON.parse).
+ * @param {Reviver} [userReviver] User's custom reviver function.
+ * @returns {any} The transformed value.
+ */
+const convertMarkedBigIntsReviver = (key, value, context, userReviver) => {
+  const isCustomFormatBigInt =
+    typeof value === "string" && customFormat.test(value);
+
+  if (isCustomFormatBigInt) return BigInt(value.slice(0, -1));
+
+  const isNoiseValue = typeof value === "string" && noiseValue.test(value);
+  if (isNoiseValue) return value.slice(0, -1);
+
+  const hasUserReviver = typeof userReviver === "function";
+
+  if (!hasUserReviver) return value;
+
+  return userReviver(key, value, context);
+};
+
+/**
+ * Fast JSON.parse implementation (~2x faster than classic fallback).
+ * Uses JSON.parse's context.source feature to detect integers and convert
+ * large numbers directly to BigInt without string manipulation.
+ *
+ * Does not support legacy custom format from v1 of this library.
+ *
+ * @param {string} text JSON string to parse.
+ * @param {Reviver} [reviver] Transform function to apply to each value.
+ * @returns {any} Parsed JavaScript value.
+ */
+const JSONParseV2 = (text, reviver) => {
+  return JSON.parse(text, (key, value, context) => {
+    const isNumber = typeof value === "number";
+    const isOutOfBounds =
+      value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER;
+    const isBigNumber = isNumber && isOutOfBounds;
+    const isInt = context && intRegex.test(context.source);
+    const isBigInt = isBigNumber && isInt;
+
+    if (isBigInt) return BigInt(context.source);
+
+    const hasCustomReviver = typeof reviver === "function";
+
+    if (!hasCustomReviver) return value;
+
+    return reviver(key, value, context);
+  });
+};
+
+const MAX_INT = Number.MAX_SAFE_INTEGER.toString();
+const MAX_DIGITS = MAX_INT.length;
+const stringsOrLargeNumbers =
+  /"(?:\\.|[^"])*"|-?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?/g;
+const noiseValueWithQuotes = /^"-?\d+n+"$/; // Noise - strings that match the custom format before being converted to it
+
+/**
+ * Iteratively traverses the parsed object bottom-up (post-order),
+ * emulating the native JSON.parse reviver behavior.
+ * This avoids Call Stack overflows (RangeError) on deeply nested structures.
+ *
+ * @param {any} parsed The natively parsed JSON object.
+ * @param {Reviver} [userReviver] User's custom reviver function.
+ * @returns {any} The fully processed object.
+ */
+const applyReviverIteratively = (parsed, userReviver) => {
+  const rootHolder = { "": parsed };
+  const stack = [{ parent: rootHolder, key: "", visited: false }];
+
+  while (stack.length > 0) {
+    const node = stack[stack.length - 1];
+
+    if (!node.visited) {
+      node.visited = true;
+
+      const value = node.parent[node.key];
+      const isComplexObject = value !== null && typeof value === "object";
+
+      if (isComplexObject) {
+        const keys = Object.keys(value);
+
+        for (let i = keys.length - 1; i >= 0; i--) {
+          stack.push({ parent: value, key: keys[i], visited: false });
+        }
+      }
+    } else {
+      const { parent, key } = node;
+      let value = parent[key];
+
+      if (typeof value === "string") {
+        const isCustomFormatBigInt = customFormat.test(value);
+
+        if (isCustomFormatBigInt) {
+          value = BigInt(value.slice(0, -1));
+        } else {
+          const isNoise = noiseValue.test(value);
+
+          if (isNoise) value = value.slice(0, -1);
+        }
+      }
+
+      const hasUserReviver = typeof userReviver === "function";
+
+      if (hasUserReviver) {
+        value = userReviver.call(parent, key, value);
+      }
+
+      const isDeleted = value === undefined;
+
+      if (isDeleted) {
+        delete parent[key];
+      } else {
+        parent[key] = value;
+      }
+
+      stack.pop();
+    }
+  }
+
+  return rootHolder[""];
+};
+
+/**
+ * Pre-processes the JSON string to mark large numbers with an 'n' suffix.
+ *
+ * @param {string} text The raw JSON string.
+ * @returns {string} The serialized string with marked BigInts.
+ */
+const serializeBigInts = (text) => {
+  return text.replace(
+    stringsOrLargeNumbers,
+    (match, digits, fractional, exponential) => {
+      const isString = match[0] === '"';
+      const isNoise = isString && noiseValueWithQuotes.test(match);
+
+      if (isNoise) return match.substring(0, match.length - 1) + 'n"'; // Mark noise values with additional "n" to offset the deletion of one "n" during the processing
+
+      const hasFractionalOrExponential = fractional || exponential;
+
+      // With a fixed number of digits, we can correctly use lexicographical comparison to do a numeric comparison
+      const isLessThanMaxSafeInt =
+        digits &&
+        (digits.length < MAX_DIGITS ||
+          (digits.length === MAX_DIGITS && digits <= MAX_INT));
+
+      const isStandardValue =
+        isString || hasFractionalOrExponential || isLessThanMaxSafeInt;
+
+      if (isStandardValue) return match;
+
+      return '"' + match + 'n"';
+    },
+  );
+};
+
+/**
+ * Converts a JSON string into a JavaScript value.
+ *
+ * Supports parsing of large integers using two strategies:
+ * 1. Classic fallback: Marks large numbers with "123n" format, then converts to BigInt
+ * 2. Fast path (JSONParseV2): Uses context.source feature (~2x faster) when available
+ *
+ * All other JSON values are parsed exactly like native JSON.parse().
+ *
+ * @param {string} text A valid JSON string.
+ * @param {Reviver} [reviver]
+ * A function that transforms the results. This function is called for each member
+ * of the object. If a member contains nested objects, the nested objects are
+ * transformed before the parent object is.
+ * @returns {any} The parsed JavaScript value.
+ * @throws {SyntaxError} If text is not valid JSON.
+ */
+const JSONParse = (text, reviver) => {
+  if (!text) return originalParse(text, reviver);
+
+  try {
+    if (isContextSourceSupported()) return JSONParseV2(text, reviver); // Shortcut to a faster (2x) and simpler version
+
+    // Find and mark big numbers with "n"
+    const serializedData = serializeBigInts(text);
+
+    return originalParse(serializedData, (key, value, context) =>
+      convertMarkedBigIntsReviver(key, value, context, reviver),
+    );
+  } catch (error) {
+    if (error instanceof RangeError) {
+      const serializedData = serializeBigInts(text);
+      const parsed = originalParse(serializedData);
+
+      return applyReviverIteratively(parsed, reviver);
+    }
+
+    throw error;
+  }
+};
+
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+request-error@7.1.1/node_modules/@octokit/request-error/dist-src/index.js
+class RequestError extends Error {
+  name;
+  /**
+   * http status code
+   */
+  status;
+  /**
+   * Request options that lead to the error.
+   */
+  request;
+  /**
+   * Response object if a response was received
+   */
+  response;
+  constructor(message, statusCode, options) {
+    super(message, { cause: options.cause });
+    this.name = "HttpError";
+    this.status = Number.parseInt(statusCode);
+    if (Number.isNaN(this.status)) {
+      this.status = 0;
+    }
+    /* v8 ignore else -- @preserve -- Bug with vitest coverage where it sees an else branch that doesn't exist */
+    if ("response" in options) {
+      this.response = options.response;
+    }
+    const requestCopy = Object.assign({}, options.request);
+    if (options.request.headers.authorization) {
+      requestCopy.headers = Object.assign({}, options.request.headers, {
+        authorization: options.request.headers.authorization.replace(
+          /(?<! ) .*$/,
+          " [REDACTED]"
+        )
+      });
+    }
+    requestCopy.url = requestCopy.url.replace(/\bclient_secret=\w+/g, "client_secret=[REDACTED]").replace(/\baccess_token=\w+/g, "access_token=[REDACTED]");
+    this.request = requestCopy;
+  }
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+request@10.0.13/node_modules/@octokit/request/dist-bundle/index.js
+// pkg/dist-src/index.js
+
+
+// pkg/dist-src/defaults.js
+
+
+// pkg/dist-src/version.js
+var dist_bundle_VERSION = "10.0.13";
+
+// pkg/dist-src/defaults.js
+var defaults_default = {
+  headers: {
+    "user-agent": `octokit-request.js/${dist_bundle_VERSION} ${getUserAgent()}`
+  }
+};
+
+// pkg/dist-src/fetch-wrapper.js
+
+
+
+// pkg/dist-src/is-plain-object.js
+function dist_bundle_isPlainObject(value) {
+  if (typeof value !== "object" || value === null) return false;
+  if (Object.prototype.toString.call(value) !== "[object Object]") return false;
+  const proto = Object.getPrototypeOf(value);
+  if (proto === null) return true;
+  const Ctor = Object.prototype.hasOwnProperty.call(proto, "constructor") && proto.constructor;
+  return typeof Ctor === "function" && Ctor instanceof Ctor && Function.prototype.call(Ctor) === Function.prototype.call(value);
+}
+
+// pkg/dist-src/fetch-wrapper.js
+
+var noop = () => "";
+async function fetchWrapper(requestOptions) {
+  const fetch = requestOptions.request?.fetch || globalThis.fetch;
+  if (!fetch) {
+    throw new Error(
+      "fetch is not set. Please pass a fetch implementation as new Octokit({ request: { fetch }}). Learn more at https://github.com/octokit/octokit.js/#fetch-missing"
+    );
+  }
+  const log = requestOptions.request?.log || console;
+  const parseSuccessResponseBody = requestOptions.request?.parseSuccessResponseBody !== false;
+  const body = dist_bundle_isPlainObject(requestOptions.body) || Array.isArray(requestOptions.body) ? JSONStringify(requestOptions.body) : requestOptions.body;
+  const requestHeaders = Object.fromEntries(
+    Object.entries(requestOptions.headers).map(([name, value]) => [
+      name,
+      String(value)
+    ])
+  );
+  let fetchResponse;
+  try {
+    fetchResponse = await fetch(requestOptions.url, {
+      method: requestOptions.method,
+      body,
+      redirect: requestOptions.request?.redirect,
+      headers: requestHeaders,
+      signal: requestOptions.request?.signal,
+      // duplex must be set if request.body is ReadableStream or Async Iterables.
+      // See https://fetch.spec.whatwg.org/#dom-requestinit-duplex.
+      ...requestOptions.body && { duplex: "half" }
+    });
+  } catch (error) {
+    let message = "Unknown Error";
+    if (error instanceof Error) {
+      if (error.name === "AbortError") {
+        error.status = 500;
+        throw error;
+      }
+      message = error.message;
+      if (error.name === "TypeError" && "cause" in error) {
+        if (error.cause instanceof Error) {
+          message = error.cause.message;
+        } else if (typeof error.cause === "string") {
+          message = error.cause;
+        }
+      }
+    }
+    const requestError = new RequestError(message, 500, {
+      request: requestOptions
+    });
+    requestError.cause = error;
+    throw requestError;
+  }
+  const status = fetchResponse.status;
+  const url = fetchResponse.url;
+  const responseHeaders = {};
+  for (const [key, value] of fetchResponse.headers) {
+    responseHeaders[key] = value;
+  }
+  const octokitResponse = {
+    url,
+    status,
+    headers: responseHeaders,
+    data: ""
+  };
+  if ("deprecation" in responseHeaders) {
+    const matches = responseHeaders.link && responseHeaders.link.match(/<([^<>]+)>; rel="deprecation"/);
+    const deprecationLink = matches && matches.pop();
+    log.warn(
+      `[@octokit/request] "${requestOptions.method} ${requestOptions.url}" is deprecated. It is scheduled to be removed on ${responseHeaders.sunset}${deprecationLink ? `. See ${deprecationLink}` : ""}`
+    );
+  }
+  if (status === 204 || status === 205) {
+    return octokitResponse;
+  }
+  if (requestOptions.method === "HEAD") {
+    if (status < 400) {
+      return octokitResponse;
+    }
+    throw new RequestError(fetchResponse.statusText, status, {
+      response: octokitResponse,
+      request: requestOptions
+    });
+  }
+  if (status === 304) {
+    octokitResponse.data = await getResponseData(fetchResponse);
+    throw new RequestError("Not modified", status, {
+      response: octokitResponse,
+      request: requestOptions
+    });
+  }
+  if (status >= 400) {
+    octokitResponse.data = await getResponseData(fetchResponse);
+    throw new RequestError(toErrorMessage(octokitResponse.data), status, {
+      response: octokitResponse,
+      request: requestOptions
+    });
+  }
+  octokitResponse.data = parseSuccessResponseBody ? await getResponseData(fetchResponse) : fetchResponse.body;
+  return octokitResponse;
+}
+async function getResponseData(response) {
+  const contentType = response.headers.get("content-type");
+  if (!contentType) {
+    return response.text().catch(noop);
+  }
+  const mimetype = (0,dist/* parse */.qg)(contentType);
+  if (isJSONResponse(mimetype)) {
+    let text = "";
+    try {
+      text = await response.text();
+      return JSONParse(text);
+    } catch (err) {
+      return text;
+    }
+  } else if (mimetype.type.startsWith("text/") || // `application/octet-stream` is the canonical "arbitrary binary" type
+  // (RFC 2046) and must never be decoded as text, even when the response
+  // carries a (misleading) `charset=utf-8` parameter — see #751.
+  mimetype.parameters.charset?.toLowerCase() === "utf-8" && mimetype.type !== "application/octet-stream") {
+    return response.text().catch(noop);
+  } else {
+    return response.arrayBuffer().catch(
+      /* v8 ignore next -- @preserve */
+      () => new ArrayBuffer(0)
+    );
+  }
+}
+function isJSONResponse(mimetype) {
+  return mimetype.type === "application/json" || mimetype.type === "application/scim+json";
+}
+function toErrorMessage(data) {
+  if (typeof data === "string") {
+    return data;
+  }
+  if (data instanceof ArrayBuffer) {
+    return "Unknown error";
+  }
+  if (typeof data === "object" && data !== null && "message" in data) {
+    const objectData = data;
+    const suffix = "documentation_url" in objectData ? ` - ${objectData.documentation_url}` : "";
+    return Array.isArray(objectData.errors) ? `${objectData.message}: ${objectData.errors.map((v) => JSON.stringify(v)).join(", ")}${suffix}` : `${objectData.message}${suffix}`;
+  }
+  return `Unknown error: ${JSON.stringify(data)}`;
+}
+
+// pkg/dist-src/with-defaults.js
+function dist_bundle_withDefaults(oldEndpoint, newDefaults) {
+  const endpoint2 = oldEndpoint.defaults(newDefaults);
+  const newApi = function(route, parameters) {
+    const endpointOptions = endpoint2.merge(route, parameters);
+    if (!endpointOptions.request || !endpointOptions.request.hook) {
+      return fetchWrapper(endpoint2.parse(endpointOptions));
+    }
+    const request2 = (route2, parameters2) => {
+      return fetchWrapper(
+        endpoint2.parse(endpoint2.merge(route2, parameters2))
+      );
+    };
+    Object.assign(request2, {
+      endpoint: endpoint2,
+      defaults: dist_bundle_withDefaults.bind(null, endpoint2)
+    });
+    return endpointOptions.request.hook(request2, endpointOptions);
+  };
+  return Object.assign(newApi, {
+    endpoint: endpoint2,
+    defaults: dist_bundle_withDefaults.bind(null, endpoint2)
+  });
+}
+
+// pkg/dist-src/index.js
+var request = dist_bundle_withDefaults(endpoint, defaults_default);
+
+/* v8 ignore next -- @preserve */
+/* v8 ignore else -- @preserve */
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+graphql@9.0.4/node_modules/@octokit/graphql/dist-bundle/index.js
+// pkg/dist-src/index.js
+
+
+
+// pkg/dist-src/version.js
+var graphql_dist_bundle_VERSION = "0.0.0-development";
+
+// pkg/dist-src/with-defaults.js
+
+
+// pkg/dist-src/graphql.js
+
+
+// pkg/dist-src/error.js
+function _buildMessageForResponseErrors(data) {
+  return `Request failed due to following response errors:
+` + data.errors.map((e) => ` - ${e.message}`).join("\n");
+}
+var GraphqlResponseError = class extends Error {
+  constructor(request2, headers, response) {
+    super(_buildMessageForResponseErrors(response));
+    this.request = request2;
+    this.headers = headers;
+    this.response = response;
+    this.errors = response.errors;
+    this.data = response.data;
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, this.constructor);
+    }
+  }
+  request;
+  headers;
+  response;
+  name = "GraphqlResponseError";
+  errors;
+  data;
+};
+
+// pkg/dist-src/graphql.js
+var NON_VARIABLE_OPTIONS = [
+  "method",
+  "baseUrl",
+  "url",
+  "headers",
+  "request",
+  "query",
+  "mediaType",
+  "operationName"
+];
+var FORBIDDEN_VARIABLE_OPTIONS = ["query", "method", "url"];
+var GHES_V3_SUFFIX_REGEX = /\/api\/v3\/?$/;
+function graphql(request2, query, options) {
+  if (options) {
+    if (typeof query === "string" && "query" in options) {
+      return Promise.reject(
+        new Error(`[@octokit/graphql] "query" cannot be used as variable name`)
+      );
+    }
+    for (const key in options) {
+      if (!FORBIDDEN_VARIABLE_OPTIONS.includes(key)) continue;
+      return Promise.reject(
+        new Error(
+          `[@octokit/graphql] "${key}" cannot be used as variable name`
+        )
+      );
+    }
+  }
+  const parsedOptions = typeof query === "string" ? Object.assign({ query }, options) : query;
+  const requestOptions = Object.keys(
+    parsedOptions
+  ).reduce((result, key) => {
+    if (NON_VARIABLE_OPTIONS.includes(key)) {
+      result[key] = parsedOptions[key];
+      return result;
+    }
+    if (!result.variables) {
+      result.variables = {};
+    }
+    result.variables[key] = parsedOptions[key];
+    return result;
+  }, {});
+  const baseUrl = parsedOptions.baseUrl || request2.endpoint.DEFAULTS.baseUrl;
+  if (GHES_V3_SUFFIX_REGEX.test(baseUrl)) {
+    requestOptions.url = baseUrl.replace(GHES_V3_SUFFIX_REGEX, "/api/graphql");
+  }
+  return request2(requestOptions).then((response) => {
+    if (response.data.errors) {
+      const headers = {};
+      for (const key of Object.keys(response.headers)) {
+        headers[key] = response.headers[key];
+      }
+      throw new GraphqlResponseError(
+        requestOptions,
+        headers,
+        response.data
+      );
+    }
+    return response.data.data;
+  });
+}
+
+// pkg/dist-src/with-defaults.js
+function graphql_dist_bundle_withDefaults(request2, newDefaults) {
+  const newRequest = request2.defaults(newDefaults);
+  const newApi = (query, options) => {
+    return graphql(newRequest, query, options);
+  };
+  return Object.assign(newApi, {
+    defaults: graphql_dist_bundle_withDefaults.bind(null, newRequest),
+    endpoint: newRequest.endpoint
+  });
+}
+
+// pkg/dist-src/index.js
+var graphql2 = graphql_dist_bundle_withDefaults(request, {
+  headers: {
+    "user-agent": `octokit-graphql.js/${graphql_dist_bundle_VERSION} ${getUserAgent()}`
+  },
+  method: "POST",
+  url: "/graphql"
+});
+function withCustomRequest(customRequest) {
+  return graphql_dist_bundle_withDefaults(customRequest, {
+    method: "POST",
+    url: "/graphql"
+  });
+}
+
+/* v8 ignore if -- @preserve */
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+auth-token@6.0.0/node_modules/@octokit/auth-token/dist-bundle/index.js
+// pkg/dist-src/is-jwt.js
+var b64url = "(?:[a-zA-Z0-9_-]+)";
+var sep = "\\.";
+var jwtRE = new RegExp(`^${b64url}${sep}${b64url}${sep}${b64url}$`);
+var isJWT = jwtRE.test.bind(jwtRE);
+
+// pkg/dist-src/auth.js
+async function auth(token) {
+  const isApp = isJWT(token);
+  const isInstallation = token.startsWith("v1.") || token.startsWith("ghs_");
+  const isUserToServer = token.startsWith("ghu_");
+  const tokenType = isApp ? "app" : isInstallation ? "installation" : isUserToServer ? "user-to-server" : "oauth";
+  return {
+    type: "token",
+    token,
+    tokenType
+  };
+}
+
+// pkg/dist-src/with-authorization-prefix.js
+function withAuthorizationPrefix(token) {
+  if (token.split(/\./).length === 3) {
+    return `bearer ${token}`;
+  }
+  return `token ${token}`;
+}
+
+// pkg/dist-src/hook.js
+async function hook(token, request, route, parameters) {
+  const endpoint = request.endpoint.merge(
+    route,
+    parameters
+  );
+  endpoint.headers.authorization = withAuthorizationPrefix(token);
+  return request(endpoint);
+}
+
+// pkg/dist-src/index.js
+var createTokenAuth = function createTokenAuth2(token) {
+  if (!token) {
+    throw new Error("[@octokit/auth-token] No token passed to createTokenAuth");
+  }
+  if (typeof token !== "string") {
+    throw new Error(
+      "[@octokit/auth-token] Token passed to createTokenAuth is not a string"
+    );
+  }
+  token = token.replace(/^(token|bearer) +/i, "");
+  return Object.assign(auth.bind(null, token), {
+    hook: hook.bind(null, token)
+  });
+};
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+core@7.0.7/node_modules/@octokit/core/dist-src/version.js
+const version_VERSION = "7.0.7";
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+core@7.0.7/node_modules/@octokit/core/dist-src/index.js
+
+
+
+
+
+
+const dist_src_noop = () => {
+};
+const consoleWarn = console.warn.bind(console);
+const consoleError = console.error.bind(console);
+function createLogger(logger = {}) {
+  if (typeof logger.debug !== "function") {
+    logger.debug = dist_src_noop;
+  }
+  if (typeof logger.info !== "function") {
+    logger.info = dist_src_noop;
+  }
+  if (typeof logger.warn !== "function") {
+    logger.warn = consoleWarn;
+  }
+  if (typeof logger.error !== "function") {
+    logger.error = consoleError;
+  }
+  return logger;
+}
+const userAgentTrail = `octokit-core.js/${version_VERSION} ${getUserAgent()}`;
+class Octokit {
+  static VERSION = version_VERSION;
+  static defaults(defaults) {
+    const OctokitWithDefaults = class extends this {
+      constructor(...args) {
+        const options = args[0] || {};
+        if (typeof defaults === "function") {
+          super(defaults(options));
+          return;
+        }
+        super(
+          Object.assign(
+            {},
+            defaults,
+            options,
+            options.userAgent && defaults.userAgent ? {
+              userAgent: `${options.userAgent} ${defaults.userAgent}`
+            } : null
+          )
+        );
+      }
+    };
+    return OctokitWithDefaults;
+  }
+  static plugins = [];
+  /**
+   * Attach a plugin (or many) to your Octokit instance.
+   *
+   * @example
+   * const API = Octokit.plugin(plugin1, plugin2, plugin3, ...)
+   */
+  static plugin(...newPlugins) {
+    const currentPlugins = this.plugins;
+    const NewOctokit = class extends this {
+      static plugins = currentPlugins.concat(
+        newPlugins.filter((plugin) => !currentPlugins.includes(plugin))
+      );
+    };
+    return NewOctokit;
+  }
+  constructor(options = {}) {
+    const hook = new before_after_hook.Collection();
+    const requestDefaults = {
+      baseUrl: request.endpoint.DEFAULTS.baseUrl,
+      headers: {},
+      request: Object.assign({}, options.request, {
+        // @ts-ignore internal usage only, no need to type
+        hook: hook.bind(null, "request")
+      }),
+      mediaType: {
+        previews: [],
+        format: ""
+      }
+    };
+    requestDefaults.headers["user-agent"] = options.userAgent ? `${options.userAgent} ${userAgentTrail}` : userAgentTrail;
+    if (options.baseUrl) {
+      requestDefaults.baseUrl = options.baseUrl;
+    }
+    if (options.previews) {
+      requestDefaults.mediaType.previews = options.previews;
+    }
+    if (options.timeZone) {
+      requestDefaults.headers["time-zone"] = options.timeZone;
+    }
+    this.request = request.defaults(requestDefaults);
+    this.graphql = withCustomRequest(this.request).defaults(requestDefaults);
+    this.log = createLogger(options.log);
+    this.hook = hook;
+    if (!options.authStrategy) {
+      if (!options.auth) {
+        this.auth = async () => ({
+          type: "unauthenticated"
+        });
+      } else {
+        const auth = createTokenAuth(options.auth);
+        hook.wrap("request", auth.hook);
+        this.auth = auth;
+      }
+    } else {
+      const { authStrategy, ...otherOptions } = options;
+      const auth = authStrategy(
+        Object.assign(
+          {
+            request: this.request,
+            log: this.log,
+            // we pass the current octokit instance as well as its constructor options
+            // to allow for authentication strategies that return a new octokit instance
+            // that shares the same internal state as the current one. The original
+            // requirement for this was the "event-octokit" authentication strategy
+            // of https://github.com/probot/octokit-auth-probot.
+            octokit: this,
+            octokitOptions: otherOptions
+          },
+          options.auth
+        )
+      );
+      hook.wrap("request", auth.hook);
+      this.auth = auth;
+    }
+    const classConstructor = this.constructor;
+    for (let i = 0; i < classConstructor.plugins.length; ++i) {
+      Object.assign(this, classConstructor.plugins[i](this, options));
+    }
+  }
+  // assigned during constructor
+  request;
+  graphql;
+  log;
+  hook;
+  // TODO: type `octokit.auth` based on passed options.authStrategy
+  auth;
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-rest-endpoint-methods@17.0.0_@octokit+core@7.0.7/node_modules/@octokit/plugin-rest-endpoint-methods/dist-src/version.js
+const dist_src_version_VERSION = "17.0.0";
+
+//# sourceMappingURL=version.js.map
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-rest-endpoint-methods@17.0.0_@octokit+core@7.0.7/node_modules/@octokit/plugin-rest-endpoint-methods/dist-src/generated/endpoints.js
+const Endpoints = {
+  actions: {
+    addCustomLabelsToSelfHostedRunnerForOrg: [
+      "POST /orgs/{org}/actions/runners/{runner_id}/labels"
+    ],
+    addCustomLabelsToSelfHostedRunnerForRepo: [
+      "POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"
+    ],
+    addRepoAccessToSelfHostedRunnerGroupInOrg: [
+      "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}"
+    ],
+    addSelectedRepoToOrgSecret: [
+      "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    addSelectedRepoToOrgVariable: [
+      "PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"
+    ],
+    approveWorkflowRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve"
+    ],
+    cancelWorkflowRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel"
+    ],
+    createEnvironmentVariable: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}/variables"
+    ],
+    createHostedRunnerForOrg: ["POST /orgs/{org}/actions/hosted-runners"],
+    createOrUpdateEnvironmentSecret: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"
+    ],
+    createOrUpdateOrgSecret: ["PUT /orgs/{org}/actions/secrets/{secret_name}"],
+    createOrUpdateRepoSecret: [
+      "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}"
+    ],
+    createOrgVariable: ["POST /orgs/{org}/actions/variables"],
+    createRegistrationTokenForOrg: [
+      "POST /orgs/{org}/actions/runners/registration-token"
+    ],
+    createRegistrationTokenForRepo: [
+      "POST /repos/{owner}/{repo}/actions/runners/registration-token"
+    ],
+    createRemoveTokenForOrg: ["POST /orgs/{org}/actions/runners/remove-token"],
+    createRemoveTokenForRepo: [
+      "POST /repos/{owner}/{repo}/actions/runners/remove-token"
+    ],
+    createRepoVariable: ["POST /repos/{owner}/{repo}/actions/variables"],
+    createWorkflowDispatch: [
+      "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches"
+    ],
+    deleteActionsCacheById: [
+      "DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}"
+    ],
+    deleteActionsCacheByKey: [
+      "DELETE /repos/{owner}/{repo}/actions/caches{?key,ref}"
+    ],
+    deleteArtifact: [
+      "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"
+    ],
+    deleteCustomImageFromOrg: [
+      "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}"
+    ],
+    deleteCustomImageVersionFromOrg: [
+      "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}"
+    ],
+    deleteEnvironmentSecret: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"
+    ],
+    deleteEnvironmentVariable: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"
+    ],
+    deleteHostedRunnerForOrg: [
+      "DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"
+    ],
+    deleteOrgSecret: ["DELETE /orgs/{org}/actions/secrets/{secret_name}"],
+    deleteOrgVariable: ["DELETE /orgs/{org}/actions/variables/{name}"],
+    deleteRepoSecret: [
+      "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}"
+    ],
+    deleteRepoVariable: [
+      "DELETE /repos/{owner}/{repo}/actions/variables/{name}"
+    ],
+    deleteSelfHostedRunnerFromOrg: [
+      "DELETE /orgs/{org}/actions/runners/{runner_id}"
+    ],
+    deleteSelfHostedRunnerFromRepo: [
+      "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}"
+    ],
+    deleteWorkflowRun: ["DELETE /repos/{owner}/{repo}/actions/runs/{run_id}"],
+    deleteWorkflowRunLogs: [
+      "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs"
+    ],
+    disableSelectedRepositoryGithubActionsOrganization: [
+      "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}"
+    ],
+    disableWorkflow: [
+      "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable"
+    ],
+    downloadArtifact: [
+      "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}"
+    ],
+    downloadJobLogsForWorkflowRun: [
+      "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs"
+    ],
+    downloadWorkflowRunAttemptLogs: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs"
+    ],
+    downloadWorkflowRunLogs: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs"
+    ],
+    enableSelectedRepositoryGithubActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/repositories/{repository_id}"
+    ],
+    enableWorkflow: [
+      "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable"
+    ],
+    forceCancelWorkflowRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel"
+    ],
+    generateRunnerJitconfigForOrg: [
+      "POST /orgs/{org}/actions/runners/generate-jitconfig"
+    ],
+    generateRunnerJitconfigForRepo: [
+      "POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig"
+    ],
+    getActionsCacheList: ["GET /repos/{owner}/{repo}/actions/caches"],
+    getActionsCacheUsage: ["GET /repos/{owner}/{repo}/actions/cache/usage"],
+    getActionsCacheUsageByRepoForOrg: [
+      "GET /orgs/{org}/actions/cache/usage-by-repository"
+    ],
+    getActionsCacheUsageForOrg: ["GET /orgs/{org}/actions/cache/usage"],
+    getAllowedActionsOrganization: [
+      "GET /orgs/{org}/actions/permissions/selected-actions"
+    ],
+    getAllowedActionsRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions/selected-actions"
+    ],
+    getArtifact: ["GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}"],
+    getCustomImageForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}"
+    ],
+    getCustomImageVersionForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}"
+    ],
+    getCustomOidcSubClaimForRepo: [
+      "GET /repos/{owner}/{repo}/actions/oidc/customization/sub"
+    ],
+    getEnvironmentPublicKey: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key"
+    ],
+    getEnvironmentSecret: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}"
+    ],
+    getEnvironmentVariable: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"
+    ],
+    getGithubActionsDefaultWorkflowPermissionsOrganization: [
+      "GET /orgs/{org}/actions/permissions/workflow"
+    ],
+    getGithubActionsDefaultWorkflowPermissionsRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions/workflow"
+    ],
+    getGithubActionsPermissionsOrganization: [
+      "GET /orgs/{org}/actions/permissions"
+    ],
+    getGithubActionsPermissionsRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions"
+    ],
+    getHostedRunnerForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"
+    ],
+    getHostedRunnersGithubOwnedImagesForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/github-owned"
+    ],
+    getHostedRunnersLimitsForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/limits"
+    ],
+    getHostedRunnersMachineSpecsForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/machine-sizes"
+    ],
+    getHostedRunnersPartnerImagesForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/partner"
+    ],
+    getHostedRunnersPlatformsForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/platforms"
+    ],
+    getJobForWorkflowRun: ["GET /repos/{owner}/{repo}/actions/jobs/{job_id}"],
+    getOrgPublicKey: ["GET /orgs/{org}/actions/secrets/public-key"],
+    getOrgSecret: ["GET /orgs/{org}/actions/secrets/{secret_name}"],
+    getOrgVariable: ["GET /orgs/{org}/actions/variables/{name}"],
+    getPendingDeploymentsForRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"
+    ],
+    getRepoPermissions: [
+      "GET /repos/{owner}/{repo}/actions/permissions",
+      {},
+      { renamed: ["actions", "getGithubActionsPermissionsRepository"] }
+    ],
+    getRepoPublicKey: ["GET /repos/{owner}/{repo}/actions/secrets/public-key"],
+    getRepoSecret: ["GET /repos/{owner}/{repo}/actions/secrets/{secret_name}"],
+    getRepoVariable: ["GET /repos/{owner}/{repo}/actions/variables/{name}"],
+    getReviewsForRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals"
+    ],
+    getSelfHostedRunnerForOrg: ["GET /orgs/{org}/actions/runners/{runner_id}"],
+    getSelfHostedRunnerForRepo: [
+      "GET /repos/{owner}/{repo}/actions/runners/{runner_id}"
+    ],
+    getWorkflow: ["GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}"],
+    getWorkflowAccessToRepository: [
+      "GET /repos/{owner}/{repo}/actions/permissions/access"
+    ],
+    getWorkflowRun: ["GET /repos/{owner}/{repo}/actions/runs/{run_id}"],
+    getWorkflowRunAttempt: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}"
+    ],
+    getWorkflowRunUsage: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing"
+    ],
+    getWorkflowUsage: [
+      "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing"
+    ],
+    listArtifactsForRepo: ["GET /repos/{owner}/{repo}/actions/artifacts"],
+    listCustomImageVersionsForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions"
+    ],
+    listCustomImagesForOrg: [
+      "GET /orgs/{org}/actions/hosted-runners/images/custom"
+    ],
+    listEnvironmentSecrets: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets"
+    ],
+    listEnvironmentVariables: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/variables"
+    ],
+    listGithubHostedRunnersInGroupForOrg: [
+      "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners"
+    ],
+    listHostedRunnersForOrg: ["GET /orgs/{org}/actions/hosted-runners"],
+    listJobsForWorkflowRun: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs"
+    ],
+    listJobsForWorkflowRunAttempt: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs"
+    ],
+    listLabelsForSelfHostedRunnerForOrg: [
+      "GET /orgs/{org}/actions/runners/{runner_id}/labels"
+    ],
+    listLabelsForSelfHostedRunnerForRepo: [
+      "GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"
+    ],
+    listOrgSecrets: ["GET /orgs/{org}/actions/secrets"],
+    listOrgVariables: ["GET /orgs/{org}/actions/variables"],
+    listRepoOrganizationSecrets: [
+      "GET /repos/{owner}/{repo}/actions/organization-secrets"
+    ],
+    listRepoOrganizationVariables: [
+      "GET /repos/{owner}/{repo}/actions/organization-variables"
+    ],
+    listRepoSecrets: ["GET /repos/{owner}/{repo}/actions/secrets"],
+    listRepoVariables: ["GET /repos/{owner}/{repo}/actions/variables"],
+    listRepoWorkflows: ["GET /repos/{owner}/{repo}/actions/workflows"],
+    listRunnerApplicationsForOrg: ["GET /orgs/{org}/actions/runners/downloads"],
+    listRunnerApplicationsForRepo: [
+      "GET /repos/{owner}/{repo}/actions/runners/downloads"
+    ],
+    listSelectedReposForOrgSecret: [
+      "GET /orgs/{org}/actions/secrets/{secret_name}/repositories"
+    ],
+    listSelectedReposForOrgVariable: [
+      "GET /orgs/{org}/actions/variables/{name}/repositories"
+    ],
+    listSelectedRepositoriesEnabledGithubActionsOrganization: [
+      "GET /orgs/{org}/actions/permissions/repositories"
+    ],
+    listSelfHostedRunnersForOrg: ["GET /orgs/{org}/actions/runners"],
+    listSelfHostedRunnersForRepo: ["GET /repos/{owner}/{repo}/actions/runners"],
+    listWorkflowRunArtifacts: [
+      "GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts"
+    ],
+    listWorkflowRuns: [
+      "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs"
+    ],
+    listWorkflowRunsForRepo: ["GET /repos/{owner}/{repo}/actions/runs"],
+    reRunJobForWorkflowRun: [
+      "POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun"
+    ],
+    reRunWorkflow: ["POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun"],
+    reRunWorkflowFailedJobs: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs"
+    ],
+    removeAllCustomLabelsFromSelfHostedRunnerForOrg: [
+      "DELETE /orgs/{org}/actions/runners/{runner_id}/labels"
+    ],
+    removeAllCustomLabelsFromSelfHostedRunnerForRepo: [
+      "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"
+    ],
+    removeCustomLabelFromSelfHostedRunnerForOrg: [
+      "DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}"
+    ],
+    removeCustomLabelFromSelfHostedRunnerForRepo: [
+      "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}"
+    ],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    removeSelectedRepoFromOrgVariable: [
+      "DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}"
+    ],
+    reviewCustomGatesForRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule"
+    ],
+    reviewPendingDeploymentsForRun: [
+      "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments"
+    ],
+    setAllowedActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/selected-actions"
+    ],
+    setAllowedActionsRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions/selected-actions"
+    ],
+    setCustomLabelsForSelfHostedRunnerForOrg: [
+      "PUT /orgs/{org}/actions/runners/{runner_id}/labels"
+    ],
+    setCustomLabelsForSelfHostedRunnerForRepo: [
+      "PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels"
+    ],
+    setCustomOidcSubClaimForRepo: [
+      "PUT /repos/{owner}/{repo}/actions/oidc/customization/sub"
+    ],
+    setGithubActionsDefaultWorkflowPermissionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/workflow"
+    ],
+    setGithubActionsDefaultWorkflowPermissionsRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions/workflow"
+    ],
+    setGithubActionsPermissionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions"
+    ],
+    setGithubActionsPermissionsRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions"
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories"
+    ],
+    setSelectedReposForOrgVariable: [
+      "PUT /orgs/{org}/actions/variables/{name}/repositories"
+    ],
+    setSelectedRepositoriesEnabledGithubActionsOrganization: [
+      "PUT /orgs/{org}/actions/permissions/repositories"
+    ],
+    setWorkflowAccessToRepository: [
+      "PUT /repos/{owner}/{repo}/actions/permissions/access"
+    ],
+    updateEnvironmentVariable: [
+      "PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}"
+    ],
+    updateHostedRunnerForOrg: [
+      "PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}"
+    ],
+    updateOrgVariable: ["PATCH /orgs/{org}/actions/variables/{name}"],
+    updateRepoVariable: [
+      "PATCH /repos/{owner}/{repo}/actions/variables/{name}"
+    ]
+  },
+  activity: {
+    checkRepoIsStarredByAuthenticatedUser: ["GET /user/starred/{owner}/{repo}"],
+    deleteRepoSubscription: ["DELETE /repos/{owner}/{repo}/subscription"],
+    deleteThreadSubscription: [
+      "DELETE /notifications/threads/{thread_id}/subscription"
+    ],
+    getFeeds: ["GET /feeds"],
+    getRepoSubscription: ["GET /repos/{owner}/{repo}/subscription"],
+    getThread: ["GET /notifications/threads/{thread_id}"],
+    getThreadSubscriptionForAuthenticatedUser: [
+      "GET /notifications/threads/{thread_id}/subscription"
+    ],
+    listEventsForAuthenticatedUser: ["GET /users/{username}/events"],
+    listNotificationsForAuthenticatedUser: ["GET /notifications"],
+    listOrgEventsForAuthenticatedUser: [
+      "GET /users/{username}/events/orgs/{org}"
+    ],
+    listPublicEvents: ["GET /events"],
+    listPublicEventsForRepoNetwork: ["GET /networks/{owner}/{repo}/events"],
+    listPublicEventsForUser: ["GET /users/{username}/events/public"],
+    listPublicOrgEvents: ["GET /orgs/{org}/events"],
+    listReceivedEventsForUser: ["GET /users/{username}/received_events"],
+    listReceivedPublicEventsForUser: [
+      "GET /users/{username}/received_events/public"
+    ],
+    listRepoEvents: ["GET /repos/{owner}/{repo}/events"],
+    listRepoNotificationsForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/notifications"
+    ],
+    listReposStarredByAuthenticatedUser: ["GET /user/starred"],
+    listReposStarredByUser: ["GET /users/{username}/starred"],
+    listReposWatchedByUser: ["GET /users/{username}/subscriptions"],
+    listStargazersForRepo: ["GET /repos/{owner}/{repo}/stargazers"],
+    listWatchedReposForAuthenticatedUser: ["GET /user/subscriptions"],
+    listWatchersForRepo: ["GET /repos/{owner}/{repo}/subscribers"],
+    markNotificationsAsRead: ["PUT /notifications"],
+    markRepoNotificationsAsRead: ["PUT /repos/{owner}/{repo}/notifications"],
+    markThreadAsDone: ["DELETE /notifications/threads/{thread_id}"],
+    markThreadAsRead: ["PATCH /notifications/threads/{thread_id}"],
+    setRepoSubscription: ["PUT /repos/{owner}/{repo}/subscription"],
+    setThreadSubscription: [
+      "PUT /notifications/threads/{thread_id}/subscription"
+    ],
+    starRepoForAuthenticatedUser: ["PUT /user/starred/{owner}/{repo}"],
+    unstarRepoForAuthenticatedUser: ["DELETE /user/starred/{owner}/{repo}"]
+  },
+  apps: {
+    addRepoToInstallation: [
+      "PUT /user/installations/{installation_id}/repositories/{repository_id}",
+      {},
+      { renamed: ["apps", "addRepoToInstallationForAuthenticatedUser"] }
+    ],
+    addRepoToInstallationForAuthenticatedUser: [
+      "PUT /user/installations/{installation_id}/repositories/{repository_id}"
+    ],
+    checkToken: ["POST /applications/{client_id}/token"],
+    createFromManifest: ["POST /app-manifests/{code}/conversions"],
+    createInstallationAccessToken: [
+      "POST /app/installations/{installation_id}/access_tokens"
+    ],
+    deleteAuthorization: ["DELETE /applications/{client_id}/grant"],
+    deleteInstallation: ["DELETE /app/installations/{installation_id}"],
+    deleteToken: ["DELETE /applications/{client_id}/token"],
+    getAuthenticated: ["GET /app"],
+    getBySlug: ["GET /apps/{app_slug}"],
+    getInstallation: ["GET /app/installations/{installation_id}"],
+    getOrgInstallation: ["GET /orgs/{org}/installation"],
+    getRepoInstallation: ["GET /repos/{owner}/{repo}/installation"],
+    getSubscriptionPlanForAccount: [
+      "GET /marketplace_listing/accounts/{account_id}"
+    ],
+    getSubscriptionPlanForAccountStubbed: [
+      "GET /marketplace_listing/stubbed/accounts/{account_id}"
+    ],
+    getUserInstallation: ["GET /users/{username}/installation"],
+    getWebhookConfigForApp: ["GET /app/hook/config"],
+    getWebhookDelivery: ["GET /app/hook/deliveries/{delivery_id}"],
+    listAccountsForPlan: ["GET /marketplace_listing/plans/{plan_id}/accounts"],
+    listAccountsForPlanStubbed: [
+      "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts"
+    ],
+    listInstallationReposForAuthenticatedUser: [
+      "GET /user/installations/{installation_id}/repositories"
+    ],
+    listInstallationRequestsForAuthenticatedApp: [
+      "GET /app/installation-requests"
+    ],
+    listInstallations: ["GET /app/installations"],
+    listInstallationsForAuthenticatedUser: ["GET /user/installations"],
+    listPlans: ["GET /marketplace_listing/plans"],
+    listPlansStubbed: ["GET /marketplace_listing/stubbed/plans"],
+    listReposAccessibleToInstallation: ["GET /installation/repositories"],
+    listSubscriptionsForAuthenticatedUser: ["GET /user/marketplace_purchases"],
+    listSubscriptionsForAuthenticatedUserStubbed: [
+      "GET /user/marketplace_purchases/stubbed"
+    ],
+    listWebhookDeliveries: ["GET /app/hook/deliveries"],
+    redeliverWebhookDelivery: [
+      "POST /app/hook/deliveries/{delivery_id}/attempts"
+    ],
+    removeRepoFromInstallation: [
+      "DELETE /user/installations/{installation_id}/repositories/{repository_id}",
+      {},
+      { renamed: ["apps", "removeRepoFromInstallationForAuthenticatedUser"] }
+    ],
+    removeRepoFromInstallationForAuthenticatedUser: [
+      "DELETE /user/installations/{installation_id}/repositories/{repository_id}"
+    ],
+    resetToken: ["PATCH /applications/{client_id}/token"],
+    revokeInstallationAccessToken: ["DELETE /installation/token"],
+    scopeToken: ["POST /applications/{client_id}/token/scoped"],
+    suspendInstallation: ["PUT /app/installations/{installation_id}/suspended"],
+    unsuspendInstallation: [
+      "DELETE /app/installations/{installation_id}/suspended"
+    ],
+    updateWebhookConfigForApp: ["PATCH /app/hook/config"]
+  },
+  billing: {
+    getGithubActionsBillingOrg: ["GET /orgs/{org}/settings/billing/actions"],
+    getGithubActionsBillingUser: [
+      "GET /users/{username}/settings/billing/actions"
+    ],
+    getGithubBillingPremiumRequestUsageReportOrg: [
+      "GET /organizations/{org}/settings/billing/premium_request/usage"
+    ],
+    getGithubBillingPremiumRequestUsageReportUser: [
+      "GET /users/{username}/settings/billing/premium_request/usage"
+    ],
+    getGithubBillingUsageReportOrg: [
+      "GET /organizations/{org}/settings/billing/usage"
+    ],
+    getGithubBillingUsageReportUser: [
+      "GET /users/{username}/settings/billing/usage"
+    ],
+    getGithubPackagesBillingOrg: ["GET /orgs/{org}/settings/billing/packages"],
+    getGithubPackagesBillingUser: [
+      "GET /users/{username}/settings/billing/packages"
+    ],
+    getSharedStorageBillingOrg: [
+      "GET /orgs/{org}/settings/billing/shared-storage"
+    ],
+    getSharedStorageBillingUser: [
+      "GET /users/{username}/settings/billing/shared-storage"
+    ]
+  },
+  campaigns: {
+    createCampaign: ["POST /orgs/{org}/campaigns"],
+    deleteCampaign: ["DELETE /orgs/{org}/campaigns/{campaign_number}"],
+    getCampaignSummary: ["GET /orgs/{org}/campaigns/{campaign_number}"],
+    listOrgCampaigns: ["GET /orgs/{org}/campaigns"],
+    updateCampaign: ["PATCH /orgs/{org}/campaigns/{campaign_number}"]
+  },
+  checks: {
+    create: ["POST /repos/{owner}/{repo}/check-runs"],
+    createSuite: ["POST /repos/{owner}/{repo}/check-suites"],
+    get: ["GET /repos/{owner}/{repo}/check-runs/{check_run_id}"],
+    getSuite: ["GET /repos/{owner}/{repo}/check-suites/{check_suite_id}"],
+    listAnnotations: [
+      "GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations"
+    ],
+    listForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"],
+    listForSuite: [
+      "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs"
+    ],
+    listSuitesForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/check-suites"],
+    rerequestRun: [
+      "POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest"
+    ],
+    rerequestSuite: [
+      "POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest"
+    ],
+    setSuitesPreferences: [
+      "PATCH /repos/{owner}/{repo}/check-suites/preferences"
+    ],
+    update: ["PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}"]
+  },
+  codeScanning: {
+    commitAutofix: [
+      "POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits"
+    ],
+    createAutofix: [
+      "POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"
+    ],
+    createVariantAnalysis: [
+      "POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses"
+    ],
+    deleteAnalysis: [
+      "DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}"
+    ],
+    deleteCodeqlDatabase: [
+      "DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"
+    ],
+    getAlert: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+      {},
+      { renamedParameters: { alert_id: "alert_number" } }
+    ],
+    getAnalysis: [
+      "GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}"
+    ],
+    getAutofix: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix"
+    ],
+    getCodeqlDatabase: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}"
+    ],
+    getDefaultSetup: ["GET /repos/{owner}/{repo}/code-scanning/default-setup"],
+    getSarif: ["GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}"],
+    getVariantAnalysis: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}"
+    ],
+    getVariantAnalysisRepoTask: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}"
+    ],
+    listAlertInstances: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances"
+    ],
+    listAlertsForOrg: ["GET /orgs/{org}/code-scanning/alerts"],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/code-scanning/alerts"],
+    listAlertsInstances: [
+      "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+      {},
+      { renamed: ["codeScanning", "listAlertInstances"] }
+    ],
+    listCodeqlDatabases: [
+      "GET /repos/{owner}/{repo}/code-scanning/codeql/databases"
+    ],
+    listRecentAnalyses: ["GET /repos/{owner}/{repo}/code-scanning/analyses"],
+    updateAlert: [
+      "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}"
+    ],
+    updateDefaultSetup: [
+      "PATCH /repos/{owner}/{repo}/code-scanning/default-setup"
+    ],
+    uploadSarif: ["POST /repos/{owner}/{repo}/code-scanning/sarifs"]
+  },
+  codeSecurity: {
+    attachConfiguration: [
+      "POST /orgs/{org}/code-security/configurations/{configuration_id}/attach"
+    ],
+    attachEnterpriseConfiguration: [
+      "POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach"
+    ],
+    createConfiguration: ["POST /orgs/{org}/code-security/configurations"],
+    createConfigurationForEnterprise: [
+      "POST /enterprises/{enterprise}/code-security/configurations"
+    ],
+    deleteConfiguration: [
+      "DELETE /orgs/{org}/code-security/configurations/{configuration_id}"
+    ],
+    deleteConfigurationForEnterprise: [
+      "DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}"
+    ],
+    detachConfiguration: [
+      "DELETE /orgs/{org}/code-security/configurations/detach"
+    ],
+    getConfiguration: [
+      "GET /orgs/{org}/code-security/configurations/{configuration_id}"
+    ],
+    getConfigurationForRepository: [
+      "GET /repos/{owner}/{repo}/code-security-configuration"
+    ],
+    getConfigurationsForEnterprise: [
+      "GET /enterprises/{enterprise}/code-security/configurations"
+    ],
+    getConfigurationsForOrg: ["GET /orgs/{org}/code-security/configurations"],
+    getDefaultConfigurations: [
+      "GET /orgs/{org}/code-security/configurations/defaults"
+    ],
+    getDefaultConfigurationsForEnterprise: [
+      "GET /enterprises/{enterprise}/code-security/configurations/defaults"
+    ],
+    getRepositoriesForConfiguration: [
+      "GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories"
+    ],
+    getRepositoriesForEnterpriseConfiguration: [
+      "GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories"
+    ],
+    getSingleConfigurationForEnterprise: [
+      "GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}"
+    ],
+    setConfigurationAsDefault: [
+      "PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults"
+    ],
+    setConfigurationAsDefaultForEnterprise: [
+      "PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults"
+    ],
+    updateConfiguration: [
+      "PATCH /orgs/{org}/code-security/configurations/{configuration_id}"
+    ],
+    updateEnterpriseConfiguration: [
+      "PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}"
+    ]
+  },
+  codesOfConduct: {
+    getAllCodesOfConduct: ["GET /codes_of_conduct"],
+    getConductCode: ["GET /codes_of_conduct/{key}"]
+  },
+  codespaces: {
+    addRepositoryForSecretForAuthenticatedUser: [
+      "PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    addSelectedRepoToOrgSecret: [
+      "PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    checkPermissionsForDevcontainer: [
+      "GET /repos/{owner}/{repo}/codespaces/permissions_check"
+    ],
+    codespaceMachinesForAuthenticatedUser: [
+      "GET /user/codespaces/{codespace_name}/machines"
+    ],
+    createForAuthenticatedUser: ["POST /user/codespaces"],
+    createOrUpdateOrgSecret: [
+      "PUT /orgs/{org}/codespaces/secrets/{secret_name}"
+    ],
+    createOrUpdateRepoSecret: [
+      "PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}"
+    ],
+    createOrUpdateSecretForAuthenticatedUser: [
+      "PUT /user/codespaces/secrets/{secret_name}"
+    ],
+    createWithPrForAuthenticatedUser: [
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces"
+    ],
+    createWithRepoForAuthenticatedUser: [
+      "POST /repos/{owner}/{repo}/codespaces"
+    ],
+    deleteForAuthenticatedUser: ["DELETE /user/codespaces/{codespace_name}"],
+    deleteFromOrganization: [
+      "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}"
+    ],
+    deleteOrgSecret: ["DELETE /orgs/{org}/codespaces/secrets/{secret_name}"],
+    deleteRepoSecret: [
+      "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}"
+    ],
+    deleteSecretForAuthenticatedUser: [
+      "DELETE /user/codespaces/secrets/{secret_name}"
+    ],
+    exportForAuthenticatedUser: [
+      "POST /user/codespaces/{codespace_name}/exports"
+    ],
+    getCodespacesForUserInOrg: [
+      "GET /orgs/{org}/members/{username}/codespaces"
+    ],
+    getExportDetailsForAuthenticatedUser: [
+      "GET /user/codespaces/{codespace_name}/exports/{export_id}"
+    ],
+    getForAuthenticatedUser: ["GET /user/codespaces/{codespace_name}"],
+    getOrgPublicKey: ["GET /orgs/{org}/codespaces/secrets/public-key"],
+    getOrgSecret: ["GET /orgs/{org}/codespaces/secrets/{secret_name}"],
+    getPublicKeyForAuthenticatedUser: [
+      "GET /user/codespaces/secrets/public-key"
+    ],
+    getRepoPublicKey: [
+      "GET /repos/{owner}/{repo}/codespaces/secrets/public-key"
+    ],
+    getRepoSecret: [
+      "GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}"
+    ],
+    getSecretForAuthenticatedUser: [
+      "GET /user/codespaces/secrets/{secret_name}"
+    ],
+    listDevcontainersInRepositoryForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/codespaces/devcontainers"
+    ],
+    listForAuthenticatedUser: ["GET /user/codespaces"],
+    listInOrganization: [
+      "GET /orgs/{org}/codespaces",
+      {},
+      { renamedParameters: { org_id: "org" } }
+    ],
+    listInRepositoryForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/codespaces"
+    ],
+    listOrgSecrets: ["GET /orgs/{org}/codespaces/secrets"],
+    listRepoSecrets: ["GET /repos/{owner}/{repo}/codespaces/secrets"],
+    listRepositoriesForSecretForAuthenticatedUser: [
+      "GET /user/codespaces/secrets/{secret_name}/repositories"
+    ],
+    listSecretsForAuthenticatedUser: ["GET /user/codespaces/secrets"],
+    listSelectedReposForOrgSecret: [
+      "GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories"
+    ],
+    preFlightWithRepoForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/codespaces/new"
+    ],
+    publishForAuthenticatedUser: [
+      "POST /user/codespaces/{codespace_name}/publish"
+    ],
+    removeRepositoryForSecretForAuthenticatedUser: [
+      "DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    repoMachinesForAuthenticatedUser: [
+      "GET /repos/{owner}/{repo}/codespaces/machines"
+    ],
+    setRepositoriesForSecretForAuthenticatedUser: [
+      "PUT /user/codespaces/secrets/{secret_name}/repositories"
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories"
+    ],
+    startForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/start"],
+    stopForAuthenticatedUser: ["POST /user/codespaces/{codespace_name}/stop"],
+    stopInOrganization: [
+      "POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop"
+    ],
+    updateForAuthenticatedUser: ["PATCH /user/codespaces/{codespace_name}"]
+  },
+  copilot: {
+    addCopilotSeatsForTeams: [
+      "POST /orgs/{org}/copilot/billing/selected_teams"
+    ],
+    addCopilotSeatsForUsers: [
+      "POST /orgs/{org}/copilot/billing/selected_users"
+    ],
+    cancelCopilotSeatAssignmentForTeams: [
+      "DELETE /orgs/{org}/copilot/billing/selected_teams"
+    ],
+    cancelCopilotSeatAssignmentForUsers: [
+      "DELETE /orgs/{org}/copilot/billing/selected_users"
+    ],
+    copilotMetricsForOrganization: ["GET /orgs/{org}/copilot/metrics"],
+    copilotMetricsForTeam: ["GET /orgs/{org}/team/{team_slug}/copilot/metrics"],
+    getCopilotOrganizationDetails: ["GET /orgs/{org}/copilot/billing"],
+    getCopilotSeatDetailsForUser: [
+      "GET /orgs/{org}/members/{username}/copilot"
+    ],
+    listCopilotSeats: ["GET /orgs/{org}/copilot/billing/seats"]
+  },
+  credentials: { revoke: ["POST /credentials/revoke"] },
+  dependabot: {
+    addSelectedRepoToOrgSecret: [
+      "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    createOrUpdateOrgSecret: [
+      "PUT /orgs/{org}/dependabot/secrets/{secret_name}"
+    ],
+    createOrUpdateRepoSecret: [
+      "PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"
+    ],
+    deleteOrgSecret: ["DELETE /orgs/{org}/dependabot/secrets/{secret_name}"],
+    deleteRepoSecret: [
+      "DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"
+    ],
+    getAlert: ["GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"],
+    getOrgPublicKey: ["GET /orgs/{org}/dependabot/secrets/public-key"],
+    getOrgSecret: ["GET /orgs/{org}/dependabot/secrets/{secret_name}"],
+    getRepoPublicKey: [
+      "GET /repos/{owner}/{repo}/dependabot/secrets/public-key"
+    ],
+    getRepoSecret: [
+      "GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}"
+    ],
+    listAlertsForEnterprise: [
+      "GET /enterprises/{enterprise}/dependabot/alerts"
+    ],
+    listAlertsForOrg: ["GET /orgs/{org}/dependabot/alerts"],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/dependabot/alerts"],
+    listOrgSecrets: ["GET /orgs/{org}/dependabot/secrets"],
+    listRepoSecrets: ["GET /repos/{owner}/{repo}/dependabot/secrets"],
+    listSelectedReposForOrgSecret: [
+      "GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories"
+    ],
+    removeSelectedRepoFromOrgSecret: [
+      "DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}"
+    ],
+    repositoryAccessForOrg: [
+      "GET /organizations/{org}/dependabot/repository-access"
+    ],
+    setRepositoryAccessDefaultLevel: [
+      "PUT /organizations/{org}/dependabot/repository-access/default-level"
+    ],
+    setSelectedReposForOrgSecret: [
+      "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories"
+    ],
+    updateAlert: [
+      "PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}"
+    ],
+    updateRepositoryAccessForOrg: [
+      "PATCH /organizations/{org}/dependabot/repository-access"
+    ]
+  },
+  dependencyGraph: {
+    createRepositorySnapshot: [
+      "POST /repos/{owner}/{repo}/dependency-graph/snapshots"
+    ],
+    diffRange: [
+      "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}"
+    ],
+    exportSbom: ["GET /repos/{owner}/{repo}/dependency-graph/sbom"]
+  },
+  emojis: { get: ["GET /emojis"] },
+  enterpriseTeamMemberships: {
+    add: [
+      "PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}"
+    ],
+    bulkAdd: [
+      "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add"
+    ],
+    bulkRemove: [
+      "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove"
+    ],
+    get: [
+      "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}"
+    ],
+    list: ["GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships"],
+    remove: [
+      "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}"
+    ]
+  },
+  enterpriseTeamOrganizations: {
+    add: [
+      "PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}"
+    ],
+    bulkAdd: [
+      "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add"
+    ],
+    bulkRemove: [
+      "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove"
+    ],
+    delete: [
+      "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}"
+    ],
+    getAssignment: [
+      "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}"
+    ],
+    getAssignments: [
+      "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations"
+    ]
+  },
+  enterpriseTeams: {
+    create: ["POST /enterprises/{enterprise}/teams"],
+    delete: ["DELETE /enterprises/{enterprise}/teams/{team_slug}"],
+    get: ["GET /enterprises/{enterprise}/teams/{team_slug}"],
+    list: ["GET /enterprises/{enterprise}/teams"],
+    update: ["PATCH /enterprises/{enterprise}/teams/{team_slug}"]
+  },
+  gists: {
+    checkIsStarred: ["GET /gists/{gist_id}/star"],
+    create: ["POST /gists"],
+    createComment: ["POST /gists/{gist_id}/comments"],
+    delete: ["DELETE /gists/{gist_id}"],
+    deleteComment: ["DELETE /gists/{gist_id}/comments/{comment_id}"],
+    fork: ["POST /gists/{gist_id}/forks"],
+    get: ["GET /gists/{gist_id}"],
+    getComment: ["GET /gists/{gist_id}/comments/{comment_id}"],
+    getRevision: ["GET /gists/{gist_id}/{sha}"],
+    list: ["GET /gists"],
+    listComments: ["GET /gists/{gist_id}/comments"],
+    listCommits: ["GET /gists/{gist_id}/commits"],
+    listForUser: ["GET /users/{username}/gists"],
+    listForks: ["GET /gists/{gist_id}/forks"],
+    listPublic: ["GET /gists/public"],
+    listStarred: ["GET /gists/starred"],
+    star: ["PUT /gists/{gist_id}/star"],
+    unstar: ["DELETE /gists/{gist_id}/star"],
+    update: ["PATCH /gists/{gist_id}"],
+    updateComment: ["PATCH /gists/{gist_id}/comments/{comment_id}"]
+  },
+  git: {
+    createBlob: ["POST /repos/{owner}/{repo}/git/blobs"],
+    createCommit: ["POST /repos/{owner}/{repo}/git/commits"],
+    createRef: ["POST /repos/{owner}/{repo}/git/refs"],
+    createTag: ["POST /repos/{owner}/{repo}/git/tags"],
+    createTree: ["POST /repos/{owner}/{repo}/git/trees"],
+    deleteRef: ["DELETE /repos/{owner}/{repo}/git/refs/{ref}"],
+    getBlob: ["GET /repos/{owner}/{repo}/git/blobs/{file_sha}"],
+    getCommit: ["GET /repos/{owner}/{repo}/git/commits/{commit_sha}"],
+    getRef: ["GET /repos/{owner}/{repo}/git/ref/{ref}"],
+    getTag: ["GET /repos/{owner}/{repo}/git/tags/{tag_sha}"],
+    getTree: ["GET /repos/{owner}/{repo}/git/trees/{tree_sha}"],
+    listMatchingRefs: ["GET /repos/{owner}/{repo}/git/matching-refs/{ref}"],
+    updateRef: ["PATCH /repos/{owner}/{repo}/git/refs/{ref}"]
+  },
+  gitignore: {
+    getAllTemplates: ["GET /gitignore/templates"],
+    getTemplate: ["GET /gitignore/templates/{name}"]
+  },
+  hostedCompute: {
+    createNetworkConfigurationForOrg: [
+      "POST /orgs/{org}/settings/network-configurations"
+    ],
+    deleteNetworkConfigurationFromOrg: [
+      "DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}"
+    ],
+    getNetworkConfigurationForOrg: [
+      "GET /orgs/{org}/settings/network-configurations/{network_configuration_id}"
+    ],
+    getNetworkSettingsForOrg: [
+      "GET /orgs/{org}/settings/network-settings/{network_settings_id}"
+    ],
+    listNetworkConfigurationsForOrg: [
+      "GET /orgs/{org}/settings/network-configurations"
+    ],
+    updateNetworkConfigurationForOrg: [
+      "PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}"
+    ]
+  },
+  interactions: {
+    getRestrictionsForAuthenticatedUser: ["GET /user/interaction-limits"],
+    getRestrictionsForOrg: ["GET /orgs/{org}/interaction-limits"],
+    getRestrictionsForRepo: ["GET /repos/{owner}/{repo}/interaction-limits"],
+    getRestrictionsForYourPublicRepos: [
+      "GET /user/interaction-limits",
+      {},
+      { renamed: ["interactions", "getRestrictionsForAuthenticatedUser"] }
+    ],
+    removeRestrictionsForAuthenticatedUser: ["DELETE /user/interaction-limits"],
+    removeRestrictionsForOrg: ["DELETE /orgs/{org}/interaction-limits"],
+    removeRestrictionsForRepo: [
+      "DELETE /repos/{owner}/{repo}/interaction-limits"
+    ],
+    removeRestrictionsForYourPublicRepos: [
+      "DELETE /user/interaction-limits",
+      {},
+      { renamed: ["interactions", "removeRestrictionsForAuthenticatedUser"] }
+    ],
+    setRestrictionsForAuthenticatedUser: ["PUT /user/interaction-limits"],
+    setRestrictionsForOrg: ["PUT /orgs/{org}/interaction-limits"],
+    setRestrictionsForRepo: ["PUT /repos/{owner}/{repo}/interaction-limits"],
+    setRestrictionsForYourPublicRepos: [
+      "PUT /user/interaction-limits",
+      {},
+      { renamed: ["interactions", "setRestrictionsForAuthenticatedUser"] }
+    ]
+  },
+  issues: {
+    addAssignees: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees"
+    ],
+    addBlockedByDependency: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"
+    ],
+    addLabels: ["POST /repos/{owner}/{repo}/issues/{issue_number}/labels"],
+    addSubIssue: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"
+    ],
+    checkUserCanBeAssigned: ["GET /repos/{owner}/{repo}/assignees/{assignee}"],
+    checkUserCanBeAssignedToIssue: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}"
+    ],
+    create: ["POST /repos/{owner}/{repo}/issues"],
+    createComment: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/comments"
+    ],
+    createLabel: ["POST /repos/{owner}/{repo}/labels"],
+    createMilestone: ["POST /repos/{owner}/{repo}/milestones"],
+    deleteComment: [
+      "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}"
+    ],
+    deleteLabel: ["DELETE /repos/{owner}/{repo}/labels/{name}"],
+    deleteMilestone: [
+      "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}"
+    ],
+    get: ["GET /repos/{owner}/{repo}/issues/{issue_number}"],
+    getComment: ["GET /repos/{owner}/{repo}/issues/comments/{comment_id}"],
+    getEvent: ["GET /repos/{owner}/{repo}/issues/events/{event_id}"],
+    getLabel: ["GET /repos/{owner}/{repo}/labels/{name}"],
+    getMilestone: ["GET /repos/{owner}/{repo}/milestones/{milestone_number}"],
+    getParent: ["GET /repos/{owner}/{repo}/issues/{issue_number}/parent"],
+    list: ["GET /issues"],
+    listAssignees: ["GET /repos/{owner}/{repo}/assignees"],
+    listComments: ["GET /repos/{owner}/{repo}/issues/{issue_number}/comments"],
+    listCommentsForRepo: ["GET /repos/{owner}/{repo}/issues/comments"],
+    listDependenciesBlockedBy: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by"
+    ],
+    listDependenciesBlocking: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking"
+    ],
+    listEvents: ["GET /repos/{owner}/{repo}/issues/{issue_number}/events"],
+    listEventsForRepo: ["GET /repos/{owner}/{repo}/issues/events"],
+    listEventsForTimeline: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline"
+    ],
+    listForAuthenticatedUser: ["GET /user/issues"],
+    listForOrg: ["GET /orgs/{org}/issues"],
+    listForRepo: ["GET /repos/{owner}/{repo}/issues"],
+    listLabelsForMilestone: [
+      "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels"
+    ],
+    listLabelsForRepo: ["GET /repos/{owner}/{repo}/labels"],
+    listLabelsOnIssue: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/labels"
+    ],
+    listMilestones: ["GET /repos/{owner}/{repo}/milestones"],
+    listSubIssues: [
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues"
+    ],
+    lock: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    removeAllLabels: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels"
+    ],
+    removeAssignees: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees"
+    ],
+    removeDependencyBlockedBy: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}"
+    ],
+    removeLabel: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}"
+    ],
+    removeSubIssue: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue"
+    ],
+    reprioritizeSubIssue: [
+      "PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority"
+    ],
+    setLabels: ["PUT /repos/{owner}/{repo}/issues/{issue_number}/labels"],
+    unlock: ["DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock"],
+    update: ["PATCH /repos/{owner}/{repo}/issues/{issue_number}"],
+    updateComment: ["PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}"],
+    updateLabel: ["PATCH /repos/{owner}/{repo}/labels/{name}"],
+    updateMilestone: [
+      "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}"
+    ]
+  },
+  licenses: {
+    get: ["GET /licenses/{license}"],
+    getAllCommonlyUsed: ["GET /licenses"],
+    getForRepo: ["GET /repos/{owner}/{repo}/license"]
+  },
+  markdown: {
+    render: ["POST /markdown"],
+    renderRaw: [
+      "POST /markdown/raw",
+      { headers: { "content-type": "text/plain; charset=utf-8" } }
+    ]
+  },
+  meta: {
+    get: ["GET /meta"],
+    getAllVersions: ["GET /versions"],
+    getOctocat: ["GET /octocat"],
+    getZen: ["GET /zen"],
+    root: ["GET /"]
+  },
+  migrations: {
+    deleteArchiveForAuthenticatedUser: [
+      "DELETE /user/migrations/{migration_id}/archive"
+    ],
+    deleteArchiveForOrg: [
+      "DELETE /orgs/{org}/migrations/{migration_id}/archive"
+    ],
+    downloadArchiveForOrg: [
+      "GET /orgs/{org}/migrations/{migration_id}/archive"
+    ],
+    getArchiveForAuthenticatedUser: [
+      "GET /user/migrations/{migration_id}/archive"
+    ],
+    getStatusForAuthenticatedUser: ["GET /user/migrations/{migration_id}"],
+    getStatusForOrg: ["GET /orgs/{org}/migrations/{migration_id}"],
+    listForAuthenticatedUser: ["GET /user/migrations"],
+    listForOrg: ["GET /orgs/{org}/migrations"],
+    listReposForAuthenticatedUser: [
+      "GET /user/migrations/{migration_id}/repositories"
+    ],
+    listReposForOrg: ["GET /orgs/{org}/migrations/{migration_id}/repositories"],
+    listReposForUser: [
+      "GET /user/migrations/{migration_id}/repositories",
+      {},
+      { renamed: ["migrations", "listReposForAuthenticatedUser"] }
+    ],
+    startForAuthenticatedUser: ["POST /user/migrations"],
+    startForOrg: ["POST /orgs/{org}/migrations"],
+    unlockRepoForAuthenticatedUser: [
+      "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock"
+    ],
+    unlockRepoForOrg: [
+      "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock"
+    ]
+  },
+  oidc: {
+    getOidcCustomSubTemplateForOrg: [
+      "GET /orgs/{org}/actions/oidc/customization/sub"
+    ],
+    updateOidcCustomSubTemplateForOrg: [
+      "PUT /orgs/{org}/actions/oidc/customization/sub"
+    ]
+  },
+  orgs: {
+    addSecurityManagerTeam: [
+      "PUT /orgs/{org}/security-managers/teams/{team_slug}",
+      {},
+      {
+        deprecated: "octokit.rest.orgs.addSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#add-a-security-manager-team"
+      }
+    ],
+    assignTeamToOrgRole: [
+      "PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"
+    ],
+    assignUserToOrgRole: [
+      "PUT /orgs/{org}/organization-roles/users/{username}/{role_id}"
+    ],
+    blockUser: ["PUT /orgs/{org}/blocks/{username}"],
+    cancelInvitation: ["DELETE /orgs/{org}/invitations/{invitation_id}"],
+    checkBlockedUser: ["GET /orgs/{org}/blocks/{username}"],
+    checkMembershipForUser: ["GET /orgs/{org}/members/{username}"],
+    checkPublicMembershipForUser: ["GET /orgs/{org}/public_members/{username}"],
+    convertMemberToOutsideCollaborator: [
+      "PUT /orgs/{org}/outside_collaborators/{username}"
+    ],
+    createArtifactStorageRecord: [
+      "POST /orgs/{org}/artifacts/metadata/storage-record"
+    ],
+    createInvitation: ["POST /orgs/{org}/invitations"],
+    createIssueType: ["POST /orgs/{org}/issue-types"],
+    createWebhook: ["POST /orgs/{org}/hooks"],
+    customPropertiesForOrgsCreateOrUpdateOrganizationValues: [
+      "PATCH /organizations/{org}/org-properties/values"
+    ],
+    customPropertiesForOrgsGetOrganizationValues: [
+      "GET /organizations/{org}/org-properties/values"
+    ],
+    customPropertiesForReposCreateOrUpdateOrganizationDefinition: [
+      "PUT /orgs/{org}/properties/schema/{custom_property_name}"
+    ],
+    customPropertiesForReposCreateOrUpdateOrganizationDefinitions: [
+      "PATCH /orgs/{org}/properties/schema"
+    ],
+    customPropertiesForReposCreateOrUpdateOrganizationValues: [
+      "PATCH /orgs/{org}/properties/values"
+    ],
+    customPropertiesForReposDeleteOrganizationDefinition: [
+      "DELETE /orgs/{org}/properties/schema/{custom_property_name}"
+    ],
+    customPropertiesForReposGetOrganizationDefinition: [
+      "GET /orgs/{org}/properties/schema/{custom_property_name}"
+    ],
+    customPropertiesForReposGetOrganizationDefinitions: [
+      "GET /orgs/{org}/properties/schema"
+    ],
+    customPropertiesForReposGetOrganizationValues: [
+      "GET /orgs/{org}/properties/values"
+    ],
+    delete: ["DELETE /orgs/{org}"],
+    deleteAttestationsBulk: ["POST /orgs/{org}/attestations/delete-request"],
+    deleteAttestationsById: [
+      "DELETE /orgs/{org}/attestations/{attestation_id}"
+    ],
+    deleteAttestationsBySubjectDigest: [
+      "DELETE /orgs/{org}/attestations/digest/{subject_digest}"
+    ],
+    deleteIssueType: ["DELETE /orgs/{org}/issue-types/{issue_type_id}"],
+    deleteWebhook: ["DELETE /orgs/{org}/hooks/{hook_id}"],
+    disableSelectedRepositoryImmutableReleasesOrganization: [
+      "DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}"
+    ],
+    enableSelectedRepositoryImmutableReleasesOrganization: [
+      "PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}"
+    ],
+    get: ["GET /orgs/{org}"],
+    getImmutableReleasesSettings: [
+      "GET /orgs/{org}/settings/immutable-releases"
+    ],
+    getImmutableReleasesSettingsRepositories: [
+      "GET /orgs/{org}/settings/immutable-releases/repositories"
+    ],
+    getMembershipForAuthenticatedUser: ["GET /user/memberships/orgs/{org}"],
+    getMembershipForUser: ["GET /orgs/{org}/memberships/{username}"],
+    getOrgRole: ["GET /orgs/{org}/organization-roles/{role_id}"],
+    getOrgRulesetHistory: ["GET /orgs/{org}/rulesets/{ruleset_id}/history"],
+    getOrgRulesetVersion: [
+      "GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}"
+    ],
+    getWebhook: ["GET /orgs/{org}/hooks/{hook_id}"],
+    getWebhookConfigForOrg: ["GET /orgs/{org}/hooks/{hook_id}/config"],
+    getWebhookDelivery: [
+      "GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}"
+    ],
+    list: ["GET /organizations"],
+    listAppInstallations: ["GET /orgs/{org}/installations"],
+    listArtifactStorageRecords: [
+      "GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records"
+    ],
+    listAttestationRepositories: ["GET /orgs/{org}/attestations/repositories"],
+    listAttestations: ["GET /orgs/{org}/attestations/{subject_digest}"],
+    listAttestationsBulk: [
+      "POST /orgs/{org}/attestations/bulk-list{?per_page,before,after}"
+    ],
+    listBlockedUsers: ["GET /orgs/{org}/blocks"],
+    listFailedInvitations: ["GET /orgs/{org}/failed_invitations"],
+    listForAuthenticatedUser: ["GET /user/orgs"],
+    listForUser: ["GET /users/{username}/orgs"],
+    listInvitationTeams: ["GET /orgs/{org}/invitations/{invitation_id}/teams"],
+    listIssueTypes: ["GET /orgs/{org}/issue-types"],
+    listMembers: ["GET /orgs/{org}/members"],
+    listMembershipsForAuthenticatedUser: ["GET /user/memberships/orgs"],
+    listOrgRoleTeams: ["GET /orgs/{org}/organization-roles/{role_id}/teams"],
+    listOrgRoleUsers: ["GET /orgs/{org}/organization-roles/{role_id}/users"],
+    listOrgRoles: ["GET /orgs/{org}/organization-roles"],
+    listOrganizationFineGrainedPermissions: [
+      "GET /orgs/{org}/organization-fine-grained-permissions"
+    ],
+    listOutsideCollaborators: ["GET /orgs/{org}/outside_collaborators"],
+    listPatGrantRepositories: [
+      "GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories"
+    ],
+    listPatGrantRequestRepositories: [
+      "GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories"
+    ],
+    listPatGrantRequests: ["GET /orgs/{org}/personal-access-token-requests"],
+    listPatGrants: ["GET /orgs/{org}/personal-access-tokens"],
+    listPendingInvitations: ["GET /orgs/{org}/invitations"],
+    listPublicMembers: ["GET /orgs/{org}/public_members"],
+    listSecurityManagerTeams: [
+      "GET /orgs/{org}/security-managers",
+      {},
+      {
+        deprecated: "octokit.rest.orgs.listSecurityManagerTeams() is deprecated, see https://docs.github.com/rest/orgs/security-managers#list-security-manager-teams"
+      }
+    ],
+    listWebhookDeliveries: ["GET /orgs/{org}/hooks/{hook_id}/deliveries"],
+    listWebhooks: ["GET /orgs/{org}/hooks"],
+    pingWebhook: ["POST /orgs/{org}/hooks/{hook_id}/pings"],
+    redeliverWebhookDelivery: [
+      "POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"
+    ],
+    removeMember: ["DELETE /orgs/{org}/members/{username}"],
+    removeMembershipForUser: ["DELETE /orgs/{org}/memberships/{username}"],
+    removeOutsideCollaborator: [
+      "DELETE /orgs/{org}/outside_collaborators/{username}"
+    ],
+    removePublicMembershipForAuthenticatedUser: [
+      "DELETE /orgs/{org}/public_members/{username}"
+    ],
+    removeSecurityManagerTeam: [
+      "DELETE /orgs/{org}/security-managers/teams/{team_slug}",
+      {},
+      {
+        deprecated: "octokit.rest.orgs.removeSecurityManagerTeam() is deprecated, see https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team"
+      }
+    ],
+    reviewPatGrantRequest: [
+      "POST /orgs/{org}/personal-access-token-requests/{pat_request_id}"
+    ],
+    reviewPatGrantRequestsInBulk: [
+      "POST /orgs/{org}/personal-access-token-requests"
+    ],
+    revokeAllOrgRolesTeam: [
+      "DELETE /orgs/{org}/organization-roles/teams/{team_slug}"
+    ],
+    revokeAllOrgRolesUser: [
+      "DELETE /orgs/{org}/organization-roles/users/{username}"
+    ],
+    revokeOrgRoleTeam: [
+      "DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}"
+    ],
+    revokeOrgRoleUser: [
+      "DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}"
+    ],
+    setImmutableReleasesSettings: [
+      "PUT /orgs/{org}/settings/immutable-releases"
+    ],
+    setImmutableReleasesSettingsRepositories: [
+      "PUT /orgs/{org}/settings/immutable-releases/repositories"
+    ],
+    setMembershipForUser: ["PUT /orgs/{org}/memberships/{username}"],
+    setPublicMembershipForAuthenticatedUser: [
+      "PUT /orgs/{org}/public_members/{username}"
+    ],
+    unblockUser: ["DELETE /orgs/{org}/blocks/{username}"],
+    update: ["PATCH /orgs/{org}"],
+    updateIssueType: ["PUT /orgs/{org}/issue-types/{issue_type_id}"],
+    updateMembershipForAuthenticatedUser: [
+      "PATCH /user/memberships/orgs/{org}"
+    ],
+    updatePatAccess: ["POST /orgs/{org}/personal-access-tokens/{pat_id}"],
+    updatePatAccesses: ["POST /orgs/{org}/personal-access-tokens"],
+    updateWebhook: ["PATCH /orgs/{org}/hooks/{hook_id}"],
+    updateWebhookConfigForOrg: ["PATCH /orgs/{org}/hooks/{hook_id}/config"]
+  },
+  packages: {
+    deletePackageForAuthenticatedUser: [
+      "DELETE /user/packages/{package_type}/{package_name}"
+    ],
+    deletePackageForOrg: [
+      "DELETE /orgs/{org}/packages/{package_type}/{package_name}"
+    ],
+    deletePackageForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}"
+    ],
+    deletePackageVersionForAuthenticatedUser: [
+      "DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    deletePackageVersionForOrg: [
+      "DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    deletePackageVersionForUser: [
+      "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    getAllPackageVersionsForAPackageOwnedByAnOrg: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
+      {},
+      { renamed: ["packages", "getAllPackageVersionsForPackageOwnedByOrg"] }
+    ],
+    getAllPackageVersionsForAPackageOwnedByTheAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions",
+      {},
+      {
+        renamed: [
+          "packages",
+          "getAllPackageVersionsForPackageOwnedByAuthenticatedUser"
+        ]
+      }
+    ],
+    getAllPackageVersionsForPackageOwnedByAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions"
+    ],
+    getAllPackageVersionsForPackageOwnedByOrg: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions"
+    ],
+    getAllPackageVersionsForPackageOwnedByUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}/versions"
+    ],
+    getPackageForAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}"
+    ],
+    getPackageForOrganization: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}"
+    ],
+    getPackageForUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}"
+    ],
+    getPackageVersionForAuthenticatedUser: [
+      "GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    getPackageVersionForOrganization: [
+      "GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    getPackageVersionForUser: [
+      "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}"
+    ],
+    listDockerMigrationConflictingPackagesForAuthenticatedUser: [
+      "GET /user/docker/conflicts"
+    ],
+    listDockerMigrationConflictingPackagesForOrganization: [
+      "GET /orgs/{org}/docker/conflicts"
+    ],
+    listDockerMigrationConflictingPackagesForUser: [
+      "GET /users/{username}/docker/conflicts"
+    ],
+    listPackagesForAuthenticatedUser: ["GET /user/packages"],
+    listPackagesForOrganization: ["GET /orgs/{org}/packages"],
+    listPackagesForUser: ["GET /users/{username}/packages"],
+    restorePackageForAuthenticatedUser: [
+      "POST /user/packages/{package_type}/{package_name}/restore{?token}"
+    ],
+    restorePackageForOrg: [
+      "POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}"
+    ],
+    restorePackageForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}"
+    ],
+    restorePackageVersionForAuthenticatedUser: [
+      "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"
+    ],
+    restorePackageVersionForOrg: [
+      "POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"
+    ],
+    restorePackageVersionForUser: [
+      "POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore"
+    ]
+  },
+  privateRegistries: {
+    createOrgPrivateRegistry: ["POST /orgs/{org}/private-registries"],
+    deleteOrgPrivateRegistry: [
+      "DELETE /orgs/{org}/private-registries/{secret_name}"
+    ],
+    getOrgPrivateRegistry: ["GET /orgs/{org}/private-registries/{secret_name}"],
+    getOrgPublicKey: ["GET /orgs/{org}/private-registries/public-key"],
+    listOrgPrivateRegistries: ["GET /orgs/{org}/private-registries"],
+    updateOrgPrivateRegistry: [
+      "PATCH /orgs/{org}/private-registries/{secret_name}"
+    ]
+  },
+  projects: {
+    addItemForOrg: ["POST /orgs/{org}/projectsV2/{project_number}/items"],
+    addItemForUser: [
+      "POST /users/{username}/projectsV2/{project_number}/items"
+    ],
+    deleteItemForOrg: [
+      "DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}"
+    ],
+    deleteItemForUser: [
+      "DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}"
+    ],
+    getFieldForOrg: [
+      "GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}"
+    ],
+    getFieldForUser: [
+      "GET /users/{username}/projectsV2/{project_number}/fields/{field_id}"
+    ],
+    getForOrg: ["GET /orgs/{org}/projectsV2/{project_number}"],
+    getForUser: ["GET /users/{username}/projectsV2/{project_number}"],
+    getOrgItem: ["GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}"],
+    getUserItem: [
+      "GET /users/{username}/projectsV2/{project_number}/items/{item_id}"
+    ],
+    listFieldsForOrg: ["GET /orgs/{org}/projectsV2/{project_number}/fields"],
+    listFieldsForUser: [
+      "GET /users/{username}/projectsV2/{project_number}/fields"
+    ],
+    listForOrg: ["GET /orgs/{org}/projectsV2"],
+    listForUser: ["GET /users/{username}/projectsV2"],
+    listItemsForOrg: ["GET /orgs/{org}/projectsV2/{project_number}/items"],
+    listItemsForUser: [
+      "GET /users/{username}/projectsV2/{project_number}/items"
+    ],
+    updateItemForOrg: [
+      "PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}"
+    ],
+    updateItemForUser: [
+      "PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}"
+    ]
+  },
+  pulls: {
+    checkIfMerged: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
+    create: ["POST /repos/{owner}/{repo}/pulls"],
+    createReplyForReviewComment: [
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies"
+    ],
+    createReview: ["POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews"],
+    createReviewComment: [
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments"
+    ],
+    deletePendingReview: [
+      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
+    ],
+    deleteReviewComment: [
+      "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}"
+    ],
+    dismissReview: [
+      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals"
+    ],
+    get: ["GET /repos/{owner}/{repo}/pulls/{pull_number}"],
+    getReview: [
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
+    ],
+    getReviewComment: ["GET /repos/{owner}/{repo}/pulls/comments/{comment_id}"],
+    list: ["GET /repos/{owner}/{repo}/pulls"],
+    listCommentsForReview: [
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments"
+    ],
+    listCommits: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/commits"],
+    listFiles: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/files"],
+    listRequestedReviewers: [
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
+    ],
+    listReviewComments: [
+      "GET /repos/{owner}/{repo}/pulls/{pull_number}/comments"
+    ],
+    listReviewCommentsForRepo: ["GET /repos/{owner}/{repo}/pulls/comments"],
+    listReviews: ["GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews"],
+    merge: ["PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge"],
+    removeRequestedReviewers: [
+      "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
+    ],
+    requestReviewers: [
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers"
+    ],
+    submitReview: [
+      "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events"
+    ],
+    update: ["PATCH /repos/{owner}/{repo}/pulls/{pull_number}"],
+    updateBranch: [
+      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch"
+    ],
+    updateReview: [
+      "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}"
+    ],
+    updateReviewComment: [
+      "PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}"
+    ]
+  },
+  rateLimit: { get: ["GET /rate_limit"] },
+  reactions: {
+    createForCommitComment: [
+      "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions"
+    ],
+    createForIssue: [
+      "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions"
+    ],
+    createForIssueComment: [
+      "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"
+    ],
+    createForPullRequestReviewComment: [
+      "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"
+    ],
+    createForRelease: [
+      "POST /repos/{owner}/{repo}/releases/{release_id}/reactions"
+    ],
+    createForTeamDiscussionCommentInOrg: [
+      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"
+    ],
+    createForTeamDiscussionInOrg: [
+      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"
+    ],
+    deleteForCommitComment: [
+      "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}"
+    ],
+    deleteForIssue: [
+      "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}"
+    ],
+    deleteForIssueComment: [
+      "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}"
+    ],
+    deleteForPullRequestComment: [
+      "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}"
+    ],
+    deleteForRelease: [
+      "DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}"
+    ],
+    deleteForTeamDiscussion: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}"
+    ],
+    deleteForTeamDiscussionComment: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}"
+    ],
+    listForCommitComment: [
+      "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions"
+    ],
+    listForIssue: ["GET /repos/{owner}/{repo}/issues/{issue_number}/reactions"],
+    listForIssueComment: [
+      "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions"
+    ],
+    listForPullRequestReviewComment: [
+      "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions"
+    ],
+    listForRelease: [
+      "GET /repos/{owner}/{repo}/releases/{release_id}/reactions"
+    ],
+    listForTeamDiscussionCommentInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions"
+    ],
+    listForTeamDiscussionInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions"
+    ]
+  },
+  repos: {
+    acceptInvitation: [
+      "PATCH /user/repository_invitations/{invitation_id}",
+      {},
+      { renamed: ["repos", "acceptInvitationForAuthenticatedUser"] }
+    ],
+    acceptInvitationForAuthenticatedUser: [
+      "PATCH /user/repository_invitations/{invitation_id}"
+    ],
+    addAppAccessRestrictions: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
+    ],
+    addCollaborator: ["PUT /repos/{owner}/{repo}/collaborators/{username}"],
+    addStatusCheckContexts: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
+    ],
+    addTeamAccessRestrictions: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
+    ],
+    addUserAccessRestrictions: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
+    ],
+    cancelPagesDeployment: [
+      "POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel"
+    ],
+    checkAutomatedSecurityFixes: [
+      "GET /repos/{owner}/{repo}/automated-security-fixes"
+    ],
+    checkCollaborator: ["GET /repos/{owner}/{repo}/collaborators/{username}"],
+    checkImmutableReleases: ["GET /repos/{owner}/{repo}/immutable-releases"],
+    checkPrivateVulnerabilityReporting: [
+      "GET /repos/{owner}/{repo}/private-vulnerability-reporting"
+    ],
+    checkVulnerabilityAlerts: [
+      "GET /repos/{owner}/{repo}/vulnerability-alerts"
+    ],
+    codeownersErrors: ["GET /repos/{owner}/{repo}/codeowners/errors"],
+    compareCommits: ["GET /repos/{owner}/{repo}/compare/{base}...{head}"],
+    compareCommitsWithBasehead: [
+      "GET /repos/{owner}/{repo}/compare/{basehead}"
+    ],
+    createAttestation: ["POST /repos/{owner}/{repo}/attestations"],
+    createAutolink: ["POST /repos/{owner}/{repo}/autolinks"],
+    createCommitComment: [
+      "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments"
+    ],
+    createCommitSignatureProtection: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"
+    ],
+    createCommitStatus: ["POST /repos/{owner}/{repo}/statuses/{sha}"],
+    createDeployKey: ["POST /repos/{owner}/{repo}/keys"],
+    createDeployment: ["POST /repos/{owner}/{repo}/deployments"],
+    createDeploymentBranchPolicy: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"
+    ],
+    createDeploymentProtectionRule: [
+      "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"
+    ],
+    createDeploymentStatus: [
+      "POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"
+    ],
+    createDispatchEvent: ["POST /repos/{owner}/{repo}/dispatches"],
+    createForAuthenticatedUser: ["POST /user/repos"],
+    createFork: ["POST /repos/{owner}/{repo}/forks"],
+    createInOrg: ["POST /orgs/{org}/repos"],
+    createOrUpdateEnvironment: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}"
+    ],
+    createOrUpdateFileContents: ["PUT /repos/{owner}/{repo}/contents/{path}"],
+    createOrgRuleset: ["POST /orgs/{org}/rulesets"],
+    createPagesDeployment: ["POST /repos/{owner}/{repo}/pages/deployments"],
+    createPagesSite: ["POST /repos/{owner}/{repo}/pages"],
+    createRelease: ["POST /repos/{owner}/{repo}/releases"],
+    createRepoRuleset: ["POST /repos/{owner}/{repo}/rulesets"],
+    createUsingTemplate: [
+      "POST /repos/{template_owner}/{template_repo}/generate"
+    ],
+    createWebhook: ["POST /repos/{owner}/{repo}/hooks"],
+    customPropertiesForReposCreateOrUpdateRepositoryValues: [
+      "PATCH /repos/{owner}/{repo}/properties/values"
+    ],
+    customPropertiesForReposGetRepositoryValues: [
+      "GET /repos/{owner}/{repo}/properties/values"
+    ],
+    declineInvitation: [
+      "DELETE /user/repository_invitations/{invitation_id}",
+      {},
+      { renamed: ["repos", "declineInvitationForAuthenticatedUser"] }
+    ],
+    declineInvitationForAuthenticatedUser: [
+      "DELETE /user/repository_invitations/{invitation_id}"
+    ],
+    delete: ["DELETE /repos/{owner}/{repo}"],
+    deleteAccessRestrictions: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"
+    ],
+    deleteAdminBranchProtection: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"
+    ],
+    deleteAnEnvironment: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}"
+    ],
+    deleteAutolink: ["DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}"],
+    deleteBranchProtection: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection"
+    ],
+    deleteCommitComment: ["DELETE /repos/{owner}/{repo}/comments/{comment_id}"],
+    deleteCommitSignatureProtection: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"
+    ],
+    deleteDeployKey: ["DELETE /repos/{owner}/{repo}/keys/{key_id}"],
+    deleteDeployment: [
+      "DELETE /repos/{owner}/{repo}/deployments/{deployment_id}"
+    ],
+    deleteDeploymentBranchPolicy: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"
+    ],
+    deleteFile: ["DELETE /repos/{owner}/{repo}/contents/{path}"],
+    deleteInvitation: [
+      "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}"
+    ],
+    deleteOrgRuleset: ["DELETE /orgs/{org}/rulesets/{ruleset_id}"],
+    deletePagesSite: ["DELETE /repos/{owner}/{repo}/pages"],
+    deletePullRequestReviewProtection: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"
+    ],
+    deleteRelease: ["DELETE /repos/{owner}/{repo}/releases/{release_id}"],
+    deleteReleaseAsset: [
+      "DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}"
+    ],
+    deleteRepoRuleset: ["DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
+    deleteWebhook: ["DELETE /repos/{owner}/{repo}/hooks/{hook_id}"],
+    disableAutomatedSecurityFixes: [
+      "DELETE /repos/{owner}/{repo}/automated-security-fixes"
+    ],
+    disableDeploymentProtectionRule: [
+      "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"
+    ],
+    disableImmutableReleases: [
+      "DELETE /repos/{owner}/{repo}/immutable-releases"
+    ],
+    disablePrivateVulnerabilityReporting: [
+      "DELETE /repos/{owner}/{repo}/private-vulnerability-reporting"
+    ],
+    disableVulnerabilityAlerts: [
+      "DELETE /repos/{owner}/{repo}/vulnerability-alerts"
+    ],
+    downloadArchive: [
+      "GET /repos/{owner}/{repo}/zipball/{ref}",
+      {},
+      { renamed: ["repos", "downloadZipballArchive"] }
+    ],
+    downloadTarballArchive: ["GET /repos/{owner}/{repo}/tarball/{ref}"],
+    downloadZipballArchive: ["GET /repos/{owner}/{repo}/zipball/{ref}"],
+    enableAutomatedSecurityFixes: [
+      "PUT /repos/{owner}/{repo}/automated-security-fixes"
+    ],
+    enableImmutableReleases: ["PUT /repos/{owner}/{repo}/immutable-releases"],
+    enablePrivateVulnerabilityReporting: [
+      "PUT /repos/{owner}/{repo}/private-vulnerability-reporting"
+    ],
+    enableVulnerabilityAlerts: [
+      "PUT /repos/{owner}/{repo}/vulnerability-alerts"
+    ],
+    generateReleaseNotes: [
+      "POST /repos/{owner}/{repo}/releases/generate-notes"
+    ],
+    get: ["GET /repos/{owner}/{repo}"],
+    getAccessRestrictions: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions"
+    ],
+    getAdminBranchProtection: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"
+    ],
+    getAllDeploymentProtectionRules: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules"
+    ],
+    getAllEnvironments: ["GET /repos/{owner}/{repo}/environments"],
+    getAllStatusCheckContexts: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts"
+    ],
+    getAllTopics: ["GET /repos/{owner}/{repo}/topics"],
+    getAppsWithAccessToProtectedBranch: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps"
+    ],
+    getAutolink: ["GET /repos/{owner}/{repo}/autolinks/{autolink_id}"],
+    getBranch: ["GET /repos/{owner}/{repo}/branches/{branch}"],
+    getBranchProtection: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection"
+    ],
+    getBranchRules: ["GET /repos/{owner}/{repo}/rules/branches/{branch}"],
+    getClones: ["GET /repos/{owner}/{repo}/traffic/clones"],
+    getCodeFrequencyStats: ["GET /repos/{owner}/{repo}/stats/code_frequency"],
+    getCollaboratorPermissionLevel: [
+      "GET /repos/{owner}/{repo}/collaborators/{username}/permission"
+    ],
+    getCombinedStatusForRef: ["GET /repos/{owner}/{repo}/commits/{ref}/status"],
+    getCommit: ["GET /repos/{owner}/{repo}/commits/{ref}"],
+    getCommitActivityStats: ["GET /repos/{owner}/{repo}/stats/commit_activity"],
+    getCommitComment: ["GET /repos/{owner}/{repo}/comments/{comment_id}"],
+    getCommitSignatureProtection: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures"
+    ],
+    getCommunityProfileMetrics: ["GET /repos/{owner}/{repo}/community/profile"],
+    getContent: ["GET /repos/{owner}/{repo}/contents/{path}"],
+    getContributorsStats: ["GET /repos/{owner}/{repo}/stats/contributors"],
+    getCustomDeploymentProtectionRule: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}"
+    ],
+    getDeployKey: ["GET /repos/{owner}/{repo}/keys/{key_id}"],
+    getDeployment: ["GET /repos/{owner}/{repo}/deployments/{deployment_id}"],
+    getDeploymentBranchPolicy: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"
+    ],
+    getDeploymentStatus: [
+      "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}"
+    ],
+    getEnvironment: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}"
+    ],
+    getLatestPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/latest"],
+    getLatestRelease: ["GET /repos/{owner}/{repo}/releases/latest"],
+    getOrgRuleSuite: ["GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}"],
+    getOrgRuleSuites: ["GET /orgs/{org}/rulesets/rule-suites"],
+    getOrgRuleset: ["GET /orgs/{org}/rulesets/{ruleset_id}"],
+    getOrgRulesets: ["GET /orgs/{org}/rulesets"],
+    getPages: ["GET /repos/{owner}/{repo}/pages"],
+    getPagesBuild: ["GET /repos/{owner}/{repo}/pages/builds/{build_id}"],
+    getPagesDeployment: [
+      "GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}"
+    ],
+    getPagesHealthCheck: ["GET /repos/{owner}/{repo}/pages/health"],
+    getParticipationStats: ["GET /repos/{owner}/{repo}/stats/participation"],
+    getPullRequestReviewProtection: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"
+    ],
+    getPunchCardStats: ["GET /repos/{owner}/{repo}/stats/punch_card"],
+    getReadme: ["GET /repos/{owner}/{repo}/readme"],
+    getReadmeInDirectory: ["GET /repos/{owner}/{repo}/readme/{dir}"],
+    getRelease: ["GET /repos/{owner}/{repo}/releases/{release_id}"],
+    getReleaseAsset: ["GET /repos/{owner}/{repo}/releases/assets/{asset_id}"],
+    getReleaseByTag: ["GET /repos/{owner}/{repo}/releases/tags/{tag}"],
+    getRepoRuleSuite: [
+      "GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}"
+    ],
+    getRepoRuleSuites: ["GET /repos/{owner}/{repo}/rulesets/rule-suites"],
+    getRepoRuleset: ["GET /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
+    getRepoRulesetHistory: [
+      "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history"
+    ],
+    getRepoRulesetVersion: [
+      "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}"
+    ],
+    getRepoRulesets: ["GET /repos/{owner}/{repo}/rulesets"],
+    getStatusChecksProtection: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"
+    ],
+    getTeamsWithAccessToProtectedBranch: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams"
+    ],
+    getTopPaths: ["GET /repos/{owner}/{repo}/traffic/popular/paths"],
+    getTopReferrers: ["GET /repos/{owner}/{repo}/traffic/popular/referrers"],
+    getUsersWithAccessToProtectedBranch: [
+      "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users"
+    ],
+    getViews: ["GET /repos/{owner}/{repo}/traffic/views"],
+    getWebhook: ["GET /repos/{owner}/{repo}/hooks/{hook_id}"],
+    getWebhookConfigForRepo: [
+      "GET /repos/{owner}/{repo}/hooks/{hook_id}/config"
+    ],
+    getWebhookDelivery: [
+      "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}"
+    ],
+    listActivities: ["GET /repos/{owner}/{repo}/activity"],
+    listAttestations: [
+      "GET /repos/{owner}/{repo}/attestations/{subject_digest}"
+    ],
+    listAutolinks: ["GET /repos/{owner}/{repo}/autolinks"],
+    listBranches: ["GET /repos/{owner}/{repo}/branches"],
+    listBranchesForHeadCommit: [
+      "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head"
+    ],
+    listCollaborators: ["GET /repos/{owner}/{repo}/collaborators"],
+    listCommentsForCommit: [
+      "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments"
+    ],
+    listCommitCommentsForRepo: ["GET /repos/{owner}/{repo}/comments"],
+    listCommitStatusesForRef: [
+      "GET /repos/{owner}/{repo}/commits/{ref}/statuses"
+    ],
+    listCommits: ["GET /repos/{owner}/{repo}/commits"],
+    listContributors: ["GET /repos/{owner}/{repo}/contributors"],
+    listCustomDeploymentRuleIntegrations: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps"
+    ],
+    listDeployKeys: ["GET /repos/{owner}/{repo}/keys"],
+    listDeploymentBranchPolicies: [
+      "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies"
+    ],
+    listDeploymentStatuses: [
+      "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses"
+    ],
+    listDeployments: ["GET /repos/{owner}/{repo}/deployments"],
+    listForAuthenticatedUser: ["GET /user/repos"],
+    listForOrg: ["GET /orgs/{org}/repos"],
+    listForUser: ["GET /users/{username}/repos"],
+    listForks: ["GET /repos/{owner}/{repo}/forks"],
+    listInvitations: ["GET /repos/{owner}/{repo}/invitations"],
+    listInvitationsForAuthenticatedUser: ["GET /user/repository_invitations"],
+    listLanguages: ["GET /repos/{owner}/{repo}/languages"],
+    listPagesBuilds: ["GET /repos/{owner}/{repo}/pages/builds"],
+    listPublic: ["GET /repositories"],
+    listPullRequestsAssociatedWithCommit: [
+      "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls"
+    ],
+    listReleaseAssets: [
+      "GET /repos/{owner}/{repo}/releases/{release_id}/assets"
+    ],
+    listReleases: ["GET /repos/{owner}/{repo}/releases"],
+    listTags: ["GET /repos/{owner}/{repo}/tags"],
+    listTeams: ["GET /repos/{owner}/{repo}/teams"],
+    listWebhookDeliveries: [
+      "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries"
+    ],
+    listWebhooks: ["GET /repos/{owner}/{repo}/hooks"],
+    merge: ["POST /repos/{owner}/{repo}/merges"],
+    mergeUpstream: ["POST /repos/{owner}/{repo}/merge-upstream"],
+    pingWebhook: ["POST /repos/{owner}/{repo}/hooks/{hook_id}/pings"],
+    redeliverWebhookDelivery: [
+      "POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts"
+    ],
+    removeAppAccessRestrictions: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
+    ],
+    removeCollaborator: [
+      "DELETE /repos/{owner}/{repo}/collaborators/{username}"
+    ],
+    removeStatusCheckContexts: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
+    ],
+    removeStatusCheckProtection: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"
+    ],
+    removeTeamAccessRestrictions: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
+    ],
+    removeUserAccessRestrictions: [
+      "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
+    ],
+    renameBranch: ["POST /repos/{owner}/{repo}/branches/{branch}/rename"],
+    replaceAllTopics: ["PUT /repos/{owner}/{repo}/topics"],
+    requestPagesBuild: ["POST /repos/{owner}/{repo}/pages/builds"],
+    setAdminBranchProtection: [
+      "POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins"
+    ],
+    setAppAccessRestrictions: [
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      {},
+      { mapToData: "apps" }
+    ],
+    setStatusCheckContexts: [
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      {},
+      { mapToData: "contexts" }
+    ],
+    setTeamAccessRestrictions: [
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      {},
+      { mapToData: "teams" }
+    ],
+    setUserAccessRestrictions: [
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      {},
+      { mapToData: "users" }
+    ],
+    testPushWebhook: ["POST /repos/{owner}/{repo}/hooks/{hook_id}/tests"],
+    transfer: ["POST /repos/{owner}/{repo}/transfer"],
+    update: ["PATCH /repos/{owner}/{repo}"],
+    updateBranchProtection: [
+      "PUT /repos/{owner}/{repo}/branches/{branch}/protection"
+    ],
+    updateCommitComment: ["PATCH /repos/{owner}/{repo}/comments/{comment_id}"],
+    updateDeploymentBranchPolicy: [
+      "PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}"
+    ],
+    updateInformationAboutPagesSite: ["PUT /repos/{owner}/{repo}/pages"],
+    updateInvitation: [
+      "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}"
+    ],
+    updateOrgRuleset: ["PUT /orgs/{org}/rulesets/{ruleset_id}"],
+    updatePullRequestReviewProtection: [
+      "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews"
+    ],
+    updateRelease: ["PATCH /repos/{owner}/{repo}/releases/{release_id}"],
+    updateReleaseAsset: [
+      "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}"
+    ],
+    updateRepoRuleset: ["PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}"],
+    updateStatusCheckPotection: [
+      "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+      {},
+      { renamed: ["repos", "updateStatusCheckProtection"] }
+    ],
+    updateStatusCheckProtection: [
+      "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks"
+    ],
+    updateWebhook: ["PATCH /repos/{owner}/{repo}/hooks/{hook_id}"],
+    updateWebhookConfigForRepo: [
+      "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config"
+    ],
+    uploadReleaseAsset: [
+      "POST /repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
+      { baseUrl: "https://uploads.github.com" }
+    ]
+  },
+  search: {
+    code: ["GET /search/code"],
+    commits: ["GET /search/commits"],
+    issuesAndPullRequests: ["GET /search/issues"],
+    labels: ["GET /search/labels"],
+    repos: ["GET /search/repositories"],
+    topics: ["GET /search/topics"],
+    users: ["GET /search/users"]
+  },
+  secretScanning: {
+    createPushProtectionBypass: [
+      "POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses"
+    ],
+    getAlert: [
+      "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"
+    ],
+    getScanHistory: ["GET /repos/{owner}/{repo}/secret-scanning/scan-history"],
+    listAlertsForOrg: ["GET /orgs/{org}/secret-scanning/alerts"],
+    listAlertsForRepo: ["GET /repos/{owner}/{repo}/secret-scanning/alerts"],
+    listLocationsForAlert: [
+      "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations"
+    ],
+    listOrgPatternConfigs: [
+      "GET /orgs/{org}/secret-scanning/pattern-configurations"
+    ],
+    updateAlert: [
+      "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}"
+    ],
+    updateOrgPatternConfigs: [
+      "PATCH /orgs/{org}/secret-scanning/pattern-configurations"
+    ]
+  },
+  securityAdvisories: {
+    createFork: [
+      "POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks"
+    ],
+    createPrivateVulnerabilityReport: [
+      "POST /repos/{owner}/{repo}/security-advisories/reports"
+    ],
+    createRepositoryAdvisory: [
+      "POST /repos/{owner}/{repo}/security-advisories"
+    ],
+    createRepositoryAdvisoryCveRequest: [
+      "POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve"
+    ],
+    getGlobalAdvisory: ["GET /advisories/{ghsa_id}"],
+    getRepositoryAdvisory: [
+      "GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}"
+    ],
+    listGlobalAdvisories: ["GET /advisories"],
+    listOrgRepositoryAdvisories: ["GET /orgs/{org}/security-advisories"],
+    listRepositoryAdvisories: ["GET /repos/{owner}/{repo}/security-advisories"],
+    updateRepositoryAdvisory: [
+      "PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}"
+    ]
+  },
+  teams: {
+    addOrUpdateMembershipForUserInOrg: [
+      "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}"
+    ],
+    addOrUpdateRepoPermissionsInOrg: [
+      "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
+    ],
+    checkPermissionsForRepoInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
+    ],
+    create: ["POST /orgs/{org}/teams"],
+    createDiscussionCommentInOrg: [
+      "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
+    ],
+    createDiscussionInOrg: ["POST /orgs/{org}/teams/{team_slug}/discussions"],
+    deleteDiscussionCommentInOrg: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
+    ],
+    deleteDiscussionInOrg: [
+      "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
+    ],
+    deleteInOrg: ["DELETE /orgs/{org}/teams/{team_slug}"],
+    getByName: ["GET /orgs/{org}/teams/{team_slug}"],
+    getDiscussionCommentInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
+    ],
+    getDiscussionInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
+    ],
+    getMembershipForUserInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/memberships/{username}"
+    ],
+    list: ["GET /orgs/{org}/teams"],
+    listChildInOrg: ["GET /orgs/{org}/teams/{team_slug}/teams"],
+    listDiscussionCommentsInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments"
+    ],
+    listDiscussionsInOrg: ["GET /orgs/{org}/teams/{team_slug}/discussions"],
+    listForAuthenticatedUser: ["GET /user/teams"],
+    listMembersInOrg: ["GET /orgs/{org}/teams/{team_slug}/members"],
+    listPendingInvitationsInOrg: [
+      "GET /orgs/{org}/teams/{team_slug}/invitations"
+    ],
+    listReposInOrg: ["GET /orgs/{org}/teams/{team_slug}/repos"],
+    removeMembershipForUserInOrg: [
+      "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}"
+    ],
+    removeRepoInOrg: [
+      "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}"
+    ],
+    updateDiscussionCommentInOrg: [
+      "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}"
+    ],
+    updateDiscussionInOrg: [
+      "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}"
+    ],
+    updateInOrg: ["PATCH /orgs/{org}/teams/{team_slug}"]
+  },
+  users: {
+    addEmailForAuthenticated: [
+      "POST /user/emails",
+      {},
+      { renamed: ["users", "addEmailForAuthenticatedUser"] }
+    ],
+    addEmailForAuthenticatedUser: ["POST /user/emails"],
+    addSocialAccountForAuthenticatedUser: ["POST /user/social_accounts"],
+    block: ["PUT /user/blocks/{username}"],
+    checkBlocked: ["GET /user/blocks/{username}"],
+    checkFollowingForUser: ["GET /users/{username}/following/{target_user}"],
+    checkPersonIsFollowedByAuthenticated: ["GET /user/following/{username}"],
+    createGpgKeyForAuthenticated: [
+      "POST /user/gpg_keys",
+      {},
+      { renamed: ["users", "createGpgKeyForAuthenticatedUser"] }
+    ],
+    createGpgKeyForAuthenticatedUser: ["POST /user/gpg_keys"],
+    createPublicSshKeyForAuthenticated: [
+      "POST /user/keys",
+      {},
+      { renamed: ["users", "createPublicSshKeyForAuthenticatedUser"] }
+    ],
+    createPublicSshKeyForAuthenticatedUser: ["POST /user/keys"],
+    createSshSigningKeyForAuthenticatedUser: ["POST /user/ssh_signing_keys"],
+    deleteAttestationsBulk: [
+      "POST /users/{username}/attestations/delete-request"
+    ],
+    deleteAttestationsById: [
+      "DELETE /users/{username}/attestations/{attestation_id}"
+    ],
+    deleteAttestationsBySubjectDigest: [
+      "DELETE /users/{username}/attestations/digest/{subject_digest}"
+    ],
+    deleteEmailForAuthenticated: [
+      "DELETE /user/emails",
+      {},
+      { renamed: ["users", "deleteEmailForAuthenticatedUser"] }
+    ],
+    deleteEmailForAuthenticatedUser: ["DELETE /user/emails"],
+    deleteGpgKeyForAuthenticated: [
+      "DELETE /user/gpg_keys/{gpg_key_id}",
+      {},
+      { renamed: ["users", "deleteGpgKeyForAuthenticatedUser"] }
+    ],
+    deleteGpgKeyForAuthenticatedUser: ["DELETE /user/gpg_keys/{gpg_key_id}"],
+    deletePublicSshKeyForAuthenticated: [
+      "DELETE /user/keys/{key_id}",
+      {},
+      { renamed: ["users", "deletePublicSshKeyForAuthenticatedUser"] }
+    ],
+    deletePublicSshKeyForAuthenticatedUser: ["DELETE /user/keys/{key_id}"],
+    deleteSocialAccountForAuthenticatedUser: ["DELETE /user/social_accounts"],
+    deleteSshSigningKeyForAuthenticatedUser: [
+      "DELETE /user/ssh_signing_keys/{ssh_signing_key_id}"
+    ],
+    follow: ["PUT /user/following/{username}"],
+    getAuthenticated: ["GET /user"],
+    getById: ["GET /user/{account_id}"],
+    getByUsername: ["GET /users/{username}"],
+    getContextForUser: ["GET /users/{username}/hovercard"],
+    getGpgKeyForAuthenticated: [
+      "GET /user/gpg_keys/{gpg_key_id}",
+      {},
+      { renamed: ["users", "getGpgKeyForAuthenticatedUser"] }
+    ],
+    getGpgKeyForAuthenticatedUser: ["GET /user/gpg_keys/{gpg_key_id}"],
+    getPublicSshKeyForAuthenticated: [
+      "GET /user/keys/{key_id}",
+      {},
+      { renamed: ["users", "getPublicSshKeyForAuthenticatedUser"] }
+    ],
+    getPublicSshKeyForAuthenticatedUser: ["GET /user/keys/{key_id}"],
+    getSshSigningKeyForAuthenticatedUser: [
+      "GET /user/ssh_signing_keys/{ssh_signing_key_id}"
+    ],
+    list: ["GET /users"],
+    listAttestations: ["GET /users/{username}/attestations/{subject_digest}"],
+    listAttestationsBulk: [
+      "POST /users/{username}/attestations/bulk-list{?per_page,before,after}"
+    ],
+    listBlockedByAuthenticated: [
+      "GET /user/blocks",
+      {},
+      { renamed: ["users", "listBlockedByAuthenticatedUser"] }
+    ],
+    listBlockedByAuthenticatedUser: ["GET /user/blocks"],
+    listEmailsForAuthenticated: [
+      "GET /user/emails",
+      {},
+      { renamed: ["users", "listEmailsForAuthenticatedUser"] }
+    ],
+    listEmailsForAuthenticatedUser: ["GET /user/emails"],
+    listFollowedByAuthenticated: [
+      "GET /user/following",
+      {},
+      { renamed: ["users", "listFollowedByAuthenticatedUser"] }
+    ],
+    listFollowedByAuthenticatedUser: ["GET /user/following"],
+    listFollowersForAuthenticatedUser: ["GET /user/followers"],
+    listFollowersForUser: ["GET /users/{username}/followers"],
+    listFollowingForUser: ["GET /users/{username}/following"],
+    listGpgKeysForAuthenticated: [
+      "GET /user/gpg_keys",
+      {},
+      { renamed: ["users", "listGpgKeysForAuthenticatedUser"] }
+    ],
+    listGpgKeysForAuthenticatedUser: ["GET /user/gpg_keys"],
+    listGpgKeysForUser: ["GET /users/{username}/gpg_keys"],
+    listPublicEmailsForAuthenticated: [
+      "GET /user/public_emails",
+      {},
+      { renamed: ["users", "listPublicEmailsForAuthenticatedUser"] }
+    ],
+    listPublicEmailsForAuthenticatedUser: ["GET /user/public_emails"],
+    listPublicKeysForUser: ["GET /users/{username}/keys"],
+    listPublicSshKeysForAuthenticated: [
+      "GET /user/keys",
+      {},
+      { renamed: ["users", "listPublicSshKeysForAuthenticatedUser"] }
+    ],
+    listPublicSshKeysForAuthenticatedUser: ["GET /user/keys"],
+    listSocialAccountsForAuthenticatedUser: ["GET /user/social_accounts"],
+    listSocialAccountsForUser: ["GET /users/{username}/social_accounts"],
+    listSshSigningKeysForAuthenticatedUser: ["GET /user/ssh_signing_keys"],
+    listSshSigningKeysForUser: ["GET /users/{username}/ssh_signing_keys"],
+    setPrimaryEmailVisibilityForAuthenticated: [
+      "PATCH /user/email/visibility",
+      {},
+      { renamed: ["users", "setPrimaryEmailVisibilityForAuthenticatedUser"] }
+    ],
+    setPrimaryEmailVisibilityForAuthenticatedUser: [
+      "PATCH /user/email/visibility"
+    ],
+    unblock: ["DELETE /user/blocks/{username}"],
+    unfollow: ["DELETE /user/following/{username}"],
+    updateAuthenticated: ["PATCH /user"]
+  }
+};
+var endpoints_default = Endpoints;
+
+//# sourceMappingURL=endpoints.js.map
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-rest-endpoint-methods@17.0.0_@octokit+core@7.0.7/node_modules/@octokit/plugin-rest-endpoint-methods/dist-src/endpoints-to-methods.js
+
+const endpointMethodsMap = /* @__PURE__ */ new Map();
+for (const [scope, endpoints] of Object.entries(endpoints_default)) {
+  for (const [methodName, endpoint] of Object.entries(endpoints)) {
+    const [route, defaults, decorations] = endpoint;
+    const [method, url] = route.split(/ /);
+    const endpointDefaults = Object.assign(
+      {
+        method,
+        url
+      },
+      defaults
+    );
+    if (!endpointMethodsMap.has(scope)) {
+      endpointMethodsMap.set(scope, /* @__PURE__ */ new Map());
+    }
+    endpointMethodsMap.get(scope).set(methodName, {
+      scope,
+      methodName,
+      endpointDefaults,
+      decorations
+    });
+  }
+}
+const handler = {
+  has({ scope }, methodName) {
+    return endpointMethodsMap.get(scope).has(methodName);
+  },
+  getOwnPropertyDescriptor(target, methodName) {
+    return {
+      value: this.get(target, methodName),
+      // ensures method is in the cache
+      configurable: true,
+      writable: true,
+      enumerable: true
+    };
+  },
+  defineProperty(target, methodName, descriptor) {
+    Object.defineProperty(target.cache, methodName, descriptor);
+    return true;
+  },
+  deleteProperty(target, methodName) {
+    delete target.cache[methodName];
+    return true;
+  },
+  ownKeys({ scope }) {
+    return [...endpointMethodsMap.get(scope).keys()];
+  },
+  set(target, methodName, value) {
+    return target.cache[methodName] = value;
+  },
+  get({ octokit, scope, cache }, methodName) {
+    if (cache[methodName]) {
+      return cache[methodName];
+    }
+    const method = endpointMethodsMap.get(scope).get(methodName);
+    if (!method) {
+      return void 0;
+    }
+    const { endpointDefaults, decorations } = method;
+    if (decorations) {
+      cache[methodName] = decorate(
+        octokit,
+        scope,
+        methodName,
+        endpointDefaults,
+        decorations
+      );
+    } else {
+      cache[methodName] = octokit.request.defaults(endpointDefaults);
+    }
+    return cache[methodName];
+  }
+};
+function endpointsToMethods(octokit) {
+  const newMethods = {};
+  for (const scope of endpointMethodsMap.keys()) {
+    newMethods[scope] = new Proxy({ octokit, scope, cache: {} }, handler);
+  }
+  return newMethods;
+}
+function decorate(octokit, scope, methodName, defaults, decorations) {
+  const requestWithDefaults = octokit.request.defaults(defaults);
+  function withDecorations(...args) {
+    let options = requestWithDefaults.endpoint.merge(...args);
+    if (decorations.mapToData) {
+      options = Object.assign({}, options, {
+        data: options[decorations.mapToData],
+        [decorations.mapToData]: void 0
+      });
+      return requestWithDefaults(options);
+    }
+    if (decorations.renamed) {
+      const [newScope, newMethodName] = decorations.renamed;
+      octokit.log.warn(
+        `octokit.${scope}.${methodName}() has been renamed to octokit.${newScope}.${newMethodName}()`
+      );
+    }
+    if (decorations.deprecated) {
+      octokit.log.warn(decorations.deprecated);
+    }
+    if (decorations.renamedParameters) {
+      const options2 = requestWithDefaults.endpoint.merge(...args);
+      for (const [name, alias] of Object.entries(
+        decorations.renamedParameters
+      )) {
+        if (name in options2) {
+          octokit.log.warn(
+            `"${name}" parameter is deprecated for "octokit.${scope}.${methodName}()". Use "${alias}" instead`
+          );
+          if (!(alias in options2)) {
+            options2[alias] = options2[name];
+          }
+          delete options2[name];
+        }
+      }
+      return requestWithDefaults(options2);
+    }
+    return requestWithDefaults(...args);
+  }
+  return Object.assign(withDecorations, requestWithDefaults);
+}
+
+//# sourceMappingURL=endpoints-to-methods.js.map
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-rest-endpoint-methods@17.0.0_@octokit+core@7.0.7/node_modules/@octokit/plugin-rest-endpoint-methods/dist-src/index.js
+
+
+function restEndpointMethods(octokit) {
+  const api = endpointsToMethods(octokit);
+  return {
+    rest: api
+  };
+}
+restEndpointMethods.VERSION = dist_src_version_VERSION;
+function legacyRestEndpointMethods(octokit) {
+  const api = endpointsToMethods(octokit);
+  return {
+    ...api,
+    rest: api
+  };
+}
+legacyRestEndpointMethods.VERSION = dist_src_version_VERSION;
+
+//# sourceMappingURL=index.js.map
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@octokit+plugin-paginate-rest@14.0.0_@octokit+core@7.0.7/node_modules/@octokit/plugin-paginate-rest/dist-bundle/index.js
+// pkg/dist-src/version.js
+var plugin_paginate_rest_dist_bundle_VERSION = "0.0.0-development";
+
+// pkg/dist-src/normalize-paginated-list-response.js
+function normalizePaginatedListResponse(response) {
+  if (!response.data) {
+    return {
+      ...response,
+      data: []
+    };
+  }
+  const responseNeedsNormalization = ("total_count" in response.data || "total_commits" in response.data) && !("url" in response.data);
+  if (!responseNeedsNormalization) return response;
+  const incompleteResults = response.data.incomplete_results;
+  const repositorySelection = response.data.repository_selection;
+  const totalCount = response.data.total_count;
+  const totalCommits = response.data.total_commits;
+  delete response.data.incomplete_results;
+  delete response.data.repository_selection;
+  delete response.data.total_count;
+  delete response.data.total_commits;
+  const namespaceKey = Object.keys(response.data)[0];
+  const data = response.data[namespaceKey];
+  response.data = data;
+  if (typeof incompleteResults !== "undefined") {
+    response.data.incomplete_results = incompleteResults;
+  }
+  if (typeof repositorySelection !== "undefined") {
+    response.data.repository_selection = repositorySelection;
+  }
+  response.data.total_count = totalCount;
+  response.data.total_commits = totalCommits;
+  return response;
+}
+
+// pkg/dist-src/iterator.js
+function iterator(octokit, route, parameters) {
+  const options = typeof route === "function" ? route.endpoint(parameters) : octokit.request.endpoint(route, parameters);
+  const requestMethod = typeof route === "function" ? route : octokit.request;
+  const method = options.method;
+  const headers = options.headers;
+  let url = options.url;
+  return {
+    [Symbol.asyncIterator]: () => ({
+      async next() {
+        if (!url) return { done: true };
+        try {
+          const response = await requestMethod({ method, url, headers });
+          const normalizedResponse = normalizePaginatedListResponse(response);
+          url = ((normalizedResponse.headers.link || "").match(
+            /<([^<>]+)>;\s*rel="next"/
+          ) || [])[1];
+          if (!url && "total_commits" in normalizedResponse.data) {
+            const parsedUrl = new URL(normalizedResponse.url);
+            const params = parsedUrl.searchParams;
+            const page = parseInt(params.get("page") || "1", 10);
+            const per_page = parseInt(params.get("per_page") || "250", 10);
+            if (page * per_page < normalizedResponse.data.total_commits) {
+              params.set("page", String(page + 1));
+              url = parsedUrl.toString();
+            }
+          }
+          return { value: normalizedResponse };
+        } catch (error) {
+          if (error.status !== 409) throw error;
+          url = "";
+          return {
+            value: {
+              status: 200,
+              headers: {},
+              data: []
+            }
+          };
+        }
+      }
+    })
+  };
+}
+
+// pkg/dist-src/paginate.js
+function paginate(octokit, route, parameters, mapFn) {
+  if (typeof parameters === "function") {
+    mapFn = parameters;
+    parameters = void 0;
+  }
+  return gather(
+    octokit,
+    [],
+    iterator(octokit, route, parameters)[Symbol.asyncIterator](),
+    mapFn
+  );
+}
+function gather(octokit, results, iterator2, mapFn) {
+  return iterator2.next().then((result) => {
+    if (result.done) {
+      return results;
+    }
+    let earlyExit = false;
+    function done() {
+      earlyExit = true;
+    }
+    results = results.concat(
+      mapFn ? mapFn(result.value, done) : result.value.data
+    );
+    if (earlyExit) {
+      return results;
+    }
+    return gather(octokit, results, iterator2, mapFn);
+  });
+}
+
+// pkg/dist-src/compose-paginate.js
+var composePaginateRest = Object.assign(paginate, {
+  iterator
+});
+
+// pkg/dist-src/generated/paginating-endpoints.js
+var paginatingEndpoints = (/* unused pure expression or super */ null && ([
+  "GET /advisories",
+  "GET /app/hook/deliveries",
+  "GET /app/installation-requests",
+  "GET /app/installations",
+  "GET /assignments/{assignment_id}/accepted_assignments",
+  "GET /classrooms",
+  "GET /classrooms/{classroom_id}/assignments",
+  "GET /enterprises/{enterprise}/code-security/configurations",
+  "GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories",
+  "GET /enterprises/{enterprise}/dependabot/alerts",
+  "GET /enterprises/{enterprise}/teams",
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships",
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations",
+  "GET /events",
+  "GET /gists",
+  "GET /gists/public",
+  "GET /gists/starred",
+  "GET /gists/{gist_id}/comments",
+  "GET /gists/{gist_id}/commits",
+  "GET /gists/{gist_id}/forks",
+  "GET /installation/repositories",
+  "GET /issues",
+  "GET /licenses",
+  "GET /marketplace_listing/plans",
+  "GET /marketplace_listing/plans/{plan_id}/accounts",
+  "GET /marketplace_listing/stubbed/plans",
+  "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts",
+  "GET /networks/{owner}/{repo}/events",
+  "GET /notifications",
+  "GET /organizations",
+  "GET /organizations/{org}/dependabot/repository-access",
+  "GET /orgs/{org}/actions/cache/usage-by-repository",
+  "GET /orgs/{org}/actions/hosted-runners",
+  "GET /orgs/{org}/actions/permissions/repositories",
+  "GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories",
+  "GET /orgs/{org}/actions/runner-groups",
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners",
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+  "GET /orgs/{org}/actions/runners",
+  "GET /orgs/{org}/actions/secrets",
+  "GET /orgs/{org}/actions/secrets/{secret_name}/repositories",
+  "GET /orgs/{org}/actions/variables",
+  "GET /orgs/{org}/actions/variables/{name}/repositories",
+  "GET /orgs/{org}/attestations/repositories",
+  "GET /orgs/{org}/attestations/{subject_digest}",
+  "GET /orgs/{org}/blocks",
+  "GET /orgs/{org}/campaigns",
+  "GET /orgs/{org}/code-scanning/alerts",
+  "GET /orgs/{org}/code-security/configurations",
+  "GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories",
+  "GET /orgs/{org}/codespaces",
+  "GET /orgs/{org}/codespaces/secrets",
+  "GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories",
+  "GET /orgs/{org}/copilot/billing/seats",
+  "GET /orgs/{org}/copilot/metrics",
+  "GET /orgs/{org}/dependabot/alerts",
+  "GET /orgs/{org}/dependabot/secrets",
+  "GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+  "GET /orgs/{org}/events",
+  "GET /orgs/{org}/failed_invitations",
+  "GET /orgs/{org}/hooks",
+  "GET /orgs/{org}/hooks/{hook_id}/deliveries",
+  "GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}",
+  "GET /orgs/{org}/insights/api/subject-stats",
+  "GET /orgs/{org}/insights/api/user-stats/{user_id}",
+  "GET /orgs/{org}/installations",
+  "GET /orgs/{org}/invitations",
+  "GET /orgs/{org}/invitations/{invitation_id}/teams",
+  "GET /orgs/{org}/issues",
+  "GET /orgs/{org}/members",
+  "GET /orgs/{org}/members/{username}/codespaces",
+  "GET /orgs/{org}/migrations",
+  "GET /orgs/{org}/migrations/{migration_id}/repositories",
+  "GET /orgs/{org}/organization-roles/{role_id}/teams",
+  "GET /orgs/{org}/organization-roles/{role_id}/users",
+  "GET /orgs/{org}/outside_collaborators",
+  "GET /orgs/{org}/packages",
+  "GET /orgs/{org}/packages/{package_type}/{package_name}/versions",
+  "GET /orgs/{org}/personal-access-token-requests",
+  "GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories",
+  "GET /orgs/{org}/personal-access-tokens",
+  "GET /orgs/{org}/personal-access-tokens/{pat_id}/repositories",
+  "GET /orgs/{org}/private-registries",
+  "GET /orgs/{org}/projects",
+  "GET /orgs/{org}/projectsV2",
+  "GET /orgs/{org}/projectsV2/{project_number}/fields",
+  "GET /orgs/{org}/projectsV2/{project_number}/items",
+  "GET /orgs/{org}/properties/values",
+  "GET /orgs/{org}/public_members",
+  "GET /orgs/{org}/repos",
+  "GET /orgs/{org}/rulesets",
+  "GET /orgs/{org}/rulesets/rule-suites",
+  "GET /orgs/{org}/rulesets/{ruleset_id}/history",
+  "GET /orgs/{org}/secret-scanning/alerts",
+  "GET /orgs/{org}/security-advisories",
+  "GET /orgs/{org}/settings/immutable-releases/repositories",
+  "GET /orgs/{org}/settings/network-configurations",
+  "GET /orgs/{org}/team/{team_slug}/copilot/metrics",
+  "GET /orgs/{org}/teams",
+  "GET /orgs/{org}/teams/{team_slug}/discussions",
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+  "GET /orgs/{org}/teams/{team_slug}/invitations",
+  "GET /orgs/{org}/teams/{team_slug}/members",
+  "GET /orgs/{org}/teams/{team_slug}/projects",
+  "GET /orgs/{org}/teams/{team_slug}/repos",
+  "GET /orgs/{org}/teams/{team_slug}/teams",
+  "GET /projects/{project_id}/collaborators",
+  "GET /repos/{owner}/{repo}/actions/artifacts",
+  "GET /repos/{owner}/{repo}/actions/caches",
+  "GET /repos/{owner}/{repo}/actions/organization-secrets",
+  "GET /repos/{owner}/{repo}/actions/organization-variables",
+  "GET /repos/{owner}/{repo}/actions/runners",
+  "GET /repos/{owner}/{repo}/actions/runs",
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs",
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+  "GET /repos/{owner}/{repo}/actions/secrets",
+  "GET /repos/{owner}/{repo}/actions/variables",
+  "GET /repos/{owner}/{repo}/actions/workflows",
+  "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
+  "GET /repos/{owner}/{repo}/activity",
+  "GET /repos/{owner}/{repo}/assignees",
+  "GET /repos/{owner}/{repo}/attestations/{subject_digest}",
+  "GET /repos/{owner}/{repo}/branches",
+  "GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
+  "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
+  "GET /repos/{owner}/{repo}/code-scanning/alerts",
+  "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+  "GET /repos/{owner}/{repo}/code-scanning/analyses",
+  "GET /repos/{owner}/{repo}/codespaces",
+  "GET /repos/{owner}/{repo}/codespaces/devcontainers",
+  "GET /repos/{owner}/{repo}/codespaces/secrets",
+  "GET /repos/{owner}/{repo}/collaborators",
+  "GET /repos/{owner}/{repo}/comments",
+  "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions",
+  "GET /repos/{owner}/{repo}/commits",
+  "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments",
+  "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls",
+  "GET /repos/{owner}/{repo}/commits/{ref}/check-runs",
+  "GET /repos/{owner}/{repo}/commits/{ref}/check-suites",
+  "GET /repos/{owner}/{repo}/commits/{ref}/status",
+  "GET /repos/{owner}/{repo}/commits/{ref}/statuses",
+  "GET /repos/{owner}/{repo}/compare/{basehead}",
+  "GET /repos/{owner}/{repo}/compare/{base}...{head}",
+  "GET /repos/{owner}/{repo}/contributors",
+  "GET /repos/{owner}/{repo}/dependabot/alerts",
+  "GET /repos/{owner}/{repo}/dependabot/secrets",
+  "GET /repos/{owner}/{repo}/deployments",
+  "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+  "GET /repos/{owner}/{repo}/environments",
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps",
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets",
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/variables",
+  "GET /repos/{owner}/{repo}/events",
+  "GET /repos/{owner}/{repo}/forks",
+  "GET /repos/{owner}/{repo}/hooks",
+  "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+  "GET /repos/{owner}/{repo}/invitations",
+  "GET /repos/{owner}/{repo}/issues",
+  "GET /repos/{owner}/{repo}/issues/comments",
+  "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+  "GET /repos/{owner}/{repo}/issues/events",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/comments",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/events",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/labels",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
+  "GET /repos/{owner}/{repo}/keys",
+  "GET /repos/{owner}/{repo}/labels",
+  "GET /repos/{owner}/{repo}/milestones",
+  "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+  "GET /repos/{owner}/{repo}/notifications",
+  "GET /repos/{owner}/{repo}/pages/builds",
+  "GET /repos/{owner}/{repo}/projects",
+  "GET /repos/{owner}/{repo}/pulls",
+  "GET /repos/{owner}/{repo}/pulls/comments",
+  "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/comments",
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/commits",
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/files",
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments",
+  "GET /repos/{owner}/{repo}/releases",
+  "GET /repos/{owner}/{repo}/releases/{release_id}/assets",
+  "GET /repos/{owner}/{repo}/releases/{release_id}/reactions",
+  "GET /repos/{owner}/{repo}/rules/branches/{branch}",
+  "GET /repos/{owner}/{repo}/rulesets",
+  "GET /repos/{owner}/{repo}/rulesets/rule-suites",
+  "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history",
+  "GET /repos/{owner}/{repo}/secret-scanning/alerts",
+  "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+  "GET /repos/{owner}/{repo}/security-advisories",
+  "GET /repos/{owner}/{repo}/stargazers",
+  "GET /repos/{owner}/{repo}/subscribers",
+  "GET /repos/{owner}/{repo}/tags",
+  "GET /repos/{owner}/{repo}/teams",
+  "GET /repos/{owner}/{repo}/topics",
+  "GET /repositories",
+  "GET /search/code",
+  "GET /search/commits",
+  "GET /search/issues",
+  "GET /search/labels",
+  "GET /search/repositories",
+  "GET /search/topics",
+  "GET /search/users",
+  "GET /teams/{team_id}/discussions",
+  "GET /teams/{team_id}/discussions/{discussion_number}/comments",
+  "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+  "GET /teams/{team_id}/discussions/{discussion_number}/reactions",
+  "GET /teams/{team_id}/invitations",
+  "GET /teams/{team_id}/members",
+  "GET /teams/{team_id}/projects",
+  "GET /teams/{team_id}/repos",
+  "GET /teams/{team_id}/teams",
+  "GET /user/blocks",
+  "GET /user/codespaces",
+  "GET /user/codespaces/secrets",
+  "GET /user/emails",
+  "GET /user/followers",
+  "GET /user/following",
+  "GET /user/gpg_keys",
+  "GET /user/installations",
+  "GET /user/installations/{installation_id}/repositories",
+  "GET /user/issues",
+  "GET /user/keys",
+  "GET /user/marketplace_purchases",
+  "GET /user/marketplace_purchases/stubbed",
+  "GET /user/memberships/orgs",
+  "GET /user/migrations",
+  "GET /user/migrations/{migration_id}/repositories",
+  "GET /user/orgs",
+  "GET /user/packages",
+  "GET /user/packages/{package_type}/{package_name}/versions",
+  "GET /user/public_emails",
+  "GET /user/repos",
+  "GET /user/repository_invitations",
+  "GET /user/social_accounts",
+  "GET /user/ssh_signing_keys",
+  "GET /user/starred",
+  "GET /user/subscriptions",
+  "GET /user/teams",
+  "GET /users",
+  "GET /users/{username}/attestations/{subject_digest}",
+  "GET /users/{username}/events",
+  "GET /users/{username}/events/orgs/{org}",
+  "GET /users/{username}/events/public",
+  "GET /users/{username}/followers",
+  "GET /users/{username}/following",
+  "GET /users/{username}/gists",
+  "GET /users/{username}/gpg_keys",
+  "GET /users/{username}/keys",
+  "GET /users/{username}/orgs",
+  "GET /users/{username}/packages",
+  "GET /users/{username}/projects",
+  "GET /users/{username}/projectsV2",
+  "GET /users/{username}/projectsV2/{project_number}/fields",
+  "GET /users/{username}/projectsV2/{project_number}/items",
+  "GET /users/{username}/received_events",
+  "GET /users/{username}/received_events/public",
+  "GET /users/{username}/repos",
+  "GET /users/{username}/social_accounts",
+  "GET /users/{username}/ssh_signing_keys",
+  "GET /users/{username}/starred",
+  "GET /users/{username}/subscriptions"
+]));
+
+// pkg/dist-src/paginating-endpoints.js
+function isPaginatingEndpoint(arg) {
+  if (typeof arg === "string") {
+    return paginatingEndpoints.includes(arg);
+  } else {
+    return false;
+  }
+}
+
+// pkg/dist-src/index.js
+function paginateRest(octokit) {
+  return {
+    paginate: Object.assign(paginate.bind(null, octokit), {
+      iterator: iterator.bind(null, octokit)
+    })
+  };
+}
+paginateRest.VERSION = plugin_paginate_rest_dist_bundle_VERSION;
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/utils.js
+
+
+// octokit + plugins
+
+
+
+const context = new Context();
+const baseUrl = getApiBaseUrl();
+const defaults = {
+    baseUrl,
+    request: {
+        agent: getProxyAgent(baseUrl),
+        fetch: getProxyFetch(baseUrl)
+    }
+};
+const GitHub = Octokit.plugin(restEndpointMethods, paginateRest).defaults(defaults);
+
+/**
+ * Convience function to correctly format Octokit Options to pass into the constructor.
+ *
+ * @param     token    the repo PAT or GITHUB_TOKEN
+ * @param     options  other options to set
+ */
+function getOctokitOptions(token, options) {
+    const opts = Object.assign({}, options || {}); // Shallow clone - don't mutate the object provided by the caller
+    // Auth
+    const auth = getAuthString(token, opts);
+    if (auth) {
+        opts.auth = auth;
+    }
+    // Orchestration ID
+    const userAgent = getUserAgentWithOrchestrationId(opts.userAgent);
+    if (userAgent) {
+        opts.userAgent = userAgent;
+    }
+    return opts;
+}
+//# sourceMappingURL=utils.js.map
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@actions+github@9.1.1/node_modules/@actions/github/lib/github.js
+
+
+const github_context = new Context();
+/**
+ * Returns a hydrated octokit ready to use for GitHub Actions
+ *
+ * @param     token    the repo PAT or GITHUB_TOKEN
+ * @param     options  other options to set
+ */
+function getOctokit(token, options, ...additionalPlugins) {
+    const GitHubWithPlugins = GitHub.plugin(...additionalPlugins);
+    return new GitHubWithPlugins(getOctokitOptions(token, options));
+}
+//# sourceMappingURL=github.js.map
+// EXTERNAL MODULE: ./node_modules/.pnpm/@slack+web-api@8.0.0/node_modules/@slack/web-api/dist/index.js
+var web_api_dist = __nccwpck_require__(4092);
+// EXTERNAL MODULE: external "util"
+var external_util_ = __nccwpck_require__(9023);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/js-yaml@5.2.3/node_modules/js-yaml/dist/js-yaml.mjs
+/*! js-yaml 5.2.3 https://github.com/nodeca/js-yaml @license MIT */
+//#region src/tag.ts
+var NOT_RESOLVED = Symbol("NOT_RESOLVED");
+var MERGE_KEY = Symbol("MERGE_KEY");
+function defineScalarTag(tagName, options) {
+	return {
+		tagName,
+		nodeKind: "scalar",
+		implicit: options.implicit ?? false,
+		matchByTagPrefix: options.matchByTagPrefix ?? false,
+		implicitFirstChars: options.implicitFirstChars ?? null,
+		resolve: options.resolve,
+		identify: options.identify ?? null,
+		represent: options.represent ?? ((data) => String(data)),
+		representTagName: options.representTagName ?? null
+	};
+}
+function defineSequenceTag(tagName, options) {
+	const carrierIsResult = options.finalize === void 0;
+	return {
+		tagName,
+		nodeKind: "sequence",
+		implicit: false,
+		matchByTagPrefix: options.matchByTagPrefix ?? false,
+		create: options.create,
+		addItem: options.addItem,
+		finalize: options.finalize ?? ((carrier) => carrier),
+		carrierIsResult,
+		identify: options.identify ?? null,
+		represent: options.represent ?? ((data) => data),
+		representTagName: options.representTagName ?? null
+	};
+}
+function defineMappingTag(tagName, options) {
+	const carrierIsResult = options.finalize === void 0;
+	return {
+		tagName,
+		nodeKind: "mapping",
+		implicit: false,
+		matchByTagPrefix: options.matchByTagPrefix ?? false,
+		create: options.create,
+		addPair: options.addPair,
+		has: options.has,
+		keys: options.keys,
+		get: options.get,
+		finalize: options.finalize ?? ((carrier) => carrier),
+		carrierIsResult,
+		identify: options.identify ?? null,
+		represent: options.represent ?? ((data) => data),
+		representTagName: options.representTagName ?? null
+	};
+}
+//#endregion
+//#region src/tag/scalar/str.ts
+var strTag = defineScalarTag("tag:yaml.org,2002:str", {
+	resolve: (source) => source,
+	identify: (data) => typeof data === "string"
+});
+//#endregion
+//#region src/tag/scalar/null_core.ts
+var NULL_VALUES$1 = [
+	"",
+	"~",
+	"null",
+	"Null",
+	"NULL"
+];
+var nullCoreTag = defineScalarTag("tag:yaml.org,2002:null", {
+	implicit: true,
+	implicitFirstChars: [
+		"",
+		"~",
+		"n",
+		"N"
+	],
+	resolve: (source) => {
+		if (NULL_VALUES$1.indexOf(source) !== -1) return null;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => object === null,
+	represent: () => "null"
+});
+//#endregion
+//#region src/tag/scalar/null_json.ts
+var nullJsonTag = defineScalarTag("tag:yaml.org,2002:null", {
+	implicit: true,
+	implicitFirstChars: ["n"],
+	resolve: (source, isExplicit) => {
+		if (source === "null" || isExplicit && source === "") return null;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => object === null,
+	represent: () => "null"
+});
+//#endregion
+//#region src/tag/scalar/null_yaml11.ts
+var NULL_VALUES = [
+	"",
+	"~",
+	"null",
+	"Null",
+	"NULL"
+];
+var nullYaml11Tag = defineScalarTag("tag:yaml.org,2002:null", {
+	implicit: true,
+	implicitFirstChars: [
+		"",
+		"~",
+		"n",
+		"N"
+	],
+	resolve: (source) => {
+		if (NULL_VALUES.indexOf(source) !== -1) return null;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => object === null,
+	represent: () => "null"
+});
+//#endregion
+//#region src/tag/scalar/bool_core.ts
+var TRUE_VALUES$2 = [
+	"true",
+	"True",
+	"TRUE"
+];
+var FALSE_VALUES$2 = [
+	"false",
+	"False",
+	"FALSE"
+];
+var boolCoreTag = defineScalarTag("tag:yaml.org,2002:bool", {
+	implicit: true,
+	implicitFirstChars: [
+		"t",
+		"T",
+		"f",
+		"F"
+	],
+	resolve: (source) => {
+		if (TRUE_VALUES$2.indexOf(source) !== -1) return true;
+		if (FALSE_VALUES$2.indexOf(source) !== -1) return false;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
+	represent: (object) => object ? "true" : "false"
+});
+//#endregion
+//#region src/tag/scalar/bool_json.ts
+var TRUE_VALUES$1 = ["true"];
+var FALSE_VALUES$1 = ["false"];
+var boolJsonTag = defineScalarTag("tag:yaml.org,2002:bool", {
+	implicit: true,
+	implicitFirstChars: ["t", "f"],
+	resolve: (source) => {
+		if (TRUE_VALUES$1.indexOf(source) !== -1) return true;
+		if (FALSE_VALUES$1.indexOf(source) !== -1) return false;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
+	represent: (object) => object ? "true" : "false"
+});
+//#endregion
+//#region src/tag/scalar/bool_yaml11.ts
+var TRUE_VALUES = [
+	"true",
+	"True",
+	"TRUE",
+	"y",
+	"Y",
+	"yes",
+	"Yes",
+	"YES",
+	"on",
+	"On",
+	"ON"
+];
+var FALSE_VALUES = [
+	"false",
+	"False",
+	"FALSE",
+	"n",
+	"N",
+	"no",
+	"No",
+	"NO",
+	"off",
+	"Off",
+	"OFF"
+];
+var boolYaml11Tag = defineScalarTag("tag:yaml.org,2002:bool", {
+	implicit: true,
+	implicitFirstChars: [
+		"y",
+		"Y",
+		"n",
+		"N",
+		"t",
+		"T",
+		"f",
+		"F",
+		"o",
+		"O"
+	],
+	resolve: (source) => {
+		if (TRUE_VALUES.indexOf(source) !== -1) return true;
+		if (FALSE_VALUES.indexOf(source) !== -1) return false;
+		return NOT_RESOLVED;
+	},
+	identify: (object) => Object.prototype.toString.call(object) === "[object Boolean]",
+	represent: (object) => object ? "true" : "false"
+});
+//#endregion
+//#region src/tag/scalar/int_core.ts
+var YAML_INTEGER_IMPLICIT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:0o[0-7]+|0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
+var YAML_INTEGER_EXPLICIT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1]+|[-+]?0o[0-7]+|[-+]?0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
+function parseYamlInteger$2(source) {
+	let value = source;
+	let sign = 1;
+	if (value[0] === "-" || value[0] === "+") {
+		if (value[0] === "-") sign = -1;
+		value = value.slice(1);
+	}
+	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
+	if (value.startsWith("0o")) return sign * parseInt(value.slice(2), 8);
+	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
+	return sign * parseInt(value, 10);
+}
+function resolveYamlInteger$2(source, isExplicit) {
+	if (isExplicit) {
+		if (!YAML_INTEGER_EXPLICIT_PATTERN$1.test(source)) return NOT_RESOLVED;
+	} else if (!YAML_INTEGER_IMPLICIT_PATTERN$1.test(source)) return NOT_RESOLVED;
+	const result = parseYamlInteger$2(source);
+	return Number.isFinite(result) ? result : NOT_RESOLVED;
+}
+var intCoreTag = defineScalarTag("tag:yaml.org,2002:int", {
+	implicit: true,
+	implicitFirstChars: [
+		"-",
+		"+",
+		..."0123456789"
+	],
+	resolve: resolveYamlInteger$2,
+	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
+	represent: (object) => object.toString(10)
+});
+//#endregion
+//#region src/tag/scalar/int_json.ts
+var YAML_INTEGER_IMPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^-?(?:0|[1-9][0-9]*)$");
+var YAML_INTEGER_EXPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1]+|[-+]?0o[0-7]+|[-+]?0x[0-9a-fA-F]+|[-+]?[0-9]+)$");
+function parseYamlInteger$1(source) {
+	let value = source;
+	let sign = 1;
+	if (value[0] === "-" || value[0] === "+") {
+		if (value[0] === "-") sign = -1;
+		value = value.slice(1);
+	}
+	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
+	if (value.startsWith("0o")) return sign * parseInt(value.slice(2), 8);
+	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
+	return sign * parseInt(value, 10);
+}
+function resolveYamlInteger$1(source, isExplicit) {
+	if (isExplicit) {
+		if (!YAML_INTEGER_EXPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
+	} else if (!YAML_INTEGER_IMPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
+	const result = parseYamlInteger$1(source);
+	return Number.isFinite(result) ? result : NOT_RESOLVED;
+}
+var intJsonTag = defineScalarTag("tag:yaml.org,2002:int", {
+	implicit: true,
+	implicitFirstChars: ["-", ..."0123456789"],
+	resolve: resolveYamlInteger$1,
+	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
+	represent: (object) => object.toString(10)
+});
+//#endregion
+//#region src/tag/scalar/int_yaml11.ts
+var YAML_INTEGER_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?0b[0-1_]+|[-+]?0[0-7_]+|[-+]?0x[0-9a-fA-F_]+|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+|[-+]?(?:0|[1-9][0-9_]*))$");
+function parseYamlInteger(source) {
+	let value = source.replace(/_/g, "");
+	let sign = 1;
+	if (value[0] === "-" || value[0] === "+") {
+		if (value[0] === "-") sign = -1;
+		value = value.slice(1);
+	}
+	if (value.startsWith("0b")) return sign * parseInt(value.slice(2), 2);
+	if (value.startsWith("0x")) return sign * parseInt(value.slice(2), 16);
+	if (value.includes(":")) {
+		let result = 0;
+		for (const part of value.split(":")) result = result * 60 + Number(part);
+		return sign * result;
+	}
+	if (value !== "0" && value[0] === "0") return sign * parseInt(value, 8);
+	return sign * parseInt(value, 10);
+}
+function resolveYamlInteger(source) {
+	if (!YAML_INTEGER_PATTERN.test(source)) return NOT_RESOLVED;
+	const result = parseYamlInteger(source);
+	return Number.isFinite(result) ? result : NOT_RESOLVED;
+}
+var intYaml11Tag = defineScalarTag("tag:yaml.org,2002:int", {
+	implicit: true,
+	implicitFirstChars: [
+		"-",
+		"+",
+		..."0123456789"
+	],
+	resolve: resolveYamlInteger,
+	identify: (object) => Number.isInteger(object) && !Object.is(object, -0) && object.toString(10).indexOf("e") < 0,
+	represent: (object) => object.toString(10)
+});
+//#endregion
+//#region src/tag/scalar/float_core.ts
+var YAML_FLOAT_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?[0-9]+(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?|[-+]?\\.[0-9]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+var YAML_FLOAT_SPECIAL_PATTERN$1 = /* @__PURE__ */ new RegExp("^(?:[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+function resolveYamlFloat$2(source) {
+	if (!YAML_FLOAT_PATTERN$1.test(source)) return NOT_RESOLVED;
+	let value = source.toLowerCase();
+	const sign = value[0] === "-" ? -1 : 1;
+	if ("+-".includes(value[0])) value = value.slice(1);
+	if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+	if (value === ".nan") return NaN;
+	const result = sign * parseFloat(value);
+	if (Number.isFinite(result) || YAML_FLOAT_SPECIAL_PATTERN$1.test(source)) return result;
+	return NOT_RESOLVED;
+}
+function representYamlFloat$2(object) {
+	if (isNaN(object)) return ".nan";
+	if (object === Number.POSITIVE_INFINITY) return ".inf";
+	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
+	if (Object.is(object, -0)) return "-0.0";
+	const result = object.toString(10);
+	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
+}
+var floatCoreTag = defineScalarTag("tag:yaml.org,2002:float", {
+	implicit: true,
+	implicitFirstChars: [
+		"-",
+		"+",
+		".",
+		..."0123456789"
+	],
+	resolve: resolveYamlFloat$2,
+	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
+	represent: representYamlFloat$2
+});
+//#endregion
+//#region src/tag/scalar/float_json.ts
+var YAML_FLOAT_IMPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^-?(?:0|[1-9][0-9]*)(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?$");
+var YAML_FLOAT_EXPLICIT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?[0-9]+(?:\\.[0-9]*)?(?:[eE][-+]?[0-9]+)?|[-+]?\\.[0-9]+(?:[eE][-+]?[0-9]+)?|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+function resolveYamlFloat$1(source, isExplicit) {
+	if (isExplicit) {
+		if (!YAML_FLOAT_EXPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
+		let value = source.toLowerCase();
+		const sign = value[0] === "-" ? -1 : 1;
+		if ("+-".includes(value[0])) value = value.slice(1);
+		if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+		if (value === ".nan") return NaN;
+		const result = sign * parseFloat(value);
+		return Number.isFinite(result) ? result : NOT_RESOLVED;
+	}
+	if (!YAML_FLOAT_IMPLICIT_PATTERN.test(source)) return NOT_RESOLVED;
+	const result = Number(source);
+	if (Number.isFinite(result)) return result;
+	return NOT_RESOLVED;
+}
+function representYamlFloat$1(object) {
+	if (isNaN(object)) return ".nan";
+	if (object === Number.POSITIVE_INFINITY) return ".inf";
+	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
+	if (Object.is(object, -0)) return "-0.0";
+	const result = object.toString(10);
+	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
+}
+var floatJsonTag = defineScalarTag("tag:yaml.org,2002:float", {
+	implicit: true,
+	implicitFirstChars: ["-", ..."0123456789"],
+	resolve: resolveYamlFloat$1,
+	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
+	represent: representYamlFloat$1
+});
+//#endregion
+//#region src/tag/scalar/float_yaml11.ts
+var YAML_FLOAT_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?(?:(?:[0-9][0-9_]*)?\\.[0-9_]*)(?:[eE][-+][0-9]+)?|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*|[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+var YAML_FLOAT_SPECIAL_PATTERN = /* @__PURE__ */ new RegExp("^(?:[-+]?\\.(?:inf|Inf|INF)|\\.(?:nan|NaN|NAN))$");
+function resolveYamlFloat(source) {
+	if (!YAML_FLOAT_PATTERN.test(source)) return NOT_RESOLVED;
+	let value = source.toLowerCase().replace(/_/g, "");
+	const sign = value[0] === "-" ? -1 : 1;
+	if ("+-".includes(value[0])) value = value.slice(1);
+	if (value === ".inf") return sign === 1 ? Number.POSITIVE_INFINITY : Number.NEGATIVE_INFINITY;
+	if (value === ".nan") return NaN;
+	let result = 0;
+	if (value.includes(":")) {
+		for (const part of value.split(":")) result = result * 60 + Number(part);
+		result *= sign;
+	} else result = sign * parseFloat(value);
+	if (Number.isFinite(result) || YAML_FLOAT_SPECIAL_PATTERN.test(source)) return result;
+	return NOT_RESOLVED;
+}
+function representYamlFloat(object) {
+	if (isNaN(object)) return ".nan";
+	if (object === Number.POSITIVE_INFINITY) return ".inf";
+	if (object === Number.NEGATIVE_INFINITY) return "-.inf";
+	if (Object.is(object, -0)) return "-0.0";
+	const result = object.toString(10);
+	return /^[-+]?[0-9]+e/.test(result) ? result.replace("e", ".e") : result;
+}
+var floatYaml11Tag = defineScalarTag("tag:yaml.org,2002:float", {
+	implicit: true,
+	implicitFirstChars: [
+		"-",
+		"+",
+		".",
+		..."0123456789"
+	],
+	resolve: resolveYamlFloat,
+	identify: (object) => typeof object === "number" && (!Number.isInteger(object) || Object.is(object, -0) || object.toString(10).indexOf("e") >= 0),
+	represent: representYamlFloat
+});
+//#endregion
+//#region src/tag/scalar/merge.ts
+var mergeTag = defineScalarTag("tag:yaml.org,2002:merge", {
+	implicit: true,
+	implicitFirstChars: ["<"],
+	resolve: (source, isExplicit) => {
+		if (source === "<<" || isExplicit && source === "") return MERGE_KEY;
+		return NOT_RESOLVED;
+	}
+});
+//#endregion
+//#region src/tag/scalar/binary.ts
+var BASE64_PATTERN = /^[A-Za-z0-9+/]*={0,2}$/;
+function resolveYamlBinary(source) {
+	const input = source.replace(/\s/g, "");
+	if (input.length % 4 !== 0 || !BASE64_PATTERN.test(input)) return NOT_RESOLVED;
+	const binary = atob(input);
+	const result = new Uint8Array(binary.length);
+	for (let index = 0; index < binary.length; index++) result[index] = binary.charCodeAt(index);
+	return result;
+}
+function representYamlBinary(object) {
+	let binary = "";
+	for (let index = 0; index < object.length; index++) binary += String.fromCharCode(object[index]);
+	return btoa(binary);
+}
+var binaryTag = defineScalarTag("tag:yaml.org,2002:binary", {
+	resolve: resolveYamlBinary,
+	identify: (object) => Object.prototype.toString.call(object) === "[object Uint8Array]",
+	represent: representYamlBinary
+});
+//#endregion
+//#region src/tag/scalar/timestamp.ts
+var YAML_DATE_REGEXP = /* @__PURE__ */ new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])$");
+var YAML_TIMESTAMP_REGEXP = /* @__PURE__ */ new RegExp("^([0-9][0-9][0-9][0-9])-([0-9][0-9]?)-([0-9][0-9]?)(?:[Tt]|[ \\t]+)([0-9][0-9]?):([0-9][0-9]):([0-9][0-9])(?:\\.([0-9]*))?(?:[ \\t]*(Z|([-+])([0-9][0-9]?)(?::([0-9][0-9]))?))?$");
+function makeUtcDate(year, month, day, hour = 0, minute = 0, second = 0, fraction = 0) {
+	const date = new Date(Date.UTC(year, month, day, hour, minute, second, fraction));
+	date.setUTCFullYear(year, month, day);
+	return date;
+}
+function resolveYamlTimestamp(source) {
+	let match = YAML_DATE_REGEXP.exec(source);
+	if (match === null) match = YAML_TIMESTAMP_REGEXP.exec(source);
+	if (match === null) return NOT_RESOLVED;
+	const year = +match[1];
+	const month = +match[2] - 1;
+	const day = +match[3];
+	if (!match[4]) {
+		const date = makeUtcDate(year, month, day);
+		if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month || date.getUTCDate() !== day) return NOT_RESOLVED;
+		return date;
+	}
+	const hour = +match[4];
+	const minute = +match[5];
+	const second = +match[6];
+	let fraction = 0;
+	if (hour > 23 || minute > 59 || second > 59) return NOT_RESOLVED;
+	if (match[7]) {
+		let value = match[7].slice(0, 3);
+		while (value.length < 3) value += "0";
+		fraction = +value;
+	}
+	const date = makeUtcDate(year, month, day, hour, minute, second, fraction);
+	if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month || date.getUTCDate() !== day) return NOT_RESOLVED;
+	if (match[9]) {
+		const offsetHour = +match[10];
+		const offsetMinute = +(match[11] || 0);
+		if (offsetHour > 23 || offsetMinute > 59) return NOT_RESOLVED;
+		const offset = (offsetHour * 60 + offsetMinute) * 6e4;
+		date.setTime(date.getTime() - (match[9] === "-" ? -offset : offset));
+	}
+	return date;
+}
+var timestampTag = defineScalarTag("tag:yaml.org,2002:timestamp", {
+	implicit: true,
+	implicitFirstChars: [..."0123456789"],
+	resolve: resolveYamlTimestamp,
+	identify: (object) => object instanceof Date,
+	represent: (object) => object.toISOString()
+});
+//#endregion
+//#region src/tag/sequence/seq.ts
+var seqTag = defineSequenceTag("tag:yaml.org,2002:seq", {
+	create: () => [],
+	addItem: (container, item) => {
+		container.push(item);
+	},
+	identify: Array.isArray
+});
+//#endregion
+//#region src/common/object.ts
+function js_yaml_isPlainObject(data) {
+	if (data === null || typeof data !== "object" || Array.isArray(data)) return false;
+	const prototype = Object.getPrototypeOf(data);
+	return prototype === null || prototype === Object.prototype;
+}
+function pick(object, keys) {
+	const result = {};
+	for (const key of keys) if (object[key] !== void 0) result[key] = object[key];
+	return result;
+}
+//#endregion
+//#region src/tag/sequence/omap.ts
+var omapTag = defineSequenceTag("tag:yaml.org,2002:omap", {
+	create: () => ({
+		list: [],
+		seen: /* @__PURE__ */ new Set()
+	}),
+	addItem: (carrier, item) => {
+		let key;
+		if (item instanceof Map) {
+			if (item.size !== 1) return "cannot resolve an ordered map item";
+			key = item.keys().next().value;
+		} else if (js_yaml_isPlainObject(item)) {
+			const itemKeys = Object.keys(item);
+			if (itemKeys.length !== 1) return "cannot resolve an ordered map item";
+			key = itemKeys[0];
+		} else return "cannot resolve an ordered map item";
+		if (carrier.seen.has(key)) return "duplicate key in ordered map";
+		carrier.seen.add(key);
+		carrier.list.push(item);
+		return "";
+	},
+	finalize: (carrier) => carrier.list
+});
+//#endregion
+//#region src/tag/sequence/pairs.ts
+var pairsTag = defineSequenceTag("tag:yaml.org,2002:pairs", {
+	create: () => [],
+	addItem: (container, item) => {
+		if (item instanceof Map) {
+			if (item.size !== 1) return "cannot resolve a pairs item";
+			container.push(item.entries().next().value);
+			return "";
+		}
+		if (Object.prototype.toString.call(item) !== "[object Object]") return "cannot resolve a pairs item";
+		const object = item;
+		const keys = Object.keys(object);
+		if (keys.length !== 1) return "cannot resolve a pairs item";
+		container.push([keys[0], object[keys[0]]]);
+		return "";
+	}
+});
+//#endregion
+//#region src/tag/mapping/map.ts
+var mapTag = defineMappingTag("tag:yaml.org,2002:map", {
+	create: () => ({}),
+	identify: js_yaml_isPlainObject,
+	represent: (o) => {
+		const map = /* @__PURE__ */ new Map();
+		for (const key of Object.keys(o)) map.set(key, o[key]);
+		return map;
+	},
+	addPair: (container, key, value) => {
+		if (key !== null && typeof key === "object") return "object-based map does not support complex keys";
+		const normalizedKey = String(key);
+		if (normalizedKey === "__proto__") Object.defineProperty(container, normalizedKey, {
+			value,
+			enumerable: true,
+			configurable: true,
+			writable: true
+		});
+		else container[normalizedKey] = value;
+		return "";
+	},
+	has: (container, key) => {
+		if (key !== null && typeof key === "object") return false;
+		return Object.prototype.hasOwnProperty.call(container, String(key));
+	},
+	keys: (container) => Object.keys(container),
+	get: (container, key) => {
+		const normalizedKey = String(key);
+		if (!Object.prototype.hasOwnProperty.call(container, normalizedKey)) return null;
+		return container[normalizedKey];
+	}
+});
+//#endregion
+//#region src/tag/mapping/set.ts
+var setTag = defineMappingTag("tag:yaml.org,2002:set", {
+	create: () => /* @__PURE__ */ new Set(),
+	identify: (data) => data instanceof Set,
+	represent: (data) => {
+		const map = /* @__PURE__ */ new Map();
+		for (const key of data) map.set(key, null);
+		return map;
+	},
+	addPair: (container, key, value) => {
+		if (value !== null) return "cannot resolve a set item";
+		container.add(key);
+		return "";
+	},
+	has: (container, key) => container.has(key),
+	keys: (container) => container.keys(),
+	get: () => null
+});
+//#endregion
+//#region src/schema.ts
+function createTagDefinitionMap() {
+	return {
+		scalar: Object.create(null),
+		sequence: Object.create(null),
+		mapping: Object.create(null)
+	};
+}
+function createTagDefinitionListMap() {
+	return {
+		scalar: [],
+		sequence: [],
+		mapping: []
+	};
+}
+function compileTags(tags) {
+	const result = [];
+	for (const tag of tags) {
+		let index = result.length;
+		for (let previousIndex = 0; previousIndex < result.length; previousIndex++) {
+			const previous = result[previousIndex];
+			if (previous.nodeKind === tag.nodeKind && previous.tagName === tag.tagName && previous.matchByTagPrefix === tag.matchByTagPrefix) {
+				index = previousIndex;
+				break;
+			}
+		}
+		result[index] = tag;
+	}
+	return result;
+}
+var Schema = class Schema {
+	tags;
+	implicitScalarTags;
+	implicitScalarByFirstChar;
+	implicitScalarAnyFirstChar;
+	defaultScalarTag;
+	defaultSequenceTag;
+	defaultMappingTag;
+	exact;
+	prefix;
+	constructor(tags) {
+		const compiledTags = compileTags(tags);
+		const implicitScalarTags = [];
+		const exact = createTagDefinitionMap();
+		const prefix = createTagDefinitionListMap();
+		for (const tag of compiledTags) {
+			if (tag.nodeKind === "scalar" && tag.implicit) {
+				if (tag.matchByTagPrefix) throw new Error("Implicit scalar tags cannot match by tag prefix");
+				implicitScalarTags.push(tag);
+			}
+			switch (tag.nodeKind) {
+				case "scalar":
+					if (tag.matchByTagPrefix) prefix.scalar.push(tag);
+					else exact.scalar[tag.tagName] = tag;
+					break;
+				case "sequence":
+					if (tag.matchByTagPrefix) prefix.sequence.push(tag);
+					else exact.sequence[tag.tagName] = tag;
+					break;
+				case "mapping":
+					if (tag.matchByTagPrefix) prefix.mapping.push(tag);
+					else exact.mapping[tag.tagName] = tag;
+					break;
+			}
+		}
+		const implicitScalarAnyFirstChar = implicitScalarTags.filter((tag) => tag.implicitFirstChars === null);
+		const keys = /* @__PURE__ */ new Set();
+		for (const tag of implicitScalarTags) if (tag.implicitFirstChars !== null) for (const key of tag.implicitFirstChars) keys.add(key);
+		const implicitScalarByFirstChar = /* @__PURE__ */ new Map();
+		for (const key of keys) implicitScalarByFirstChar.set(key, implicitScalarTags.filter((tag) => tag.implicitFirstChars === null || tag.implicitFirstChars.indexOf(key) !== -1));
+		const defaultScalarTag = exact.scalar["tag:yaml.org,2002:str"];
+		if (!defaultScalarTag) throw new Error("schema does not define the default scalar tag (tag:yaml.org,2002:str)");
+		this.tags = compiledTags;
+		this.implicitScalarTags = implicitScalarTags;
+		this.implicitScalarByFirstChar = implicitScalarByFirstChar;
+		this.implicitScalarAnyFirstChar = implicitScalarAnyFirstChar;
+		this.defaultScalarTag = defaultScalarTag;
+		this.defaultSequenceTag = exact.sequence["tag:yaml.org,2002:seq"];
+		this.defaultMappingTag = exact.mapping["tag:yaml.org,2002:map"];
+		this.exact = exact;
+		this.prefix = prefix;
+	}
+	withTags(...tags) {
+		let flatTags = [];
+		for (const tag of tags) flatTags = flatTags.concat(tag);
+		return new Schema([...this.tags, ...flatTags]);
+	}
+};
+var FAILSAFE_SCHEMA = new Schema([
+	strTag,
+	seqTag,
+	mapTag
+]);
+var JSON_SCHEMA = new Schema([
+	...FAILSAFE_SCHEMA.tags,
+	nullJsonTag,
+	boolJsonTag,
+	intJsonTag,
+	floatJsonTag
+]);
+var CORE_SCHEMA = new Schema([
+	...FAILSAFE_SCHEMA.tags,
+	nullCoreTag,
+	boolCoreTag,
+	intCoreTag,
+	floatCoreTag
+]);
+var YAML11_SCHEMA = new Schema([
+	...FAILSAFE_SCHEMA.tags,
+	nullYaml11Tag,
+	boolYaml11Tag,
+	intYaml11Tag,
+	floatYaml11Tag,
+	timestampTag,
+	mergeTag,
+	binaryTag,
+	omapTag,
+	pairsTag,
+	setTag
+]);
+//#endregion
+//#region src/tag/mapping/real_map.ts
+var realMapTag = defineMappingTag("tag:yaml.org,2002:map", {
+	create: () => /* @__PURE__ */ new Map(),
+	addPair: (container, key, value) => {
+		container.set(key, value);
+		return "";
+	},
+	has: (container, key) => container.has(key),
+	keys: (container) => container.keys(),
+	get: (container, key) => container.get(key),
+	identify: (data) => data instanceof Map || js_yaml_isPlainObject(data),
+	represent: (data) => {
+		if (data instanceof Map) return data;
+		const map = /* @__PURE__ */ new Map();
+		const obj = data;
+		for (const key of Object.keys(obj)) map.set(key, obj[key]);
+		return map;
+	}
+});
+//#endregion
+//#region src/tag/mapping/legacy_map.ts
+function normalizeKey(key) {
+	if (Array.isArray(key)) {
+		const array = Array.prototype.slice.call(key);
+		for (let index = 0; index < array.length; index++) {
+			if (Array.isArray(array[index])) return null;
+			if (typeof array[index] === "object" && Object.prototype.toString.call(array[index]) === "[object Object]") array[index] = "[object Object]";
+		}
+		return String(array);
+	}
+	if (typeof key === "object" && Object.prototype.toString.call(key) === "[object Object]") return "[object Object]";
+	return String(key);
+}
+var legacyMapTag = defineMappingTag("tag:yaml.org,2002:map", {
+	create: () => ({}),
+	identify: js_yaml_isPlainObject,
+	represent: (o) => {
+		const map = /* @__PURE__ */ new Map();
+		for (const key of Object.keys(o)) map.set(key, o[key]);
+		return map;
+	},
+	addPair: (container, key, value) => {
+		const normalizedKey = normalizeKey(key);
+		if (normalizedKey === null) return "nested arrays are not supported inside keys";
+		if (normalizedKey === "__proto__") Object.defineProperty(container, normalizedKey, {
+			value,
+			enumerable: true,
+			configurable: true,
+			writable: true
+		});
+		else container[normalizedKey] = value;
+		return "";
+	},
+	has: (container, key) => {
+		const normalizedKey = normalizeKey(key);
+		return normalizedKey !== null && Object.prototype.hasOwnProperty.call(container, normalizedKey);
+	},
+	keys: (container) => Object.keys(container),
+	get: (container, key) => {
+		const normalizedKey = String(key);
+		if (!Object.prototype.hasOwnProperty.call(container, normalizedKey)) return null;
+		return container[normalizedKey];
+	}
+});
+//#endregion
+//#region src/common/snippet.ts
+var DEFAULT_SNIPPET_OPTIONS = {
+	maxLength: 79,
+	indent: 1,
+	linesBefore: 3,
+	linesAfter: 2
+};
+function getLine(buffer, lineStart, lineEnd, position, maxLineLength) {
+	let head = "";
+	let tail = "";
+	const maxHalfLength = Math.floor(maxLineLength / 2) - 1;
+	if (position - lineStart > maxHalfLength) {
+		head = " ... ";
+		lineStart = position - maxHalfLength + head.length;
+	}
+	if (lineEnd - position > maxHalfLength) {
+		tail = " ...";
+		lineEnd = position + maxHalfLength - tail.length;
+	}
+	return {
+		str: head + buffer.slice(lineStart, lineEnd).replace(/\t/g, "→") + tail,
+		pos: position - lineStart + head.length
+	};
+}
+function padStart(string, max) {
+	return " ".repeat(Math.max(max - string.length, 0)) + string;
+}
+function makeSnippet(mark, options) {
+	if (!mark.buffer) return null;
+	const opts = {
+		...DEFAULT_SNIPPET_OPTIONS,
+		...options
+	};
+	const re = /\r?\n|\r|\0/g;
+	const lineStarts = [0];
+	const lineEnds = [];
+	let match;
+	let foundLineNo = -1;
+	while (match = re.exec(mark.buffer)) {
+		lineEnds.push(match.index);
+		lineStarts.push(match.index + match[0].length);
+		if (mark.position <= match.index && foundLineNo < 0) foundLineNo = lineStarts.length - 2;
+	}
+	if (foundLineNo < 0) foundLineNo = lineStarts.length - 1;
+	let result = "";
+	const lineNoLength = Math.min(mark.line + opts.linesAfter, lineEnds.length).toString().length;
+	const maxLineLength = opts.maxLength - (opts.indent + lineNoLength + 3);
+	for (let i = 1; i <= opts.linesBefore; i++) {
+		if (foundLineNo - i < 0) break;
+		const line = getLine(mark.buffer, lineStarts[foundLineNo - i], lineEnds[foundLineNo - i], mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo - i]), maxLineLength);
+		result = `${" ".repeat(opts.indent)}${padStart((mark.line - i + 1).toString(), lineNoLength)} | ${line.str}\n${result}`;
+	}
+	const line = getLine(mark.buffer, lineStarts[foundLineNo], lineEnds[foundLineNo], mark.position, maxLineLength);
+	result += `${" ".repeat(opts.indent)}${padStart((mark.line + 1).toString(), lineNoLength)} | ${line.str}\n`;
+	result += `${"-".repeat(opts.indent + lineNoLength + 3 + line.pos)}^\n`;
+	for (let i = 1; i <= opts.linesAfter; i++) {
+		if (foundLineNo + i >= lineEnds.length) break;
+		const line = getLine(mark.buffer, lineStarts[foundLineNo + i], lineEnds[foundLineNo + i], mark.position - (lineStarts[foundLineNo] - lineStarts[foundLineNo + i]), maxLineLength);
+		result += `${" ".repeat(opts.indent)}${padStart((mark.line + i + 1).toString(), lineNoLength)} | ${line.str}\n`;
+	}
+	return result.replace(/\n$/, "");
+}
+//#endregion
+//#region src/common/exception.ts
+function formatError(exception, compact) {
+	let where = "";
+	if (!exception.mark) return exception.reason;
+	if (exception.mark.name) where += `in "${exception.mark.name}" `;
+	where += `(${exception.mark.line + 1}:${exception.mark.column + 1})`;
+	if (!compact && exception.mark.snippet) where += `\n\n${exception.mark.snippet}`;
+	return `${exception.reason} ${where}`;
+}
+var YAMLException = class extends Error {
+	reason;
+	mark;
+	constructor(reason, mark) {
+		super();
+		this.name = "YAMLException";
+		this.reason = reason;
+		this.mark = mark;
+		this.message = formatError(this, false);
+		if (Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
+	}
+	toString(compact) {
+		return `${this.name}: ${formatError(this, compact)}`;
+	}
+};
+function throwErrorAt(source, position, message, filename = "") {
+	let line = 0;
+	let lineStart = 0;
+	for (let index = 0; index < position; index++) {
+		const ch = source.charCodeAt(index);
+		if (ch === 10) {
+			line++;
+			lineStart = index + 1;
+		} else if (ch === 13) {
+			line++;
+			if (source.charCodeAt(index + 1) === 10) index++;
+			lineStart = index + 1;
+		}
+	}
+	const mark = {
+		name: filename,
+		buffer: source,
+		position,
+		line,
+		column: position - lineStart
+	};
+	mark.snippet = makeSnippet(mark);
+	throw new YAMLException(message, mark);
+}
+//#endregion
+//#region src/parser/events.ts
+var EVENT_DOCUMENT = 1;
+var EVENT_SEQUENCE = 2;
+var EVENT_MAPPING = 3;
+var EVENT_SCALAR = 4;
+var EVENT_ALIAS = 5;
+var EVENT_POP = 6;
+var SCALAR_STYLE_PLAIN = 1;
+var SCALAR_STYLE_SINGLE_QUOTED = 2;
+var SCALAR_STYLE_DOUBLE_QUOTED = 3;
+var SCALAR_STYLE_LITERAL_BLOCK = 4;
+var SCALAR_STYLE_FOLDED_BLOCK = 5;
+var COLLECTION_STYLE_BLOCK = 1;
+var COLLECTION_STYLE_FLOW = 2;
+var CHOMPING_CLIP = 1;
+var CHOMPING_STRIP = 2;
+var CHOMPING_KEEP = 3;
+//#endregion
+//#region src/parser/parser_scalar.ts
+var NO_RANGE$3 = -1;
+function simpleEscapeSequence(c) {
+	switch (c) {
+		case 48: return "\0";
+		case 97: return "\x07";
+		case 98: return "\b";
+		case 116: return "	";
+		case 9: return "	";
+		case 110: return "\n";
+		case 118: return "\v";
+		case 102: return "\f";
+		case 114: return "\r";
+		case 101: return "\x1B";
+		case 32: return " ";
+		case 34: return "\"";
+		case 47: return "/";
+		case 92: return "\\";
+		case 78: return "";
+		case 95: return "\xA0";
+		case 76: return "\u2028";
+		case 80: return "\u2029";
+		default: return "";
+	}
+}
+var simpleEscapeCheck = new Array(256);
+var simpleEscapeMap = new Array(256);
+for (let i = 0; i < 256; i++) {
+	simpleEscapeCheck[i] = simpleEscapeSequence(i) ? 1 : 0;
+	simpleEscapeMap[i] = simpleEscapeSequence(i);
+}
+function charFromCodepoint(c) {
+	if (c <= 65535) return String.fromCharCode(c);
+	return String.fromCharCode((c - 65536 >> 10) + 55296, (c - 65536 & 1023) + 56320);
+}
+function fromHexCode$1(c) {
+	if (c >= 48 && c <= 57) return c - 48;
+	return (c | 32) - 97 + 10;
+}
+function escapedHexLen$1(c) {
+	if (c === 120) return 2;
+	if (c === 117) return 4;
+	return 8;
+}
+function skipFoldedBreaks(input, position, end) {
+	let breaks = 0;
+	while (position < end) {
+		const ch = input.charCodeAt(position);
+		if (ch === 10) {
+			breaks++;
+			position++;
+		} else if (ch === 13) {
+			breaks++;
+			position++;
+			if (input.charCodeAt(position) === 10) position++;
+		} else if (ch === 32 || ch === 9) position++;
+		else break;
+	}
+	return {
+		position,
+		breaks
+	};
+}
+function foldedBreaks(count) {
+	if (count === 1) return " ";
+	return "\n".repeat(count - 1);
+}
+function getPlainValue(input, start, end) {
+	let result = "";
+	let position = start;
+	let captureStart = start;
+	let captureEnd = start;
+	while (position < end) {
+		const ch = input.charCodeAt(position);
+		if (ch === 10 || ch === 13) {
+			result += input.slice(captureStart, captureEnd);
+			const fold = skipFoldedBreaks(input, position, end);
+			result += foldedBreaks(fold.breaks);
+			position = captureStart = captureEnd = fold.position;
+		} else {
+			position++;
+			if (ch !== 32 && ch !== 9) captureEnd = position;
+		}
+	}
+	return result + input.slice(captureStart, captureEnd);
+}
+function getSingleQuotedValue(input, start, end) {
+	let result = "";
+	let position = start;
+	let captureStart = start;
+	let captureEnd = start;
+	while (position < end) {
+		const ch = input.charCodeAt(position);
+		if (ch === 39) {
+			result += input.slice(captureStart, position) + "'";
+			position += 2;
+			captureStart = captureEnd = position;
+		} else if (ch === 10 || ch === 13) {
+			result += input.slice(captureStart, captureEnd);
+			const fold = skipFoldedBreaks(input, position, end);
+			result += foldedBreaks(fold.breaks);
+			position = captureStart = captureEnd = fold.position;
+		} else {
+			position++;
+			if (ch !== 32 && ch !== 9) captureEnd = position;
+		}
+	}
+	return result + input.slice(captureStart, end);
+}
+function getDoubleQuotedValue(input, start, end) {
+	let result = "";
+	let position = start;
+	let captureStart = start;
+	let captureEnd = start;
+	while (position < end) {
+		const ch = input.charCodeAt(position);
+		if (ch === 92) {
+			result += input.slice(captureStart, position);
+			position++;
+			const escaped = input.charCodeAt(position);
+			if (escaped === 10 || escaped === 13) position = skipFoldedBreaks(input, position, end).position;
+			else if (escaped < 256 && simpleEscapeCheck[escaped]) {
+				result += simpleEscapeMap[escaped];
+				position++;
+			} else {
+				let hexLength = escapedHexLen$1(escaped);
+				let hexResult = 0;
+				for (; hexLength > 0; hexLength--) {
+					position++;
+					const digit = fromHexCode$1(input.charCodeAt(position));
+					hexResult = (hexResult << 4) + digit;
+				}
+				result += charFromCodepoint(hexResult);
+				position++;
+			}
+			captureStart = captureEnd = position;
+		} else if (ch === 10 || ch === 13) {
+			result += input.slice(captureStart, captureEnd);
+			const fold = skipFoldedBreaks(input, position, end);
+			result += foldedBreaks(fold.breaks);
+			position = captureStart = captureEnd = fold.position;
+		} else {
+			position++;
+			if (ch !== 32 && ch !== 9) captureEnd = position;
+		}
+	}
+	return result + input.slice(captureStart, end);
+}
+function getBlockValue(input, start, end, indent, chomping, folded) {
+	const textIndent = indent < 0 ? 0 : indent;
+	const region = input.slice(start, end).replace(/\r\n?/g, "\n");
+	const lines = region === "" ? [] : (region.endsWith("\n") ? region.slice(0, -1) : region).split("\n");
+	let result = "";
+	let didReadContent = false;
+	let emptyLines = 0;
+	let atMoreIndented = false;
+	for (const line of lines) {
+		let column = 0;
+		while (column < textIndent && line.charCodeAt(column) === 32) column++;
+		if (indent < 0 || column >= line.length) {
+			emptyLines++;
+			continue;
+		}
+		const content = line.slice(textIndent);
+		const first = content.charCodeAt(0);
+		if (folded) if (first === 32 || first === 9) {
+			atMoreIndented = true;
+			result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
+		} else if (atMoreIndented) {
+			atMoreIndented = false;
+			result += "\n".repeat(emptyLines + 1);
+		} else if (emptyLines === 0) {
+			if (didReadContent) result += " ";
+		} else result += "\n".repeat(emptyLines);
+		else result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
+		result += content;
+		didReadContent = true;
+		emptyLines = 0;
+	}
+	if (chomping === 3) result += "\n".repeat(didReadContent ? 1 + emptyLines : emptyLines);
+	else if (chomping !== 2) {
+		if (didReadContent) result += "\n";
+	}
+	return result;
+}
+function getScalarValue(input, scalar) {
+	if (scalar.valueStart === NO_RANGE$3) return "";
+	const { valueStart, valueEnd } = scalar;
+	if (scalar.fast) return input.slice(valueStart, valueEnd);
+	switch (scalar.style) {
+		case 2: return getSingleQuotedValue(input, valueStart, valueEnd);
+		case 3: return getDoubleQuotedValue(input, valueStart, valueEnd);
+		case 4: return getBlockValue(input, valueStart, valueEnd, scalar.indent, scalar.chomping, false);
+		case 5: return getBlockValue(input, valueStart, valueEnd, scalar.indent, scalar.chomping, true);
+		default: return getPlainValue(input, valueStart, valueEnd);
+	}
+}
+//#endregion
+//#region src/common/tagname.ts
+var DEFAULT_TAG_HANDLERS = Object.assign(Object.create(null), {
+	"!": "!",
+	"!!": "tag:yaml.org,2002:"
+});
+function tagPercentEncode(source) {
+	return encodeURI(source).replace(/!/g, "%21");
+}
+function tagNameFull(rawTag, tagHandlers) {
+	if (rawTag.startsWith("!<") && rawTag.endsWith(">")) return decodeURIComponent(rawTag.slice(2, -1));
+	const handleEnd = rawTag.indexOf("!", 1);
+	const handle = handleEnd === -1 ? "!" : rawTag.slice(0, handleEnd + 1);
+	const prefix = tagHandlers?.[handle] ?? DEFAULT_TAG_HANDLERS[handle] ?? handle;
+	return decodeURIComponent(prefix) + decodeURIComponent(rawTag.slice(handle.length));
+}
+function tagNameShort(fullTag) {
+	let tag = fullTag;
+	if (tag.charCodeAt(0) === 33) {
+		tag = tag.slice(1);
+		return `!${tagPercentEncode(tag)}`;
+	}
+	if (tag.slice(0, 18) === "tag:yaml.org,2002:") return `!!${tagPercentEncode(tag.slice(18))}`;
+	return `!<${tagPercentEncode(tag)}>`;
+}
+//#endregion
+//#region src/parser/constructor.ts
+var NO_RANGE$2 = -1;
+var DEFAULT_CONSTRUCTOR_OPTIONS = {
+	filename: "",
+	schema: CORE_SCHEMA,
+	json: false,
+	maxTotalMergeKeys: 1e4,
+	maxAliases: -1
+};
+function eventPosition$1(event) {
+	if ("tagStart" in event && event.tagStart !== NO_RANGE$2) return event.tagStart;
+	if ("anchorStart" in event && event.anchorStart !== NO_RANGE$2) return event.anchorStart;
+	if ("valueStart" in event && event.valueStart !== NO_RANGE$2) return event.valueStart;
+	if ("start" in event) return event.start;
+	return 0;
+}
+function throwError$1(state, message) {
+	throwErrorAt(state.source, state.position, message, state.filename);
+}
+function finalizeCollection(state, position, tag, carrier) {
+	try {
+		return tag.finalize(carrier);
+	} catch (error) {
+		if (error instanceof YAMLException) throw error;
+		throwErrorAt(state.source, position, error instanceof Error ? error.message : String(error), state.filename);
+	}
+}
+function lookupTag(exact, prefix, tagName) {
+	const exactTag = exact[tagName];
+	if (exactTag) return exactTag;
+	for (const tag of prefix) if (tagName.startsWith(tag.tagName)) return tag;
+}
+function findExplicitTag(state, exact, prefix, tagName, nodeKind) {
+	const tag = lookupTag(exact, prefix, tagName);
+	if (tag) return tag;
+	throwError$1(state, `unknown ${nodeKind} tag !<${tagName}>`);
+}
+function constructScalar(state, event) {
+	const source = getScalarValue(state.source, event);
+	const rawTag = event.tagStart === NO_RANGE$2 ? "" : state.source.slice(event.tagStart, event.tagEnd);
+	const strTag = state.schema.defaultScalarTag;
+	if (rawTag !== "") {
+		if (rawTag === "!") return {
+			value: source,
+			tag: strTag
+		};
+		const tagName = tagNameFull(rawTag, state.tagHandlers);
+		const scalarTag = lookupTag(state.schema.exact.scalar, state.schema.prefix.scalar, tagName);
+		if (scalarTag) {
+			const result = scalarTag.resolve(source, true, tagName);
+			if (result === NOT_RESOLVED) throwError$1(state, `cannot resolve a node with !<${tagName}> explicit tag`);
+			return {
+				value: result,
+				tag: scalarTag
+			};
+		}
+		const collectionTagDef = lookupTag(state.schema.exact.mapping, state.schema.prefix.mapping, tagName) ?? lookupTag(state.schema.exact.sequence, state.schema.prefix.sequence, tagName);
+		if (collectionTagDef) {
+			if (source !== "") throwError$1(state, `cannot resolve a node with !<${tagName}> explicit tag`);
+			const carrier = collectionTagDef.create(tagName);
+			return {
+				value: collectionTagDef.carrierIsResult ? carrier : finalizeCollection(state, state.position, collectionTagDef, carrier),
+				tag: collectionTagDef
+			};
+		}
+		throwError$1(state, `unknown scalar tag !<${tagName}>`);
+	}
+	if (event.style === 1) {
+		const candidates = state.schema.implicitScalarByFirstChar.get(source.charAt(0)) ?? state.schema.implicitScalarAnyFirstChar;
+		for (const tag of candidates) {
+			const result = tag.resolve(source, false, tag.tagName);
+			if (result !== NOT_RESOLVED) return {
+				value: result,
+				tag
+			};
+		}
+	}
+	return {
+		value: strTag.resolve(source, false, strTag.tagName),
+		tag: strTag
+	};
+}
+function collectionTag(state, event, exact, prefix, defaultTagName, nodeKind) {
+	const rawTag = event.tagStart === NO_RANGE$2 ? "" : state.source.slice(event.tagStart, event.tagEnd);
+	const tagName = rawTag === "" || rawTag === "!" ? defaultTagName : tagNameFull(rawTag, state.tagHandlers);
+	return {
+		tagName,
+		tag: findExplicitTag(state, exact, prefix, tagName, nodeKind)
+	};
+}
+function isMappingTag(tag) {
+	return tag.nodeKind === "mapping";
+}
+function mergeKeys(state, frame, source, sourceTag) {
+	for (const sourceKey of sourceTag.keys(source)) {
+		if (state.maxTotalMergeKeys !== -1 && ++state.totalMergeKeys > state.maxTotalMergeKeys) throwError$1(state, `merge keys exceeded maxTotalMergeKeys (${state.maxTotalMergeKeys})`);
+		if (frame.tag.has(frame.value, sourceKey)) continue;
+		const err = frame.tag.addPair(frame.value, sourceKey, sourceTag.get(source, sourceKey));
+		if (err) throwError$1(state, err);
+		(frame.overridable ??= /* @__PURE__ */ new Set()).add(sourceKey);
+	}
+}
+function mergeSource(state, frame, source, sourceTag) {
+	state.position = frame.keyPosition;
+	if (isMappingTag(sourceTag)) mergeKeys(state, frame, source, sourceTag);
+	else if (sourceTag.nodeKind === "sequence" && Array.isArray(source)) for (const element of source) mergeKeys(state, frame, element, frame.tag);
+	else throwError$1(state, "cannot merge mappings; the provided source object is unacceptable");
+}
+function addMappingValue(state, frame, key, value, tag) {
+	state.position = frame.keyPosition;
+	if (key === MERGE_KEY) {
+		mergeSource(state, frame, value, tag);
+		return;
+	}
+	if (!state.json && frame.tag.has(frame.value, key) && !frame.overridable?.has(key)) throwError$1(state, "duplicated mapping key");
+	const err = frame.tag.addPair(frame.value, key, value);
+	if (err) throwError$1(state, err);
+	frame.overridable?.delete(key);
+}
+function addValue(state, value, tag) {
+	const frame = state.frames[state.frames.length - 1];
+	if (frame.kind === "document") {
+		frame.value = value;
+		frame.hasValue = true;
+	} else if (frame.kind === "sequence") {
+		if (frame.merge) {
+			if (!isMappingTag(tag)) throwError$1(state, "cannot merge mappings; the provided source object is unacceptable");
+		}
+		const err = frame.tag.addItem(frame.value, value, frame.index++);
+		if (err) throwError$1(state, err);
+	} else if (frame.hasKey) {
+		const key = frame.key;
+		frame.key = void 0;
+		frame.hasKey = false;
+		addMappingValue(state, frame, key, value, tag);
+	} else {
+		frame.key = value;
+		frame.keyPosition = state.position;
+		frame.hasKey = true;
+	}
+}
+function storeAnchor(state, event, value, tag, isValueFinal) {
+	if (event.anchorStart !== NO_RANGE$2) {
+		const anchor = {
+			value,
+			tag,
+			isValueFinal
+		};
+		state.anchors.set(state.source.slice(event.anchorStart, event.anchorEnd), anchor);
+		return anchor;
+	}
+	return null;
+}
+function constructFromEvents(events, options) {
+	const state = {
+		...DEFAULT_CONSTRUCTOR_OPTIONS,
+		...options,
+		events,
+		documents: [],
+		eventIndex: 0,
+		position: 0,
+		frames: [],
+		anchors: /* @__PURE__ */ new Map(),
+		tagHandlers: Object.create(null),
+		totalMergeKeys: 0,
+		aliasCount: 0
+	};
+	while (state.eventIndex < state.events.length) {
+		const event = state.events[state.eventIndex++];
+		state.position = eventPosition$1(event);
+		switch (event.type) {
+			case 1:
+				state.anchors = /* @__PURE__ */ new Map();
+				state.aliasCount = 0;
+				state.tagHandlers = Object.create(null);
+				for (const directive of event.directives) if (directive.kind === "tag") state.tagHandlers[directive.handle] = directive.prefix;
+				state.frames.push({
+					kind: "document",
+					position: state.position,
+					value: void 0,
+					hasValue: false
+				});
+				break;
+			case 4: {
+				const { value, tag } = constructScalar(state, event);
+				storeAnchor(state, event, value, tag, true);
+				addValue(state, value, tag);
+				break;
+			}
+			case 2: {
+				const definition = collectionTag(state, event, state.schema.exact.sequence, state.schema.prefix.sequence, "tag:yaml.org,2002:seq", "sequence");
+				const value = definition.tag.create(definition.tagName);
+				const anchor = storeAnchor(state, event, value, definition.tag, definition.tag.carrierIsResult);
+				const parent = state.frames[state.frames.length - 1];
+				const merge = parent !== void 0 && parent.kind === "mapping" && parent.hasKey && parent.key === MERGE_KEY;
+				state.frames.push({
+					kind: "sequence",
+					position: state.position,
+					value,
+					tag: definition.tag,
+					anchor,
+					index: 0,
+					merge
+				});
+				break;
+			}
+			case 3: {
+				const definition = collectionTag(state, event, state.schema.exact.mapping, state.schema.prefix.mapping, "tag:yaml.org,2002:map", "mapping");
+				const value = definition.tag.create(definition.tagName);
+				const anchor = storeAnchor(state, event, value, definition.tag, definition.tag.carrierIsResult);
+				state.frames.push({
+					kind: "mapping",
+					position: state.position,
+					value,
+					tag: definition.tag,
+					anchor,
+					key: void 0,
+					keyPosition: state.position,
+					hasKey: false,
+					overridable: null
+				});
+				break;
+			}
+			case 5: {
+				if (state.maxAliases !== -1 && ++state.aliasCount > state.maxAliases) throwError$1(state, `aliases exceeded maxAliases (${state.maxAliases})`);
+				const name = state.source.slice(event.anchorStart, event.anchorEnd);
+				const anchor = state.anchors.get(name);
+				if (!anchor) throwError$1(state, `unidentified alias "${name}"`);
+				if (!anchor.isValueFinal) throwError$1(state, `recursive alias "${name}" is not supported for tag ${anchor.tag.tagName} because it uses finalize()`);
+				addValue(state, anchor.value, anchor.tag);
+				break;
+			}
+			case 6: {
+				const frame = state.frames.pop();
+				if (frame.kind === "mapping" && frame.hasKey) {
+					state.position = frame.keyPosition;
+					throwError$1(state, "incomplete mapping pair in event stream");
+				}
+				if (frame.kind === "document") state.documents.push(frame.value);
+				else {
+					const value = frame.tag.carrierIsResult ? frame.value : finalizeCollection(state, frame.position, frame.tag, frame.value);
+					if (frame.anchor) {
+						frame.anchor.value = value;
+						frame.anchor.isValueFinal = true;
+					}
+					addValue(state, value, frame.tag);
+				}
+				break;
+			}
+		}
+	}
+	return state.documents;
+}
+//#endregion
+//#region src/parser/parser.ts
+var NO_RANGE$1 = -1;
+var HAS_OWN = Object.prototype.hasOwnProperty;
+var CONTEXT_FLOW_IN = 1;
+var CONTEXT_FLOW_OUT = 2;
+var CONTEXT_BLOCK_IN = 3;
+var CONTEXT_BLOCK_OUT = 4;
+var PATTERN_NON_PRINTABLE = /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x84\x86-\x9F\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/;
+var PATTERN_FLOW_INDICATORS = /[,\[\]{}]/;
+var PATTERN_TAG_HANDLE = /^(?:!|!!|![0-9A-Za-z-]+!)$/;
+var NS_URI_CHAR = String.raw`(?:%[0-9A-Fa-f]{2}|[0-9A-Za-z\-#;/?:@&=+$,_.!~*'()\[\]])`;
+var NS_TAG_CHAR = String.raw`(?:%[0-9A-Fa-f]{2}|[0-9A-Za-z\-#;/?:@&=+$.~*'()_])`;
+var PATTERN_TAG_URI = new RegExp(`^(?:${NS_URI_CHAR})*$`);
+var PATTERN_TAG_SUFFIX = new RegExp(`^(?:${NS_TAG_CHAR})+$`);
+var PATTERN_TAG_PREFIX = new RegExp(`^(?:!(?:${NS_URI_CHAR})*|${NS_TAG_CHAR}(?:${NS_URI_CHAR})*)$`);
+var DEFAULT_PARSER_OPTIONS = {
+	filename: "",
+	maxDepth: 100
+};
+function addDocumentEvent(state, explicitStart, explicitEnd) {
+	state.events.push({
+		type: 1,
+		explicitStart,
+		explicitEnd,
+		directives: state.directives
+	});
+}
+function addSequenceEvent(state, start, anchorStart, anchorEnd, tagStart, tagEnd, style) {
+	state.events.push({
+		type: 2,
+		start,
+		anchorStart,
+		anchorEnd,
+		tagStart,
+		tagEnd,
+		style
+	});
+}
+function addMappingEvent(state, start, anchorStart, anchorEnd, tagStart, tagEnd, style) {
+	state.events.push({
+		type: 3,
+		start,
+		anchorStart,
+		anchorEnd,
+		tagStart,
+		tagEnd,
+		style
+	});
+}
+function insertFlowPairMappingEvent(state, snapshot) {
+	state.events.splice(snapshot.eventsLength, 0, {
+		type: 3,
+		start: snapshot.position,
+		anchorStart: NO_RANGE$1,
+		anchorEnd: NO_RANGE$1,
+		tagStart: NO_RANGE$1,
+		tagEnd: NO_RANGE$1,
+		style: 2
+	});
+}
+function addScalarEvent(state, valueStart, valueEnd, anchorStart, anchorEnd, tagStart, tagEnd, style, chomping = 1, indent = -1, fast = false) {
+	state.events.push({
+		type: 4,
+		valueStart,
+		valueEnd,
+		anchorStart,
+		anchorEnd,
+		tagStart,
+		tagEnd,
+		style,
+		chomping,
+		indent,
+		fast
+	});
+}
+function addAliasEvent(state, anchorStart, anchorEnd) {
+	state.events.push({
+		type: 5,
+		anchorStart,
+		anchorEnd
+	});
+}
+function addPopEvent(state) {
+	state.events.push({ type: 6 });
+}
+function addEmptyScalarEvent(state) {
+	addScalarEvent(state, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, NO_RANGE$1, 1);
+}
+function emptyProperties() {
+	return {
+		anchorStart: NO_RANGE$1,
+		anchorEnd: NO_RANGE$1,
+		tagStart: NO_RANGE$1,
+		tagEnd: NO_RANGE$1
+	};
+}
+function snapshotState(state) {
+	return {
+		position: state.position,
+		line: state.line,
+		lineStart: state.lineStart,
+		lineIndent: state.lineIndent,
+		firstTabInLine: state.firstTabInLine,
+		eventsLength: state.events.length
+	};
+}
+function restoreState(state, snapshot) {
+	state.position = snapshot.position;
+	state.line = snapshot.line;
+	state.lineStart = snapshot.lineStart;
+	state.lineIndent = snapshot.lineIndent;
+	state.firstTabInLine = snapshot.firstTabInLine;
+	state.events.length = snapshot.eventsLength;
+}
+function throwError(state, message) {
+	throwErrorAt(state.input.slice(0, state.length), state.position, message, state.filename);
+}
+function isEol(c) {
+	return c === 10 || c === 13;
+}
+function isWhiteSpace(c) {
+	return c === 9 || c === 32;
+}
+function isWsOrEol(c) {
+	return isWhiteSpace(c) || isEol(c);
+}
+function isWsOrEolOrEnd(c) {
+	return c === 0 || isWsOrEol(c);
+}
+function isFlowIndicator(c) {
+	return c === 44 || c === 91 || c === 93 || c === 123 || c === 125;
+}
+function fromDecimalCode(c) {
+	return c >= 48 && c <= 57 ? c - 48 : -1;
+}
+function fromHexCode(c) {
+	if (c >= 48 && c <= 57) return c - 48;
+	const lc = c | 32;
+	if (lc >= 97 && lc <= 102) return lc - 97 + 10;
+	return -1;
+}
+function escapedHexLen(c) {
+	if (c === 120) return 2;
+	if (c === 117) return 4;
+	if (c === 85) return 8;
+	return 0;
+}
+function isSimpleEscape(c) {
+	return c === 48 || c === 97 || c === 98 || c === 116 || c === 9 || c === 110 || c === 118 || c === 102 || c === 114 || c === 101 || c === 32 || c === 34 || c === 47 || c === 92 || c === 78 || c === 95 || c === 76 || c === 80;
+}
+function consumeLineBreak(state) {
+	if (state.input.charCodeAt(state.position) === 10) state.position++;
+	else {
+		state.position++;
+		if (state.input.charCodeAt(state.position) === 10) state.position++;
+	}
+	state.line++;
+	state.lineStart = state.position;
+	state.lineIndent = 0;
+	state.firstTabInLine = -1;
+}
+function skipSeparationSpace(state, allowComments) {
+	let lineBreaks = 0;
+	let ch = state.input.charCodeAt(state.position);
+	let hasSeparation = state.position === state.lineStart || isWsOrEol(state.input.charCodeAt(state.position - 1));
+	while (ch !== 0) {
+		while (isWhiteSpace(ch)) {
+			hasSeparation = true;
+			if (ch === 9 && state.firstTabInLine === -1) state.firstTabInLine = state.position;
+			ch = state.input.charCodeAt(++state.position);
+		}
+		if (allowComments && hasSeparation && ch === 35) do
+			ch = state.input.charCodeAt(++state.position);
+		while (!isEol(ch) && ch !== 0);
+		if (!isEol(ch)) break;
+		consumeLineBreak(state);
+		lineBreaks++;
+		hasSeparation = true;
+		ch = state.input.charCodeAt(state.position);
+		while (ch === 32) {
+			state.lineIndent++;
+			ch = state.input.charCodeAt(++state.position);
+		}
+	}
+	return lineBreaks;
+}
+function testDocumentSeparator(state, position = state.position) {
+	const ch = state.input.charCodeAt(position);
+	if ((ch === 45 || ch === 46) && ch === state.input.charCodeAt(position + 1) && ch === state.input.charCodeAt(position + 2)) {
+		const following = state.input.charCodeAt(position + 3);
+		return following === 0 || isWsOrEol(following);
+	}
+	return false;
+}
+function skipUntilLineEnd(state) {
+	let ch = state.input.charCodeAt(state.position);
+	while (ch !== 0 && !isEol(ch)) ch = state.input.charCodeAt(++state.position);
+}
+function checkPrintable(state, start, end) {
+	if (PATTERN_NON_PRINTABLE.test(state.input.slice(start, end))) throwError(state, "the stream contains non-printable characters");
+}
+function readTagProperty(state, props, inFlow) {
+	if (state.input.charCodeAt(state.position) !== 33) return false;
+	if (props.tagStart !== NO_RANGE$1) throwError(state, "duplication of a tag property");
+	const start = state.position;
+	let isVerbatim = false;
+	let isNamed = false;
+	let tagHandle = "!";
+	let ch = state.input.charCodeAt(++state.position);
+	if (ch === 60) {
+		isVerbatim = true;
+		ch = state.input.charCodeAt(++state.position);
+	} else if (ch === 33) {
+		isNamed = true;
+		tagHandle = "!!";
+		ch = state.input.charCodeAt(++state.position);
+	}
+	let suffixStart = state.position;
+	let tagName;
+	if (isVerbatim) {
+		while (ch !== 0 && ch !== 62) ch = state.input.charCodeAt(++state.position);
+		if (ch !== 62) throwError(state, "unexpected end of the stream within a verbatim tag");
+		tagName = state.input.slice(suffixStart, state.position);
+		state.position++;
+	} else {
+		while (ch !== 0 && !isWsOrEol(ch) && !(inFlow && isFlowIndicator(ch))) {
+			if (ch === 33) if (!isNamed) {
+				tagHandle = state.input.slice(suffixStart - 1, state.position + 1);
+				if (!PATTERN_TAG_HANDLE.test(tagHandle)) throwError(state, "named tag handle cannot contain such characters");
+				isNamed = true;
+				suffixStart = state.position + 1;
+			} else throwError(state, "tag suffix cannot contain exclamation marks");
+			ch = state.input.charCodeAt(++state.position);
+		}
+		tagName = state.input.slice(suffixStart, state.position);
+		if (PATTERN_FLOW_INDICATORS.test(tagName)) throwError(state, "tag suffix cannot contain flow indicator characters");
+	}
+	if (tagName && !(isVerbatim ? PATTERN_TAG_URI.test(tagName) : PATTERN_TAG_SUFFIX.test(tagName))) throwError(state, `tag name cannot contain such characters: ${tagName}`);
+	if (!isVerbatim && tagHandle !== "!" && tagHandle !== "!!" && !HAS_OWN.call(state.tagHandlers, tagHandle)) throwError(state, `undeclared tag handle "${tagHandle}"`);
+	props.tagStart = start;
+	props.tagEnd = state.position;
+	return true;
+}
+function readAnchorProperty(state, props) {
+	if (state.input.charCodeAt(state.position) !== 38) return false;
+	if (props.anchorStart !== NO_RANGE$1) throwError(state, "duplication of an anchor property");
+	state.position++;
+	const start = state.position;
+	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position)) && !isFlowIndicator(state.input.charCodeAt(state.position))) state.position++;
+	if (state.position === start) throwError(state, "name of an anchor node must contain at least one character");
+	props.anchorStart = start;
+	props.anchorEnd = state.position;
+	return true;
+}
+function readAlias(state, props) {
+	if (state.input.charCodeAt(state.position) !== 42) return false;
+	if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) throwError(state, "alias node should not have any properties");
+	state.position++;
+	const start = state.position;
+	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position)) && !isFlowIndicator(state.input.charCodeAt(state.position))) state.position++;
+	if (state.position === start) throwError(state, "name of an alias node must contain at least one character");
+	addAliasEvent(state, start, state.position);
+	return true;
+}
+function readFlowScalarBreak(state, nodeIndent) {
+	skipSeparationSpace(state, false);
+	if (state.lineIndent < nodeIndent) throwError(state, "deficient indentation");
+}
+function readSingleQuotedScalar(state, nodeIndent, props) {
+	if (state.input.charCodeAt(state.position) !== 39) return false;
+	state.position++;
+	const start = state.position;
+	let simple = true;
+	while (state.input.charCodeAt(state.position) !== 0) {
+		const ch = state.input.charCodeAt(state.position);
+		if (ch === 39) {
+			if (state.input.charCodeAt(state.position + 1) === 39) {
+				simple = false;
+				state.position += 2;
+				continue;
+			}
+			const end = state.position;
+			state.position++;
+			addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2, 1, -1, simple);
+			return true;
+		}
+		if (isEol(ch)) {
+			simple = false;
+			readFlowScalarBreak(state, nodeIndent);
+		} else if (state.position === state.lineStart && testDocumentSeparator(state)) throwError(state, "unexpected end of the document within a single quoted scalar");
+		else if (ch !== 9 && ch < 32) throwError(state, "expected valid JSON character");
+		else state.position++;
+	}
+	throwError(state, "unexpected end of the stream within a single quoted scalar");
+}
+function readDoubleQuotedScalar(state, nodeIndent, props) {
+	if (state.input.charCodeAt(state.position) !== 34) return false;
+	state.position++;
+	const start = state.position;
+	let simple = true;
+	while (state.input.charCodeAt(state.position) !== 0) {
+		const ch = state.input.charCodeAt(state.position);
+		if (ch === 34) {
+			const end = state.position;
+			state.position++;
+			addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 3, 1, -1, simple);
+			return true;
+		}
+		if (ch === 92) {
+			simple = false;
+			const escaped = state.input.charCodeAt(++state.position);
+			if (isEol(escaped)) readFlowScalarBreak(state, nodeIndent);
+			else if (isSimpleEscape(escaped)) state.position++;
+			else {
+				let hexLength = escapedHexLen(escaped);
+				if (hexLength === 0) throwError(state, "unknown escape sequence");
+				while (hexLength-- > 0) {
+					state.position++;
+					if (fromHexCode(state.input.charCodeAt(state.position)) < 0) throwError(state, "expected hexadecimal character");
+				}
+				state.position++;
+			}
+		} else if (isEol(ch)) {
+			simple = false;
+			readFlowScalarBreak(state, nodeIndent);
+		} else if (state.position === state.lineStart && testDocumentSeparator(state)) throwError(state, "unexpected end of the document within a double quoted scalar");
+		else if (ch !== 9 && ch < 32) throwError(state, "expected valid JSON character");
+		else state.position++;
+	}
+	throwError(state, "unexpected end of the stream within a double quoted scalar");
+}
+function readBlockScalar(state, parentIndent, props) {
+	const ch = state.input.charCodeAt(state.position);
+	let chomping = 1;
+	let indent = -1;
+	let detectedIndent = false;
+	if (ch !== 124 && ch !== 62) return false;
+	const style = ch === 124 ? 4 : 5;
+	state.position++;
+	while (state.input.charCodeAt(state.position) !== 0) {
+		const current = state.input.charCodeAt(state.position);
+		const digit = fromDecimalCode(current);
+		if (current === 43 || current === 45) {
+			if (chomping !== 1) throwError(state, "repeat of a chomping mode identifier");
+			chomping = current === 43 ? 3 : 2;
+			state.position++;
+		} else if (digit >= 0) {
+			if (digit === 0) throwError(state, "bad explicit indentation width of a block scalar; it cannot be less than one");
+			if (detectedIndent) throwError(state, "repeat of an indentation width identifier");
+			indent = parentIndent + digit - 1;
+			detectedIndent = true;
+			state.position++;
+		} else break;
+	}
+	let hadWhitespace = false;
+	while (isWhiteSpace(state.input.charCodeAt(state.position))) {
+		hadWhitespace = true;
+		state.position++;
+	}
+	if (hadWhitespace && state.input.charCodeAt(state.position) === 35) skipUntilLineEnd(state);
+	if (isEol(state.input.charCodeAt(state.position))) consumeLineBreak(state);
+	else if (state.input.charCodeAt(state.position) !== 0) throwError(state, "a line break is expected");
+	let contentIndent = detectedIndent ? indent : -1;
+	let maxLeadingIndent = 0;
+	const valueStart = state.position;
+	let valueEnd = state.position;
+	while (state.input.charCodeAt(state.position) !== 0) {
+		const linePosition = state.position;
+		let column = 0;
+		while (state.input.charCodeAt(linePosition + column) === 32) column++;
+		const first = state.input.charCodeAt(linePosition + column);
+		if (first === 0) {
+			if (contentIndent >= 0) {
+				if (column > contentIndent) valueEnd = linePosition + column;
+			} else if (column > 0) valueEnd = linePosition + column;
+			break;
+		}
+		if (linePosition === state.lineStart && testDocumentSeparator(state, linePosition)) break;
+		if (!detectedIndent && contentIndent === -1 && isEol(first)) maxLeadingIndent = Math.max(maxLeadingIndent, column);
+		if (!detectedIndent && contentIndent === -1 && !isEol(first)) {
+			if (first === 9 && column < parentIndent) {
+				state.position = linePosition + column;
+				throwError(state, "tab characters must not be used in indentation");
+			}
+			if (column < maxLeadingIndent) {
+				state.position = linePosition + column;
+				throwError(state, "bad indentation of a mapping entry");
+			}
+		}
+		if (contentIndent === -1 && first !== 0 && !isEol(first) && column < parentIndent) {
+			state.lineIndent = column;
+			state.position = linePosition + column;
+			break;
+		}
+		if (!detectedIndent && first !== 0 && !isEol(first) && contentIndent === -1) contentIndent = column;
+		const requiredIndent = contentIndent === -1 ? parentIndent + 1 : contentIndent;
+		if (first !== 0 && !isEol(first) && column < requiredIndent) {
+			state.lineIndent = column;
+			state.position = linePosition + column;
+			break;
+		}
+		skipUntilLineEnd(state);
+		valueEnd = state.position;
+		if (isEol(state.input.charCodeAt(state.position))) {
+			consumeLineBreak(state);
+			valueEnd = state.position;
+		}
+	}
+	checkPrintable(state, valueStart, valueEnd);
+	addScalarEvent(state, valueStart, valueEnd, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, style, chomping, contentIndent);
+	return true;
+}
+function canStartPlainScalar(state, nodeContext) {
+	const ch = state.input.charCodeAt(state.position);
+	const inFlow = nodeContext === CONTEXT_FLOW_IN;
+	if (ch === 0 || isWsOrEol(ch) || ch === 35 || ch === 38 || ch === 42 || ch === 33 || ch === 124 || ch === 62 || ch === 39 || ch === 34 || ch === 37 || ch === 64 || ch === 96 || inFlow && isFlowIndicator(ch)) return false;
+	if (ch === 63 || ch === 45) {
+		const following = state.input.charCodeAt(state.position + 1);
+		if (isWsOrEolOrEnd(following) || inFlow && isFlowIndicator(following)) return false;
+	}
+	return true;
+}
+function readPlainScalar(state, nodeIndent, nodeContext, props) {
+	if (!canStartPlainScalar(state, nodeContext)) return false;
+	const start = state.position;
+	let end = state.position;
+	let ch = state.input.charCodeAt(state.position);
+	const inFlow = nodeContext === CONTEXT_FLOW_IN;
+	let multiline = false;
+	while (ch !== 0) {
+		if (state.position === state.lineStart && testDocumentSeparator(state)) break;
+		if (ch === 58) {
+			const following = state.input.charCodeAt(state.position + 1);
+			if (isWsOrEolOrEnd(following) || inFlow && isFlowIndicator(following)) break;
+		} else if (ch === 35) {
+			if (isWsOrEol(state.input.charCodeAt(state.position - 1))) break;
+		} else if (inFlow && isFlowIndicator(ch)) break;
+		else if (isEol(ch)) {
+			const savedPosition = state.position;
+			const savedLine = state.line;
+			const savedLineStart = state.lineStart;
+			const savedLineIndent = state.lineIndent;
+			skipSeparationSpace(state, false);
+			if (state.lineIndent >= nodeIndent) {
+				multiline = true;
+				ch = state.input.charCodeAt(state.position);
+				continue;
+			}
+			state.position = savedPosition;
+			state.line = savedLine;
+			state.lineStart = savedLineStart;
+			state.lineIndent = savedLineIndent;
+			break;
+		}
+		if (!isWhiteSpace(ch)) end = state.position + 1;
+		ch = state.input.charCodeAt(++state.position);
+	}
+	if (end === start) return false;
+	checkPrintable(state, start, end);
+	addScalarEvent(state, start, end, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1, 1, -1, !multiline);
+	return true;
+}
+function skipFlowSeparationSpace(state, nodeIndent) {
+	const startLine = state.line;
+	skipSeparationSpace(state, true);
+	if (state.line > startLine && state.lineIndent < nodeIndent || state.firstTabInLine !== -1 && state.lineIndent < nodeIndent) throwError(state, "deficient indentation");
+}
+function readFlowCollection(state, nodeIndent, props) {
+	const ch = state.input.charCodeAt(state.position);
+	const isMapping = ch === 123;
+	const start = state.position;
+	let readNext = true;
+	if (ch !== 91 && ch !== 123) return false;
+	const terminator = isMapping ? 125 : 93;
+	if (isMapping) addMappingEvent(state, start, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2);
+	else addSequenceEvent(state, start, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 2);
+	state.position++;
+	while (state.input.charCodeAt(state.position) !== 0) {
+		skipFlowSeparationSpace(state, nodeIndent);
+		let ch = state.input.charCodeAt(state.position);
+		if (ch === terminator) {
+			state.position++;
+			addPopEvent(state);
+			return true;
+		} else if (!readNext) throwError(state, "missed comma between flow collection entries");
+		else if (ch === 44) throwError(state, "expected the node content, but found ','");
+		let isPair = false;
+		let isExplicitPair = false;
+		if (ch === 63 && isWsOrEol(state.input.charCodeAt(state.position + 1))) {
+			isPair = isExplicitPair = true;
+			state.position += 1;
+			skipFlowSeparationSpace(state, nodeIndent);
+		}
+		const entryLine = state.line;
+		const entryStart = snapshotState(state);
+		const keyWasRead = parseNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true);
+		skipFlowSeparationSpace(state, nodeIndent);
+		ch = state.input.charCodeAt(state.position);
+		if ((isMapping || isExplicitPair || state.line === entryLine) && ch === 58) {
+			isPair = true;
+			state.position++;
+			skipFlowSeparationSpace(state, nodeIndent);
+			if (!isMapping) {
+				insertFlowPairMappingEvent(state, entryStart);
+				if (!keyWasRead) addEmptyScalarEvent(state);
+			} else if (!keyWasRead) addEmptyScalarEvent(state);
+			if (!parseNode(state, nodeIndent, CONTEXT_FLOW_IN, false, true)) addEmptyScalarEvent(state);
+			skipFlowSeparationSpace(state, nodeIndent);
+			if (!isMapping) addPopEvent(state);
+		} else if (isMapping && isPair) {
+			if (!keyWasRead) addEmptyScalarEvent(state);
+			addEmptyScalarEvent(state);
+		} else if (isMapping) addEmptyScalarEvent(state);
+		else if (isPair) {
+			insertFlowPairMappingEvent(state, entryStart);
+			if (!keyWasRead) addEmptyScalarEvent(state);
+			addEmptyScalarEvent(state);
+			addPopEvent(state);
+		}
+		ch = state.input.charCodeAt(state.position);
+		if (ch === 44) {
+			readNext = true;
+			state.position++;
+		} else readNext = false;
+	}
+	throwError(state, "unexpected end of the stream within a flow collection");
+}
+function readBlockSequence(state, nodeIndent, props) {
+	if (state.firstTabInLine !== -1 || state.input.charCodeAt(state.position) !== 45 || !isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) return false;
+	addSequenceEvent(state, state.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
+	while (state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) {
+		if (state.firstTabInLine !== -1) {
+			state.position = state.firstTabInLine;
+			throwError(state, "tab characters must not be used in indentation");
+		}
+		const entryLine = state.line;
+		state.position++;
+		const hadBreak = skipSeparationSpace(state, true) > 0;
+		if (state.firstTabInLine !== -1 && state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) throwError(state, "bad indentation of a sequence entry");
+		if (hadBreak && state.lineIndent <= nodeIndent) addEmptyScalarEvent(state);
+		else parseNode(state, nodeIndent, CONTEXT_BLOCK_IN, false, true);
+		skipSeparationSpace(state, true);
+		if (state.lineIndent < nodeIndent || state.position >= state.length) break;
+		if (state.lineIndent > nodeIndent) throwError(state, "bad indentation of a sequence entry");
+		if (state.line === entryLine && state.input.charCodeAt(state.position) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 1))) throwError(state, "bad indentation of a sequence entry");
+	}
+	addPopEvent(state);
+	return true;
+}
+function readBlockMapping(state, nodeIndent, flowIndent, props) {
+	let atExplicitKey = false;
+	let detected = false;
+	let mappingOpened = false;
+	let pendingExplicitKey = false;
+	if (state.firstTabInLine !== -1) return false;
+	let ch = state.input.charCodeAt(state.position);
+	while (ch !== 0) {
+		if (!atExplicitKey && state.firstTabInLine !== -1) {
+			state.position = state.firstTabInLine;
+			throwError(state, "tab characters must not be used in indentation");
+		}
+		const following = state.input.charCodeAt(state.position + 1);
+		const entryLine = state.line;
+		if ((ch === 63 || ch === 58) && isWsOrEolOrEnd(following)) {
+			if (!mappingOpened) {
+				addMappingEvent(state, state.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
+				mappingOpened = true;
+			}
+			if (ch === 63) {
+				if (atExplicitKey) addEmptyScalarEvent(state);
+				detected = true;
+				atExplicitKey = true;
+			} else if (atExplicitKey) atExplicitKey = false;
+			else {
+				addEmptyScalarEvent(state);
+				detected = true;
+				atExplicitKey = false;
+			}
+			state.position += 1;
+			pendingExplicitKey = true;
+		} else {
+			if (atExplicitKey) {
+				addEmptyScalarEvent(state);
+				atExplicitKey = false;
+			}
+			const beforeKey = snapshotState(state);
+			if (!parseNode(state, flowIndent, CONTEXT_FLOW_OUT, false, true)) break;
+			if (state.line === entryLine) {
+				ch = state.input.charCodeAt(state.position);
+				while (isWhiteSpace(ch)) ch = state.input.charCodeAt(++state.position);
+				if (ch === 58) {
+					ch = state.input.charCodeAt(++state.position);
+					if (!isWsOrEolOrEnd(ch)) throwError(state, "a whitespace character is expected after the key-value separator within a block mapping");
+					if (!mappingOpened) {
+						restoreState(state, beforeKey);
+						addMappingEvent(state, beforeKey.position, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
+						mappingOpened = true;
+						parseNode(state, flowIndent, CONTEXT_FLOW_OUT, false, true);
+						ch = state.input.charCodeAt(state.position);
+						while (isWhiteSpace(ch)) ch = state.input.charCodeAt(++state.position);
+						state.position++;
+					}
+					detected = true;
+					atExplicitKey = false;
+					pendingExplicitKey = false;
+				} else if (detected) throwError(state, "expected ':' after a mapping key");
+				else {
+					if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) {
+						restoreState(state, beforeKey);
+						return false;
+					}
+					return true;
+				}
+			} else if (detected) throwError(state, "can not read a block mapping entry; a multiline key may not be an implicit key");
+			else {
+				if (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1) {
+					restoreState(state, beforeKey);
+					return false;
+				}
+				return true;
+			}
+		}
+		if (parseNode(state, nodeIndent, CONTEXT_BLOCK_OUT, true, pendingExplicitKey)) pendingExplicitKey = false;
+		if (!atExplicitKey) {
+			if (pendingExplicitKey) {
+				addEmptyScalarEvent(state);
+				pendingExplicitKey = false;
+			}
+		}
+		skipSeparationSpace(state, true);
+		ch = state.input.charCodeAt(state.position);
+		if ((state.line === entryLine || state.lineIndent > nodeIndent) && ch !== 0) throwError(state, "bad indentation of a mapping entry");
+		else if (state.lineIndent < nodeIndent) break;
+	}
+	if (!detected) return false;
+	if (atExplicitKey) addEmptyScalarEvent(state);
+	if (mappingOpened) addPopEvent(state);
+	return true;
+}
+function parseNode(state, parentIndent, nodeContext, allowToSeek, allowCompact, allowPropertyMapping = true) {
+	if (state.depth >= state.maxDepth) throwError(state, `nesting exceeded maxDepth (${state.maxDepth})`);
+	state.depth++;
+	let indentStatus = 1;
+	let atNewLine = false;
+	let hasContent = false;
+	let propertyStart = null;
+	const props = emptyProperties();
+	let allowBlockScalars = nodeContext === CONTEXT_BLOCK_OUT || nodeContext === CONTEXT_BLOCK_IN;
+	let allowBlockCollections = allowBlockScalars;
+	const allowBlockStyles = allowBlockScalars;
+	if (allowToSeek && skipSeparationSpace(state, true)) {
+		atNewLine = true;
+		if (state.lineIndent > parentIndent) indentStatus = 1;
+		else if (state.lineIndent === parentIndent) indentStatus = 0;
+		else indentStatus = -1;
+	}
+	if (indentStatus === 1) while (true) {
+		const ch = state.input.charCodeAt(state.position);
+		const propertyState = snapshotState(state);
+		if (atNewLine && indentStatus !== 1 && (ch === 33 || ch === 38)) break;
+		if (atNewLine && allowBlockStyles && (props.tagStart !== NO_RANGE$1 || props.anchorStart !== NO_RANGE$1) && (ch === 33 || ch === 38)) {
+			const fallbackState = snapshotState(state);
+			const flowIndent = parentIndent + 1;
+			if (readBlockMapping(state, state.position - state.lineStart, flowIndent, props) && state.events[fallbackState.eventsLength]?.type === 3) {
+				state.depth--;
+				return true;
+			}
+			restoreState(state, fallbackState);
+		}
+		if (atNewLine && (ch === 33 && props.tagStart !== NO_RANGE$1 || ch === 38 && props.anchorStart !== NO_RANGE$1)) break;
+		if (!readTagProperty(state, props, nodeContext === CONTEXT_FLOW_IN) && !readAnchorProperty(state, props)) break;
+		if (propertyStart === null) propertyStart = propertyState;
+		if (skipSeparationSpace(state, true)) {
+			atNewLine = true;
+			allowBlockCollections = allowBlockStyles;
+			if (state.lineIndent > parentIndent) indentStatus = 1;
+			else if (state.lineIndent === parentIndent) indentStatus = 0;
+			else indentStatus = -1;
+		} else allowBlockCollections = false;
+	}
+	if (allowBlockCollections) allowBlockCollections = atNewLine || allowCompact;
+	if (indentStatus === 1 || nodeContext === CONTEXT_BLOCK_OUT) {
+		const flowIndent = nodeContext === CONTEXT_FLOW_IN || nodeContext === CONTEXT_FLOW_OUT ? parentIndent : parentIndent + 1;
+		const blockIndent = state.position - state.lineStart;
+		if (indentStatus === 1) if (allowBlockCollections && (readBlockSequence(state, blockIndent, props) || readBlockMapping(state, blockIndent, flowIndent, props)) || readFlowCollection(state, flowIndent, props)) hasContent = true;
+		else {
+			const ch = state.input.charCodeAt(state.position);
+			if (propertyStart !== null && allowPropertyMapping && allowBlockStyles && !allowBlockCollections && ch !== 124 && ch !== 62) {
+				const fallbackState = snapshotState(state);
+				const propertyIndent = propertyStart.position - propertyStart.lineStart;
+				restoreState(state, propertyStart);
+				if (readBlockMapping(state, propertyIndent, flowIndent, emptyProperties()) && state.events[fallbackState.eventsLength]?.type === 3) hasContent = true;
+				else restoreState(state, fallbackState);
+			}
+			if (!hasContent && (allowBlockScalars && readBlockScalar(state, flowIndent, props) || readSingleQuotedScalar(state, flowIndent, props) || readDoubleQuotedScalar(state, flowIndent, props) || readAlias(state, props) || readPlainScalar(state, flowIndent, nodeContext, props))) hasContent = true;
+		}
+		else if (indentStatus === 0) hasContent = allowBlockCollections && readBlockSequence(state, blockIndent, props);
+	}
+	allowBlockScalars = allowBlockScalars && !hasContent;
+	if (!hasContent && (props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1 || allowBlockScalars)) {
+		addScalarEvent(state, NO_RANGE$1, NO_RANGE$1, props.anchorStart, props.anchorEnd, props.tagStart, props.tagEnd, 1);
+		hasContent = true;
+	}
+	state.depth--;
+	return hasContent || props.anchorStart !== NO_RANGE$1 || props.tagStart !== NO_RANGE$1;
+}
+function readDirective(state) {
+	if (state.lineIndent > 0 || state.input.charCodeAt(state.position) !== 37) return false;
+	state.position++;
+	const nameStart = state.position;
+	while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position))) state.position++;
+	const name = state.input.slice(nameStart, state.position);
+	const args = [];
+	if (name.length === 0) throwError(state, "directive name must not be less than one character in length");
+	while (state.input.charCodeAt(state.position) !== 0 && !isEol(state.input.charCodeAt(state.position))) {
+		while (isWhiteSpace(state.input.charCodeAt(state.position))) state.position++;
+		if (state.input.charCodeAt(state.position) === 35 || isEol(state.input.charCodeAt(state.position)) || state.input.charCodeAt(state.position) === 0) break;
+		const start = state.position;
+		while (state.input.charCodeAt(state.position) !== 0 && !isWsOrEol(state.input.charCodeAt(state.position))) state.position++;
+		args.push(state.input.slice(start, state.position));
+	}
+	if (isEol(state.input.charCodeAt(state.position))) consumeLineBreak(state);
+	if (name === "YAML") {
+		if (state.directives.some((directive) => directive.kind === "yaml")) throwError(state, "duplication of %YAML directive");
+		if (args.length !== 1) throwError(state, "YAML directive accepts exactly one argument");
+		const match = /^([0-9]+)\.([0-9]+)$/.exec(args[0]);
+		if (match === null) throwError(state, "ill-formed argument of the YAML directive");
+		if (parseInt(match[1], 10) !== 1) throwError(state, "unacceptable YAML version of the document");
+		state.directives.push({
+			kind: "yaml",
+			version: args[0]
+		});
+	} else if (name === "TAG") {
+		if (args.length !== 2) throwError(state, "TAG directive accepts exactly two arguments");
+		const [handle, prefix] = args;
+		if (!PATTERN_TAG_HANDLE.test(handle)) throwError(state, "ill-formed tag handle (first argument) of the TAG directive");
+		if (HAS_OWN.call(state.tagHandlers, handle)) throwError(state, `there is a previously declared suffix for "${handle}" tag handle`);
+		if (!PATTERN_TAG_PREFIX.test(prefix)) throwError(state, "ill-formed tag prefix (second argument) of the TAG directive");
+		state.tagHandlers[handle] = prefix;
+		state.directives.push({
+			kind: "tag",
+			handle,
+			prefix
+		});
+	}
+	return true;
+}
+function readDocument(state) {
+	state.directives = [];
+	state.tagHandlers = Object.create(null);
+	let hasDirectives = false;
+	skipSeparationSpace(state, true);
+	while (readDirective(state)) {
+		hasDirectives = true;
+		skipSeparationSpace(state, true);
+	}
+	let explicitStart = false;
+	let explicitEnd = false;
+	let allowCompact = true;
+	if (state.lineIndent === 0 && state.input.charCodeAt(state.position) === 45 && state.input.charCodeAt(state.position + 1) === 45 && state.input.charCodeAt(state.position + 2) === 45 && isWsOrEolOrEnd(state.input.charCodeAt(state.position + 3))) {
+		explicitStart = true;
+		const markerLine = state.line;
+		state.position += 3;
+		skipSeparationSpace(state, true);
+		allowCompact = state.line > markerLine;
+	} else if (hasDirectives) throwError(state, "directives end mark is expected");
+	const documentEventIndex = state.events.length;
+	if (!explicitStart && state.position === state.lineStart && state.input.charCodeAt(state.position) === 46 && testDocumentSeparator(state)) {
+		state.position += 3;
+		skipSeparationSpace(state, true);
+		return;
+	}
+	addDocumentEvent(state, explicitStart, false);
+	if (!parseNode(state, state.lineIndent - 1, CONTEXT_BLOCK_OUT, false, allowCompact, allowCompact)) addEmptyScalarEvent(state);
+	skipSeparationSpace(state, true);
+	if (state.position === state.lineStart && testDocumentSeparator(state)) {
+		explicitEnd = state.input.charCodeAt(state.position) === 46;
+		if (explicitEnd) {
+			const markerLine = state.line;
+			state.position += 3;
+			skipSeparationSpace(state, true);
+			if (state.line === markerLine && state.position < state.length) throwError(state, "end of the stream or a document separator is expected");
+		}
+	}
+	const documentEvent = state.events[documentEventIndex];
+	if (documentEvent?.type === 1) documentEvent.explicitEnd = explicitEnd;
+	addPopEvent(state);
+	if (!explicitEnd && state.position < state.length && !(state.position === state.lineStart && testDocumentSeparator(state))) throwError(state, "end of the stream or a document separator is expected");
+}
+function parseEvents(input, options) {
+	const length = input.length;
+	const state = {
+		...DEFAULT_PARSER_OPTIONS,
+		...options,
+		input: `${input}\0`,
+		length,
+		position: 0,
+		line: 0,
+		lineStart: 0,
+		lineIndent: 0,
+		firstTabInLine: -1,
+		depth: 0,
+		directives: [],
+		tagHandlers: Object.create(null),
+		events: []
+	};
+	const nullpos = input.indexOf("\0");
+	if (nullpos !== -1) throwErrorAt(input, nullpos, "null byte is not allowed in input", state.filename);
+	if (state.input.charCodeAt(state.position) === 65279) state.position++;
+	while (state.position < state.length) {
+		skipSeparationSpace(state, true);
+		if (state.position >= state.length) break;
+		const documentStart = state.position;
+		readDocument(state);
+		if (state.position === documentStart)
+ /* c8 ignore next */
+		throwError(state, "can not read a document");
+	}
+	return state.events;
+}
+//#endregion
+//#region src/load.ts
+var DEFAULT_LOAD_OPTIONS = {
+	...DEFAULT_PARSER_OPTIONS,
+	...DEFAULT_CONSTRUCTOR_OPTIONS
+};
+function loadDocuments(input, options = {}) {
+	const opts = {
+		...DEFAULT_LOAD_OPTIONS,
+		...options
+	};
+	const source = String(input);
+	const PARSER_OPT_KEYS = Object.keys(DEFAULT_PARSER_OPTIONS);
+	const CONSTRUCTOR_OPT_KEYS = Object.keys(DEFAULT_CONSTRUCTOR_OPTIONS);
+	return constructFromEvents(parseEvents(source, pick(opts, PARSER_OPT_KEYS)), {
+		...pick(opts, CONSTRUCTOR_OPT_KEYS),
+		source
+	});
+}
+function loadAll(input, iteratorOrOptions, options) {
+	let iterator = null;
+	if (typeof iteratorOrOptions === "function") iterator = iteratorOrOptions;
+	else if (iteratorOrOptions !== null && typeof iteratorOrOptions === "object") options = iteratorOrOptions;
+	const documents = loadDocuments(input, options);
+	if (iterator === null) return documents;
+	for (const document of documents) iterator(document);
+}
+function load(input, options) {
+	const documents = loadDocuments(input, options);
+	if (documents.length === 0) throw new YAMLException("expected a document, but the input is empty");
+	if (documents.length === 1) return documents[0];
+	throw new YAMLException("expected a single document in the stream, but found more");
+}
+//#endregion
+//#region src/ast/nodes.ts
+var Style = class {
+	tagged = false;
+	flow = false;
+	singleQuoted = false;
+	doubleQuoted = false;
+	literal = false;
+	folded = false;
+};
+//#endregion
+//#region src/ast/from_js.ts
+var INVALID = Symbol("INVALID");
+function buildRepresentTypes(schema) {
+	const defaultTags = new Set([
+		schema.defaultScalarTag,
+		schema.defaultSequenceTag,
+		schema.defaultMappingTag
+	].filter((t) => t !== void 0));
+	const implicitScalars = schema.implicitScalarTags;
+	const explicitTags = schema.tags.filter((t) => !(t.nodeKind === "scalar" && t.implicit) && !defaultTags.has(t));
+	const defaultTagsLast = schema.tags.filter((t) => defaultTags.has(t));
+	return [
+		...implicitScalars.map((tag) => ({
+			tag,
+			implicitTag: true
+		})),
+		...explicitTags.map((tag) => ({
+			tag,
+			implicitTag: false
+		})),
+		...defaultTagsLast.map((tag) => ({
+			tag,
+			implicitTag: true
+		}))
+	];
+}
+function matchTag(state, object) {
+	for (let index = 0, length = state.representTypes.length; index < length; index += 1) {
+		const { tag, implicitTag } = state.representTypes[index];
+		if (tag.identify && tag.identify(object)) {
+			let tagName;
+			if (tag.matchByTagPrefix && tag.representTagName) tagName = tag.representTagName(object);
+			else tagName = tag.tagName;
+			return {
+				tag,
+				tagName,
+				implicitTag
+			};
+		}
+	}
+	return null;
+}
+function build(state, object) {
+	if (!state.noRefs && object !== null && typeof object === "object") {
+		const existing = state.refs.get(object);
+		if (existing) {
+			if (existing.anchor === void 0) existing.anchor = `ref_${state.refCounter++}`;
+			return {
+				kind: "alias",
+				tag: "",
+				style: new Style(),
+				anchor: existing.anchor
+			};
+		}
+	}
+	const matched = matchTag(state, object);
+	if (!matched) {
+		if (object === void 0) return INVALID;
+		if (state.skipInvalid) return INVALID;
+		throw new YAMLException(`unacceptable kind of an object to dump ${Object.prototype.toString.call(object)}`);
+	}
+	const { tag, tagName, implicitTag } = matched;
+	const nodeTagName = implicitTag ? tagName : tagNameShort(tagName);
+	if (tag.nodeKind === "scalar") {
+		const style = new Style();
+		style.tagged = !implicitTag;
+		return {
+			kind: "scalar",
+			tag: nodeTagName,
+			style,
+			value: tag.represent(object)
+		};
+	}
+	if (tag.nodeKind === "sequence") {
+		const container = tag.represent(object);
+		const style = new Style();
+		style.tagged = !implicitTag;
+		const node = {
+			kind: "sequence",
+			tag: nodeTagName,
+			style,
+			items: []
+		};
+		if (!state.noRefs) state.refs.set(object, node);
+		for (let index = 0, length = container.length; index < length; index += 1) {
+			let item = build(state, container[index]);
+			if (item === INVALID && container[index] === void 0) item = build(state, null);
+			if (item === INVALID) continue;
+			node.items.push(item);
+		}
+		return node;
+	}
+	const map = tag.represent(object);
+	const style = new Style();
+	style.tagged = !implicitTag;
+	const node = {
+		kind: "mapping",
+		tag: nodeTagName,
+		style,
+		items: []
+	};
+	if (!state.noRefs) state.refs.set(object, node);
+	for (const [objectKey, objectValue] of map) {
+		const key = build(state, objectKey);
+		if (key === INVALID) continue;
+		const value = build(state, objectValue);
+		if (value === INVALID) continue;
+		node.items.push({
+			key,
+			value
+		});
+	}
+	return node;
+}
+function jsToAst(input, schema, options = {}) {
+	const root = build({
+		representTypes: buildRepresentTypes(schema),
+		noRefs: options.noRefs ?? false,
+		skipInvalid: options.skipInvalid ?? false,
+		refs: /* @__PURE__ */ new Map(),
+		refCounter: 0
+	}, input);
+	return [{
+		contents: root === INVALID ? null : root,
+		directives: []
+	}];
+}
+//#endregion
+//#region src/ast/visit.ts
+var VISIT_BREAK = Symbol("visit:break");
+var VISIT_SKIP = Symbol("visit:skip");
+function visitNode(node, visitor, ctx) {
+	const control = visitor(node, ctx);
+	if (control === VISIT_BREAK) return true;
+	if (control === VISIT_SKIP) return false;
+	const depth = ctx.depth + 1;
+	switch (node.kind) {
+		case "sequence":
+			for (const item of node.items) if (visitNode(item, visitor, {
+				depth,
+				parent: node,
+				isKey: false
+			})) return true;
+			break;
+		case "mapping":
+			for (const { key, value } of node.items) {
+				if (visitNode(key, visitor, {
+					depth,
+					parent: node,
+					isKey: true
+				})) return true;
+				if (visitNode(value, visitor, {
+					depth,
+					parent: node,
+					isKey: false
+				})) return true;
+			}
+			break;
+	}
+	return false;
+}
+function visit(documents, visitor) {
+	for (const doc of documents) if (doc.contents && visitNode(doc.contents, visitor, {
+		depth: 0,
+		parent: null,
+		isKey: false
+	})) return;
+}
+//#endregion
+//#region src/ast/presenter.ts
+var CHAR_BOM = 65279;
+var CHAR_TAB = 9;
+var CHAR_LINE_FEED = 10;
+var CHAR_CARRIAGE_RETURN = 13;
+var CHAR_SPACE = 32;
+var CHAR_EXCLAMATION = 33;
+var CHAR_DOUBLE_QUOTE = 34;
+var CHAR_SHARP = 35;
+var CHAR_PERCENT = 37;
+var CHAR_AMPERSAND = 38;
+var CHAR_SINGLE_QUOTE = 39;
+var CHAR_ASTERISK = 42;
+var CHAR_COMMA = 44;
+var CHAR_MINUS = 45;
+var CHAR_COLON = 58;
+var CHAR_EQUALS = 61;
+var CHAR_GREATER_THAN = 62;
+var CHAR_QUESTION = 63;
+var CHAR_COMMERCIAL_AT = 64;
+var CHAR_LEFT_SQUARE_BRACKET = 91;
+var CHAR_RIGHT_SQUARE_BRACKET = 93;
+var CHAR_GRAVE_ACCENT = 96;
+var CHAR_LEFT_CURLY_BRACKET = 123;
+var CHAR_VERTICAL_LINE = 124;
+var CHAR_RIGHT_CURLY_BRACKET = 125;
+var ESCAPE_SEQUENCES = {};
+ESCAPE_SEQUENCES[0] = "\\0";
+ESCAPE_SEQUENCES[7] = "\\a";
+ESCAPE_SEQUENCES[8] = "\\b";
+ESCAPE_SEQUENCES[9] = "\\t";
+ESCAPE_SEQUENCES[10] = "\\n";
+ESCAPE_SEQUENCES[11] = "\\v";
+ESCAPE_SEQUENCES[12] = "\\f";
+ESCAPE_SEQUENCES[13] = "\\r";
+ESCAPE_SEQUENCES[27] = "\\e";
+ESCAPE_SEQUENCES[34] = "\\\"";
+ESCAPE_SEQUENCES[92] = "\\\\";
+ESCAPE_SEQUENCES[133] = "\\N";
+ESCAPE_SEQUENCES[160] = "\\_";
+ESCAPE_SEQUENCES[8232] = "\\L";
+ESCAPE_SEQUENCES[8233] = "\\P";
+var DEFAULT_PRESENTER_OPTIONS = {
+	indent: 2,
+	seqNoIndent: false,
+	seqInlineFirst: true,
+	sortKeys: false,
+	lineWidth: 80,
+	flowBracketPadding: false,
+	flowSkipCommaSpace: false,
+	flowSkipColonSpace: false,
+	quoteFlowKeys: false,
+	quoteStyle: "single",
+	forceQuotes: false,
+	tagBeforeAnchor: false
+};
+function nodeTagShort(node) {
+	return node.style.tagged ? node.tag : tagNameShort(node.tag);
+}
+function createPresenterState(options) {
+	const opts = {
+		...DEFAULT_PRESENTER_OPTIONS,
+		...options
+	};
+	return {
+		...opts,
+		defaultScalarTagName: opts.schema.defaultScalarTag.tagName,
+		implicitResolvers: opts.schema.implicitScalarTags
+	};
+}
+function encodeNonPrintable(character) {
+	const string = character.toString(16).toUpperCase();
+	const handle = character <= 255 ? "x" : "u";
+	const length = character <= 255 ? 2 : 4;
+	return `\\${handle}${"0".repeat(length - string.length)}${string}`;
+}
+function indentString(string, spaces) {
+	const ind = " ".repeat(spaces);
+	let position = 0;
+	let result = "";
+	const length = string.length;
+	while (position < length) {
+		let line;
+		const next = string.indexOf("\n", position);
+		if (next === -1) {
+			line = string.slice(position);
+			position = length;
+		} else {
+			line = string.slice(position, next + 1);
+			position = next + 1;
+		}
+		if (line.length && line !== "\n") result += ind;
+		result += line;
+	}
+	return result;
+}
+function generateNextLine(state, level) {
+	return `\n${" ".repeat(state.indent * level)}`;
+}
+function scalarLayout(state, level) {
+	const indent = state.indent * Math.max(1, level);
+	return {
+		indent,
+		blockIndent: level === 0 ? state.indent + 1 : state.indent,
+		lineWidth: state.lineWidth === -1 ? -1 : Math.max(Math.min(state.lineWidth, 40), state.lineWidth - indent)
+	};
+}
+function resolveImplicitTag(state, str) {
+	for (let index = 0, length = state.implicitResolvers.length; index < length; index += 1) {
+		const tagDefinition = state.implicitResolvers[index];
+		if (tagDefinition.resolve(str, false, tagDefinition.tagName) !== NOT_RESOLVED) return tagDefinition.tagName;
+	}
+	return state.defaultScalarTagName;
+}
+function isWhitespace(c) {
+	return c === CHAR_SPACE || c === CHAR_TAB;
+}
+function startsWithDocumentSeparator(string) {
+	const marker = string.charCodeAt(0);
+	if (marker !== CHAR_MINUS && marker !== 46 || string.charCodeAt(1) !== marker || string.charCodeAt(2) !== marker) return false;
+	if (string.length === 3) return true;
+	const following = string.charCodeAt(3);
+	return isWhitespace(following) || following === CHAR_CARRIAGE_RETURN || following === CHAR_LINE_FEED;
+}
+function isPrintable(c) {
+	return c >= 32 && c <= 126 || c >= 161 && c <= 55295 && c !== 8232 && c !== 8233 || c >= 57344 && c <= 65533 && c !== CHAR_BOM || c >= 65536 && c <= 1114111;
+}
+function isNsCharOrWhitespace(c) {
+	return isPrintable(c) && c !== CHAR_BOM && c !== CHAR_CARRIAGE_RETURN && c !== CHAR_LINE_FEED;
+}
+function isPlainSafe(c, prev, inblock) {
+	const cIsNsCharOrWhitespace = isNsCharOrWhitespace(c);
+	const cIsNsChar = cIsNsCharOrWhitespace && !isWhitespace(c);
+	return (inblock ? cIsNsCharOrWhitespace : cIsNsCharOrWhitespace && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET) && c !== CHAR_SHARP && !(prev === CHAR_COLON && !cIsNsChar) || isNsCharOrWhitespace(prev) && !isWhitespace(prev) && c === CHAR_SHARP || prev === CHAR_COLON && cIsNsChar && (inblock || c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET);
+}
+function isPlainSafeFirst(c) {
+	return isPrintable(c) && c !== CHAR_BOM && !isWhitespace(c) && c !== CHAR_MINUS && c !== CHAR_QUESTION && c !== CHAR_COLON && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET && c !== CHAR_SHARP && c !== CHAR_AMPERSAND && c !== CHAR_ASTERISK && c !== CHAR_EXCLAMATION && c !== CHAR_VERTICAL_LINE && c !== CHAR_EQUALS && c !== CHAR_GREATER_THAN && c !== CHAR_SINGLE_QUOTE && c !== CHAR_DOUBLE_QUOTE && c !== CHAR_PERCENT && c !== CHAR_COMMERCIAL_AT && c !== CHAR_GRAVE_ACCENT;
+}
+function isPlainSafeAtStart(string, inblock) {
+	const first = codePointAt(string, 0);
+	if (isPlainSafeFirst(first)) return true;
+	if (string.length > 1 && (first === CHAR_MINUS || first === CHAR_QUESTION || first === CHAR_COLON)) {
+		const second = codePointAt(string, 1);
+		return !isWhitespace(second) && isPlainSafe(second, first, inblock);
+	}
+	return false;
+}
+function isPlainSafeLast(c) {
+	return !isWhitespace(c) && c !== CHAR_COLON;
+}
+function codePointAt(string, pos) {
+	const first = string.charCodeAt(pos);
+	let second;
+	if (first >= 55296 && first <= 56319 && pos + 1 < string.length) {
+		second = string.charCodeAt(pos + 1);
+		if (second >= 56320 && second <= 57343) return (first - 55296) * 1024 + second - 56320 + 65536;
+	}
+	return first;
+}
+function needIndentIndicator(string) {
+	return /^\n* /.test(string);
+}
+var STYLE_PLAIN = 1;
+var STYLE_SINGLE = 2;
+var STYLE_LITERAL = 3;
+var STYLE_FOLDED = 4;
+var STYLE_DOUBLE = 5;
+function chooseScalarStyle(state, string, layout, singleLineOnly, forceQuote, inblock) {
+	const { blockIndent, lineWidth } = layout;
+	let i;
+	let char = 0;
+	let prevChar = -1;
+	let hasLineBreak = false;
+	let hasFoldableLine = false;
+	const shouldTrackWidth = lineWidth !== -1;
+	let previousLineBreak = -1;
+	let plain = !startsWithDocumentSeparator(string) && isPlainSafeAtStart(string, inblock) && isPlainSafeLast(codePointAt(string, string.length - 1));
+	if (singleLineOnly || forceQuote) for (i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
+		char = codePointAt(string, i);
+		if (!isPrintable(char)) return STYLE_DOUBLE;
+		plain = plain && isPlainSafe(char, prevChar, inblock);
+		prevChar = char;
+	}
+	else {
+		for (i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
+			char = codePointAt(string, i);
+			if (char === CHAR_LINE_FEED) {
+				hasLineBreak = true;
+				if (shouldTrackWidth) {
+					hasFoldableLine = hasFoldableLine || i - previousLineBreak - 1 > lineWidth && !isMoreIndented(string[previousLineBreak + 1]);
+					previousLineBreak = i;
+				}
+			} else if (!isPrintable(char)) return STYLE_DOUBLE;
+			plain = plain && isPlainSafe(char, prevChar, inblock);
+			prevChar = char;
+		}
+		hasFoldableLine = hasFoldableLine || shouldTrackWidth && i - previousLineBreak - 1 > lineWidth && !isMoreIndented(string[previousLineBreak + 1]);
+	}
+	if (!hasLineBreak && !hasFoldableLine) {
+		if (plain && !forceQuote) return STYLE_PLAIN;
+		return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
+	}
+	if (blockIndent > 9 && needIndentIndicator(string)) return STYLE_DOUBLE;
+	return hasFoldableLine ? STYLE_FOLDED : STYLE_LITERAL;
+}
+function renderScalarStyle(string, style, layout) {
+	const { indent, blockIndent, lineWidth } = layout;
+	switch (style) {
+		case STYLE_PLAIN: return encodeFlowBreaks(string, indent);
+		case STYLE_SINGLE: return `'${encodeFlowBreaks(string, indent).replace(/'/g, "''")}'`;
+		case STYLE_LITERAL: return "|" + blockHeader(string, blockIndent) + dropEndingNewline(indentString(string, indent));
+		case STYLE_FOLDED: return ">" + blockHeader(string, blockIndent) + dropEndingNewline(indentString(foldBlockScalar(string, lineWidth), indent));
+		case STYLE_DOUBLE: return `"${escapeString(string)}"`;
+	}
+}
+function resolveScalarStyle(state, node, layout, iskey, inblock) {
+	const singleLineOnly = iskey || !inblock;
+	if (node.style.singleQuoted) return STYLE_SINGLE;
+	if (node.style.doubleQuoted) return STYLE_DOUBLE;
+	if (!singleLineOnly) {
+		if (node.style.literal) return STYLE_LITERAL;
+		if (node.style.folded) return STYLE_FOLDED;
+	}
+	const string = node.value;
+	if (string.length === 0) {
+		if (node.style.tagged || resolveImplicitTag(state, string) === node.tag) return STYLE_PLAIN;
+		return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
+	}
+	const style = chooseScalarStyle(state, string, layout, singleLineOnly, state.forceQuotes && !iskey, inblock);
+	if (style === STYLE_PLAIN && !node.style.tagged && resolveImplicitTag(state, string) !== node.tag) return state.quoteStyle === "double" ? STYLE_DOUBLE : STYLE_SINGLE;
+	return style;
+}
+function blockHeader(string, indentPerLevel) {
+	const indentIndicator = needIndentIndicator(string) ? String(indentPerLevel) : "";
+	const clip = string[string.length - 1] === "\n";
+	return `${indentIndicator}${clip && (string[string.length - 2] === "\n" || string === "\n") ? "+" : clip ? "" : "-"}\n`;
+}
+function encodeFlowBreaks(string, indent) {
+	let nextLF = string.indexOf("\n");
+	if (nextLF === -1) return string;
+	const pad = " ".repeat(indent);
+	let result = string.slice(0, nextLF);
+	const lineRe = /(\n+)([^\n]*)/g;
+	lineRe.lastIndex = nextLF;
+	let match;
+	while (match = lineRe.exec(string)) {
+		const breaks = match[1].length;
+		const line = match[2];
+		result += "\n".repeat(breaks + 1) + pad + line;
+	}
+	return result;
+}
+function dropEndingNewline(string) {
+	return string[string.length - 1] === "\n" ? string.slice(0, -1) : string;
+}
+function isMoreIndented(char) {
+	return char === " " || char === "	";
+}
+function foldBlockScalar(string, width) {
+	const lineRe = /(\n+)([^\n]*)/g;
+	let nextLF = string.indexOf("\n");
+	if (nextLF === -1) nextLF = string.length;
+	lineRe.lastIndex = nextLF;
+	let result = foldLine(string.slice(0, nextLF), width);
+	let prevMoreIndented = string[0] === "\n" || isMoreIndented(string[0]);
+	let moreIndented;
+	let match;
+	while (match = lineRe.exec(string)) {
+		const prefix = match[1];
+		const line = match[2];
+		moreIndented = line !== "" && isMoreIndented(line[0]);
+		result += prefix + (!prevMoreIndented && !moreIndented && line !== "" ? "\n" : "") + foldLine(line, width);
+		prevMoreIndented = moreIndented;
+	}
+	return result;
+}
+function foldLine(line, width) {
+	if (line === "" || isMoreIndented(line[0])) return line;
+	const breakRe = / [^ \t]/g;
+	let match;
+	let start = 0;
+	let end;
+	let curr = 0;
+	let next = 0;
+	let result = "";
+	while (match = breakRe.exec(line)) {
+		next = match.index;
+		if (next - start > width) {
+			end = curr > start ? curr : next;
+			result += `\n${line.slice(start, end)}`;
+			start = end + 1;
+		}
+		curr = next;
+	}
+	result += "\n";
+	if (line.length - start > width && curr > start) result += `${line.slice(start, curr)}\n${line.slice(curr + 1)}`;
+	else result += line.slice(start);
+	return result.slice(1);
+}
+function escapeString(string) {
+	let result = "";
+	let char = 0;
+	for (let i = 0; i < string.length; char >= 65536 ? i += 2 : i++) {
+		char = codePointAt(string, i);
+		const escapeSeq = ESCAPE_SEQUENCES[char];
+		if (escapeSeq) {
+			result += escapeSeq;
+			continue;
+		}
+		if (isPrintable(char)) {
+			result += string[i];
+			if (char >= 65536) result += string[i + 1];
+			continue;
+		}
+		result += encodeNonPrintable(char);
+	}
+	return result;
+}
+function writeFlowSequence(state, level, node) {
+	let result = "";
+	for (let index = 0, length = node.items.length; index < length; index += 1) {
+		const item = writeNode(state, level, node.items[index], {});
+		if (result !== "") result += `,${!state.flowSkipCommaSpace ? " " : ""}`;
+		result += item;
+	}
+	const pad = state.flowBracketPadding && result !== "" ? " " : "";
+	return `[${pad}${result}${pad}]`;
+}
+function writeBlockSequence(state, level, node, compact) {
+	let result = "";
+	for (let index = 0, length = node.items.length; index < length; index += 1) {
+		const item = writeNode(state, level + 1, node.items[index], {
+			block: true,
+			compact: state.seqInlineFirst,
+			isblockseq: true
+		});
+		if (!compact || result !== "") result += generateNextLine(state, level);
+		if (item === "" || CHAR_LINE_FEED === item.charCodeAt(0)) result += "-";
+		else result += "- ";
+		result += item;
+	}
+	return result;
+}
+function writeFlowMapping(state, level, node) {
+	let result = "";
+	const items = sortMappingItems(state, node.items);
+	for (const { key, value } of items) {
+		let pairBuffer = "";
+		if (result !== "") pairBuffer += `,${!state.flowSkipCommaSpace ? " " : ""}`;
+		const keyText = writeNode(state, level, key, { iskey: true });
+		const explicitPair = keyText.length > 1024;
+		if (explicitPair) pairBuffer += "? ";
+		else if (state.quoteFlowKeys) pairBuffer += "\"";
+		const valueText = writeNode(state, level, value, {});
+		const sep = state.flowSkipColonSpace || valueText === "" ? "" : " ";
+		pairBuffer += `${keyText}${state.quoteFlowKeys && !explicitPair ? "\"" : ""}:${sep}${valueText}`;
+		result += pairBuffer;
+	}
+	const pad = state.flowBracketPadding && result !== "" ? " " : "";
+	return `{${pad}${result}${pad}}`;
+}
+function sortKeyValue(key) {
+	return key.kind === "scalar" ? key.value : key;
+}
+function sortMappingItems(state, items) {
+	if (!state.sortKeys) return items;
+	const copy = items.slice();
+	if (state.sortKeys === true) copy.sort((a, b) => {
+		const x = sortKeyValue(a.key);
+		const y = sortKeyValue(b.key);
+		if (x < y) return -1;
+		if (x > y) return 1;
+		return 0;
+	});
+	else {
+		const fn = state.sortKeys;
+		copy.sort((a, b) => fn(sortKeyValue(a.key), sortKeyValue(b.key)));
+	}
+	return copy;
+}
+function writeBlockMapping(state, level, node, compact) {
+	let result = "";
+	const items = sortMappingItems(state, node.items);
+	for (let index = 0, length = items.length; index < length; index += 1) {
+		let pairBuffer = "";
+		if (!compact || result !== "") pairBuffer += generateNextLine(state, level);
+		const { key, value } = items[index];
+		const keyIsBlock = (key.kind === "mapping" || key.kind === "sequence") && !key.style.flow && key.items.length !== 0 || key.kind === "scalar" && (key.style.literal || key.style.folded);
+		const keyText = keyIsBlock ? writeNode(state, level + 1, key, {
+			block: true,
+			compact: true,
+			isblockseq: !cannotBeCompact(state, key, level + 1)
+		}) : writeNode(state, level + 1, key, {
+			block: true,
+			compact: true,
+			iskey: true
+		});
+		const keyHasLineBreak = key.kind === "scalar" && key.value.indexOf("\n") !== -1;
+		const explicitPair = keyIsBlock || keyHasLineBreak || keyText.length > 1024;
+		if (explicitPair) if (keyText && CHAR_LINE_FEED === keyText.charCodeAt(0)) pairBuffer += "?";
+		else pairBuffer += "? ";
+		pairBuffer += keyText;
+		if (explicitPair) pairBuffer += generateNextLine(state, level);
+		const valueText = writeNode(state, level + 1, value, {
+			block: true,
+			compact: explicitPair,
+			isblockseq: explicitPair && !cannotBeCompact(state, value, level + 1)
+		});
+		const keyIsBareProps = key.kind === "scalar" && key.value === "" && keyText !== "" && keyText.charCodeAt(keyText.length - 1) !== CHAR_SINGLE_QUOTE && keyText.charCodeAt(keyText.length - 1) !== CHAR_DOUBLE_QUOTE;
+		const keyColonSep = !explicitPair && (key.kind === "alias" || keyIsBareProps) ? " " : "";
+		if (valueText === "" || CHAR_LINE_FEED === valueText.charCodeAt(0)) pairBuffer += `${keyColonSep}:`;
+		else pairBuffer += `${keyColonSep}: `;
+		pairBuffer += valueText;
+		result += pairBuffer;
+	}
+	return result;
+}
+function cannotBeCompact(state, node, level) {
+	return node.style.tagged || node.anchor !== void 0 || state.indent < 2 && level > 0;
+}
+function writeNode(state, level, node, ctx) {
+	if (node.kind === "alias") return `*${node.anchor}`;
+	const { block = false, iskey = false, isblockseq = false } = ctx;
+	let compact = ctx.compact ?? false;
+	const hasAnchor = node.anchor !== void 0;
+	if (cannotBeCompact(state, node, level)) compact = false;
+	let body;
+	let shouldPrintTag = node.style.tagged;
+	const useBlockCollection = block && (node.kind === "mapping" || node.kind === "sequence") && !node.style.flow && node.items.length !== 0;
+	if (node.kind === "mapping") if (useBlockCollection) body = writeBlockMapping(state, level, node, compact);
+	else body = writeFlowMapping(state, level, node);
+	else if (node.kind === "sequence") if (useBlockCollection) if (state.seqNoIndent && !isblockseq && level > 0) body = writeBlockSequence(state, level - 1, node, compact);
+	else body = writeBlockSequence(state, level, node, compact);
+	else body = writeFlowSequence(state, level, node);
+	else {
+		const layout = scalarLayout(state, level);
+		const style = resolveScalarStyle(state, node, layout, iskey, block);
+		body = renderScalarStyle(node.value, style, layout);
+		shouldPrintTag = node.style.tagged || style !== STYLE_PLAIN && node.tag !== state.defaultScalarTagName;
+	}
+	if (useBlockCollection && compact && level > 0 && state.indent > 2) body = `${" ".repeat(state.indent - 2)}${body}`;
+	if (shouldPrintTag || hasAnchor) {
+		const props = [];
+		const tag = shouldPrintTag ? nodeTagShort(node) : null;
+		const anchor = hasAnchor ? `&${node.anchor}` : null;
+		if (state.tagBeforeAnchor) {
+			if (tag !== null) props.push(tag);
+			if (anchor !== null) props.push(anchor);
+		} else {
+			if (anchor !== null) props.push(anchor);
+			if (tag !== null) props.push(tag);
+		}
+		const sep = body === "" || body.charCodeAt(0) === CHAR_LINE_FEED ? "" : " ";
+		body = `${props.join(" ")}${sep}${body}`;
+	}
+	return body;
+}
+function rootStartsOwnLine(node) {
+	return (node.kind === "sequence" || node.kind === "mapping") && !node.style.flow && node.items.length !== 0 && !node.style.tagged && node.anchor === void 0;
+}
+function isOpenEnded(node) {
+	let leaf = node;
+	while ((leaf.kind === "sequence" || leaf.kind === "mapping") && !leaf.style.flow && leaf.items.length !== 0) leaf = leaf.kind === "sequence" ? leaf.items[leaf.items.length - 1] : leaf.items[leaf.items.length - 1].value;
+	if (leaf.kind !== "scalar" || !(leaf.style.literal || leaf.style.folded)) return false;
+	const { value } = leaf;
+	return value.endsWith("\n\n") || value === "\n";
+}
+function writeDocumentDirectives(doc) {
+	let result = "";
+	for (const directive of doc.directives) {
+		if (directive.kind === "yaml") {
+			result += `%YAML ${directive.version}\n`;
+			continue;
+		}
+		const { handle, prefix } = directive;
+		result += `%TAG ${handle} ${prefix}\n`;
+	}
+	return result;
+}
+function present(documents, options) {
+	const state = createPresenterState(options);
+	let result = "";
+	let previousEnded = false;
+	for (let index = 0; index < documents.length; index += 1) {
+		const doc = documents[index];
+		const directives = writeDocumentDirectives(doc);
+		const hasDirectives = directives !== "";
+		const marker = doc.explicitStart || hasDirectives || index > 0 && !previousEnded;
+		result += directives;
+		if (doc.contents === null) {
+			if (marker) result += "---\n";
+		} else if (marker) {
+			const body = writeNode(state, 0, doc.contents, {
+				block: true,
+				compact: true
+			});
+			const sep = body === "" ? "" : hasDirectives || rootStartsOwnLine(doc.contents) ? "\n" : " ";
+			result += `---${sep}${body}\n`;
+		} else result += writeNode(state, 0, doc.contents, {
+			block: true,
+			compact: true
+		}) + "\n";
+		previousEnded = doc.explicitEnd || doc.contents !== null && isOpenEnded(doc.contents);
+		if (previousEnded) result += "...\n";
+	}
+	return result;
+}
+//#endregion
+//#region src/dump.ts
+var DEFAULT_DUMP_SCHEMA = YAML11_SCHEMA.withTags({
+	...intYaml11Tag,
+	resolve: (source, isExplicit, tagName) => {
+		const result = intYaml11Tag.resolve(source, isExplicit, tagName);
+		return result === NOT_RESOLVED ? intCoreTag.resolve(source, isExplicit, tagName) : result;
+	}
+}, {
+	...floatYaml11Tag,
+	resolve: (source, isExplicit, tagName) => {
+		const result = floatYaml11Tag.resolve(source, isExplicit, tagName);
+		return result === NOT_RESOLVED ? floatCoreTag.resolve(source, isExplicit, tagName) : result;
+	}
+});
+var DEFAULT_DUMP_OPTIONS = {
+	...DEFAULT_PRESENTER_OPTIONS,
+	schema: DEFAULT_DUMP_SCHEMA,
+	skipInvalid: false,
+	noRefs: false,
+	flowLevel: -1,
+	transform: () => {}
+};
+function dump(input, options = {}) {
+	const opts = {
+		...DEFAULT_DUMP_OPTIONS,
+		...options
+	};
+	const documents = jsToAst(input, opts.schema, {
+		noRefs: opts.noRefs,
+		skipInvalid: opts.skipInvalid
+	});
+	if (opts.flowLevel >= 0) visit(documents, (node, ctx) => {
+		if (ctx.depth < opts.flowLevel) return;
+		node.style.flow = true;
+		return VISIT_SKIP;
+	});
+	opts.transform(documents);
+	return present(documents, {
+		...pick(opts, Object.keys(DEFAULT_PRESENTER_OPTIONS)),
+		schema: opts.schema
+	});
+}
+//#endregion
+//#region src/ast/from_events.ts
+var NO_RANGE = (/* unused pure expression or super */ null && (-1));
+function eventPosition(event) {
+	if ("tagStart" in event && event.tagStart !== NO_RANGE) return event.tagStart;
+	if ("anchorStart" in event && event.anchorStart !== NO_RANGE) return event.anchorStart;
+	if ("valueStart" in event && event.valueStart !== NO_RANGE) return event.valueStart;
+	if ("start" in event) return event.start;
+	return 0;
+}
+function rawTag(state, event) {
+	return event.tagStart === NO_RANGE ? "" : state.source.slice(event.tagStart, event.tagEnd);
+}
+function anchorName(state, event) {
+	return event.anchorStart === NO_RANGE ? void 0 : state.source.slice(event.anchorStart, event.anchorEnd);
+}
+function implicitScalarTagName(state, source) {
+	const { schema } = state;
+	const candidates = schema.implicitScalarByFirstChar.get(source.charAt(0)) ?? schema.implicitScalarAnyFirstChar;
+	for (const tag of candidates) if (tag.resolve(source, false, tag.tagName) !== NOT_RESOLVED) return tag.tagName;
+	return schema.defaultScalarTag.tagName;
+}
+function buildScalar(state, event) {
+	const value = getScalarValue(state.source, event);
+	const raw = rawTag(state, event);
+	const style = new Style();
+	switch (event.style) {
+		case 2:
+			style.singleQuoted = true;
+			break;
+		case 3:
+			style.doubleQuoted = true;
+			break;
+		case 4:
+			style.literal = true;
+			break;
+		case 5:
+			style.folded = true;
+			break;
+	}
+	let tag;
+	if (raw !== "") {
+		style.tagged = true;
+		tag = raw;
+	} else if (event.style === 1) tag = implicitScalarTagName(state, value);
+	else tag = state.schema.defaultScalarTag.tagName;
+	return {
+		kind: "scalar",
+		tag,
+		style,
+		anchor: anchorName(state, event),
+		value
+	};
+}
+function buildCollection(state, event, defaultTagName) {
+	const raw = rawTag(state, event);
+	const style = new Style();
+	if (event.style === 2) style.flow = true;
+	let tag;
+	if (raw === "") tag = defaultTagName;
+	else {
+		tag = raw;
+		style.tagged = true;
+	}
+	return {
+		tag,
+		style,
+		anchor: anchorName(state, event)
+	};
+}
+function addNode(state, node) {
+	const frame = state.frames[state.frames.length - 1];
+	if (frame.kind === "document") frame.doc.contents = node;
+	else if (frame.kind === "sequence") frame.node.items.push(node);
+	else if (frame.key) {
+		frame.node.items.push({
+			key: frame.key,
+			value: node
+		});
+		frame.key = null;
+	} else frame.key = node;
+}
+function eventsToAst(events, options) {
+	const state = {
+		source: options.source,
+		schema: options.schema,
+		eventIndex: 0,
+		position: 0,
+		frames: [],
+		documents: []
+	};
+	while (state.eventIndex < events.length) {
+		const event = events[state.eventIndex++];
+		state.position = eventPosition(event);
+		switch (event.type) {
+			case 1: {
+				const doc = {
+					contents: null,
+					explicitStart: event.explicitStart,
+					explicitEnd: event.explicitEnd,
+					directives: event.directives
+				};
+				state.frames.push({
+					kind: "document",
+					doc
+				});
+				break;
+			}
+			case 4:
+				addNode(state, buildScalar(state, event));
+				break;
+			case 2: {
+				const { tag, style, anchor } = buildCollection(state, event, "tag:yaml.org,2002:seq");
+				const node = {
+					kind: "sequence",
+					tag,
+					style,
+					anchor,
+					items: []
+				};
+				state.frames.push({
+					kind: "sequence",
+					node
+				});
+				break;
+			}
+			case 3: {
+				const { tag, style, anchor } = buildCollection(state, event, "tag:yaml.org,2002:map");
+				const node = {
+					kind: "mapping",
+					tag,
+					style,
+					anchor,
+					items: []
+				};
+				state.frames.push({
+					kind: "mapping",
+					node,
+					key: null
+				});
+				break;
+			}
+			case 5: {
+				const name = state.source.slice(event.anchorStart, event.anchorEnd);
+				addNode(state, {
+					kind: "alias",
+					tag: "",
+					style: new Style(),
+					anchor: name
+				});
+				break;
+			}
+			case 6: {
+				const frame = state.frames.pop();
+				if (frame.kind === "mapping" && frame.key) throw new Error("incomplete mapping pair in event stream");
+				if (frame.kind === "document") state.documents.push(frame.doc);
+				else addNode(state, frame.node);
+				break;
+			}
+		}
+	}
+	return state.documents;
+}
+//#endregion
+
+
+//# sourceMappingURL=js-yaml.mjs.map
+// EXTERNAL MODULE: external "path"
+var external_path_ = __nccwpck_require__(6928);
+;// CONCATENATED MODULE: ./src/utils/state-helper.ts
+
+const EXPORT_VAR_PREFIX = 'SLACK_NOTIFICATION_';
+// We set this state in `state.ts`, but we want to have the value here to avoid exporting during post processing
+const IS_POST_PROCESSING = !!process.env[`STATE_is-post`];
+const _getName = (name) => `${name.replace(/ /g, '_').toUpperCase()}`;
+const getStateBase = (name) => process.env[`${EXPORT_VAR_PREFIX}${_getName(name)}`];
+const saveStateBase = (name, value) => {
+    if (!IS_POST_PROCESSING)
+        (0,core.exportVariable)(`${EXPORT_VAR_PREFIX}${_getName(name)}`, value);
+};
+const stateHelper = (name, options) => {
+    const { defaultValue = undefined, toValue, fromValue, required, output = false, useFromInput = true, storeFromInput = true, isSensitive = false, saveState = saveStateBase, getState = getStateBase, } = options || {};
+    const setState = (value) => {
+        const processedValue = (fromValue ? fromValue(value) : value);
+        if (isSensitive) {
+            (0,core.setSecret)(processedValue);
+        }
+        saveState(name, processedValue);
+        if (output) {
+            (0,core.setOutput)(name, processedValue);
+        }
+    };
+    let current = defaultValue;
+    let found = false;
+    if (useFromInput) {
+        const fromInput = (0,core.getInput)(name, { required });
+        if (fromInput) {
+            const parsed = toValue ? toValue(fromInput) : fromInput;
+            if (parsed) {
+                current = parsed;
+                found = true;
+                if (storeFromInput)
+                    setState(parsed);
+            }
+        }
+    }
+    // If we're post-processing, we will always try to load from state to ensure the latest saved data is used
+    if (!found || IS_POST_PROCESSING) {
+        const value = getState(name);
+        if (value) {
+            const parsed = toValue ? toValue(value) : value;
+            if (parsed) {
+                current = parsed;
+                found = true;
+            }
+        }
+    }
+    return [current, setState, found];
+};
+/* harmony default export */ const state_helper = (stateHelper);
+
+;// CONCATENATED MODULE: ./src/utils/state.ts
+
+
+const getState = (name) => process.env[`STATE_${name}`];
+const [isPost, setIsPost] = state_helper('is-post', {
+    toValue: (val) => !!val,
+    fromValue: (val) => `${val}`,
+    defaultValue: false,
+    useFromInput: false,
+    saveState: core.saveState,
+    getState: getState,
+});
+// Setting this does not update `isPost`, it merely makes sure that we can detect if we're in the post action.
+setIsPost(true);
+const jsonStateHelper = (name, options) => state_helper(name, {
+    ...options,
+    toValue: (val) => {
+        if (typeof val !== 'string')
+            return val;
+        return JSON.parse(val);
+    },
+    fromValue: (val) => JSON.stringify(val),
+});
+const [slackToken, setSlackToken] = state_helper('slack-token', { isSensitive: true });
+const [githubToken, setGithubToken] = state_helper('github-token', { required: true, isSensitive: true });
+const [matrix, setMatrix] = jsonStateHelper('matrix', { defaultValue: {} });
+const [jobNames, setJobNames] = jsonStateHelper('job-names', {
+    defaultValue: {},
+    useFromInput: false,
+});
+const channelName = (0,core.getInput)('channel-name');
+const [channelId, setChannelId] = state_helper('channel-id', { output: true });
+const [messageId, setMessageId] = state_helper('message-id', { output: true });
+const [messageTitle, setMessageTitle] = state_helper('message-title');
+const [messageLink, setMessageLink] = state_helper('message-link');
+const [showFooter, setShowFooter] = jsonStateHelper('show-footer', { defaultValue: true });
+const [messageType, setMessageType] = state_helper('message-type', { defaultValue: 'rich' });
+const [customMessage, setCustomMessage] = state_helper('message-custom');
+const [summary, setSummary] = state_helper('message-summary');
+const [state_text, setText] = state_helper('message-text');
+const currentState = () => {
+    // Instead of just dumping the entire state, we sanitize it a bit, adding some more descriptive names.
+    return {
+        'is-post-processing': isPost,
+        'slack-token-provided': Boolean(slackToken),
+        'github-token-provided': Boolean(githubToken),
+        matrix,
+        'channel-name': channelName,
+        'channel-id': channelId,
+        'message-id': messageId,
+        'message-title': messageTitle,
+        'message-link': messageLink,
+        'message-custom': customMessage,
+        'message-summary': summary,
+        'message-text': state_text,
+        'show-footer': showFooter,
+    };
+};
+
+;// CONCATENATED MODULE: ./src/utils/log.ts
+
+const isDebug = process.env['RUNNER_DEBUG'] === '1';
+const withDebug = (func) => {
+    if (isDebug)
+        func();
+};
+
+;// CONCATENATED MODULE: ./src/utils/github.ts
+
+
+
+
+
+
+
+const { apiUrl: github_baseUrl, job, workflow: workflowName, payload: { workflow }, } = github_context;
+const getWorkflowFile = () => {
+    if (workflow)
+        return workflow;
+    if (workflowName.startsWith('.github/workflows/'))
+        return workflowName;
+    core.debug(`No workflow payload, detecting workflow file from ${workflowName}`);
+    try {
+        // Resolved via the workspace env var: a literal path here gets folded by ncc's asset
+        // relocator, which would bundle our own workflows and read those instead of the caller's.
+        const dname = (0,external_path_.resolve)(process.env.GITHUB_WORKSPACE ?? '.', '.github/workflows');
+        const files = (0,external_fs_.readdirSync)(dname);
+        for (const fname of files) {
+            const path = (0,external_path_.join)(dname, fname);
+            if (fname.endsWith('.yml') || fname.endsWith('.yaml')) {
+                const contents = (0,external_fs_.readFileSync)(path, 'utf8');
+                const data = load(contents);
+                if (data.name === workflowName) {
+                    return (0,external_path_.join)('.github/workflows/', fname);
+                }
+            }
+        }
+    }
+    catch (e) {
+        core.error(`Unable to detect workflow file: ${e}`);
+        core.warning('Be sure to run actions/checkout@v3 _before_ this action.');
+    }
+};
+if (Object.entries(jobNames).length === 0) {
+    core.debug((0,external_util_.inspect)(github_context));
+    const fname = getWorkflowFile();
+    if (!fname) {
+        core.error('Unable to detect workflow file');
+    }
+    else {
+        core.debug(`No job names found in state, attempting to parse workflow file ${fname}`);
+        try {
+            const contents = (0,external_fs_.readFileSync)(fname, 'utf8');
+            const data = load(contents);
+            for (const [jobKey, jobItem] of Object.entries(data.jobs)) {
+                jobNames[jobKey] = jobItem.name ?? jobKey;
+            }
+            setJobNames(jobNames);
+        }
+        catch (e) {
+            core.error(`Unable to parse workflow file ${fname}: ${e}`);
+            core.warning('Be sure to run actions/checkout@v3 _before_ this action.');
+        }
+    }
+}
+const jobName = jobNames[job] ?? job;
+if (jobName.indexOf('${{') !== -1) {
+    core.warning('Job name contains a matrix variable. This is not supported.');
+}
+const attempt_number = parseInt(process.env.GITHUB_RUN_ATTEMPT || '1', 10);
+const github_getOctokit = (options) => getOctokit(githubToken, { baseUrl: github_baseUrl, ...(options || {}) });
+const listCurrentJobsForWorkflowRun = async () => {
+    const octokit = github_getOctokit();
+    const { runId: run_id, repo: { owner, repo }, } = github_context;
+    return await octokit.rest.actions.listJobsForWorkflowRun({
+        owner,
+        repo,
+        run_id,
+        attempt_number,
+    });
+};
+const jobMatcher = /(?<name>\w+) \((?<matrix>[^()]+)\)/;
+const getMatrixData = () => {
+    const values = Object.values(matrix);
+    if (values.length === 0)
+        return;
+    return values.flat();
+};
+/**
+ * GitHub does not provide the matrix information or a _full_ job name if you are
+ * running inside a matrix. We work around this by passing the matrix data as json
+ * as an input, and doing some matching magic in this function.
+ *
+ * If there is no matrix data, we simply match on the name of the job.
+ * If there is matrix data, we extract the name and the matrix data from the
+ * full name, and see if that matches.
+ *
+ * @param jobItem The item to match
+ * @returns True if the job is the current one based on matrix data
+ */
+const matchJobByName = (jobItem) => {
+    if (jobItem.name === jobName)
+        return true;
+    const matrixData = getMatrixData();
+    core.debug(`Matrix fields: ${(0,external_util_.inspect)(matrixData, false, null)}`);
+    if (matrixData) {
+        const { name = '', matrix = '' } = jobItem.name.match(jobMatcher)?.groups || {};
+        core.debug(`Job name: '${name.trim()}'`);
+        core.debug(`Expected job name: ${jobName}`);
+        if (name.trim().localeCompare(jobName, undefined, { sensitivity: 'base' }) !== 0)
+            return false;
+        const matrixParts = matrix.split(', ');
+        core.debug(`Job matrix fields: ${(0,external_util_.inspect)(matrixParts, false, null)}`);
+        return matrixParts.every((x) => matrixData.indexOf(x) !== -1);
+    }
+    return false;
+};
+const getCurrentJobForWorkflowRun = async () => {
+    const { data: { jobs }, status, } = await listCurrentJobsForWorkflowRun();
+    if (status != 200) {
+        core.warning(`Failed to get current job for workflow run: ${status}`);
+        if (status === 403) {
+            core.warning(`Make sure the token has the 'actions:read' scope, and that a valid token is provided.`);
+        }
+        return undefined;
+    }
+    const found = jobs.find(matchJobByName);
+    if (!found) {
+        core.startGroup('Current job not found');
+        core.info((0,external_util_.inspect)(jobs, false, null));
+        core.info('Matrix data:');
+        core.info((0,external_util_.inspect)(getMatrixData(), false, null));
+        core.endGroup();
+    }
+    return found;
+};
+const getCurrentJobConclusion = async (currentJob) => {
+    const job = currentJob ?? (await getCurrentJobForWorkflowRun());
+    core.startGroup('Current job');
+    core.info((0,external_util_.inspect)(job?.steps || [], false, null));
+    core.endGroup();
+    // Since we are checking the current running job, we can not trust
+    // the `conclusion` field as it will remain `null` until the job has
+    // completed.
+    // Instead, we need to iterate over the current steps, and check if
+    // there are any failed steps.
+    // To make it easier, we check only the completed steps, more
+    // specifically, those that have not been skipped.
+    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
+    if (steps.find((x) => x.conclusion === 'failure'))
+        return 'failure';
+    if (steps.find((x) => x.conclusion === 'cancelled'))
+        return 'cancelled';
+    // There should always be a 'Set up job' task, so we should always
+    // have at least one success conclusion in our list of completed
+    // steps.
+    if (steps.filter((x) => x.conclusion === 'success').length > 0)
+        return 'success';
+    // If we don't, we try to use the job conclusion, or fall back to 'unknown'
+    return job?.conclusion ?? 'unknown';
+};
+const getJobJustStarted = async (currentJob) => {
+    // Here we check how many tasks have already been completed
+    // to check if we have just started or not.
+    // Ideally we would want this action to be called
+    // as early as possible to notify the start of the workflow.
+    const job = currentJob ?? (await getCurrentJobForWorkflowRun());
+    // To make it easier, we check only the completed steps, more
+    // specifically, those that have not been skipped.
+    const steps = (job?.steps || []).filter((x) => x.status === 'completed' && x.conclusion !== 'skipped');
+    // There should always be a 'Set up job' task at the start of
+    // the tasks list. We compare against 2 because in some cases,
+    // like our own repo, we must checkout before we can run the
+    // action.
+    return steps.length <= 2;
+};
+
+;// CONCATENATED MODULE: ./src/utils/slack.ts
+
+
+const ensureChannelName = (channelName) => channelName.replace(/[#@]/g, '');
+const lookupChannel = async (slack, channelName) => {
+    const name = ensureChannelName(channelName);
+    for await (const page of slack.paginate('conversations.list', {
+        types: 'public_channel, private_channel',
+    })) {
+        const match = page?.channels?.find((x) => x.name === name);
+        if (match) {
+            return match.id;
+        }
+    }
+    return undefined;
+};
+const capitalize = (text) => text.slice(0, 1).toUpperCase() + text.slice(1, text.length);
+const snakeToPascal = (word) => {
+    return word.split('_').map(capitalize).join(' ');
+};
+const { payload, ref, workflow: slack_workflow, eventName, serverUrl, runId, sha, actor, job: slack_job } = github_context;
+const { owner, repo } = github_context.repo;
+const branchName = ref.replace('refs/heads/', '');
+const eventTitle = snakeToPascal(eventName);
+const repository = `${owner}/${repo}`;
+const repoUrl = `${serverUrl}/${repository}`;
+const repoField = {
+    title: 'Repo',
+    value: `<${repoUrl} | ${repository}>`,
+    short: true,
+};
+const workflowField = {
+    title: 'Workflow',
+    value: `<${repoUrl}/actions/runs/${runId} | ${slack_workflow}>`,
+    short: true,
+};
+const buildTitle = () => {
+    if (messageTitle) {
+        return {
+            title: messageTitle,
+            title_link: messageLink ?? undefined,
+        };
+    }
+    switch (eventName) {
+        case 'pull_request':
+            return {
+                title: `${eventTitle} [${payload.action}]: ${payload.pull_request?.title}`,
+                title_link: payload.pull_request?.html_url,
+            };
+        case 'release':
+            return {
+                title: `${eventTitle}: ${payload.release.name} [${payload.release.tag_name}]`,
+                title_link: payload.release.html_url,
+            };
+        case 'push':
+            return {
+                title: `${eventTitle}: ${payload.head_commit.message} [${branchName}]`,
+                title_link: payload.compare,
+            };
+        default:
+            return {
+                title: `${eventTitle}: ${branchName}`,
+                title_link: `${repoUrl}/commit/${sha}`,
+            };
+    }
+};
+const statusColors = {
+    started: '#c0c0c0',
+    skipped: '#c0c0c0',
+    unknown: '#800080',
+    cancelled: 'warning',
+    in_progress: '#0000cc',
+    completed: 'warning',
+    success: 'good',
+    failure: 'danger',
+};
+const buildStatusField = (status) => {
+    return {
+        title: 'Status',
+        value: capitalize(status),
+        short: true,
+    };
+};
+const buildJobField = (jobId) => {
+    return {
+        title: 'Job',
+        value: `<${repoUrl}/runs/${jobId}?check_suite_focus=true | ${slack_job}>`,
+        short: true,
+    };
+};
+const buildMatrixField = (matrix) => {
+    return {
+        title: 'Matrix',
+        value: Object.entries(matrix)
+            .map(([k, v]) => `${k}: ${v}`)
+            .join(', '),
+        short: true,
+    };
+};
+const buildCustomMessageField = (message) => {
+    return {
+        title: 'Extra',
+        value: message,
+        short: true,
+    };
+};
+const buildAttachmentsMessage = ({ status, jobId }) => {
+    const color = statusColors[status];
+    const fields = [repoField, buildStatusField(status), workflowField];
+    if (jobId)
+        fields.push(buildJobField(jobId));
+    if (matrix && Object.entries(matrix).length)
+        fields.push(buildMatrixField(matrix));
+    if (customMessage)
+        fields.push(buildCustomMessageField(customMessage));
+    const footer = showFooter
+        ? {
+            footer_icon: 'https://github.githubassets.com/favicon.ico',
+            footer: `<${repoUrl} | ${repository}>`,
+        }
+        : {};
+    return [
+        {
+            color,
+            fields: messageType === 'rich' ? fields : undefined,
+            author_name: actor,
+            author_link: `${serverUrl}/${actor}`,
+            ts: `${Math.floor(Date.now() / 1000)}`,
+            mrkdwn_in: ['pretext', 'text'],
+            pretext: state_text || undefined,
+            text: summary || undefined,
+            ...footer,
+            ...buildTitle(),
+        },
+    ];
+};
+
+;// CONCATENATED MODULE: ./src/main.ts
+
+
+
+
+
+
+
+
+const run = async () => {
+    const currentJob = await getCurrentJobForWorkflowRun();
+    // Store our GitHub token for later use.
+    setGithubToken(githubToken);
+    // If 'token' is set, it means we likely want to send the initial message (or update it)
+    if (slackToken) {
+        const slack = new web_api_dist.WebClient(slackToken);
+        // Ensure that either channel-id or channel-name is set
+        if (!channelId && !channelName) {
+            return (0,core.setFailed)(`Either 'channel-id' or 'channel-name' must be set.`);
+        }
+        // Get our channel ID. If specified as a name, see if we can look it up.
+        const channel = channelId || (await lookupChannel(slack, channelName));
+        // If channel is undefined, it means we used a channel name and could not find it.
+        if (!channel) {
+            return (0,core.setFailed)(`Channel ${channelName} could not be found`);
+        }
+        else {
+            // Ensure the channel ID is saved to state
+            setChannelId(channel);
+        }
+        let apiMethod = 'postMessage';
+        let extraArgs = {};
+        if (messageId) {
+            apiMethod = 'update';
+            extraArgs = {
+                ts: messageId,
+            };
+        }
+        const status = (await getJobJustStarted(currentJob)) ? 'started' : 'in_progress';
+        const attachments = buildAttachmentsMessage({
+            status,
+            jobId: currentJob?.id,
+        });
+        const args = {
+            channel,
+            attachments,
+            ...extraArgs,
+        };
+        try {
+            const response = await slack.chat[apiMethod](args);
+            if (response.ts) {
+                // We received our message ID, save it to state so we can update it later.
+                setMessageId(response.ts);
+            }
+        }
+        catch (error) {
+            (0,core.setFailed)(error);
+        }
+    }
+};
+/**
+ * Set a promise to resolve after a certain time, making it a crude sleepms implementation
+ * @param ms the time to sleep
+ */
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const cleanup = async () => {
+    // We wait for a few seconds to ensure that all our API calls will reflect the most current data.
+    // Occasionally we are so fast with polling the API that it has not yet caught up on the current state
+    // giving us outdated information (sometimes even leading to false success runs)
+    await sleep(5000);
+    const currentJob = await getCurrentJobForWorkflowRun();
+    if (messageId && githubToken && slackToken && channelId) {
+        const status = await getCurrentJobConclusion(currentJob);
+        const slack = new web_api_dist.WebClient(slackToken);
+        const attachments = buildAttachmentsMessage({
+            status,
+            jobId: currentJob?.id,
+        });
+        const args = {
+            channel: channelId,
+            attachments,
+            ts: messageId,
+        };
+        try {
+            await slack.chat.update(args);
+        }
+        catch (error) {
+            (0,core.setFailed)(error);
+        }
+    }
+    else {
+        // TODO: Notify user we never sent a message.
+    }
+};
+async function main() {
+    if (isDebug) {
+        core.startGroup('State information');
+        core.debug((0,external_util_.inspect)(currentState(), false, null));
+        core.endGroup();
+        core.startGroup('Job information');
+        core.debug((0,external_util_.inspect)(github_context, false, null));
+        core.endGroup();
+    }
+    if (isPost) {
+        await core.group('Cleaning up...', cleanup);
+    }
+    else {
+        await core.group('Processing', run);
+    }
+}
+main();
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;

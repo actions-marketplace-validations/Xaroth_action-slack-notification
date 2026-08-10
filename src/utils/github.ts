@@ -1,8 +1,4 @@
 import { context, getOctokit as getOctokitBase } from '@actions/github'
-import { GitHub } from '@actions/github/lib/utils'
-import type { OctokitOptions } from '@octokit/core/dist-types/types'
-import type { components } from '@octokit/openapi-types/types'
-import type { RestEndpointMethodTypes } from '@octokit/plugin-rest-endpoint-methods/dist-types/generated/parameters-and-response-types'
 import { inspect } from 'util'
 import { load } from 'js-yaml'
 import { readFileSync, readdirSync } from 'fs'
@@ -35,7 +31,9 @@ const getWorkflowFile = (): string | undefined => {
 
   log.debug(`No workflow payload, detecting workflow file from ${workflowName}`)
   try {
-    const dname = resolve('.github/workflows/')
+    // Resolved via the workspace env var: a literal path here gets folded by ncc's asset
+    // relocator, which would bundle our own workflows and read those instead of the caller's.
+    const dname = resolve(process.env.GITHUB_WORKSPACE ?? '.', '.github/workflows')
     const files = readdirSync(dname)
     for (const fname of files) {
       const path = join(dname, fname)
@@ -82,12 +80,15 @@ if (jobName.indexOf('${{') !== -1) {
 
 const attempt_number = parseInt(process.env.GITHUB_RUN_ATTEMPT || '1', 10)
 
-export const getOctokit = (options?: Partial<OctokitOptions>): InstanceType<typeof GitHub> =>
+type Octokit = ReturnType<typeof getOctokitBase>
+type OctokitOptions = NonNullable<Parameters<typeof getOctokitBase>[1]>
+type ListJobsResponse = Awaited<ReturnType<Octokit['rest']['actions']['listJobsForWorkflowRun']>>
+type CurrentJob = ListJobsResponse['data']['jobs'][number]
+
+export const getOctokit = (options?: Partial<OctokitOptions>): Octokit =>
   getOctokitBase(state.githubToken, { baseUrl, ...(options || {}) })
 
-export const listCurrentJobsForWorkflowRun = async (): Promise<
-  RestEndpointMethodTypes['actions']['listJobsForWorkflowRun']['response']
-> => {
+export const listCurrentJobsForWorkflowRun = async (): Promise<ListJobsResponse> => {
   const octokit = getOctokit()
   const {
     runId: run_id,
@@ -121,7 +122,7 @@ const getMatrixData = (): string[] | undefined => {
  * @param jobItem The item to match
  * @returns True if the job is the current one based on matrix data
  */
-export const matchJobByName = (jobItem: components['schemas']['job']): boolean => {
+export const matchJobByName = (jobItem: CurrentJob): boolean => {
   if (jobItem.name === jobName) return true
 
   const matrixData = getMatrixData()
@@ -142,8 +143,6 @@ export const matchJobByName = (jobItem: components['schemas']['job']): boolean =
 
   return false
 }
-
-type CurrentJob = components['schemas']['job']
 
 export const getCurrentJobForWorkflowRun = async (): Promise<CurrentJob | undefined> => {
   const {
