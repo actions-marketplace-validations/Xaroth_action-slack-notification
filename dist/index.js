@@ -45767,7 +45767,7 @@ const getWorkflowFile = () => {
     }
     catch (e) {
         error(`Unable to detect workflow file: ${e}`);
-        warning('Be sure to run actions/checkout@v3 _before_ this action.');
+        warning('Be sure to run actions/checkout _before_ this action.');
     }
 };
 if (Object.entries(jobNames).length === 0) {
@@ -45788,7 +45788,7 @@ if (Object.entries(jobNames).length === 0) {
         }
         catch (e) {
             error(`Unable to parse workflow file ${fname}: ${e}`);
-            warning('Be sure to run actions/checkout@v3 _before_ this action.');
+            warning('Be sure to run actions/checkout _before_ this action.');
         }
     }
 }

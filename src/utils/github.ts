@@ -47,7 +47,7 @@ const getWorkflowFile = (): string | undefined => {
     }
   } catch (e) {
     log.error(`Unable to detect workflow file: ${e}`)
-    log.warning('Be sure to run actions/checkout@v3 _before_ this action.')
+    log.warning('Be sure to run actions/checkout _before_ this action.')
   }
 }
 
@@ -68,7 +68,7 @@ if (Object.entries(state.jobNames).length === 0) {
       state.setJobNames(state.jobNames)
     } catch (e) {
       log.error(`Unable to parse workflow file ${fname}: ${e}`)
-      log.warning('Be sure to run actions/checkout@v3 _before_ this action.')
+      log.warning('Be sure to run actions/checkout _before_ this action.')
     }
   }
 }
