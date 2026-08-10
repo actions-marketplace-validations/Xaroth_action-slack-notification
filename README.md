@@ -23,6 +23,18 @@ The channel (either by ID or by name) to send to. Please note that if you use th
 
 When specified, causes the action to update the message with the specified `message-id`. This is useful if you want to update your message mid-workflow.
 
+### message-title and message-link
+
+Override the title of the attachment, and the link that title points at. By default the title is derived from the event that triggered the workflow.
+
+### message-type
+
+Either `rich` (default) to show the Repo/Status/Workflow fields, or `text` to omit them.
+
+### show-footer
+
+Set to `false` to hide the footer linking back to the repository. Defaults to `true`.
+
 ### slack-token
 
 The slack token that belongs to the bot account. This token can be found under `OAuth & Permissions`, and generally starts with `xoxb-`. Please be sure to attach the right scopes; at a bare minimum it will need the `chat:write` scope (as well as you manually inviting the bot account into that channel)
