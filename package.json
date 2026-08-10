@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Steven 'Xaroth' Noorbergen",
   "license": "MIT",
+  "packageManager": "pnpm@10.18.0",
   "bugs": {
     "url": "https://github.com/xaroth/action-slack-notification/issues"
   },
@@ -54,5 +55,11 @@
   ],
   "engines": {
     "node": ">=24.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "pre-commit",
+      "unrs-resolver"
+    ]
   }
 }

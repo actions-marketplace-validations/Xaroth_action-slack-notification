@@ -32,22 +32,24 @@ jobs:
           slack-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --prefer-offline --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Run tests
         if: github.event_name != 'pull_request' || matrix.test != 'unit'
-        run: yarn test:${{ matrix.test }}
+        run: pnpm test:${{ matrix.test }}
 
       - name: Report on PR
         if: github.event_name == 'pull_request' && matrix.test == 'unit'
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          test-script: yarn test:${{ matrix.test }}
-          package-manager: yarn
+          test-script: pnpm test:${{ matrix.test }}
+          package-manager: pnpm
           skip-step: install

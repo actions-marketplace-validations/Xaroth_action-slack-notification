@@ -26,16 +26,18 @@ jobs:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           message-summary: Checking if ${{ github.ref_name }} needs an updated build
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: yarn
+          cache: pnpm
 
       - name: Install dependencies
-        run: yarn --prefer-offline --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Run the build
-        run: yarn build
+        run: pnpm build
 
       - name: Check for modified files
         id: is-modified
