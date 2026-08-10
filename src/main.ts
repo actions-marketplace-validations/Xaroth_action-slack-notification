@@ -24,7 +24,7 @@ const run = async (): Promise<void> => {
 
     // Ensure that either channel-id or channel-name is set
     if (!state.channelId && !state.channelName) {
-      return setFailed(`Either 'channel-id' or 'channel-name' must be sedt.`)
+      return setFailed(`Either 'channel-id' or 'channel-name' must be set.`)
     }
 
     // Get our channel ID. If specified as a name, see if we can look it up.
