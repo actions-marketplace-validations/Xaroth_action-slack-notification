@@ -1,24 +1,23 @@
 import stateHelper, { EXPORT_VAR_PREFIX } from 'utils/state-helper'
 import * as actionsCore from '@actions/core'
-
-// We mock issueCommand as it will output to console (since we don't have access to the command file)
-// This causes GitHub to error out on our tests because it doesn't trust it.
-// Plus we don't actually want to output anything.
-jest.mock('@actions/core/lib/command', () => {
-  const original = jest.requireActual('@actions/core/lib/command')
-  return {
-    __esModule: true,
-    ...original,
-    issueCommand: jest.fn(),
-  }
-})
+import { mkdtempSync, writeFileSync } from 'fs'
+import { tmpdir } from 'os'
+import { join } from 'path'
 
 describe('state tests', () => {
   const name = 'TESTVALUE'
   const value = 'test'
 
   beforeAll(() => {
+    // Point the command files at a temp dir, otherwise @actions/core emits workflow
+    // commands on stdout, which GitHub refuses to trust when running our own tests.
+    const dir = mkdtempSync(join(tmpdir(), 'state-helper-'))
     process.env = {}
+    for (const file of ['GITHUB_ENV', 'GITHUB_OUTPUT', 'GITHUB_STATE']) {
+      const path = join(dir, file)
+      writeFileSync(path, '')
+      process.env[file] = path
+    }
   })
 
   it('stateHelper picks up on process.env variables', () => {
