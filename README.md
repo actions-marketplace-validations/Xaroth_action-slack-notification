@@ -4,6 +4,10 @@ This action sends a message to your slack channel with information about your ru
 
 <img src="action.png" alt="Slack output">
 
+## Requirements
+
+Runs on the `node24` runtime, so it needs a runner that supports it (GitHub-hosted runners do; self-hosted runners and GHES may need updating).
+
 ## Usage
 
 ```yaml
